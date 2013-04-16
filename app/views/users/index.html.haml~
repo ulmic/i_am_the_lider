@@ -1,0 +1,24 @@
+%h1
+  Зарегистрированные участники
+
+%table
+  %tr
+  = simple_form_for @user do |f|
+    %th f.label :title
+    %th f.label :district
+    %th f.label :birth_date
+    %th f.label :school
+    %th f.label :group
+    %th f.label :twitter
+
+  = @users.each do |user|
+  %tr
+    %td = user.title
+    %td = user.district.title
+    %td = user.birth_date
+    %td = user.school
+    %td = user.group
+    %td = user.email
+    %td = user.vkontakte
+    %td = user.twitter
+    %td = link_to 'Посмотреть страницу участника', user

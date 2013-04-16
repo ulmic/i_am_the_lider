@@ -1,0 +1,26 @@
+= simple_form_for @user do |f|
+  -if @user.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user.errors.count, "error") "prohibited this user from being saved:"
+      %ul
+        = @user.errors.full_messages.each do |msg|
+        %li
+          = msg
+  .field
+    = f.input :login
+    = f.input :password
+    = f.input :first_name
+    = f.input :middle_name
+    = f.input :last_name
+    = f.association :district as: :select, label_method: :title, value_method: :id
+    = f.date_select :birth_date
+    = f.input :school
+    = f.input :group
+    = f.input :mobile_phone
+    = f.input :home_phone
+    = f.input :email
+    = f.input :vkontakte
+    = f.input :twitter
+  .actions
+    = f.submit
