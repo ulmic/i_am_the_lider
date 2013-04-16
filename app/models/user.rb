@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
                   :password, :school, :twitter, :vkontakte
 
   belongs_to :district
+
+  def title
+    "#{first_name} #{middle_name} #{last_name}"
+  end
 end
