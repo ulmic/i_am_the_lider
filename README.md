@@ -1,4 +1,5 @@
 i_am_the_lider
 ==============
+Poster contest for students of the asset, "I - the leader".
 
-Сайт конкурса актива учащейся молодёжи "Я - лидер!".   С помощью этого сервиса участники смогут вести свои собственные дневники активности.
+With this service, participants will be able to conduct their own blogs activity.
