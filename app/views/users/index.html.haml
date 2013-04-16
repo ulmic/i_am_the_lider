@@ -3,20 +3,19 @@
 
 %table
   %tr
-  = simple_form_for @user do |f|
-    %th f.label :title
-    %th f.label :district
-    %th f.label :birth_date
-    %th f.label :school
-    %th f.label :group
-    %th f.label :twitter
+    %th Ф.И.О
+    %th Муниципальное образование
+    %th Дата рождения
+    %th Учебное заведение
+    %th Группа (класс)
+    %th Аккаунт в твиттере
 
   = @users.each do |user|
-  %tr
-    %td = user.title
-    %td = user.district.title
-    %td = user.birth_date
-    %td = user.school
-    %td = user.group
-    %td = user.twitter
-    %td = link_to 'Посмотреть страницу участника', user
+    %tr
+      %td = user.title
+      %td = user.district.title
+      %td = user.birth_date
+      %td = user.school
+      %td = user.group
+      %td = user.twitter
+      %td = link_to 'Посмотреть страницу участника', user
