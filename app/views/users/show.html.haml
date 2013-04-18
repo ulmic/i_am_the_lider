@@ -19,5 +19,8 @@
   %p
     %b= f.label :twitter
     = @user.twitter
+  %p
+    %b= f.label :avatar
+    %img{:src => @user.avatar} 
 
 = link_to 'К списку участников', users_path

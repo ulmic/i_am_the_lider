@@ -11,6 +11,8 @@ gem 'rspec'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
