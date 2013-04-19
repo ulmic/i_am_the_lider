@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   belongs_to :district
   has_one :project
+  has_one :report
   has_attached_file :avatar
 
   validates_attachment_content_type :avatar, :content_type => /image/
