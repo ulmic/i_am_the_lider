@@ -4,10 +4,11 @@ IAmTheLider::Application.routes.draw do
 
   resources :users
 
-  match "login" => "users#login"
+  match "office" => "users#login"
   match "logout" => "users#logout"
-  match "project_description" => "projects#new"
-
+  match "create_project" => "projects#new"
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,6 +10,9 @@
 
   = simple_form_for @user do |f|
     %p
+      %b= f.label :avatar
+      %img{:src => @user.avatar} 
+    %p
       %b= f.label :district
       = @user.district_id
     %p
@@ -24,8 +27,7 @@
     %p
       %b= f.label :twitter
       = @user.twitter
-    %p
-      %b= f.label :avatar
-      %img{:src => @user.avatar} 
-  %a{:href => "../project_description"} Создать описание проекта |
-  
+  - if @user.project.nil?
+    %a{:href => "../create_project"} Создать описание проекта |
+  - else
+    %a{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
