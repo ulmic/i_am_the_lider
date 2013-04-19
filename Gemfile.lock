@@ -141,6 +141,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     validate_url (0.2.0)
       activemodel (>= 3.0.0)
+    validates_phone_number (2.0.1)
 
 PLATFORMS
   ruby
@@ -159,3 +160,4 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   validate_url
   validates_email_format_of!
+  validates_phone_number
