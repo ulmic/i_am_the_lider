@@ -14,13 +14,13 @@ class User < ActiveRecord::Base
   validates_format_of :login, :with => /^[-a-z]+$/
   validates :password, :length => { :minimum => 3, :maximum => 8 }
   validates_format_of :password, :with => /^[-a-z]+$/
-  validates_url :vkontakte, :allow_blank => true,
-                            :allow_nil => true
-  validates_url :twitter, :allow_blank => true,
-                            :allow_nil => true
+  validates_url :vkontakte, :twitter, :allow_blank => true,
+                            :allow_nil => true,
+                            :message => "должен иметь формат ссылки"
   validate :mobile_phone, :phone_number => true
   validates_length_of :mobile_phone, :is => 11
-  validates_attachment_content_type :avatar, :content_type => /image/
+  validates_attachment_content_type :avatar, :content_type => /image/,
+                                             :message => "не является изображением"
 
   def title
     "#{first_name} #{middle_name} #{last_name}"

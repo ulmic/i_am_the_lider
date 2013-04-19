@@ -1,0 +1,38 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+      report: Отчёт о мероприятии
+      project: Описание мероприятия
+    attributes:
+      user:
+        login: Логин
+        password: Пароль
+        avatar: Фото
+        first_name: Фамилия
+        middle_name: Имя
+        last_name: Отчество
+        birth_date: Дата рождения
+        mobile_phone: Мобильный телефон
+        district: Муниципальное образование
+        group: Класс
+        home_phone: Домашний телефон
+        school: Учебное заведение
+        twitter: Аккаунт в твиттере
+        vkontakte: Аккаунт ВКонтакте
+        avatar_content_type: Фото
+      report:
+        date: Дата проведения
+        member_count: Количество участников
+        member_type: Категория участников 
+        venue: Место проведения
+        archive: Архив с данными о мероприятии
+      project:
+        date: Запланированная дата проведения
+        description: Описание мероприятия 
+        goal: Цель мероприятия 
+        place: Место проведения 
+        results: Ожидаемый результата 
+        target_audience: Целевая аудитория 
+        tasks: Задачи 
+        title: Название
