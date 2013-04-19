@@ -6,8 +6,8 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.input :login
-    = f.input :password
+    = f.input :login, :placeholder => "Логин больше 3 и меньше 8 символов"
+    = f.input :password, :placeholder => "Пароль больше 3 и меньше 8 символов"
     = f.input :first_name
     = f.input :middle_name
     = f.input :last_name
@@ -16,11 +16,11 @@
     = f.date_select :birth_date
     = f.input :school
     = f.input :group
-    = f.input :mobile_phone
+    = f.input :mobile_phone, :placeholder => "пример: +7960123456"
     = f.input :home_phone
     = f.input :email
-    = f.input :vkontakte
-    = f.input :twitter
+    = f.input :vkontakte, :placeholder => "Ссылка на вашу страницу ВКонтакте"
+    = f.input :twitter, :placeholder => "Ссылка на аккаунт в твиттере"
     %hr
     = f.label :avatar
     = f.file_field :avatar
