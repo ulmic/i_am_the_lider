@@ -1,6 +1,9 @@
-%h1 Editing user
+- if session[:user_id] === @user.id
+  = render 'page_404'
+- else
+  %h1 Editing user
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @user |
-= link_to 'Back', users_path %>
+  = link_to 'Show', @user |
+  = link_to 'Back', users_path
