@@ -4,8 +4,21 @@ class User < ActiveRecord::Base
 
   belongs_to :district
   has_one :project
+  has_one :report
   has_attached_file :avatar
 
+  validates_presence_of :birth_date, :district_id, :email, :first_name, :middle_name, :last_name, :login, :mobile_phone, :password, :avatar
+  validates :email, :uniqueness => true,
+  validates_email_format_of :email
+  validates :login, :length {:minimum => 3, :maximum => 8}
+  validates_format_of :login, :with => /^[-a-z]+$/
+  validates :password, :length {:minimum => 3, :maximum => 8}
+  validates_format_of :password, :with => /^[-a-z]+$/
+  validates_url :vkontakte, :allow_blank => true,
+                            :allow_nil => true
+  validates_url :twitter, :allow_blank => true,
+                            :allow_nil => true
+  validates :mobile_phone, :phone_number => true
   validates_attachment_content_type :avatar, :content_type => /image/
 
   def title
