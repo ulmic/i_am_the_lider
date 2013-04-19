@@ -20,7 +20,7 @@ ru:
         school: Учебное заведение
         twitter: Аккаунт в твиттере
         vkontakte: Аккаунт ВКонтакте
-        avatar_content_type: Фото
+        avatar_content_type: Загруженный файл
       report:
         date: Дата проведения
         member_count: Количество участников
