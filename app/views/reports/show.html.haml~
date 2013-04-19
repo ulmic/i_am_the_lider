@@ -20,5 +20,5 @@
 \|
 = link_to 'Back', reports_path
 
-- if session[:user_id] != @report.user_id
-  
+- if session[:user_id] == @report.user_id
+  %a{:href => "reports/#{@report.id}/edit"} Редактировать отчёт

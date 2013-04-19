@@ -10,7 +10,7 @@ IAmTheLider::Application.routes.draw do
   match "office" => "users#login"
   match "logout" => "users#logout"
   match "create_project" => "projects#new"
-  
+  match "create_report" => "reports#new"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
