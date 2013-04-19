@@ -9,7 +9,5 @@
     = submit_tag 'Login'
 
 - else
-  = form_for @user, :url => 'logout' do |f|
-    Hello,
-    = @user.login
-    = f.submit 'Log out'
+  = render 'office'
+  %a{:href => "users/#{@user.id}/edit"} Изменить аккаунт

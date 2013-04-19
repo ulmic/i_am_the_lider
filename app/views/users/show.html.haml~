@@ -1,29 +1,5 @@
 - if session[:user_id].nil?
   = render 'page_404'
 - else
-  %p{:id => "notice"}
-    = notice
-  = simple_form_for @user do |f|
-    %p
-      %b= f.label :title
-      = @user.title
-    %p
-      %b= f.label :district
-      = @user.district_id
-    %p
-      %b= f.label :birth_date
-      = @user.birth_date
-    %p
-      %b= f.label :school
-      = @user.school
-    %p
-      %b= f.label :group
-      = @user.group
-    %p
-      %b= f.label :twitter
-      = @user.twitter
-    %p
-      %b= f.label :avatar
-      %img{:src => @user.avatar} 
-
-  %a{:href => "../project_create"} Создать описание проекта
+  = render 'office'
+  %a{:href => "/edit"} Изменить аккаунт

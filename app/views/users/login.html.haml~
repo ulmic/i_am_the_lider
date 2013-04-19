@@ -9,8 +9,4 @@
     = submit_tag 'Login'
 
 - else
-  = form_for @user, :url => 'logout' do |f|
-    Hello,
-    = @user.login
-    = f.submit 'Log out'
-  %a{:class => "btn btn-large btn-success", :href => "/users"} Посмотреть пользователей
+  = render 'office'
