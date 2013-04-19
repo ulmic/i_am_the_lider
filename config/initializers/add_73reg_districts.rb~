@@ -1,7 +1,7 @@
 module NewLookContestReg
   class Application < Rails::Railtie
     config.after_initialize do
-      if District.all.empty?
+      if ActiveRecord::Base.connection.table_exists? and District.all.empty?
         District.new(:title => "г. Ульяновск").save
         District.new(:title => "г. Димитровград").save
         District.new(:title => "г. Новоульяновск").save

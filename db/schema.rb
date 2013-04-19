@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418235737) do
+ActiveRecord::Schema.define(:version => 20130419204723) do
 
   create_table "districts", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(:version => 20130418235737) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "user_id"
+  end
+
+  create_table "reports", :force => true do |t|
+    t.string   "member_type"
+    t.integer  "member_count"
+    t.string   "venue"
+    t.date     "date"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "archive_file_name"
+    t.string   "archive_content_type"
+    t.integer  "archive_file_size"
+    t.datetime "archive_updated_at"
   end
 
   create_table "users", :force => true do |t|
