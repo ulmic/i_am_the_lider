@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
                   :password, :school, :twitter, :vkontakte, :avatar
 
   belongs_to :district
+  has_one :project
   has_attached_file :avatar
 
   validates_attachment :avatar, :presence => true

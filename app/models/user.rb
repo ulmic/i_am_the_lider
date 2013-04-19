@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   has_one :project
   has_attached_file :avatar
 
-  validates_attachment :avatar, :presence => true
   validates_attachment_content_type :avatar, :content_type => /image/
 
   def title
