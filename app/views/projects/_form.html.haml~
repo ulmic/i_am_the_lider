@@ -18,6 +18,7 @@
     = f.text_area :description, :class => :span6, :rows => 8
     = f.label :date
     = f.date_select :date
-    = f.input :results, :class => :span6, :rows => 5
+    = f.label :results
+    = f.text_area :results, :class => :span6, :rows => 5
   .actions
     = f.submit 'Сохранить'
