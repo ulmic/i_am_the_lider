@@ -1,25 +1,13 @@
+= stylesheet_link_tag    "welcome", :media => "all"
 .span3
   %h3 Проекты
+  %table.table-striped
   -@projects.each do |project|
-    
-%h1
-  Зарегистрированные участники
-
-%table
-  %tr
-    %th Ф.И.О
-    %th Муниципальное образование
-    %th Дата рождения
-    %th Учебное заведение
-    %th Группа (класс)
-    %th Аккаунт в твиттере
-
-  -@users.each do |user|
-    %tr
-      %td= user.title
-      %td= user.district.title
-      %td= user.birth_date
-      %td= user.school
-      %td= user.group
-      %td= user.twitter
-      %td= link_to 'Посмотреть страницу участника', user
+    %tr{:href => "/projects/#{project.id}"}
+      %h5= project.title
+      = project.description
+      %br
+      %img.img-circle.small{:src => project.user.avatar, :href => "/users/#{project.user.id}"}  
+      %a{:href => "/users/#{project.user.id}"}
+        = project.user.title
+      %hr

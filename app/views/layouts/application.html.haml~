@@ -10,10 +10,9 @@
   .container-fluid
     .row-fluid
       .span2.logo
-      .span2
-        .well.well-small
-          Конкурс актива учащейся молодёжи 
-          %h4 Я -лидер!
+      .span2.well.well-small
+        Конкурс актива учащейся молодёжи 
+        %h4 Я -лидер!
       %ul.nav.nav-pills
         %li
           %a{:href => "#"} 

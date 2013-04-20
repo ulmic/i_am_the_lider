@@ -15,6 +15,10 @@ body {
   background-color: white;
   text-align: center;
   padding-top: 75px;
+  border-radius:20px; 
+  -webkit-border-radius:20px; 
+  -moz-border-radius:20px; 
+  -khtml-border-radius:20px;
 }
 
 .nav-pills {
@@ -32,5 +36,5 @@ body {
   -moz-border-radius:20px; 
   -khtml-border-radius:20px;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
 }

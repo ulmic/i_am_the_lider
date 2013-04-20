@@ -21,7 +21,7 @@ body {
   -khtml-border-radius:20px;
 }
 
-.nav-pills {
+.nav-buttons {
   float: right;
   margin-top: 75px;
 }
@@ -36,5 +36,5 @@ body {
   -moz-border-radius:20px; 
   -khtml-border-radius:20px;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
 }
