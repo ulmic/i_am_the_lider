@@ -1,3 +1,4 @@
+
 .small {
   max-width: 80px;
 }
@@ -24,5 +25,5 @@
 }
 
 .right_align_row {
-
+  text-align: right;
 }

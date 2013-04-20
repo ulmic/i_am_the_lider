@@ -1,5 +1,2 @@
-- if session[:user_id].nil?
-  = render 'page_404'
-- else
-  = render 'office'
-  %a{:href => "/edit"} Изменить аккаунт
+= render 'office'
+%a{:href => "#{@user.id}/edit"} Изменить аккаунт
