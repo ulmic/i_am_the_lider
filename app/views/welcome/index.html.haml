@@ -1,0 +1,21 @@
+%h1
+  Зарегистрированные участники
+
+%table
+  %tr
+    %th Ф.И.О
+    %th Муниципальное образование
+    %th Дата рождения
+    %th Учебное заведение
+    %th Группа (класс)
+    %th Аккаунт в твиттере
+
+  -@users.each do |user|
+    %tr
+      %td= user.title
+      %td= user.district.title
+      %td= user.birth_date
+      %td= user.school
+      %td= user.group
+      %td= user.twitter
+      %td= link_to 'Посмотреть страницу участника', user

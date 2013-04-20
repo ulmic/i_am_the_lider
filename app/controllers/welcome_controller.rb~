@@ -1,0 +1,10 @@
+class WelcomeController < ApplicationController
+  def index
+    @page = Resource.find(1)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @page }
+    end
+  end
+end
