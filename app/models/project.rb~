@@ -1,7 +1,13 @@
 class Project < ActiveRecord::Base
+<<<<<<< HEAD
   attr_accessible :date, :description, :goal, :place, :results, :target_audience, :tasks, :title
 
   validates_presence_of :date, :description, :goal, :place, :results, :target_audience, :tasks, :title
   validates_length_of :goal, :is => 140
+=======
+  attr_accessible :date, :description, :goal, :place, :results, :target_audience, :tasks, :title, :user_id
+  attr_accessor :user_id
+
+>>>>>>> make_up
   belongs_to :user
 end
