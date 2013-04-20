@@ -27,6 +27,10 @@ body {
 }
 
 .content {
+  border-radius:20px; 
+  -webkit-border-radius:20px; 
+  -moz-border-radius:20px; 
+  -khtml-border-radius:20px;
   background-color: white;
-  text-align: center;
+  padding: 20px;
 }
