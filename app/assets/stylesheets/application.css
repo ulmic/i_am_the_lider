@@ -64,6 +64,7 @@ body {
   -webkit-border-radius:20px; 
   -moz-border-radius:20px; 
   -khtml-border-radius:20px;
+  box-shadow: 0 0 20px;
 }
 
 .nav-buttons {
@@ -80,8 +81,10 @@ body {
   -webkit-border-radius:10px; 
   -moz-border-radius:10px; 
   -khtml-border-radius:10px;
+  box-shadow: 0 0 20px;
   background-color: white;
   padding: 10px;
+  min-height: 300px;
 }
 
 .big_img {

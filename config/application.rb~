@@ -38,7 +38,7 @@ module IAmTheLider
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    Time::DATE_FORMATS[:ru_datetime] = "%d.%m.%Y в %k:%M:%S"
+    Time::DATE_FORMATS[:ru_datetime] = "%Y.%m.%d в %k:%M:%S"
     article.created_at.to_s(:ru_datetime)
 
     # Enable escaping HTML in JSON.
