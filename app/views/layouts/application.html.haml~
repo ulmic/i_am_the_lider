@@ -13,7 +13,7 @@
       .span2.well.well-small
         Конкурс актива учащейся молодёжи 
         %h4 Я -лидер!
-      %ul.nav.nav-pills
+      %ul.nav.nav-pills.nav-buttons
         %li
           %a{:href => "#"} 
             %h3 Участники
@@ -29,3 +29,5 @@
     .row-fluid
       .span12.content
         = yield
+    .row-fluid
+      = render 'layouts/footer'

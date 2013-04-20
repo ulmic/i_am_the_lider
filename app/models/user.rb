@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def title
     "#{first_name} #{middle_name} #{last_name}"
   end
+  
+  def small_name
+    "#{first_name} #{middle_name}"
+  end
 end

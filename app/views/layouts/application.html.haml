@@ -9,7 +9,7 @@
 %body
   .container-fluid
     .row-fluid
-      .span2.logo
+      .span2.logo.mic
       .span2.well.well-small
         Конкурс актива учащейся молодёжи 
         %h4 Я -лидер!
@@ -29,3 +29,5 @@
     .row-fluid
       .span12.content
         = yield
+    .row-fluid
+      = render 'layouts/footer'
