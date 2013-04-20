@@ -1,8 +1,9 @@
+= stylesheet_link_tag "users", :media => "all"
 %h1
-  Зарегистрированные участники
+  Участники конкурса
 
   -@users.each do |user|
-    .row-fluid
+    .row-fluid.has_top_margin
       %a{:href => "users/#{user.id}"}
         .span3
           %img.img-polaroid{:src => user.avatar}
@@ -22,5 +23,4 @@
           .row-fluid
             %a{:href => user.twitter}
               .span1.logo.mini.twitter
-    %a{:href => "/#{user.id}"}
-      %h4 Посмотреть страницу участника
+    
