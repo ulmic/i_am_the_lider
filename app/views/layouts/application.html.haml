@@ -1,0 +1,31 @@
+%html
+%head
+  %title Я - лидер!
+  = stylesheet_link_tag "bootstrap", :media => "all"
+  = stylesheet_link_tag "bootstrap-responsive", :media => "all"
+  = stylesheet_link_tag    "application", :media => "all"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+%body
+  .container-fluid
+    .row-fluid
+      .span2.logo
+      .span2.well.well-small
+        Конкурс актива учащейся молодёжи 
+        %h4 Я -лидер!
+      %ul.nav.nav-pills
+        %li
+          %a{:href => "#"} 
+            %h3 Участники
+        %li
+          %a{:href => "#"} 
+            %h3 Положение
+        %li
+          %a{:href => "#"} 
+            %h3 Новости
+        %li
+          %a{:href => "#"} 
+            %h3 Этапы
+    .row-fluid
+      .span12.content
+        = yield
