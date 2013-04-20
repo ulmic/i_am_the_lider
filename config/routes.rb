@@ -11,10 +11,7 @@ IAmTheLider::Application.routes.draw do
   match "logout" => "users#logout"
   match "create_project" => "projects#new"
   match "create_report" => "reports#new"
-<<<<<<< HEAD
-=======
-  
->>>>>>> make_up
+  match "stages" => "welcome#stages"
   root :to => 'welcome#index'
 
   # The priority is based upon order of creation:

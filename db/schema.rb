@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419205953) do
+ActiveRecord::Schema.define(:version => 20130420133940) do
 
   create_table "districts", :force => true do |t|
     t.string   "title"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(:version => 20130419205953) do
     t.integer  "archive_file_size"
     t.datetime "archive_updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "stages", :force => true do |t|
+    t.string   "title"
+    t.string   "epigraph"
+    t.string   "hypertext"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
