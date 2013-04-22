@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  login: MyString
+  password: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  district_id: 1
+  birth_date: 2013-04-16
+  school: MyString
+  group: MyString
+  mobile_phone: MyString
+  home_phone: MyString
+  email: MyString
+  vkontakte: MyString
+  twitter: MyString
+
+two:
+  login: MyString
+  password: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  district_id: 1
+  birth_date: 2013-04-16
+  school: MyString
+  group: MyString
+  mobile_phone: MyString
+  home_phone: MyString
+  email: MyString
+  vkontakte: MyString
+  twitter: MyString
