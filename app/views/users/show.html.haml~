@@ -1,2 +1,0 @@
-= render 'office'
-%a{:href => "#{@user.id}/edit"} Изменить аккаунт
