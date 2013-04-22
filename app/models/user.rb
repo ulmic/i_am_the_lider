@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :district
   has_one :project
   has_one :report
+  has_many :blog_posts
   has_attached_file :avatar
 
   validates_presence_of :birth_date, :district_id, :email, :first_name, :middle_name, :last_name, :login, :mobile_phone, :password, :avatar
