@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422155604) do
-
-  create_table "blog_posts", :force => true do |t|
-    t.string   "title"
-    t.string   "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130420133940) do
 
   create_table "districts", :force => true do |t|
     t.string   "title"
@@ -52,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20130422155604) do
     t.integer  "archive_file_size"
     t.datetime "archive_updated_at"
     t.integer  "user_id"
-    t.string   "description"
   end
 
   create_table "stages", :force => true do |t|

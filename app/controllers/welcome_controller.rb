@@ -11,4 +11,7 @@ class WelcomeController < ApplicationController
   
   def stages
   end
+  
+  def competition
+  end
 end
