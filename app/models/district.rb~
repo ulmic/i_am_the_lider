@@ -1,5 +1,0 @@
-class District < ActiveRecord::Base
-  attr_accessor :title
-
-  has_many :users
-end
