@@ -10,6 +10,5 @@ class WelcomeController < ApplicationController
   end
   
   def stages
-    
   end
 end
