@@ -9,10 +9,12 @@
 %body
   .container-fluid
     .row-fluid
-      .span2.logo.mic
-      .span2.well.well-small
-        Конкурс актива учащейся молодёжи 
-        %h4 Я -лидер!
+      %a{:href => "http://ulmic.ru"}
+        .span2.logo.mic
+      %a{:href => "/"}
+        .span2.well.well-small.black_link
+          Конкурс актива учащейся молодёжи 
+          %h4 Я -лидер!
       %ul.nav.nav-pills.nav-buttons
         %li
           %a{:href => "/users"} 

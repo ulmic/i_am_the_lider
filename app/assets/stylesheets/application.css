@@ -98,3 +98,7 @@ body {
 .there_is_margin {
   margin-top: 30px;
 }
+
+.black_link {
+  color: black;
+}
