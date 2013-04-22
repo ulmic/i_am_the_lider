@@ -15,7 +15,7 @@ gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
 gem 'validate_url'
 gem 'validates_phone_number'
-
+gem 'ruby-bbcode'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
