@@ -1,0 +1,24 @@
+= simple_form_for @project do |f|
+  - if @project.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@project.errors.count, "error")} ошибок найдено при попытке сохранить изменения:"
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.input :title
+    = f.label :goal
+    = f.text_area :goal, :placeholder => "Цель мероприятия не больше 140 символов", :class => :span6, :rows => 3
+    = f.label :tasks
+    = f.text_area :tasks, :class => :span6, :rows => 5
+    = f.input :target_audience
+    = f.input :place
+    = f.label :description
+    = f.text_area :description, :class => :span6, :rows => 8
+    = f.label :date
+    = f.date_select :date
+    = f.label :results
+    = f.text_area :results, :class => :span6, :rows => 5
+  .actions
+    = f.submit 'Сохранить'

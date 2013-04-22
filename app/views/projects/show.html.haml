@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @project.title
+%p
+  %b Goal:
+  = @project.goal
+%p
+  %b Tasks:
+  = @project.tasks
+%p
+  %b Target audience:
+  = @project.target_audience
+%p
+  %b Place:
+  = @project.place
+%p
+  %b Description:
+  = @project.description
+%p
+  %b Date:
+  = @project.date
+%p
+  %b Results:
+  = @project.results
+
+= link_to 'Edit', edit_project_path(@project)
+\|
+= link_to 'Back', projects_path

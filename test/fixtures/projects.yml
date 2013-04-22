@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  goal: MyString
+  tasks: MyString
+  target_audience: MyString
+  place: MyString
+  description: MyString
+  date: 2013-04-19
+  results: MyString
+
+two:
+  title: MyString
+  goal: MyString
+  tasks: MyString
+  target_audience: MyString
+  place: MyString
+  description: MyString
+  date: 2013-04-19
+  results: MyString

@@ -1,0 +1,35 @@
+%html
+%head
+  %title Я - лидер!
+  = stylesheet_link_tag "bootstrap", :media => "all"
+  = stylesheet_link_tag "bootstrap-responsive", :media => "all"
+  = stylesheet_link_tag    "application", :media => "all"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+%body
+  .container-fluid
+    .row-fluid
+      %a{:href => "http://ulmic.ru"}
+        .span2.logo.mic
+      %a{:href => "/"}
+        .span2.well.well-small.black_link
+          Конкурс актива учащейся молодёжи 
+          %h4 Я -лидер!
+      %ul.nav.nav-pills.nav-buttons
+        %li
+          %a{:href => "/users"} 
+            %h3 Участники
+        %li
+          %a{:href => ""} 
+            %h3 Положение
+        %li
+          %a{:href => "#"} 
+            %h3 Новости
+        %li
+          %a{:href => "/stages"} 
+            %h3 Этапы
+    .row-fluid
+      .span12.content
+        = yield
+    .row-fluid
+      = render 'layouts/footer'

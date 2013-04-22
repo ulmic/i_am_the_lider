@@ -1,0 +1,10 @@
+- if session[:user_id] != @project.user_id
+  = render 'page_404'
+- else
+  %h1 Editing project
+
+  = render 'form'
+
+  = link_to 'Show', @project
+  \|
+  = link_to 'Back', projects_path
