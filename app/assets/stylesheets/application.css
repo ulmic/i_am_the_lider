@@ -59,7 +59,8 @@ body {
 .well-small {
   background-color: white;
   text-align: center;
-  padding-top: 75px;
+  padding-top: 95px;
+  margin-top: -20px;
   border-radius:20px; 
   -webkit-border-radius:20px; 
   -moz-border-radius:20px; 

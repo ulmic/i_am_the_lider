@@ -30,10 +30,12 @@
 ol>li{
   display:block
 }
+
 ol>li:before{
   content:counters(item,".") ". ";
   counter-increment:item
 }
+
 ol{
   counter-reset:item
 }
