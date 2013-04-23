@@ -13,7 +13,7 @@
 .span5
   %h2
     Последние записи:
-    -# =blog_post.find(:all, :order => "id desc", :limit => 5).reverse
+    =@last_posts
 .span3
   %h3 Участники
   .row.top_row
