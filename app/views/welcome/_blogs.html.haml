@@ -1,0 +1,9 @@
+-BlogPost.find(:all, :order => "id desc", :limit => 5).reverse.each do |b|
+  .blog_post{:style =>"border: 1px solid black;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"}
+    %h5
+      ="Аноним" if b.user.nil?
+      =b.user.small_name unless b.user.nil?
+    %h4
+      =b.title
+    =b.preview
+  %br

@@ -12,6 +12,7 @@
     %hr
 .span5
   %h1 ЗДЕСЬ БУДУТ БЛОГИ!!!
+  =render "blogs"
 .span3
   %h3 Участники
   .row.top_row
@@ -34,6 +35,3 @@
   .row.right_align_row
     %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "325431445092958208", :href => "https://twitter.com/search?q=%23%D0%AF%D0%9B%D0%B8%D0%B4%D0%B5%D1%80"} Я - лидер!
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-%h2
-  Последние записи:
-  =@last_posts
