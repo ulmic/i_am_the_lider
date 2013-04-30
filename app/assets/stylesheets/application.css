@@ -3,6 +3,11 @@ body {
   padding-bottom: 20px;
 }
 
+
+label {
+    font-weight: bold;
+}
+
 .logo {
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -102,3 +107,4 @@ body {
 .black_link {
   color: black;
 }
+

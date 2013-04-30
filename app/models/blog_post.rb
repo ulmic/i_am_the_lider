@@ -1,11 +1,11 @@
 class BlogPost < ActiveRecord::Base
-  attr_accessible :text, :title
+  attr_accessible :text, :title, :user_id
 
   belongs_to :user
 
   def preview
-    if self.text.length>140
-      self.text[0..137]+"..." 
+    if self.text.length>50
+      self.text[0..47]+"..."
     else
       self.text
     end

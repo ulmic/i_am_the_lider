@@ -1,9 +1,7 @@
-%p{:id => "notice"}
-  = notice
 = form_for @user, :url => 'logout' do |f|
   - if session[:user_id] == @user.id
-    Hello,
-    = @user.title
+    Здравствуйте,
+    = @user.middle_name
     = f.submit 'Log out'
   = simple_form_for @user do |f|
     .row-fluid
@@ -26,36 +24,43 @@
           = @user.group
         %p
           %b= f.label :twitter
-          = @user.twitter
+          %a{:href => "#{@user.twitter}"}
+            = @user.twitter
       .span4
+        %h3
+          Проект
         %p
           %h3= @user.project.title if @user.project.present?
         %p
-          = f.label :description
+          = f.label "Описание:"
           = @user.project.description if @user.project.present?
         %p
-          = f.label :goal
+          = f.label "Цель:"
           = @user.project.goal if @user.project.present?
         %p
-          = f.label :place
+          = f.label "Место:"
           = @user.project.place if @user.project.present?
         %p
-          = f.label :target_audience
+          = f.label "Целевая аудитория"
           = @user.project.target_audience if @user.project.present?
         %p
-          = f.label :results
+          = f.label "Результат:"
           = @user.project.results if @user.project.present?
       .span3
         %p
           %h3 Отчёт о мероприятии
         %p
-          = f.label :member_count
+          = f.label "Количество участников:"
           = @user.report.member_count if @user.report.present?
         %p
-          = f.label :member_type
+          = f.label "Категория участников:"
           = @user.report.member_type if @user.report.present?
         %p
-          = f.label :venue
+          = f.label "Место:"
           = @user.report.venue if @user.report.present?
         %p
-          %a{:href => "#{@user.report.archive if @user.report.present?}"} Скачать архив
+          -if @user.report.present?
+            %a{:href => "#{@user.report.archive}"} Скачать архив
+          -else
+            %span{:style => "color: #AAA;"}Архив не загружен
+

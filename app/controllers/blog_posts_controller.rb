@@ -25,7 +25,7 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts/new.json
   def new
     @blog_post = BlogPost.new
-    @blog_post.user=User.find(session[:user_id])
+    @blog_post.user_id=session[:user_id] #if User.find(session[:user_id]).present?
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @blog_post }
@@ -35,16 +35,19 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts/1/edit
   def edit
     @blog_post = BlogPost.find(params[:id])
+    unless @blog_post.user_id == session[:user_id]
+      redirect_to :root
+    end
   end
 
   # POST /blog_posts
   # POST /blog_posts.json
   def create
     @blog_post = BlogPost.new(params[:blog_post])
-
+    @blog_post.user_id=session[:user_id]
     respond_to do |format|
       if @blog_post.save
-        format.html { redirect_to :office, notice: 'Blog post was successfully created.' }
+        format.html { redirect_to :office, notice: 'Запись в блог добавлена.' }
         format.json { render json: @blog_post, status: :created, location: @blog_post }
       else
         format.html { render action: "new" }
@@ -60,7 +63,7 @@ class BlogPostsController < ApplicationController
 
     respond_to do |format|
       if @blog_post.update_attributes(params[:blog_post])
-        format.html { redirect_to @blog_post, notice: 'Blog post was successfully updated.' }
+        format.html { redirect_to @blog_post, notice: 'Запись в блоге обновлена.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

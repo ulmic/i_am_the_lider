@@ -1,5 +1,5 @@
--BlogPost.find(:all, :order => "id desc", :limit => 5).reverse.each do |b|
-  .blog_post{:style =>"border: 1px solid black;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"}
+-BlogPost.all(:order => "id desc", :limit => 5).reverse.each do |b|
+  .blog_post{:style =>"border: 1px solid black;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", :onclick => "document.location.href = '#{blog_post_path(b.id)}';"}
     %h5
       ="Аноним" if b.user.nil?
       =b.user.small_name unless b.user.nil?
@@ -7,3 +7,6 @@
       =b.title
     =b.preview
   %br
+%h5
+  %br
+  ='Блоги пока что пусты...' if BlogPost.count == 0
