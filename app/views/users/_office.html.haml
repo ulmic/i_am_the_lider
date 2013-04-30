@@ -14,7 +14,7 @@
           %img.img-polaroid.big_img{:src => @user.avatar} 
         %p
           %b= f.label :district
-          = @user.district.title
+          = @user.district.title if @user.district.present?
         %p
           %b= f.label :birth_date
           = @user.birth_date
@@ -29,33 +29,33 @@
           = @user.twitter
       .span4
         %p
-          %h3= @user.project.title
+          %h3= @user.project.title if @user.project.present?
         %p
           = f.label :description
-          = @user.project.description
+          = @user.project.description if @user.project.present?
         %p
           = f.label :goal
-          = @user.project.goal
+          = @user.project.goal if @user.project.present?
         %p
           = f.label :place
-          = @user.project.place
+          = @user.project.place if @user.project.present?
         %p
           = f.label :target_audience
-          = @user.project.target_audience
+          = @user.project.target_audience if @user.project.present?
         %p
           = f.label :results
-          = @user.project.results
+          = @user.project.results if @user.project.present?
       .span3
         %p
           %h3 Отчёт о мероприятии
         %p
           = f.label :member_count
-          = @user.report.member_count
+          = @user.report.member_count if @user.report.present?
         %p
           = f.label :member_type
-          = @user.report.member_type
+          = @user.report.member_type if @user.report.present?
         %p
           = f.label :venue
-          = @user.report.venue
+          = @user.report.venue if @user.report.present?
         %p
-          %a{:href => "#{@user.report.archive}"} Скачать архив
+          %a{:href => "#{@user.report.archive if @user.report.present?}"} Скачать архив
