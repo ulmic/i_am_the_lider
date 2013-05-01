@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420133940) do
+ActiveRecord::Schema.define(:version => 20130422155604) do
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title"
+    t.string   "text"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "districts", :force => true do |t|
     t.string   "title"
@@ -70,12 +78,8 @@ ActiveRecord::Schema.define(:version => 20130420133940) do
     t.string   "email"
     t.string   "vkontakte"
     t.string   "twitter"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
-    t.string   "portfolio_file_name"
-    t.string   "portfolio_content_type"
-    t.integer  "portfolio_file_size"
-    t.datetime "portfolio_updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %h3
+    =@blog_post.user.small_name
+%p
+  %h2
+    = @blog_post.title
+%br
+%p
+  = @blog_post.text
+
+= link_to 'Изменить', edit_blog_post_path(@blog_post)
+\|
+= link_to 'Назад', :back

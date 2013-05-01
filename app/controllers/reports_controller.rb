@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
+        format.html { redirect_to "/office", notice: 'Отчёт о мероприятии успешно добавлен.' }
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.update_attributes(params[:report])
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
+        format.html { redirect_to "/office", notice: 'Отчёт о мероприятии успешно обновлён.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
