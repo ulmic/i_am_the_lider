@@ -22,7 +22,7 @@ label {
 }
 
 .mic {
-  background-image: url(logo-mic.jpg);
+  background-image: url(logo-mic.png);
 }
 
 .dep {
@@ -64,8 +64,9 @@ label {
 .well-small {
   background-color: white;
   text-align: center;
-  padding-top: 75px;
-  border-radius:20px; 
+  margin-top: -20px;
+  padding-top: 95px;
+  border-radius s20px; 
   -webkit-border-radius:20px; 
   -moz-border-radius:20px; 
   -khtml-border-radius:20px;

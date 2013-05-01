@@ -8,6 +8,9 @@ class WelcomeController < ApplicationController
     end
   end
   
+  def competition
+  end
+
   def stages
   end
 end

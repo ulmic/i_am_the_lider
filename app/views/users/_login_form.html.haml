@@ -1,0 +1,22 @@
+= flash[:notice]
+%br
+- if session[:user_id].nil?
+  = form_tag do
+    login
+    = text_field_tag :login, params[:login]
+    password
+    = password_field_tag :password, params[:password]
+    = submit_tag 'Login'
+  %a{:href => "/users/new"} Зарегистрироваться
+- else
+  = render 'office'
+  - if @user.project.nil?
+    %a{:href => "../create_project"} Создать описание проекта |
+  - else
+    %a{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
+  
+  - if @user.report.nil?
+    %a{:href => "/create_report"} Создать отчёт о мероприятии |
+  - else
+    %a{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
+  %a{:href => "users/#{@user.id}/edit"} Изменить аккаунт
