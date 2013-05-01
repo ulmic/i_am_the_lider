@@ -15,6 +15,7 @@ IAmTheLider::Application.routes.draw do
   match "create_project" => "projects#new"
   match "create_report" => "reports#new"
   match "stages" => "welcome#stages"
+  match "competition" => "welcome#competition"
   root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
