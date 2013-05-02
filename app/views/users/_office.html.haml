@@ -62,6 +62,6 @@
             = @user.report.venue if @user.report.present?
           %p
             -if @user.report.present?
-              %a{:href => "#{@user.report.archive}"} Скачать архив
+              %a.btn.btn-large.btn-success{:href => "#{@user.report.archive}"} Скачать архив
             -else
               %span{:style => "color: #AAA;"}Архив не загружен
