@@ -5,15 +5,15 @@
       %ul
         - @report.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.input :member_type
-    = f.input :member_count
-    = f.input :venue
-    = f.label :date
-    = f.date_select :date
-    %hr
-    = f.label :archive
-    = f.file_field :archive
-  .actions
-    = f.submit 'Сохранить'
+  - f.with_options :input_html => {:class => "span6"} do |f|
+    .field
+      = f.input :member_type
+      = f.input :member_count
+      = f.input :venue
+      = f.label :date
+      = f.date_select :date
+      %hr
+      = f.label :archive
+      = f.file_field :archive
+    .actions
+      = f.submit 'Сохранить'

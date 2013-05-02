@@ -14,12 +14,12 @@
 - else
   = render 'office'
   - if @user.project.nil?
-    %a{:href => "../create_project"} Создать описание проекта |
+    %a.btn.btn-large.btn-success{:href => "../create_project"} Создать описание проекта |
   - else
-    %a{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
+    %a.btn.btn-large.btn-success{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
   
   - if @user.report.nil?
-    %a{:href => "/create_report"} Создать отчёт о мероприятии |
+    %a.btn.btn-large.btn-success{:href => "/create_report"} Создать отчёт о мероприятии |
   - else
-    %a{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
-  %a{:href => "users/#{@user.id}/edit"} Изменить аккаунт
+    %a.btn.btn-large.btn-success{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
+  %a.btn.btn-large.btn-success{:href => "users/#{@user.id}/edit"} Изменить аккаунт
