@@ -1,7 +1,7 @@
 - if session[:user_id].nil?
   = render 'page_404'
 - else
-  %h1 New project
+  %h1 Создать описание проекта
   = @project.user_id
 
   = render 'form'

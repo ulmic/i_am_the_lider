@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20130422155604) do
     t.integer  "archive_file_size"
     t.datetime "archive_updated_at"
     t.integer  "user_id"
-    t.string   "description"
   end
 
   create_table "stages", :force => true do |t|

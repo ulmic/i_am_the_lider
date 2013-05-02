@@ -27,40 +27,41 @@
           %a{:href => "#{@user.twitter}"}
             = @user.twitter
       .span4
-        %h3
-          Проект
-        %p
-          %h3= @user.project.title if @user.project.present?
-        %p
-          = f.label "Описание:"
-          = @user.project.description if @user.project.present?
-        %p
-          = f.label "Цель:"
-          = @user.project.goal if @user.project.present?
-        %p
-          = f.label "Место:"
-          = @user.project.place if @user.project.present?
-        %p
-          = f.label "Целевая аудитория"
-          = @user.project.target_audience if @user.project.present?
-        %p
-          = f.label "Результат:"
-          = @user.project.results if @user.project.present?
+        - if @user.project
+          %h3
+            Проект
+          %p
+            %h3= @user.project.title if @user.project.present?
+          %p
+            = f.label "Описание:"
+            = @user.project.description if @user.project.present?
+          %p
+            = f.label "Цель:"
+            = @user.project.goal if @user.project.present?
+          %p
+            = f.label "Место:"
+            = @user.project.place if @user.project.present?
+          %p
+            = f.label "Целевая аудитория"
+            = @user.project.target_audience if @user.project.present?
+          %p
+            = f.label "Результат:"
+            = @user.project.results if @user.project.present?     
       .span3
-        %p
-          %h3 Отчёт о мероприятии
-        %p
-          = f.label "Количество участников:"
-          = @user.report.member_count if @user.report.present?
-        %p
-          = f.label "Категория участников:"
-          = @user.report.member_type if @user.report.present?
-        %p
-          = f.label "Место:"
-          = @user.report.venue if @user.report.present?
-        %p
-          -if @user.report.present?
-            %a{:href => "#{@user.report.archive}"} Скачать архив
-          -else
-            %span{:style => "color: #AAA;"}Архив не загружен
-
+        - if @user.report
+          %p
+            %h3 Отчёт о мероприятии
+          %p
+            = f.label "Количество участников:"
+            = @user.report.member_count if @user.report.present?
+          %p
+            = f.label "Категория участников:"
+            = @user.report.member_type if @user.report.present?
+          %p
+            = f.label "Место:"
+            = @user.report.venue if @user.report.present?
+          %p
+            -if @user.report.present?
+              %a{:href => "#{@user.report.archive}"} Скачать архив
+            -else
+              %span{:style => "color: #AAA;"}Архив не загружен

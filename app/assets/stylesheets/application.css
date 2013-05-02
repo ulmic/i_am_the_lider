@@ -64,9 +64,15 @@ label {
 .well-small {
   background-color: white;
   text-align: center;
+<<<<<<< HEAD
   margin-top: -20px;
   padding-top: 95px;
   border-radius s20px; 
+=======
+  padding-top: 95px;
+  margin-top: -20px;
+  border-radius:20px; 
+>>>>>>> 41e0a72245b9f33031fb60cec23d170e43ecc1a9
   -webkit-border-radius:20px; 
   -moz-border-radius:20px; 
   -khtml-border-radius:20px;

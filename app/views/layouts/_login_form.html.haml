@@ -3,14 +3,11 @@
 - if session[:user_id].nil?
   = form_tag do
     login
-    %br
-    = text_field_tag :login, params[:login], :class => "span6"
-    %br
+    = text_field_tag :login, params[:login]
     password
-    %br
-    = password_field_tag :password, params[:password], :class => "span6"
-    %br
+    = password_field_tag :password, params[:password]
     = submit_tag 'Login'
+
 - else
   = render 'office'
   - if @user.project.nil?
