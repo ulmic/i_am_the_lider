@@ -3,7 +3,7 @@
 %p
   %small= @news.pusblished_at
 %p
-  = @news.body
+  != @news.body
 
 = link_to 'Edit', edit_news_path(@news)
 \|
