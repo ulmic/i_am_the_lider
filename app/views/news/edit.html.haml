@@ -1,7 +1,6 @@
-%h1 Editing news
+%h1 Изменить новость
 
 = render 'form'
 
-= link_to 'Show', @news
-\|
-= link_to 'Back', news_index_path
+= link_to 'Посмотреть', @news, :class => "btn"
+= link_to 'Назад', news_index_path, :class => "btn"

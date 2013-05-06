@@ -8,7 +8,7 @@
         != strip_tags news.body.first(500)
         %b ...
       %p
-        = link_to 'Edit', edit_news_path(news), :class => "btn"
-        = link_to 'Destroy', news, :method => :Вы, :delete => { :data => 'confirm уверены?' }, :class => "btn"
+        = link_to 'Изменить', edit_news_path(news), :class => "btn"
+        = link_to 'Удалить', news, :method => :Вы, :delete => { :data => 'уверены?' }, :class => "btn"
 
 %br

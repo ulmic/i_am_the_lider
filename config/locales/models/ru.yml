@@ -4,6 +4,7 @@ ru:
       user: Пользователь
       report: Отчёт о мероприятии
       project: Описание мероприятия
+      news: Новость
     attributes:
       user:
         login: Логин
@@ -36,3 +37,7 @@ ru:
         target_audience: Целевая аудитория 
         tasks: Задачи 
         title: Название
+      news:
+        title: Заголовок
+        body: Текст
+        pusblished_at: Опубликовано
