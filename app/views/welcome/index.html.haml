@@ -25,6 +25,16 @@
           %small.very_small_text= user.first_name
           %br
           %small.very_small_text= user.middle_name
+  .row.top_row
+    .well
+      %h4 Новости конкурса
+      - @news.each do |news|
+        %a{:href => "/news/#{news.id}"}
+          %h4= news.title
+          %small= news.pusblished_at
+          %p
+            != strip_tags news.body.first(200)
+          %b ...
   /.row.middle_row
   /  -@users_last.each do |user|
   /    .span1.user_ot
