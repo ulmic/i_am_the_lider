@@ -1,4 +1,7 @@
 IAmTheLider::Application.routes.draw do
+  resources :news
+
+
   resources :blog_posts
 
 
