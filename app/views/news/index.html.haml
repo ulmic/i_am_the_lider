@@ -1,12 +1,14 @@
 %h1 Новости конкурса
 - @news.each do |news|
-  .well
-    = news.title
-    = news.body
-    = news.pusblished_at
-    = link_to 'Show', news
-    = link_to 'Edit', edit_news_path(news)
-    = link_to 'Destroy', news, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %a{:href => "/news/#{news.id}"}
+    .well
+      %h4= news.title
+      %small= news.pusblished_at
+      %p
+        = news.body.first(300)
+        %b ...
+      %p
+        = link_to 'Edit', edit_news_path(news)
+        = link_to 'Destroy', news, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-= link_to 'New News', new_news_path

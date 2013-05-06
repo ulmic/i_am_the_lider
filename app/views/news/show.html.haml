@@ -1,14 +1,9 @@
-%p#notice= notice
-
 %p
-  %b Title:
-  = @news.title
+  %h2= @news.title
 %p
-  %b Body:
+  %small= @news.pusblished_at
+%p
   = @news.body
-%p
-  %b Pusblished at:
-  = @news.pusblished_at
 
 = link_to 'Edit', edit_news_path(@news)
 \|
