@@ -34,7 +34,8 @@
           %small= news.pusblished_at
           %p
             != strip_tags news.body.first(200)
-          %b ...
+          %small Читать далее
+        %hr
   /.row.middle_row
   /  -@users_last.each do |user|
   /    .span1.user_ot
