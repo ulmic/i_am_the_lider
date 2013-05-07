@@ -5,5 +5,5 @@
   = render 'user'
 - else
   %h4 Данная учётная запись будет вскоре подтверждена администратором конкурса!
-  - if session[:admin_id].nil?
-    %a{:href => "admins#confirm_user"} Подтвердить участие
+  - if session[:admin_id]
+    %a.btn{:href => "confirm_user/#{@user.id}"} Подтвердить участие

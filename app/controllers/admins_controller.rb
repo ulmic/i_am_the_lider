@@ -25,6 +25,7 @@ class AdminsController < ApplicationController
   end
   
   def confirm_user
-    @user.confirm = true
+    User.find(session[:confirm_id]).confirm = true
+    redirect_to 'users/#{@user.id}'
   end
 end
