@@ -12,6 +12,7 @@ IAmTheLider::Application.routes.draw do
   match "stages" => "welcome#stages"
   match "competition" => "welcome#competition"
   match "admin" => "admins#login"
+  match "admins_logout" => "admins#logout"
   root :to => 'welcome#index'
 
   # The priority is based upon order of creation:

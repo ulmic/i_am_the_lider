@@ -11,15 +11,21 @@
     = password_field_tag :password, params[:password], :class => "span6"
     %br
     = submit_tag 'Login'
+  %a.btn.btn-large{:href => "/users/new"} Зарегистрироваться
 - else
-  = render 'office'
-  - if @user.project.nil?
-    %a.btn.btn-large.btn-success{:href => "../create_project"} Создать описание проекта |
-  - else
-    %a.btn.btn-large.btn-success{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
+  - if @user.confirm
+    = render 'office'
+    - if @user.project.nil?
+      %a.btn.btn-large.btn-success{:href => "../create_project"} Создать описание проекта |
+    - else
+      %a.btn.btn-large.btn-success{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
   
-  - if @user.report.nil?
-    %a.btn.btn-large.btn-success{:href => "/create_report"} Создать отчёт о мероприятии |
+    - if @user.report.nil?
+      %a.btn.btn-large.btn-success{:href => "/create_report"} Создать отчёт о мероприятии |
+    - else
+      %a.btn.btn-large.btn-success{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
+    %a.btn.btn-large.btn-success{:href => "users/#{@user.id}/edit"} Изменить аккаунт
   - else
-    %a.btn.btn-large.btn-success{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
-  %a.btn.btn-large.btn-success{:href => "users/#{@user.id}/edit"} Изменить аккаунт
+    %h4 Ваша учётная запись будет вскоре подтверждена администратором конкурса!
+    - if session[:admin_id]
+      %a.btn{:href => "admins#confirm_user"} Подтвердить участие

@@ -18,4 +18,13 @@ class AdminsController < ApplicationController
       @admin = Admin.find(session[:admin_id])
     end
   end
+  
+  def logout
+    session[:admin_id] = nil
+    redirect_to '/'
+  end
+  
+  def confirm_user
+    @user.confirm = true
+  end
 end

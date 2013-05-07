@@ -1,4 +1,9 @@
-= render 'office'
-- if session[:user_id] == @user.id
-  %a{:href => "#{@user.id}/edit"} Изменить аккаунт
-= render 'user'
+- if @user.confirm
+  = render 'office'
+  - if session[:user_id] == @user.id
+    %a{:href => "#{@user.id}/edit"} Изменить аккаунт
+  = render 'user'
+- else
+  %h4 Данная учётная запись будет вскоре подтверждена администратором конкурса!
+  - if session[:admin_id].nil?
+    %a{:href => "admins#confirm_user"} Подтвердить участие
