@@ -1,12 +1,11 @@
 -BlogPost.all(:order => "id desc", :limit => 5).reverse.each do |b|
-  .blog_post{:style =>"border: 1px solid black;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", :onclick => "document.location.href = '#{blog_post_path(b.id)}';"}
-    %h5
-      ="Аноним" if b.user.nil?
-      =b.user.small_name unless b.user.nil?
-    %h4
-      =b.title
-    =b.preview
-  %br
+  %a{:href => '#{blog_post_path(b.id)}'}
+    .well
+      %h5= b.user.nil? ? "Аноним" : b.user.small_name
+      %h4= b.title
+      %p
+        != strip_tags b.text.first(500)
+        %b ...
 %h5
   %br
   ='Блоги пока что пусты...' if BlogPost.count == 0
