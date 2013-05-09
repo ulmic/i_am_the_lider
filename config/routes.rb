@@ -5,6 +5,7 @@ IAmTheLider::Application.routes.draw do
   resources :reports
   resources :projects
   resources :users
+  resources :confirm
   match "office" => "users#login"
   match "logout" => "users#logout"
   match "create_project" => "projects#new"

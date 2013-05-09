@@ -1,4 +1,6 @@
 class NewsController < ApplicationController
+  before_filter :check_if_admin, only: [:edit, :update, :destroy, :create, :new]
+
   # GET /news
   # GET /news.json
   def index

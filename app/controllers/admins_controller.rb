@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  before_filter :check_if_admin, only: [:confirm_user]
+  
   def login
     if session[:admin_id].nil?
       if request.post?
@@ -25,7 +27,8 @@ class AdminsController < ApplicationController
   end
   
   def confirm_user
-    User.find(session[:confirm_id]).confirm = true
+    @user = User.find(params[:id])
+    @user.confirm = true
     redirect_to 'users/#{@user.id}'
   end
 end

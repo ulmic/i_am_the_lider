@@ -1,4 +1,7 @@
 class BlogPostsController < ApplicationController
+  before_filter :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
+  before_filter :check_if_admin, only: [:edit, :update, :destroy]  
+
   # GET /blog_posts
   # GET /blog_posts.json
   def index

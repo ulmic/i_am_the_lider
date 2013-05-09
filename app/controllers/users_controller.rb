@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+
   # GET /users
   # GET /users.json
   def index
@@ -111,5 +113,9 @@ class UsersController < ApplicationController
 
   def user_blog
     @blog = user.blog
+  end
+
+  def current_user?
+    session[:user_id] === id
   end
 end

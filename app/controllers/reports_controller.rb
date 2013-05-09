@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  before_filter :check_if_admin, only: [:edit, :update, :destroy]  
+
   # GET /reports
   # GET /reports.json
   def index
