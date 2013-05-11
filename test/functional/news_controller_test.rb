@@ -36,8 +36,12 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should update news" do
-    put :update, id: @news, news: { body: @news.body, pusblished_at: @news.pusblished_at, title: @news.title }
-    assert_redirected_to news_path(assigns(:news))
+    attributes = attributes_for :news
+    put :update, id: @news, news: attributes
+    assert_response :redirect
+    
+    @news.reload
+    assert_equal attributes[:title], @news.title 
   end
 
   test "should destroy news" do
