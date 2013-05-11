@@ -35,8 +35,12 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should update report" do
-    put :update, id: @report, report: { date: @report.date, member_count: @report.member_count, member_type: @report.member_type, venue: @report.venue }
-    assert_redirected_to report_path(assigns(:report))
+    attributes = attributes_for :report
+    put :update, id: @report, report: attributes
+    assert_response :redirect
+
+    @report.reload
+    assert_equal attributes[:description], @report.description
   end
 
   test "should destroy report" do
