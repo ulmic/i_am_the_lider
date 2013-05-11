@@ -12,7 +12,7 @@ FactoryGirl.define do
   end
 
   sequence :password do |n|
-    "#{n}pass_word#{n}"
+    "#{n}pass#{n}"
   end
 
   sequence :site, aliases: [:shop_site, :url] do |n|
@@ -32,6 +32,10 @@ FactoryGirl.define do
   end
 
   sequence :phone do |n|
-    (17001000600+n).to_s
+    "+#{17001000600+n}"
+  end
+
+  sequence :login do |n|
+    "login#{n}"
   end
 end

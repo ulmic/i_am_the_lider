@@ -7,13 +7,13 @@ FactoryGirl.define do
     last_name    { generate :string }
     group        { generate :string }
     home_phone   { generate :phone }
-    login        { generate :string }
+    login        { generate :login }
     middle_name  { generate :string }
-    mobile_phone { generate :string }
+    mobile_phone { generate :phone }
     password
     school       { generate :string }
     twitter      { generate :url }
     vkontakte    { generate :url }
-    # avatar
+    #avatar       { fixture_file_upload("test/fixtures/files/rails.jpg", "image/jpg") }
   end
 end
