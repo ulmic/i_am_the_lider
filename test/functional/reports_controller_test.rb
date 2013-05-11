@@ -1,14 +1,13 @@
 require 'test_helper'
 
 class ReportsControllerTest < ActionController::TestCase
-  #setup do
-  #  @report = reports(:one)
-  #end
+  setup do
+    @report = create :report
+  end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:reports)
   end
 
   test "should get new" do
@@ -17,11 +16,12 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should create report" do
-    assert_difference('Report.count') do
-      post :create, report: { date: @report.date, member_count: @report.member_count, member_type: @report.member_type, venue: @report.venue }
-    end
+    attributes = attributes_for :report
+    post :create, report: attributes
+    assert_response :redirect
 
-    assert_redirected_to report_path(assigns(:report))
+    @report = Report.last
+    assert_equal attributes[:description], @report.description
   end
 
   test "should show report" do
