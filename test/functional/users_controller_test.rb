@@ -46,4 +46,11 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
+
+  test "should sign_in user" do
+    @user = User.first
+    attributes = { login: @user.login, password: @user.password }
+    post :login, attributes
+    assert_response :redirect 
+  end
 end

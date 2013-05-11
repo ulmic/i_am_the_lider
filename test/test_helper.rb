@@ -1,3 +1,8 @@
+if ENV["TRAVIS"]
+  require 'coveralls'
+  Coveralls.wear!
+end
+
 require 'simplecov'
 ENV["RAILS_ENV"] = "test"
 SimpleCov.start('rails') if ENV["COVERAGE"]
@@ -8,5 +13,6 @@ require 'factory_girl'
 FactoryGirl.reload
 
 class ActiveSupport::TestCase
+  include AuthHelper
   include FactoryGirl::Syntax::Methods
 end
