@@ -1,3 +1,4 @@
+#encoding: utf-8
 module NewLookContestReg
   class Application < Rails::Railtie
     config.after_initialize do
