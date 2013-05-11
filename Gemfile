@@ -35,6 +35,7 @@ group :test do
   gem 'simplecov', :require => false
   gem 'minitest'
   gem 'factory_girl_rails', :require => false
+  gem 'factory_girl_sequences'
   gem 'turn'
   gem 'tconsole'
 end
