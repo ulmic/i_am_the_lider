@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ReportsControllerTest < ActionController::TestCase
   setup do
+    @user = create :user
     @report = create :report
   end
 
@@ -16,6 +17,7 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should create report" do
+    user_sign_in @user
     attributes = attributes_for :report
     post :create, report: attributes
     assert_response :redirect

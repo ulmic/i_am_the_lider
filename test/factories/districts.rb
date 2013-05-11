@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :district do
-    title
+    title { generate :string }
   end
 end
