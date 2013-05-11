@@ -37,6 +37,7 @@ group :test do
   gem 'factory_girl_rails', :require => false
   gem 'turn'
   gem 'tconsole'
+  gem 'factory_girl_sequences', :git => 'git://github.com/akalyaev/factory_girl_sequences.git'
 end
 
 group :development do
