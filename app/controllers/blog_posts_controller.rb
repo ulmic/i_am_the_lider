@@ -1,3 +1,4 @@
+#encoding: utf-8
 class BlogPostsController < ApplicationController
   # GET /blog_posts
   # GET /blog_posts.json
