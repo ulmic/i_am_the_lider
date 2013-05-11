@@ -5,4 +5,10 @@ class WelcomeControllerTest < ActionController::TestCase
      get :index
      assert_response :success
    end
+
+   test "get competition page" do
+     get :competition
+     assert_response :success
+   end
+
 end
