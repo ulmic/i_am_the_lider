@@ -1,5 +1,9 @@
 FactoryGirl.define do
-  sequence :string do |n|
+  sequence :date do |n|
+    DateTime.now
+  end
+  
+  sequence :string, aliases: [:title] do |n|
     "string-#{n}"
   end
 
