@@ -2,7 +2,8 @@ require 'test_helper'
 
 class BlogPostsControllerTest < ActionController::TestCase
   setup do
-    @blog_post = blog_posts(:one)
+    @blog_post = create :blog_post
+    @user = create :user
   end
 
   test "should get index" do
@@ -21,7 +22,7 @@ class BlogPostsControllerTest < ActionController::TestCase
       post :create, blog_post: { text: @blog_post.text, title: @blog_post.title }
     end
 
-    assert_redirected_to blog_post_path(assigns(:blog_post))
+    assert_redirected_to office_path
   end
 
   test "should show blog_post" do
@@ -30,7 +31,9 @@ class BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @blog_post
+    user_sign_in @user
+    new_blog_post = create :blog_post, user_id: @user.id
+    get :edit, id: new_blog_post
     assert_response :success
   end
 
