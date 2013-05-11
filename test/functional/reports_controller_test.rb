@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class ReportsControllerTest < ActionController::TestCase
-  setup do
-    @report = reports(:one)
-  end
+  #setup do
+  #  @report = reports(:one)
+  #end
 
   test "should get index" do
     get :index

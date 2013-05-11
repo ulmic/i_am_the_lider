@@ -11,4 +11,9 @@ class WelcomeControllerTest < ActionController::TestCase
      assert_response :success
    end
 
+   test "get stages page" do
+     get :stages
+     assert_response :success
+   end
+
 end
