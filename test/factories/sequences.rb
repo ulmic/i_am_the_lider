@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence :string, aliases: [:postcode, :address_info, :city, :country, :province, :state,  :body, :title, :name, :slug, :description, :short_description, :manufacturer, :currency, :product_name, :package_name, :first_name, :last_name, :shipping_method, :payment_method] do |n|
+  sequence :string do |n|
     "string-#{n}"
   end
 
@@ -11,7 +11,7 @@ FactoryGirl.define do
     "#{n}pass_word#{n}"
   end
 
-  sequence :site, aliases: [:shop_site] do |n|
+  sequence :site, aliases: [:shop_site, :url] do |n|
     "http://site-#{n}.com"
   end
 
