@@ -67,6 +67,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    colorize (0.5.8)
+    coveralls (0.5.5)
+      colorize
+      json
+      rest-client
+      simplecov (>= 0.7)
+      thor
     diff-lcs (1.2.1)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -124,6 +131,8 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -178,6 +187,7 @@ DEPENDENCIES
   better_errors
   ckeditor
   coffee-rails (~> 3.2.1)
+  coveralls
   factory_girl_rails
   haml
   haml-rails
