@@ -2,46 +2,22 @@
 class ReportsController < ApplicationController
   before_filter :check_if_admin, only: [:edit, :update, :destroy]  
 
-  # GET /reports
-  # GET /reports.json
   def index
     @reports = Report.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @reports }
-    end
   end
 
-  # GET /reports/1
-  # GET /reports/1.json
   def show
     @report = Report.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @report }
-    end
   end
 
-  # GET /reports/new
-  # GET /reports/new.json
   def new
     @report = Report.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @report }
-    end
   end
 
-  # GET /reports/1/edit
   def edit
     @report = Report.find(params[:id])
   end
 
-  # POST /reports
-  # POST /reports.json
   def create
     @report = Report.new(params[:report])
     @report.user_id = session[:user_id]
@@ -57,8 +33,6 @@ class ReportsController < ApplicationController
     end
   end
 
-  # PUT /reports/1
-  # PUT /reports/1.json
   def update
     @report = Report.find(params[:id])
 
@@ -73,8 +47,6 @@ class ReportsController < ApplicationController
     end
   end
 
-  # DELETE /reports/1
-  # DELETE /reports/1.json
   def destroy
     @report = Report.find(params[:id])
     @report.destroy
