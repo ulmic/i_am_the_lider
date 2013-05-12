@@ -49,6 +49,6 @@ class ProjectsControllerTest < ActionController::TestCase
       delete :destroy, id: @project
     end
 
-    assert_redirected_to projects_path
+    assert_response :redirect
   end
 end
