@@ -16,9 +16,9 @@ class AdminsController < ApplicationController
     redirect_to '/'
   end
   
-  def confirm_user
-    @user = User.find(params[:id])
-    @user.confirm = true
-    redirect_to 'users/#{@user.id}'
-  end
+  #def confirm_user
+  #  @user = User.find(params[:id])
+  #  @user.confirm = true
+  #  redirect_to 'users'
+  #end
 end
