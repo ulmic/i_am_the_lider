@@ -101,8 +101,4 @@ class UsersController < ApplicationController
   def user_blog
     @blog = user.blog
   end
-
-  def current_user?
-    session[:user_id] === id
-  end
 end
