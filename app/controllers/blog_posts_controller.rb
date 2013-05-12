@@ -1,7 +1,7 @@
 #encoding: utf-8
 class BlogPostsController < ApplicationController
-  before_filter :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
-  before_filter :check_if_admin, only: [:edit, :update, :destroy]  
+  before_filter :check_if_admin, only: [:edit, :update, :destroy]
+  #before_filter :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
 
   def index
     @blog_posts = BlogPost.all

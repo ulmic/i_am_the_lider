@@ -13,11 +13,17 @@ class BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    @admin = Admin.first
+    admin_sign_in(@admin)
+
     get :new
     assert_response :success
   end
 
   test "should create blog_post" do
+    @user = User.first
+    user_sign_in(@user)
+
     assert_difference('BlogPost.count') do
       post :create, blog_post: { text: @blog_post.text, title: @blog_post.title }
     end
@@ -31,6 +37,9 @@ class BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    @admin = Admin.first
+    admin_sign_in(@admin)    
+
     user_sign_in @user
     new_blog_post = create :blog_post, user_id: @user.id
     get :edit, id: new_blog_post
@@ -38,11 +47,21 @@ class BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should update blog_post" do
-    put :update, id: @blog_post, blog_post: { text: @blog_post.text, title: @blog_post.title }
-    assert_redirected_to blog_post_path(assigns(:blog_post))
+    @admin = Admin.first
+    admin_sign_in(@admin)   
+ 
+    attributes = attributes_for :blog_post
+    put :update, id: @blog_post, blog_post: attributes
+    assert_response :redirect
+    
+    @blog_post.reload
+    assert_equal attributes[:title], @blog_post.title
   end
 
   test "should destroy blog_post" do
+    @admin = Admin.first
+    admin_sign_in(@admin)
+
     assert_difference('BlogPost.count', -1) do
       delete :destroy, id: @blog_post
     end
