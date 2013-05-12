@@ -26,31 +26,8 @@ module AuthHelper
     @current_user ||= User.find(session[:user_id])
   end
 
-  # Member auth
-  def member_sign_in(member)
-    session[:member_id] = member.id
-  end
-
-  def member_sign_in_by_token
-    if params[:auth_token]
-      member = Member.find_by_auth_token!(params[:auth_token])
-      member_sign_in(member)
-    end
-  end
-
-  def member_sign_out
-    session[:member_id] = nil
-  end
-
-  def member_signed_in?
-    session[:member_id] && Member.find_by_id(session[:member_id])
-  end
-
-  def authenticate_member!
-    redirect_to new_session_path unless member_signed_in?
-  end
-
-  def current_member
-    @current_member ||= Member.find(session[:member_id])
+  #Admin auth
+  def admin_sign_in(admin)
+    session[:admin_id] = admin.id
   end
 end
