@@ -5,29 +5,15 @@ class BlogPostsController < ApplicationController
 
   def index
     @blog_posts = BlogPost.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @blog_posts }
-    end
   end
 
   def show
     @blog_post = BlogPost.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @blog_post }
-    end
   end
 
   def new
     @blog_post = BlogPost.new
     @blog_post.user_id=session[:user_id] #if User.find(session[:user_id]).present?
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @blog_post }
-    end
   end
 
   def edit
