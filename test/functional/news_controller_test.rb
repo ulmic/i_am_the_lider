@@ -12,11 +12,17 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    @admin = Admin.first
+    admin_sign_in(@admin)    
+
     get :new
     assert_response :success
   end
 
   test "should create news" do
+    @admin = Admin.first
+    admin_sign_in(@admin)    
+
     attributes = attributes_for :news
     post :create, news: attributes
     assert_response :redirect
@@ -31,11 +37,17 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    @admin = Admin.first
+    admin_sign_in(@admin)
+    
     get :edit, id: @news
     assert_response :success
   end
 
   test "should update news" do
+    @admin = Admin.first
+    admin_sign_in(@admin)    
+
     attributes = attributes_for :news
     put :update, id: @news, news: attributes
     assert_response :redirect
@@ -45,6 +57,9 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should destroy news" do
+    @admin = Admin.first
+    admin_sign_in(@admin)        
+
     assert_difference('News.count', -1) do
       delete :destroy, id: @news
     end
