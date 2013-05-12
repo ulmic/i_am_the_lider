@@ -3,8 +3,6 @@ class BlogPostsController < ApplicationController
   before_filter :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
   before_filter :check_if_admin, only: [:edit, :update, :destroy]  
 
-  # GET /blog_posts
-  # GET /blog_posts.json
   def index
     @blog_posts = BlogPost.all
 
@@ -14,8 +12,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # GET /blog_posts/1
-  # GET /blog_posts/1.json
   def show
     @blog_post = BlogPost.find(params[:id])
 
@@ -25,8 +21,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # GET /blog_posts/new
-  # GET /blog_posts/new.json
   def new
     @blog_post = BlogPost.new
     @blog_post.user_id=session[:user_id] #if User.find(session[:user_id]).present?
@@ -36,7 +30,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # GET /blog_posts/1/edit
   def edit
     @blog_post = BlogPost.find(params[:id])
     unless @blog_post.user_id == session[:user_id]
@@ -44,8 +37,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # POST /blog_posts
-  # POST /blog_posts.json
   def create
     @blog_post = BlogPost.new(params[:blog_post])
     @blog_post.user_id=session[:user_id]
@@ -60,8 +51,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # PUT /blog_posts/1
-  # PUT /blog_posts/1.json
   def update
     @blog_post = BlogPost.find(params[:id])
 
@@ -76,8 +65,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # DELETE /blog_posts/1
-  # DELETE /blog_posts/1.json
   def destroy
     @blog_post = BlogPost.find(params[:id])
     @blog_post.destroy
