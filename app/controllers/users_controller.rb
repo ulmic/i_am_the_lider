@@ -14,14 +14,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if params[:id] == session[:user_id].to_s
-      redirect_to :office
-    else
-      @user = User.find(params[:id])
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @user }
-      end
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
     end
   end
 
