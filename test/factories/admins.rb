@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :admin do
     login   { generate :string }
-    password { generate :string }
+    password
   end
 end
