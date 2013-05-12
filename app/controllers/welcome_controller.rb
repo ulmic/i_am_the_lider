@@ -4,9 +4,6 @@ class WelcomeController < ApplicationController
     @users_last = User.last(3)
     @projects = Project.first(4)
     @news = News.last(2).reverse
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
   def logout
