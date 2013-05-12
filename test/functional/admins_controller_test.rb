@@ -11,4 +11,11 @@ class AdminsControllerTest < ActionController::TestCase
     post :login, attributes
     assert_response :redirect 
   end
+
+  test "should sign_out admin" do
+    @admin = Admin.first
+    attributes = attributes_for :admin
+    post :logout, attributes
+    assert_equal nil, session[:admin_id]
+  end
 end
