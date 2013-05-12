@@ -15,5 +15,6 @@ class ApplicationController < ActionController::Base
      render file: "app/views/layouts/404.html.haml", status: 404
   end
 
+  include AuthHelper
   protect_from_forgery
 end

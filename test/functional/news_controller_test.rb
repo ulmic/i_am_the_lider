@@ -2,7 +2,7 @@ require 'test_helper'
 
 class NewsControllerTest < ActionController::TestCase
   setup do
-    @news = news(:one)
+    @news = create :news
   end
 
   test "should get index" do
@@ -17,11 +17,12 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should create news" do
-    assert_difference('News.count') do
-      post :create, news: { body: @news.body, pusblished_at: @news.pusblished_at, title: @news.title }
-    end
-
-    assert_redirected_to news_path(assigns(:news))
+    attributes = attributes_for :news
+    post :create, news: attributes
+    assert_response :redirect
+    
+    @news = News.last
+    assert_equal attributes[:title], @news.title
   end
 
   test "should show news" do
@@ -35,8 +36,12 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should update news" do
-    put :update, id: @news, news: { body: @news.body, pusblished_at: @news.pusblished_at, title: @news.title }
-    assert_redirected_to news_path(assigns(:news))
+    attributes = attributes_for :news
+    put :update, id: @news, news: attributes
+    assert_response :redirect
+    
+    @news.reload
+    assert_equal attributes[:title], @news.title 
   end
 
   test "should destroy news" do

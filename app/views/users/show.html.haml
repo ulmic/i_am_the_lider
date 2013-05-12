@@ -2,8 +2,7 @@
   = render 'office'
   - if session[:user_id] == @user.id
     %a{:href => "#{@user.id}/edit"} Изменить аккаунт
-  = render 'user'
 - else
   %h4 Данная учётная запись будет вскоре подтверждена администратором конкурса!
   - if session[:admin_id]
-    %a.btn{:href => "confirm/#{@user.id}"} Подтвердить участиеzz
+    %a.btn{:href => "confirm/#{@user.id}"} Подтвердить участие

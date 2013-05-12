@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ReportsController < ApplicationController
   before_filter :check_if_admin, only: [:edit, :update, :destroy]  
 

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-    @user = users(:one)
+    @user = create :user
   end
 
   test "should get index" do
@@ -17,11 +17,15 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { birth_date: @user.birth_date, district_id: @user.district_id, email: @user.email, first_name: @user.first_name, group: @user.group, home_phone: @user.home_phone, last_name: @user.last_name, login: @user.login, middle_name: @user.middle_name, mobile_phone: @user.mobile_phone, password: @user.password, school: @user.school, twitter: @user.twitter, vkontakte: @user.vkontakte }
-    end
+    district = create :district
+    attributes = attributes_for :user
+    attributes[:district_id] = district.id
 
-    assert_redirected_to user_path(assigns(:user))
+    post :create, user: attributes
+    assert_response :redirect
+
+    @user = User.last
+    assert_equal attributes[:first_name], @user.first_name
   end
 
   test "should show user" do
@@ -35,8 +39,12 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    put :update, id: @user, user: { birth_date: @user.birth_date, district_id: @user.district_id, email: @user.email, first_name: @user.first_name, group: @user.group, home_phone: @user.home_phone, last_name: @user.last_name, login: @user.login, middle_name: @user.middle_name, mobile_phone: @user.mobile_phone, password: @user.password, school: @user.school, twitter: @user.twitter, vkontakte: @user.vkontakte }
-    assert_redirected_to user_path(assigns(:user))
+    attributes = attributes_for :user
+    put :update, id: @user, user: attributes
+    assert_response :redirect
+
+    @user.reload
+    assert_equal attributes[:first_name], @user.first_name
   end
 
   test "should destroy user" do
@@ -45,5 +53,12 @@ class UsersControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to users_path
+  end
+
+  test "should sign_in user" do
+    @user = User.first
+    attributes = { login: @user.login, password: @user.password }
+    post :login, attributes
+    assert_response :redirect 
   end
 end

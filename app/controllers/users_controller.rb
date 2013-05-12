@@ -1,3 +1,4 @@
+#encoding: utf-8
 class UsersController < ApplicationController
   before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
 
@@ -15,14 +16,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if params[:id] == session[:user_id].to_s
-      redirect_to :office
-    else
-      @user = User.find(params[:id])
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @user }
-      end
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
     end
   end
 
@@ -87,23 +84,31 @@ class UsersController < ApplicationController
   end
 
   def login
-    if session[:user_id].nil?
-      if request.post?
-        @user = User.find_by_login(params[:login])
-        if @user.nil?
-          flash[:notice] = 'Неверный логин или пароль'
-        else
-          if @user.password === params[:password]
-            session[:user_id] = @user.id
-            flash[:notice] = 'Вы успешно зарегистрированы.'
-          else
-            flash[:notice] = 'Неверный логин или пароль'
-          end
-        end
-      end
+    @user = User.find_by_login(params[:login])
+    if @user.password === params[:password]
+      user_sign_in(@user)
     else
-      @user = User.find(session[:user_id])
+      flash[:notice] = 'Вы авторизованы'
     end
+    redirect_to '/office'
+    #if session[:user_id].nil?
+    #  if request.post?
+    #    @user = User.find_by_login(params[:login])
+    #    if @user.nil?
+    #      flash[:notice] = 'Неверный логин или пароль'
+    #    else
+    #      if @user.password === params[:password]
+    #        session[:user_id] = @user.id
+    #        flash[:notice] = 'Вы успешно зарегистрированы.'
+    #      else
+    #        flash[:notice] = 'Неверный логин или пароль'
+    #      end
+    #    end
+    #  end
+    #else
+    #  @user = User.find(session[:user_id])
+    #end
+    
   end
   
   def logout
