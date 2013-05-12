@@ -39,6 +39,9 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should update project" do
+    @admin = Admin.first
+    admin_sign_in(@admin)   
+ 
     attributes = attributes_for :project
     put :update, id: @project, project: attributes
     assert_response :redirect
@@ -48,7 +51,10 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should destroy project" do
-    assert_difference('Project.count', 0) do
+    @admin = Admin.first
+    admin_sign_in(@admin)    
+
+    assert_difference('Project.count', -1) do
       delete :destroy, id: @project
     end
 
