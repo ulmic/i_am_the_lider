@@ -16,15 +16,4 @@ class AdminsControllerTest < ActionController::TestCase
     post :logout
     assert_equal nil, session[:admin_id]
   end
-
-  #test "should confirm user" do
-  #  @admin = Admin.first
-  #  @user = User.first
-  #  attributes = { id: @user.id }
-  #  post :confirm_user, attributes
-  #  assert_response :redirect
-   
-  #  @user.reload
-  #  assert_equal true, @user.confirm 
-  #end
 end
