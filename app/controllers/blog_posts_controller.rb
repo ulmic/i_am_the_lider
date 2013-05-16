@@ -1,6 +1,6 @@
 #encoding: utf-8
 class BlogPostsController < ApplicationController
-  before_filter :check_if_admin, only: [:edit, :update, :destroy] || :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
+  before_filter :check_if_admin, only: [:edit, :update, :destroy]
 
   def index
     @blog_posts = BlogPost.all
@@ -12,7 +12,9 @@ class BlogPostsController < ApplicationController
 
   def new
     @blog_post = BlogPost.new
-    @blog_post.user_id = session[:user_id]
+    if user_signed_in?  
+      @blog_post.user_id = current_user.id
+    end
   end
 
   def edit

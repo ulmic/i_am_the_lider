@@ -22,7 +22,7 @@ module AuthHelper
     redirect_to new_admin_session_path unless user_signed_in?
   end
 
-  def current_user?
+  def current_user
     @current_user ||= User.find(session[:user_id])
   end
 

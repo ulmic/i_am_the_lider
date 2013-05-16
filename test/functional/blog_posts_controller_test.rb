@@ -12,7 +12,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:blog_posts)
   end
 
-  test "should get new" do
+  test "should get new by admin" do
     @admin = Admin.first
     admin_sign_in(@admin)
 
