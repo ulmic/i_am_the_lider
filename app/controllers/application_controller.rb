@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include AuthHelper
   def check_if_admin
     if session[:admin_id].nil?
       render_404
