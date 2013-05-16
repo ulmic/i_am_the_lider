@@ -3,9 +3,12 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = create :user
+    @district = create :district
+    @user.district_id = @district.id
   end
 
   test "should get index" do
+    get :district
     get :index
     assert_response :success
     assert_not_nil assigns(:users)

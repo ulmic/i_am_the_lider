@@ -1,7 +1,6 @@
 #encoding: utf-8
 class BlogPostsController < ApplicationController
-  before_filter :check_if_admin, only: [:edit, :update, :destroy]
-  #before_filter :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
+  before_filter :check_if_admin, only: [:edit, :update, :destroy] || :check_if_current_user, only: [:edit, :update, :destroy, :create, :new]
 
   def index
     @blog_posts = BlogPost.all
@@ -12,8 +11,11 @@ class BlogPostsController < ApplicationController
   end
 
   def new
+    @user = create :user
+    user_sign_in(user)
+    
     @blog_post = BlogPost.new
-    @blog_post.user_id=session[:user_id] #if User.find(session[:user_id]).present?
+    @blog_post.user_id = @user.id
   end
 
   def edit
@@ -25,7 +27,7 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new(params[:blog_post])
-    @blog_post.user_id=session[:user_id]
+    @blog_post.user_id = session[:user_id]
     respond_to do |format|
       if @blog_post.save
         format.html { redirect_to :office, notice: 'Запись в блог добавлена.' }

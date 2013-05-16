@@ -101,4 +101,10 @@ class UsersController < ApplicationController
   def user_blog
     @blog = user.blog
   end
+
+  def district
+    @district = District.find(params[:id])
+    place = @district.id
+    @users = User.where(:district_id => place)
+  end
 end

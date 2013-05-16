@@ -20,15 +20,19 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create blog_post" do
-    @user = User.first
-    user_sign_in(@user)
+  test "should create blog_post by admin" do
+    @admin = Admin.first
+    admin_sign_in(@admin)
+    
+    user = create :user
+    attributes = attributes_for :blog_post
+    attributes[:user_id] = user.id
 
-    assert_difference('BlogPost.count') do
-      post :create, blog_post: { text: @blog_post.text, title: @blog_post.title }
-    end
+    post :create, blog_post: attributes
+    assert_response :redirect
 
-    assert_redirected_to office_path
+    @blog_post = BlogPost.last
+    assert_equal attributes[:title], @blog_post.title
   end
 
   test "should show blog_post" do
@@ -58,7 +62,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_equal attributes[:title], @blog_post.title
   end
 
-  test "should destroy blog_post" do
+  test "should destroy blog_post by admin" do
     @admin = Admin.first
     admin_sign_in(@admin)
 
