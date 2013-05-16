@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def check_current_user(user_id)
-    if user_id != session[:user_id]
+  def check_current_user
+    if !user_signed_in?
       render_404
     end
   end

@@ -12,19 +12,18 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:blog_posts)
   end
 
-  test "should get new by admin" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
+  test "should get new" do
+    user = create :user
+    user_sign_in(user)
 
     get :new
     assert_response :success
   end
 
-  test "should create blog_post by admin" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
-    
+  test "should create blog_post" do
     user = create :user
+    user_sign_in(user)
+    
     attributes = attributes_for :blog_post
     attributes[:user_id] = user.id
 
