@@ -1,6 +1,4 @@
 class AdminsController < ApplicationController
-  before_filter :check_if_admin, only: [:confirm_user]
-  
   def login
     @admin = Admin.find_by_login(params[:login])
     if @admin.password === params[:password]
@@ -15,10 +13,4 @@ class AdminsController < ApplicationController
     session[:admin_id] = nil
     redirect_to '/'
   end
-  
-  #def confirm_user
-  #  @user = User.find(params[:id])
-  #  @user.confirm = true
-  #  redirect_to 'users'
-  #end
 end
