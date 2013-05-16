@@ -11,11 +11,8 @@ class BlogPostsController < ApplicationController
   end
 
   def new
-    @user = create :user
-    user_sign_in(user)
-    
     @blog_post = BlogPost.new
-    @blog_post.user_id = @user.id
+    @blog_post.user_id = session[:user_id]
   end
 
   def edit
