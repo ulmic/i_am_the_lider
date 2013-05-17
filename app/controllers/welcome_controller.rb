@@ -11,10 +11,13 @@ class WelcomeController < ApplicationController
     redirect_to ''
   end
   
-  def competition
+  def first_stage
   end
-
-  def stages
+  
+  def second_stage
+  end
+  
+  def third_stage
   end
   
   def competition
