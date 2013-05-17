@@ -1,6 +1,5 @@
 #encoding: utf-8
 class BlogPostsController < ApplicationController
-  #before_filter :check_if_admin, only: [:edit, :update, :destroy]
   before_filter :check_current_user, only: [:new, :create]
 
   def index
@@ -18,14 +17,14 @@ class BlogPostsController < ApplicationController
 
   def edit
     @blog_post = BlogPost.find(params[:id])
-    unless @blog_post.user_id == session[:user_id]
+    unless @blog_post.user_id == current_user.id || admin_signed_in?
       redirect_to :root
     end
   end
 
   def create
     @blog_post = BlogPost.new(params[:blog_post])
-    @blog_post.user_id = session[:user_id]
+    @blog_post.user_id = current_user.id
     if @blog_post.save
       redirect_to :office, notice: 'Запись в блог добавлена.'
     else
@@ -35,10 +34,14 @@ class BlogPostsController < ApplicationController
 
   def update
     @blog_post = BlogPost.find(params[:id])
-    if @blog_post.update_attributes(params[:blog_post])
-      redirect_to @blog_post, notice: 'Запись в блоге обновлена.'
+    if admin_signed_in? || (user_signed_in? && @blog_post.user_id == current_user.id)
+      if @blog_post.update_attributes(params[:blog_post])
+        redirect_to @blog_post, notice: 'Запись в блоге обновлена.'
+      else
+        render action: "edit"
+      end
     else
-      render action: "edit"
+      redirect_to @blog_post, notice: 'Вы не можете редактировать эту запись!'
     end
   end
 

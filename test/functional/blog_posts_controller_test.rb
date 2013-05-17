@@ -39,20 +39,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    @admin = Admin.first
-    admin_sign_in(@admin)    
-
-    user_sign_in @user
-    new_blog_post = create :blog_post, user_id: @user.id
-    get :edit, id: new_blog_post
-    assert_response :success
-  end
-
-  test "should update blog_post" do
-    @admin = Admin.first
-    admin_sign_in(@admin)   
- 
+  test "should update blog_post" do    
     attributes = attributes_for :blog_post
     put :update, id: @blog_post, blog_post: attributes
     assert_response :redirect

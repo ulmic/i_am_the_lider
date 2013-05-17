@@ -38,7 +38,7 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update project" do
+  test "should update project by admin" do
     @admin = Admin.first
     admin_sign_in(@admin)   
  
