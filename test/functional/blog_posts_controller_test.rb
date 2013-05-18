@@ -52,6 +52,18 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_equal attributes[:title], @blog_post.title
   end
 
+  test "should update blog_post by admin" do
+    admin = create :admin  
+    admin_sign_in(admin)
+
+    attributes = attributes_for :blog_post
+    put :update, id: @blog_post, blog_post: attributes
+    assert_response :redirect
+    
+    @blog_post.reload
+    assert_equal attributes[:title], @blog_post.title
+  end
+
   test "should destroy blog_post by admin" do
     admin = create :admin
     admin_sign_in(admin)
