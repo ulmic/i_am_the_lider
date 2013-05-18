@@ -49,8 +49,8 @@ class BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should destroy blog_post by admin" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
+    admin = create :admin
+    admin_sign_in(admin)
 
     assert_difference('BlogPost.count', -1) do
       delete :destroy, id: @blog_post
