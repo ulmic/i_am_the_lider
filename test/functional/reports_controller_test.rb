@@ -31,17 +31,17 @@ class ReportsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
+  test "should get edit report by admin" do
+    admin = create :admin
+    admin_sign_in(admin)
 
     get :edit, id: @report
     assert_response :success
   end
 
-  test "should update report" do
-    @admin = Admin.first
-    admin_sign_in(@admin)    
+  test "should update report by admin" do
+    admin = create :admin
+    admin_sign_in(admin)    
 
     attributes = attributes_for :report
     put :update, id: @report, report: attributes
@@ -52,8 +52,8 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should destroy report" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
+    admin = create :admin
+    admin_sign_in(admin)
     
     assert_difference('Report.count', -1) do
       delete :destroy, id: @report

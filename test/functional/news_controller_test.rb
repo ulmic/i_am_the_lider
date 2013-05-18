@@ -11,17 +11,17 @@ class NewsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:news)
   end
 
-  test "should get new" do
-    @admin = Admin.first
-    admin_sign_in(@admin)    
+  test "should get new news" do
+    admin = create :admin
+    admin_sign_in(admin)    
 
     get :new
     assert_response :success
   end
 
   test "should create news" do
-    @admin = Admin.first
-    admin_sign_in(@admin)    
+    admin = create :admin
+    admin_sign_in(admin)    
 
     attributes = attributes_for :news
     post :create, news: attributes
@@ -36,17 +36,17 @@ class NewsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
+  test "should get edit news" do
+    admin = create :admin
+    admin_sign_in(admin)
     
     get :edit, id: @news
     assert_response :success
   end
 
   test "should update news" do
-    @admin = Admin.first
-    admin_sign_in(@admin)    
+    admin = create :admin
+    admin_sign_in(admin)    
 
     attributes = attributes_for :news
     put :update, id: @news, news: attributes
@@ -57,8 +57,8 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should destroy news" do
-    @admin = Admin.first
-    admin_sign_in(@admin)        
+    admin = create :admin
+    admin_sign_in(admin)        
 
     assert_difference('News.count', -1) do
       delete :destroy, id: @news

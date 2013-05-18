@@ -30,17 +30,17 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    @admin = Admin.first
-    admin_sign_in(@admin)
+  test "should get edit project by admin" do
+    admin = create :admin
+    admin_sign_in(admin)
 
     get :edit, id: @project
     assert_response :success
   end
 
   test "should update project by admin" do
-    @admin = Admin.first
-    admin_sign_in(@admin)   
+    admin = create :admin
+    admin_sign_in(admin)   
  
     attributes = attributes_for :project
     put :update, id: @project, project: attributes
@@ -51,8 +51,8 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should destroy project" do
-    @admin = Admin.first
-    admin_sign_in(@admin)    
+    admin = create :admin
+    admin_sign_in(admin)    
 
     assert_difference('Project.count', -1) do
       delete :destroy, id: @project
