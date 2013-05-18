@@ -47,7 +47,11 @@ class BlogPostsController < ApplicationController
 
   def destroy
     @blog_post = BlogPost.find(params[:id])
-    @blog_post.destroy
-    redirect_to blog_posts_url
+    if admin_signed_in? || (user_signed_in? && @blog_post.user_id == current_user.id)
+      @blog_post.destroy
+      redirect_to blog_posts_url
+    else
+      redirect_to @blog_post, notice: "Вы не можете удалить эту запись"
+    end
   end
 end

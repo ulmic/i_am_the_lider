@@ -64,6 +64,18 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_equal attributes[:title], @blog_post.title
   end
 
+  test "should destroy blog_post" do
+    user = create :user  
+    user.id = @blog_post.id
+    user_sign_in(user)    
+
+    assert_difference('BlogPost.count', -1) do
+      delete :destroy, id: @blog_post
+    end
+
+    assert_redirected_to blog_posts_path
+  end
+
   test "should destroy blog_post by admin" do
     admin = create :admin
     admin_sign_in(admin)
