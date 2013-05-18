@@ -66,7 +66,7 @@ class BlogPostsControllerTest < ActionController::TestCase
 
   test "should destroy blog_post" do
     user = create :user  
-    user.id = @blog_post.id
+    user.id = @blog_post.user_id
     user_sign_in(user)    
 
     assert_difference('BlogPost.count', -1) do

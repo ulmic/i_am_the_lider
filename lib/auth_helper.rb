@@ -34,4 +34,10 @@ module AuthHelper
   def admin_signed_in?
     session[:admin_id] && Admin.find_by_id(session[:admin_id])
   end
+
+  #Access
+  
+  def check_access_to_edit?(instance)
+    admin_signed_in? || (user_signed_in? && instance.user_id == current_user.id)
+  end
 end

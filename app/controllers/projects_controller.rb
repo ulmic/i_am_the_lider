@@ -1,7 +1,5 @@
 #encoding: utf-8
 class ProjectsController < ApplicationController
-  before_filter :check_if_admin, only: [:edit, :update, :destroy]  
-
   def index
     @projects = Project.all
   end
@@ -20,40 +18,37 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-    @project.user_id = session[:user_id]
+    if user_signed_in?
+      @project.user_id = session[:user_id]
     
-    respond_to do |format|
       if @project.save
-        format.html { redirect_to "/office", notice: 'Проект успешно добавлен.' }
-        format.json { render json: @project, status: :created, location: @project }
+        redirect_to "/office", notice: 'Проект успешно добавлен.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        render action: "new"
       end
     end
   end
 
   def update
     @project = Project.find(params[:id])
-
-    respond_to do |format|
+    if check_access_to_edit?(@project)
       if @project.update_attributes(params[:project])
-        format.html { redirect_to "/office", notice: 'Проект успешно обновлён.' }
-        format.json { head :no_content }
+        redirect_to @project, notice: 'Запись обновлена.'
       else
-        format.html { render action: "edit" }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        render action: "edit"
       end
+    else
+      redirect_to @project, notice: 'Вы не можете редактировать эту запись!'
     end
   end
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
-
-    respond_to do |format|
-      format.html { redirect_to projects_url }
-      format.json { head :no_content }
+    if check_access_to_edit?(@project)
+      @project.destroy
+      redirect_to projects_url
+    else
+      redirect_to @project
     end
   end
 end
