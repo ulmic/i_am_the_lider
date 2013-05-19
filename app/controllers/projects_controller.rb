@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
       @project.destroy
       redirect_to projects_url
     else
-      redirect_to @project
+      redirect_to @project, notice: "Вы не можете удалить эту запись"
     end
   end
 end
