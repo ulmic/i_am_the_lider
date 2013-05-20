@@ -4,10 +4,6 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-  def show
-    @project = Project.find(params[:id])
-  end
-
   def new
     @project = Project.new
   end
@@ -20,7 +16,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     if user_signed_in?
       @project.user_id = session[:user_id]
-    
       if @project.save
         redirect_to @project.user, notice: 'Проект успешно добавлен.'
       else
@@ -33,12 +28,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if check_access_to_edit?(@project)
       if @project.update_attributes(params[:project])
-        redirect_to @project, notice: 'Запись обновлена.'
+        redirect_to @project.user, notice: 'Запись обновлена.'
       else
         render action: "edit"
       end
     else
-      redirect_to @project, notice: 'Вы не можете редактировать эту запись!'
+      redirect_to @project.user, notice: 'Вы не можете редактировать эту запись!'
     end
   end
 
@@ -48,7 +43,7 @@ class ProjectsController < ApplicationController
       @project.destroy
       redirect_to projects_url
     else
-      redirect_to @project, notice: "Вы не можете удалить эту запись"
+      redirect_to @project.user, notice: "Вы не можете удалить эту запись"
     end
   end
 end
