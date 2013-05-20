@@ -4,10 +4,6 @@ class ReportsController < ApplicationController
     @reports = Report.all
   end
 
-  def show
-    @report = Report.find(params[:id])
-  end
-
   def new
     @report = Report.new
   end
@@ -24,7 +20,7 @@ class ReportsController < ApplicationController
     if user_signed_in?
       @report.user_id = current_user.id
       if @report.save
-        redirect_to "/office", notice: 'Отчёт о мероприятии успешно добавлен.'
+        redirect_to @report.user, notice: 'Отчёт о мероприятии успешно добавлен.'
       else
         render action: "new"
       end
@@ -35,19 +31,18 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
     if check_access_to_edit?(@report)
       if @report.update_attributes(params[:report])
-        redirect_to @report, notice: 'Запись в блоге обновлена.'
+        redirect_to @report.user, notice: 'Запись в блоге обновлена.'
       else
         render action: "edit"
       end
     else
-      redirect_to @report, notice: 'Вы не можете редактировать эту запись!'
+      redirect_to @report.user, notice: 'Вы не можете редактировать эту запись!'
     end
   end
 
   def destroy
     @report = Report.find(params[:id])
     @report.destroy
-
     redirect_to reports_url
   end
 end
