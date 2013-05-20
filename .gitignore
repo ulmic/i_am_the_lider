@@ -4,7 +4,5 @@
 /log/*.log
 /tmp
 *~
-public/system/reports
-public/system/users
-public/*
-coverage/*
+/public
+/coverage
