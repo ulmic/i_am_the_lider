@@ -1,6 +1,6 @@
 #encoding: utf-8
 class UsersController < ApplicationController
-  before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+  #before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
 
   def index
     @users = User.all
@@ -53,13 +53,18 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by_login(params[:login])
-    if @user.password === params[:password]
-      user_sign_in(@user)
+    if user_signed_in?
+      @user = current_user
+      redirect_to @user
     else
-      flash[:notice] = 'Вы авторизованы'
+      @user = User.find_by_login(params[:login])
+      if @user && authenticate_user?(@user, params[:password])
+        user_sign_in(@user)
+        redirect_to @user
+      else
+        flash.now[:error] = "Ошибка авторизации"
+      end
     end
-    redirect_to '/office' 
   end
   
   def logout

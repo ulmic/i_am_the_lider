@@ -18,12 +18,16 @@ module AuthHelper
     session[:user_id] && User.find_by_id(session[:user_id])
   end
 
-  def authenticate_user!
-    redirect_to new_admin_session_path unless user_signed_in?
+  def authenticate_user?(user, password)
+    user.password === password
   end
 
   def current_user
     @current_user ||= User.find(session[:user_id])
+  end
+
+  def current_user?(user)
+    current_user.id === user.id
   end
 
   #Admin auth

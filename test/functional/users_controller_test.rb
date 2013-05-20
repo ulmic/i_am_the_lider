@@ -77,6 +77,6 @@ class UsersControllerTest < ActionController::TestCase
     @user = User.first
     attributes = { login: @user.login, password: @user.password }
     post :login, attributes
-    assert_response :redirect 
+    assert_response :redirect
   end
 end

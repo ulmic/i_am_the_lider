@@ -4,7 +4,14 @@ IAmTheLider::Application.routes.draw do
   resources :blog_posts
   resources :reports
   resources :projects
-  resources :users
+  
+  resources :users do
+    collection do
+      get "login"
+      post "login"
+      get "office" => "users#show"
+    end
+  end
   
   resources :welcome do
     collection do
@@ -14,7 +21,6 @@ IAmTheLider::Application.routes.draw do
     end
   end
 
-  match "office" => "users#login"
   match "logout" => "users#logout"
   match "create_project" => "projects#new"
   match "create_report" => "reports#new"
