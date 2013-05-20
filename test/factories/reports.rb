@@ -5,7 +5,7 @@ FactoryGirl.define do
     member_type    { generate :string }
     venue          { generate :string }
     #archive       {}
-    user_id        { generate :integer }
     description    { generate :string }
+    user
   end
 end

@@ -27,11 +27,6 @@ class ReportsControllerTest < ActionController::TestCase
     assert_equal attributes[:description], @report.description
   end
 
-  test "should show report" do
-    get :show, id: @report
-    assert_response :success
-  end
-
   test "should update report by admin" do
     admin = create :admin
     admin_sign_in(admin)    
