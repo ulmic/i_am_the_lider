@@ -25,7 +25,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new(params[:blog_post])
     @blog_post.user_id = current_user.id
     if @blog_post.save
-      redirect_to :office, notice: 'Запись в блог добавлена.'
+      redirect_to @blog_post, notice: 'Запись в блог добавлена.'
     else
       render action: "new"
     end
