@@ -80,6 +80,7 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should destroy project" do
+    @project = create :project
     user = create :user
     user.id = @project.user_id
     user_sign_in(user)
