@@ -20,7 +20,7 @@
       %a{:href => "/users/new"} Зарегистрируйтесь!
     -@users_first.each do |user|
       .span1.user_ot
-        %img.img-circle.small{:src => user.avatar}
+        %img.mini-cirle.img-circle.small{:src => user.avatar}
         %a{:href => "/users/#{user.id}"}
           %small.very_small_text= user.first_name
           %br
@@ -36,14 +36,6 @@
             != strip_tags news.body.first(200)
           %small Читать далее
         %hr
-  /.row.middle_row
-  /  -@users_last.each do |user|
-  /    .span1.user_ot
-  /      %img.img-circle.small{:src => user.avatar}
-  /      %a{:href => "/users/#{user.id}"}
-  /        %small.very_small_text= user.first_name
-  /        %br
-  /        %small.very_small_text= user.middle_name
 %hr
   .row.right_align_row
     %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "325431445092958208", :width => 350, :href => "https://twitter.com/search?q=%23%D0%AF%D0%9B%D0%B8%D0%B4%D0%B5%D1%80"} Я - лидер!
