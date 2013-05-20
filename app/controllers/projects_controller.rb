@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
       @project.user_id = session[:user_id]
     
       if @project.save
-        redirect_to "/office", notice: 'Проект успешно добавлен.'
+        redirect_to @project.user, notice: 'Проект успешно добавлен.'
       else
         render action: "new"
       end
