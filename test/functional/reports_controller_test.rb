@@ -18,6 +18,7 @@ class ReportsControllerTest < ActionController::TestCase
 
   test "should create report" do
     user_sign_in @user
+    
     attributes = attributes_for :report
     post :create, report: attributes
     assert_response :redirect
@@ -28,14 +29,6 @@ class ReportsControllerTest < ActionController::TestCase
 
   test "should show report" do
     get :show, id: @report
-    assert_response :success
-  end
-
-  test "should get edit report by admin" do
-    admin = create :admin
-    admin_sign_in(admin)
-
-    get :edit, id: @report
     assert_response :success
   end
 
@@ -51,14 +44,27 @@ class ReportsControllerTest < ActionController::TestCase
     assert_equal attributes[:description], @report.description
   end
 
-  test "should destroy report" do
-    admin = create :admin
-    admin_sign_in(admin)
+  test "should update report" do
+    @user = create :user
+    @user.id = @report.user_id
+    user_sign_in @user
     
+    attributes = attributes_for :report
+    put :update, id: @report, report: attributes
+    assert_response :redirect
+  
+    @report.reload
+    assert_equal attributes[:description], @report.description
+  end
+  
+  test "should destroy report" do
+    @user.id = @report.user_id
+    user_sign_in @user
+  
     assert_difference('Report.count', -1) do
       delete :destroy, id: @report
     end
-
+  
     assert_redirected_to reports_path
   end
 end

@@ -1,7 +1,5 @@
 #encoding: utf-8
 class ReportsController < ApplicationController
-  before_filter :check_if_admin, only: [:edit, :update, :destroy]  
-
   def index
     @reports = Report.all
   end
@@ -16,34 +14,33 @@ class ReportsController < ApplicationController
 
   def edit
     @report = Report.find(params[:id])
+    unless check_access_to_edit?(@report)
+      redirect_to :root
+    end
   end
 
   def create
     @report = Report.new(params[:report])
-    @report.user_id = session[:user_id]
-
-    respond_to do |format|
+    if user_signed_in?
+      @report.user_id = current_user.id
       if @report.save
-        format.html { redirect_to "/office", notice: 'Отчёт о мероприятии успешно добавлен.' }
-        format.json { render json: @report, status: :created, location: @report }
+        redirect_to "/office", notice: 'Отчёт о мероприятии успешно добавлен.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        render action: "new"
       end
     end
   end
 
   def update
     @report = Report.find(params[:id])
-
-    respond_to do |format|
+    if check_access_to_edit?(@report)
       if @report.update_attributes(params[:report])
-        format.html { redirect_to "/office", notice: 'Отчёт о мероприятии успешно обновлён.' }
-        format.json { head :no_content }
+        redirect_to @report, notice: 'Запись в блоге обновлена.'
       else
-        format.html { render action: "edit" }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        render action: "edit"
       end
+    else
+      redirect_to @report, notice: 'Вы не можете редактировать эту запись!'
     end
   end
 
@@ -51,9 +48,6 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
     @report.destroy
 
-    respond_to do |format|
-      format.html { redirect_to reports_url }
-      format.json { head :no_content }
-    end
+    redirect_to reports_url
   end
 end
