@@ -16,13 +16,27 @@
 }
 
 .top_row {
-  margin-top: -40px;
+  margin-left: 0;
 }
 
 .middle_row {
-  margin-top: -100px;
+  margin-top: 100px;
+  margin-left: 0;
 }
 
 .right_align_row {
   text-align: right;
+}
+
+ol>li{
+  display:block
+}
+
+ol>li:before{
+  content:counters(item,".") ". ";
+  counter-increment:item
+}
+
+ol{
+  counter-reset:item
 }

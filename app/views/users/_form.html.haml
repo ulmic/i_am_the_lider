@@ -5,24 +5,25 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.input :login, :placeholder => "Логин больше 3 и меньше 8 символов"
-    = f.input :password, :placeholder => "Пароль больше 3 и меньше 8 символов"
-    = f.input :first_name
-    = f.input :middle_name
-    = f.input :last_name
-    = f.association :district, as: :select, label_method: :title, value_method: :id
-    = f.label :birth_date
-    = f.date_select :birth_date
-    = f.input :school
-    = f.input :group
-    = f.input :mobile_phone, :placeholder => "пример: +7960123456"
-    = f.input :home_phone
-    = f.input :email
-    = f.input :vkontakte, :placeholder => "Ссылка на вашу страницу ВКонтакте"
-    = f.input :twitter, :placeholder => "Ссылка на аккаунт в твиттере"
-    %hr
-    = f.label :avatar
-    = f.file_field :avatar
-  .actions
-    = f.submit
+  - f.with_options :input_html => {:class => :span6}, :html => { :multipart => true } do |f|
+    .field
+      = f.input :login, :placeholder => "Логин больше 3 и меньше 8 символов"
+      = f.input :password, :placeholder => "Пароль больше 3 и меньше 8 символов"
+      = f.input :first_name
+      = f.input :middle_name
+      = f.input :last_name
+      = f.association :district, as: :select, label_method: :title, value_method: :id
+      = f.label :birth_date
+      = f.date_select :birth_date
+      = f.input :school
+      = f.input :group
+      = f.input :mobile_phone, :placeholder => "пример: +7960123456"
+      = f.input :home_phone, :placeholder => "пример +78422212121"
+      = f.input :email
+      = f.input :vkontakte, :placeholder => "Ссылка на вашу страницу ВКонтакте"
+      = f.input :twitter, :placeholder => "Ссылка на аккаунт в твиттере"
+      %hr
+      = f.label :avatar
+      = f.file_field :avatar
+    .actions
+      = f.submit "Зарегистрироваться", :class => "btn btn-large btn-success"

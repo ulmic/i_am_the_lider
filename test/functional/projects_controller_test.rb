@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ProjectsControllerTest < ActionController::TestCase
   setup do
-    @project = projects(:one)
+    @user = create :user
+    @project = create :project
   end
 
   test "should get index" do
@@ -12,38 +13,76 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    user_sign_in(@user)
+    
     get :new
     assert_response :success
   end
 
   test "should create project" do
-    assert_difference('Project.count') do
-      post :create, project: { date: @project.date, description: @project.description, goal: @project.goal, place: @project.place, results: @project.results, target_audience: @project.target_audience, tasks: @project.tasks, title: @project.title }
-    end
+    user_sign_in(@user)
 
-    assert_redirected_to project_path(assigns(:project))
+    attributes = attributes_for :project
+    post :create, project: attributes
+    assert_response :redirect
+    
+    @project = Project.last
+    assert_equal attributes[:title], @project.title
   end
 
-  test "should show project" do
-    get :show, id: @project
-    assert_response :success
-  end
+  test "should get edit project by admin" do
+    admin = create :admin
+    admin_sign_in(admin)
 
-  test "should get edit" do
     get :edit, id: @project
     assert_response :success
   end
 
+  test "should get edit project" do
+    user = create :user
+    user.id = @project.user_id
+    user_sign_in(user)
+
+    get :edit, id: @project
+    assert_response :success
+  end
+
+
+  test "should update project by admin" do
+    admin = create :admin
+    admin_sign_in(admin)   
+ 
+    attributes = attributes_for :project
+    put :update, id: @project, project: attributes
+    assert_response :redirect
+    
+    @project.reload
+    assert_equal attributes[:title], @project.title 
+  end
+
   test "should update project" do
-    put :update, id: @project, project: { date: @project.date, description: @project.description, goal: @project.goal, place: @project.place, results: @project.results, target_audience: @project.target_audience, tasks: @project.tasks, title: @project.title }
-    assert_redirected_to project_path(assigns(:project))
+    user = create :user
+    user.id = @project.user_id
+    user_sign_in(user)
+ 
+    attributes = attributes_for :project
+    put :update, id: @project, project: attributes
+    assert_response :redirect
+    
+    @project.reload
+    assert_equal attributes[:title], @project.title 
   end
 
   test "should destroy project" do
+    @project = create :project
+    user = create :user
+    user.id = @project.user_id
+    user_sign_in(user)
+
     assert_difference('Project.count', -1) do
       delete :destroy, id: @project
     end
 
-    assert_redirected_to projects_path
+    assert_response :redirect
   end
 end

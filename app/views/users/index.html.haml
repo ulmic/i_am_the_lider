@@ -16,11 +16,13 @@
             %h4 Дата рождения #{user.birth_date}
         .span3
           .row_fluid
-            = user.school
+            %h4= user.school
           .row-fluid
-            = user.group
+            %h4= user.group
         -if user.twitter
           .row-fluid
             %a{:href => user.twitter}
               .span1.logo.mini.twitter
-    
+        .span1
+          - if !user.confirm
+            %h6 Не подтверждён!

@@ -3,12 +3,23 @@ class WelcomeController < ApplicationController
     @users_first = User.first(3)
     @users_last = User.last(3)
     @projects = Project.first(4)
+    @news = News.last(2).reverse
+  end
 
-    respond_to do |format|
-      format.html # index.html.erb
-    end
+  def logout
+    session[:user_id] = nil
+    redirect_to ''
   end
   
-  def stages
+  def first_stage
+  end
+  
+  def second_stage
+  end
+  
+  def third_stage
+  end
+  
+  def competition
   end
 end

@@ -1,44 +1,23 @@
+#encoding: utf-8
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
+  #before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+
   def index
     @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
   end
 
-  # GET /users/new
-  # GET /users/new.json
   def new
     @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(params[:user])
 
@@ -53,8 +32,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     @user = User.find(params[:id])
 
@@ -69,39 +46,39 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    redirect_to users_url
   end
 
   def login
-    if session[:user_id].nil?
-      if request.post?
-        @user = User.find_by_login(params[:login])
-        if @user.nil?
-          flash[:notice] = 'Неверный логин или пароль'
-        else
-          if @user.password === params[:password]
-            session[:user_id] = @user.id
-          else
-            flash[:notice] = 'Неверный логин или пароль'
-          end
-        end
-      end
+    if user_signed_in?
+      @user = current_user
+      redirect_to @user
     else
-      @user = User.find(session[:user_id])
+      @user = User.find_by_login(params[:login])
+      if @user && authenticate_user?(@user, params[:password])
+        user_sign_in(@user)
+        redirect_to @user
+      else
+        flash.now[:error] = "Ошибка авторизации"
+      end
     end
   end
   
   def logout
     session[:user_id] = nil
-    redirect_to ''
+    redirect_to '/'
+  end
+
+  def user_blog
+    @blog = user.blog
+  end
+
+  def district
+    @district = District.find(params[:id])
+    place = @district.id
+    @users = User.where(:district_id => place)
   end
 end

@@ -1,14 +1,20 @@
 body {
   background-color: lightgrey;
   padding-bottom: 20px;
+  min-width: 1200px;
+}
+
+
+label {
+    font-weight: bold;
 }
 
 .logo {
   background-repeat: no-repeat;
   background-size: auto 100%;
-  width: 150px;
-  height: 150px;
-  margin-top: 20px;
+  width: 110px;
+  height: 110px;
+  margin-top: 5px;
 }
 
 .mini {
@@ -17,7 +23,7 @@ body {
 }
 
 .mic {
-  background-image: url(logo-mic.jpg);
+  background-image: url(logo-mic.png);
 }
 
 .dep {
@@ -59,7 +65,8 @@ body {
 .well-small {
   background-color: white;
   text-align: center;
-  padding-top: 75px;
+  padding-top: 95px;
+  margin-top: -20px;
   border-radius:20px; 
   -webkit-border-radius:20px; 
   -moz-border-radius:20px; 
@@ -101,4 +108,16 @@ body {
 
 .black_link {
   color: black;
+}
+
+.joker {
+  background-image: url(serious.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  height: 500px;
+}
+
+.mini_equal_size {
+  width: 50px;
+  height: 50px;
 }

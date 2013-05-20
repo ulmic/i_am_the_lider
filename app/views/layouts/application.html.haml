@@ -17,16 +17,19 @@
           %h4 Я -лидер!
       %ul.nav.nav-pills.nav-buttons
         %li
+          %a{:href => "/users/login"}
+            %h3 Я - участник!
+        %li
           %a{:href => "/users"} 
             %h3 Участники
         %li
-          %a{:href => ""} 
+          %a{:href => "/competition"} 
             %h3 Положение
         %li
-          %a{:href => "#"} 
+          %a{:href => "/news"} 
             %h3 Новости
         %li
-          %a{:href => "/stages"} 
+          %a{:href => "/welcome/first_stage"}
             %h3 Этапы
     .row-fluid
       .span12.content

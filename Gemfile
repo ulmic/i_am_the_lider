@@ -15,7 +15,8 @@ gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
 gem 'validate_url'
 gem 'validates_phone_number'
-
+gem 'ruby-bbcode'
+gem 'ckeditor'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,6 +30,20 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'minitest'
+  gem 'factory_girl_rails', :require => false
+  gem 'turn'
+  gem 'tconsole'
+end
+
+group :development do
+  gem 'better_errors'
+end
+
+gem 'coveralls', require: false
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,0 +1,19 @@
+- if session[:admin_id].nil?
+  = form_tag do
+    Логин
+    %br
+    = text_field_tag :login, params[:login], :class => "span6"
+    %br
+    Пароль
+    %br
+    = password_field_tag :password, :class => "span6"
+    %br
+    = submit_tag 'Войти'
+- else
+  %h4 Здравствуйте, Администратор!!
+  %b Вы можете
+  %a.btn.btn-large{:href => "/news/new"} Добавить новость
+  %a.btn.btn-large{:href => "/users"} Изменить данные участников
+  %a.btn.btn-large{:href => "/blogs_posts"} Редактировать блоги
+  %p
+    %a.btn{:href => "admins_logout"} Выйти

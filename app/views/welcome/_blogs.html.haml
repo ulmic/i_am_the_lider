@@ -1,0 +1,11 @@
+-BlogPost.all(:order => "id desc", :limit => 5).reverse.each do |b|
+  %a{:href => '#{blog_post_path(b.id)}'}
+    .well
+      %h5= b.user.nil? ? "Аноним" : b.user.small_name
+      %h4= b.title
+      %p
+        != strip_tags b.text.first(500)
+        %b ...
+%h5
+  %br
+  ='Блоги пока что пусты...' if BlogPost.count == 0
