@@ -30,11 +30,6 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_equal attributes[:title], @project.title
   end
 
-  test "should show project" do
-    get :show, id: @project
-    assert_response :success
-  end
-
   test "should get edit project by admin" do
     admin = create :admin
     admin_sign_in(admin)
@@ -66,7 +61,6 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should update project" do
-    #project = create :project
     user = create :user
     user.id = @project.user_id
     user_sign_in(user)

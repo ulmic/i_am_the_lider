@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :project do
-    user_id { generate :integer }
     date { generate :date}
     description { generate :string }
     goal { generate :string }
@@ -9,5 +8,6 @@ FactoryGirl.define do
     target_audience { generate :string }
     tasks { generate :string } 
     title { generate :title }
+    user
   end
 end
