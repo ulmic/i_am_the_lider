@@ -1,6 +1,5 @@
 #encoding: utf-8
 class BlogPostsController < ApplicationController
-
   def index
     @blog_posts = BlogPost.all
   end
