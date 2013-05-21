@@ -28,6 +28,18 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get edit blog_post" do
+    get :edit, id: @blog_post
+    assert_response :redirect
+  end
+
+  test "should not create blog_post" do
+    attributes = attributes_for :blog_post
+
+    post :create, blog_post: attributes
+    assert_redirected_to "404"	
+  end
+
   test "should get new" do
     user = create :user
     user_sign_in(user)
