@@ -1,5 +1,5 @@
 IAmTheLider::Application.routes.draw do
-  match "/404", :to => "errors#not_found"
+  match "/404" => "errors#not_found"
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :news

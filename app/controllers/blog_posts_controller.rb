@@ -13,7 +13,7 @@ class BlogPostsController < ApplicationController
       @blog_post = BlogPost.new
       @blog_post.user_id = current_user.id
     else
-      redirect_to "404" 
+      redirect_to "/404"
     end
   end
 
