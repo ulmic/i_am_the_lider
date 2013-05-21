@@ -7,6 +7,5 @@ FactoryGirl.define do
     #archive       {}
     description    { generate :string }
     user
-    state          { generate :string }
   end
 end
