@@ -16,6 +16,22 @@ class ReportsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get edit report by admin" do
+    admin = create :admin
+    admin_sign_in(admin)
+    
+    get :edit, id: @report
+    assert_response :success
+  end
+
+  test "should get edit report by user" do
+    @user.id = @report.user_id
+    user_sign_in(@user)
+    
+    get :edit, id: @report
+    assert_response :success
+  end
+
   test "should create report" do
     user_sign_in @user
     
