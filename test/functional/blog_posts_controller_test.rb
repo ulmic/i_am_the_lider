@@ -49,7 +49,7 @@ class BlogPostsControllerTest < ActionController::TestCase
 
   test "should not get new" do
     get :new
-    assert_redirected_to "404"
+    assert_redirected_to "/404"
   end
 
   test "should create blog_post" do
