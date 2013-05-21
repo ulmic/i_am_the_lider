@@ -9,7 +9,6 @@ IAmTheLider::Application.routes.draw do
   
   resources :users do
     collection do
-      get "login"
       post "login"
       put "logout"
       get "office" => "users#show"
@@ -27,8 +26,9 @@ IAmTheLider::Application.routes.draw do
 
   resources :admins do
     collection do
-      get "admin" => "admins#login"
+      post "login"
       put "logout"
+      get "admin"
     end
   end
 

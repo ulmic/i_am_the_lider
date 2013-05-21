@@ -11,6 +11,13 @@ class AdminsControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+  test "should redirect because admin is signed in" do
+    admin_sign_in @admin
+    attributes = { login: @admin.login, password: @admin.password }
+    post :login, attributes
+    assert_redirected_to admin_admins_url
+  end
+
   test "should sign_out admin" do
     post :logout
     assert_equal nil, session[:admin_id]
