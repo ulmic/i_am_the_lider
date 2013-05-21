@@ -5,6 +5,7 @@ class UsersControllerTest < ActionController::TestCase
     @user = create :user
     @district = create :district
     @user.district_id = @district.id
+    @admin = create :admin
   end
 
   test "should get index" do
@@ -14,16 +15,14 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    admin = create :admin
-    admin_sign_in(admin)
+    admin_sign_in(@admin)
 
     get :new
     assert_response :success
   end
 
   test "should create user" do
-    admin = create :admin
-    admin_sign_in(admin)
+    admin_sign_in(@admin)
     
     district = create :district
     attributes = attributes_for :user
@@ -42,16 +41,14 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get edit by admin" do
-    admin = create :admin
-    admin_sign_in(admin)    
+    admin_sign_in(@admin)  
 
     get :edit, id: @user
     assert_response :success
   end
 
   test "should update user by admin" do
-    admin = create :admin
-    admin_sign_in(admin)   
+    admin_sign_in(@admin)   
  
     attributes = attributes_for :user
     put :update, id: @user, user: attributes
@@ -62,8 +59,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should destroy user" do
-    admin = create :admin
-    admin_sign_in(admin)    
+    admin_sign_in(@admin)    
 
     assert_difference('User.count', -1) do
       delete :destroy, id: @user
@@ -73,7 +69,6 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should sign_in user" do
-    @user = User.first
     attributes = { login: @user.login, password: @user.password }
     post :login, attributes
     assert_response :redirect
