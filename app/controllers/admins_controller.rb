@@ -1,6 +1,7 @@
 #encoding: utf-8
 class AdminsController < ApplicationController
   def login
+    @admin = Admin.new
     if admin_signed_in?
       redirect_to "/admins/panel"
     else
