@@ -28,7 +28,7 @@ IAmTheLider::Application.routes.draw do
   resources :admins do
     collection do
       post "login"
-      put "logout"
+      get "logout" => "admins#logout"
       get "panel" => "admins#panel"
     end
   end
