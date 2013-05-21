@@ -1,5 +1,6 @@
 IAmTheLider::Application.routes.draw do
   match "/404" => "errors#not_found"
+  match "admin" => "admins#login"
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :news
@@ -28,7 +29,7 @@ IAmTheLider::Application.routes.draw do
     collection do
       post "login"
       put "logout"
-      get "admin"
+      get "panel" => "admins#panel"
     end
   end
 
