@@ -1,4 +1,7 @@
 IAmTheLider::Application.routes.draw do
+  
+  root :to => 'welcome#index'
+  
   match "/404" => "errors#not_found"
   match "admin" => "admins#login"
 
@@ -33,6 +36,4 @@ IAmTheLider::Application.routes.draw do
       get "panel" => "admins#panel"
     end
   end
-
-  root :to => 'welcome#index'
 end
