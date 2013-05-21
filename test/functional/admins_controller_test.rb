@@ -6,10 +6,9 @@ class AdminsControllerTest < ActionController::TestCase
   end
 
   test "should sign_in admin" do
-    @admin = Admin.first
-    attributes = attributes_for :admin
+    attributes = { login: @admin.login, password: @admin.password }
     post :login, attributes
-    assert_response :redirect 
+    assert_response :redirect
   end
 
   test "should sign_out admin" do

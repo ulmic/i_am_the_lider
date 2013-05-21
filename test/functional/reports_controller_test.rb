@@ -4,6 +4,7 @@ class ReportsControllerTest < ActionController::TestCase
   setup do
     @user = create :user
     @report = create :report
+    @admin = create :admin
   end
 
   test "should get index" do
@@ -13,6 +14,21 @@ class ReportsControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
+    assert_response :success
+  end
+
+  test "should get edit report by admin" do
+    admin_sign_in @admin
+    
+    get :edit, id: @report
+    assert_response :success
+  end
+
+  test "should get edit report by user" do
+    @user.id = @report.user_id
+    user_sign_in @user
+    
+    get :edit, id: @report
     assert_response :success
   end
 
@@ -28,8 +44,7 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should update report by admin" do
-    admin = create :admin
-    admin_sign_in(admin)    
+    admin_sign_in @admin
 
     attributes = attributes_for :report
     put :update, id: @report, report: attributes
@@ -40,7 +55,6 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should update report" do
-    @user = create :user
     @user.id = @report.user_id
     user_sign_in @user
     

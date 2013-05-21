@@ -1,6 +1,6 @@
 #encoding: utf-8
 class UsersController < ApplicationController
-  #before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_filter :check_if_admin, only: [:destroy, :new, :create]
 
   def index
     @users = User.all
@@ -21,28 +21,20 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to "/office", notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      redirect_to "/office", notice: 'User was successfully created.'
+    else
+      render action: "new"
     end
   end
 
   def update
     @user = User.find(params[:id])
 
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
+      redirect_to @user
+    else
+      render action: "edit"
     end
   end
 
@@ -74,11 +66,5 @@ class UsersController < ApplicationController
 
   def user_blog
     @blog = user.blog
-  end
-
-  def district
-    @district = District.find(params[:id])
-    place = @district.id
-    @users = User.where(:district_id => place)
   end
 end
