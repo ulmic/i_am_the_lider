@@ -39,7 +39,7 @@ module AuthHelper
     session[:admin_id] && Admin.find_by_id(session[:admin_id])
   end
 
-  def admin_sign_out(admin)
+  def admin_sign_out
     session[:admin_id] = nil
   end
 
