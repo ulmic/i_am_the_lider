@@ -21,15 +21,16 @@ IAmTheLider::Application.routes.draw do
       get "first_stage"
       get "second_stage"
       get "third_stage"
+      get "competition"
     end
   end
 
-  match "logout" => "users#logout"
-  match "create_project" => "projects#new"
-  match "create_report" => "reports#new"
-  match "competition" => "welcome#competition"
-  match "admin" => "admins#login"
-  match "admins_logout" => "admins#logout"
+  resources :admins do
+    collection do
+      get "admin" => "admins#login"
+      put "logout"
+    end
+  end
 
   root :to => 'welcome#index'
 end
