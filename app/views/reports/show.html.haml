@@ -1,0 +1,11 @@
+%p
+  %h5= @report.date
+%p
+  %h5= @report.member_count
+%p
+  %h5= @report.member_type
+%p
+  %h5= @report.venue
+  != @report.description
+%p
+  = link_to '<- Вернуться', @report.user, :class => "btn"
