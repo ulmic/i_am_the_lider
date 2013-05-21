@@ -9,13 +9,13 @@ class AdminsController < ApplicationController
         admin_sign_in(@admin)
         redirect_to "admins#admin"
       else
-        flash.now[:error] = "Ошибка авторизации"
+        flash[:notice] = "Неверный логин или пароль"
       end
     end
   end
   
   def logout
-    session[:admin_id] = nil
-    redirect_to '/'
+    admin_sign_out
+    redirect_to :root
   end
 end
