@@ -9,4 +9,4 @@
   - else
     %a.btn.btn-large.btn-success{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
   - if session[:user_id] === @user.id
-    %a.btn.btn-large.btn-success{:href => "users/#{@user.id}/edit"} Изменить аккаунт
+    %a.btn.btn-large.btn-success{:href => "#{@user.id}/edit"} Изменить аккаунт
