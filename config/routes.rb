@@ -10,6 +10,7 @@ IAmTheLider::Application.routes.draw do
   
   resources :users do
     collection do
+      get "login"
       post "login"
       put "logout"
       get "office" => "users#show"
