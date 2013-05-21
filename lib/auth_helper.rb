@@ -39,6 +39,10 @@ module AuthHelper
     session[:admin_id] && Admin.find_by_id(session[:admin_id])
   end
 
+  def admin_sign_out(admin)
+    session[:admin_id] = nil
+  end
+
   #Access
   
   def check_access_to_edit?(instance)

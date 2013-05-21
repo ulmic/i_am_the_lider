@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   end
   
   def logout
-    session[:user_id] = nil
-    redirect_to '/'
+    user_sign_out
+    redirect_to :root
   end
 end
