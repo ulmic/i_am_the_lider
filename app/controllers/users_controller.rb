@@ -1,6 +1,6 @@
 #encoding: utf-8
 class UsersController < ApplicationController
-  #before_filter :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_filter :check_if_admin, only: [:destroy, :new, :create]
 
   def index
     @users = User.all
