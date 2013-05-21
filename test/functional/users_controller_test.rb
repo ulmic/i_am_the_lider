@@ -11,18 +11,18 @@ class UsersControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:users)
+    assert_not_nil assigns :users
   end
 
   test "should get new" do
-    admin_sign_in(@admin)
+    admin_sign_in @admin
 
     get :new
     assert_response :success
   end
 
   test "should create user" do
-    admin_sign_in(@admin)
+    admin_sign_in @admin
     
     district = create :district
     attributes = attributes_for :user
@@ -41,14 +41,14 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get edit by admin" do
-    admin_sign_in(@admin)  
+    admin_sign_in @admin  
 
     get :edit, id: @user
     assert_response :success
   end
 
   test "should update user by admin" do
-    admin_sign_in(@admin)   
+    admin_sign_in @admin
  
     attributes = attributes_for :user
     put :update, id: @user, user: attributes
@@ -59,7 +59,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should destroy user" do
-    admin_sign_in(@admin)    
+    admin_sign_in @admin    
 
     assert_difference('User.count', -1) do
       delete :destroy, id: @user
@@ -75,7 +75,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should redirect because user is signed in" do
-    user_sign_in(@user)
+    user_sign_in @user
     attributes = { login: @user.login, password: @user.password }
     post :login, attributes
     assert_response :redirect

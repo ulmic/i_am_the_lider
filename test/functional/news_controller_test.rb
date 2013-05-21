@@ -3,25 +3,24 @@ require 'test_helper'
 class NewsControllerTest < ActionController::TestCase
   setup do
     @news = create :news
+    @admin = create :admin
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:news)
+    assert_not_nil assigns :news
   end
 
   test "should get new news" do
-    admin = create :admin
-    admin_sign_in(admin)    
+    admin_sign_in @admin
 
     get :new
     assert_response :success
   end
 
   test "should create news" do
-    admin = create :admin
-    admin_sign_in(admin)    
+    admin_sign_in @admin
 
     attributes = attributes_for :news
     post :create, news: attributes
@@ -37,16 +36,14 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should get edit news" do
-    admin = create :admin
-    admin_sign_in(admin)
+    admin_sign_in @admin
     
     get :edit, id: @news
     assert_response :success
   end
 
   test "should update news" do
-    admin = create :admin
-    admin_sign_in(admin)    
+    admin_sign_in @admin     
 
     attributes = attributes_for :news
     put :update, id: @news, news: attributes
@@ -57,8 +54,7 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   test "should destroy news" do
-    admin = create :admin
-    admin_sign_in(admin)        
+    admin_sign_in @admin        
 
     assert_difference('News.count', -1) do
       delete :destroy, id: @news
