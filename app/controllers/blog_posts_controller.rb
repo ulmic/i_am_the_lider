@@ -9,8 +9,12 @@ class BlogPostsController < ApplicationController
   end
 
   def new
-    @blog_post = BlogPost.new
-    @blog_post.user_id = current_user.id
+    if user_signed_in?
+      @blog_post = BlogPost.new
+      @blog_post.user_id = current_user.id
+    else
+      redirect_to "404" 
+    end
   end
 
   def edit

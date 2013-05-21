@@ -47,6 +47,11 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get new" do
+    get :new
+    assert_redirected_to "404"
+  end
+
   test "should create blog_post" do
     user_sign_in @user
     
