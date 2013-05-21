@@ -1,17 +1,17 @@
 #encoding: utf-8
 class AdminsController < ApplicationController
   def login
-    @admin = Admin.find_by_login(params[:login])
-    if @admin
-      if @admin.password === params[:password]
-        admin_sign_in(@admin)
-      else
-        flash[:notice] = 'Вы авторизованы'
-      end
+    if admin_signed_in?
+      redirect_to "admins#admin"
     else
-      flash[:notice] = 'Ввели неправильный логин или пароль'
+      @admin = Admin.find_by_login(params[:login])
+      if @admin && authenticate_user?(@admin, params[:password])
+        admin_sign_in(@admin)
+        redirect_to "admins#admin"
+      else
+        flash.now[:error] = "Ошибка авторизации"
+      end
     end
-    redirect_to '/login'
   end
   
   def logout
