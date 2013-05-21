@@ -63,8 +63,4 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to '/'
   end
-
-  def user_blog
-    @blog = user.blog
-  end
 end
