@@ -1,7 +1,5 @@
 #encoding: utf-8
 class UsersController < ApplicationController
-  before_filter :check_if_admin, only: [:destroy, :new, :create]
-
   def index
     @users = User.all
   end
@@ -11,7 +9,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if admin_signed_in?
+      @user = User.new
+    else
+      redirect_to "/404"
+    end
   end
 
   def edit
@@ -19,12 +21,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-
-    if @user.save
-      redirect_to "/office", notice: 'User was successfully created.'
+    if admin_signed_in?
+      @user = User.new(params[:user])
+      if @user.save
+        redirect_to "/office", notice: 'User was successfully created.'
+      else
+        render action: "new"
+      end
     else
-      render action: "new"
+      redirect_to "/404"
     end
   end
 

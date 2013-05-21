@@ -35,6 +35,15 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal attributes[:first_name], @user.first_name
   end
 
+  test "should not create user" do
+    district = create :district
+    attributes = attributes_for :user
+    attributes[:district_id] = district.id
+
+    post :create, user: attributes
+    assert_redirected_to "/404"
+  end
+
   test "should show user" do
     get :show, id: @user
     assert_response :success
