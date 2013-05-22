@@ -52,6 +52,10 @@
           %p
             %h3 Отчёт о мероприятии
           %p
+            != strip_tags @user.report.description.first(200)
+            %br
+            %a.btn{:href => "/reports/#{@user.report.id}"} Читать далее
+          %p
             = f.label "Количество участников:"
             = @user.report.member_count if @user.report.present?
           %p

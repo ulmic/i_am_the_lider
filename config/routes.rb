@@ -8,9 +8,8 @@ IAmTheLider::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :news
   resources :blog_posts
-  resources :reports
   resources :projects
-  
+  resources :reports
   resources :users do
     collection do
       get "login"
