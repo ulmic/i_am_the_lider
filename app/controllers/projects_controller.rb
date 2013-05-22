@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    unless check_access_to_edit?(@project)
+      redirect_to "/404"
+    end
   end
 
   def create

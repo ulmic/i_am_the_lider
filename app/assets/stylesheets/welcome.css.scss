@@ -32,11 +32,15 @@ ol>li{
   display:block
 }
 
-ol>li:before{
+ol>li:before {
   content:counters(item,".") ". ";
   counter-increment:item
 }
 
 ol{
   counter-reset:item
+}
+
+.black_text {
+  color: black;
 }

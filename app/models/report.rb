@@ -9,5 +9,4 @@ class Report < ActiveRecord::Base
   def get_html_description
     self.description.bbcode_to_html
   end
-
 end

@@ -8,6 +8,10 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
+  def show
+    @report = Report.find(params[:id])
+  end
+
   def edit
     @report = Report.find(params[:id])
     unless check_access_to_edit?(@report)
