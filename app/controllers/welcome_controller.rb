@@ -5,11 +5,6 @@ class WelcomeController < ApplicationController
     @projects = Project.first(4)
     @news = News.last(2).reverse
   end
-
-  def logout
-    session[:user_id] = nil
-    redirect_to ''
-  end
   
   def first_stage
   end

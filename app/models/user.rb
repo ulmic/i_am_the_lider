@@ -42,8 +42,4 @@ class User < ActiveRecord::Base
   def small_name
     "#{first_name} #{middle_name}"
   end
-  
-  def current_user?
-    current_user
-  end
 end

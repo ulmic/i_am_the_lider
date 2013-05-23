@@ -5,8 +5,4 @@ class Report < ActiveRecord::Base
   validates_numericality_of :member_count, :greater_than => 0   
   belongs_to :user
   has_attached_file :archive
-
-  def get_html_description
-    self.description.bbcode_to_html
-  end
 end

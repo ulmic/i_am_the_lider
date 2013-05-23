@@ -18,6 +18,8 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    user_sign_in(@user)
+
     get :new
     assert_response :success
   end
@@ -81,4 +83,32 @@ class ReportsControllerTest < ActionController::TestCase
   
     assert_redirected_to reports_path
   end
+
+  test "should not edit report with no access" do
+    get :edit, id: @report
+    assert_redirected_to :root
+  end
+
+  test "should not create report with render new" do
+    user_sign_in @user
+    attributes = attributes_for :report
+    attributes[:venue] = nil
+
+    post :create, report: attributes
+    assert_template :new
+  end
+
+  test "should not update report with no access" do
+    attributes = attributes_for :report
+    put :update, id: @report, report: attributes
+    
+    assert_redirected_to @report.user
+  end
+
+#  test "should not update report with render edit" do
+#    attributes = attributes_for :report
+#    attributes[:venue] = nil
+#    put :update, id: @report, report: attributes
+#    assert_template /edit/
+#  end
 end
