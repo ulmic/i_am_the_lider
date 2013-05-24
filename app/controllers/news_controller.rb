@@ -6,7 +6,7 @@ class NewsController < ApplicationController
   end
 
   def show
-    @news = News.find(params[:id])
+    @news = News.find params[:id]
   end
 
   def new
@@ -14,11 +14,11 @@ class NewsController < ApplicationController
   end
 
   def edit
-    @news = News.find(params[:id])
+    @news = News.find params[:id]
   end
 
   def create
-    @news = News.new(params[:news])
+    @news = News.new params[:news]
 
     if @news.save
       redirect_to @news
@@ -28,9 +28,9 @@ class NewsController < ApplicationController
   end
 
   def update
-    @news = News.find(params[:id])
+    @news = News.find params[:id]
 
-    if @news.update_attributes(params[:news])
+    if @news.update_attributes params[:news]
       redirect_to @news
     else
       render action: "edit"
@@ -38,7 +38,7 @@ class NewsController < ApplicationController
   end
 
   def destroy
-    @news = News.find(params[:id])
+    @news = News.find params[:id]
     @news.destroy
     redirect_to news_index_url
   end

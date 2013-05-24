@@ -22,4 +22,10 @@ class AdminsControllerTest < ActionController::TestCase
     post :logout
     assert_equal nil, session[:admin_id]
   end
+
+  test "should not sign in admin" do
+    attributes = attributes_for :admin
+    post :login, attributes
+    assert_response :success
+  end
 end

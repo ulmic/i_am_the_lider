@@ -1,14 +1,10 @@
 class WelcomeController < ApplicationController
   def index
-    @users_first = User.first(3)
-    @users_last = User.last(3)
-    @projects = Project.first(4)
+    @users_first = User.first 3
+    @users_last = User.last 3
+    @projects = Project.first 4
     @news = News.last(2).reverse
-  end
-
-  def logout
-    session[:user_id] = nil
-    redirect_to ''
+    @blog_posts = BlogPost.last(5).reverse
   end
   
   def first_stage

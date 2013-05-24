@@ -89,4 +89,36 @@ class UsersControllerTest < ActionController::TestCase
     post :login, attributes
     assert_response :redirect
   end
+
+  test "should not get new with no access" do
+    get :new
+    assert_redirected_to "/404"
+  end
+
+  test "should not create user with render new" do
+    admin_sign_in @admin
+    attributes = attributes_for :user
+    attributes[:first_name] = nil
+
+    post :create, user: attributes
+    assert_template :new
+  end  
+
+#  test "should not update report with render edit" do
+#    attributes = attributes_for :report
+#    attributes[:venue] = nil
+#    put :update, id: @report, report: attributes
+#    assert_template /edit/
+#  end
+
+  test "should not sign in with wrong login or password" do
+    attributes = attributes_for :user
+    post :login, attributes
+    assert_response :success
+  end
+
+  test "should sign out user" do
+    post :logout
+    assert_equal nil, session[:user_id]
+  end
 end

@@ -62,4 +62,22 @@ class NewsControllerTest < ActionController::TestCase
 
     assert_redirected_to news_index_path
   end
+
+  test "should not create news with render new" do
+    admin_sign_in @admin
+    attributes = attributes_for :news
+    attributes[:title] = nil
+
+    post :create, news: attributes
+    assert_template :new
+  end
+
+  test "should not update news with render edit" do
+    admin_sign_in @admin     
+
+    attributes = attributes_for :news
+    attributes[:title] = nil
+    put :update, id: @news, news: attributes
+    assert_template :edit
+  end
 end

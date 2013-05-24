@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def check_if_admin
     unless admin_signed_in?
-      redirect_to "404"
+      redirect_to "/404"
     end
   end
 

@@ -113,4 +113,37 @@ class BlogPostsControllerTest < ActionController::TestCase
 
     assert_redirected_to blog_posts_path
   end
+
+  test "should not create blog_post with render new" do
+    user_sign_in @user
+    attributes = attributes_for :blog_post
+    attributes[:title] = nil
+
+    post :create, blog_post: attributes
+    assert_template :new
+  end
+
+  test "should not update blog_post with no access" do
+    attributes = attributes_for :blog_post
+    put :update, id: @blog_post, blog_post: attributes
+    
+    assert_redirected_to @blog_post
+  end
+
+  test "should not destroy blog_post with no access" do
+    assert_difference('BlogPost.count', 0) do
+      delete :destroy, id: @blog_post
+    end
+
+    assert_redirected_to @blog_post
+  end
+
+#  test "should not update blog_post with render edit" do
+#    user_sign_in @user#
+#
+#    attributes = attributes_for :blog_post
+#    attributes[:text] = nil
+#    put :update, id: @blog_post, blog_post: attributes
+#    assert_template "edit"
+#  end
 end

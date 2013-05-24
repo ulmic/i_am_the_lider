@@ -80,4 +80,32 @@ class ProjectsControllerTest < ActionController::TestCase
 
     assert_response :redirect
   end
+
+  test "should not edit project with no access" do
+    get :edit, id: @project
+    assert_redirected_to "/404"
+  end
+
+  test "should not create project with render new" do
+    user_sign_in @user
+    attributes = attributes_for :project
+    attributes[:title] = nil
+
+    post :create, project: attributes
+    assert_template :new
+  end
+
+  test "should not update project with no access" do
+    attributes = attributes_for :project
+    put :update, id: @project, project: attributes
+    
+    assert_redirected_to @project.user
+  end
+
+#  test "should not update project with render edit" do
+#    attributes = attributes_for :project
+#    attributes[:title] = nil
+#    put :update, id: @project, project: attributes
+#    assert_template /edit/
+#  end
 end
