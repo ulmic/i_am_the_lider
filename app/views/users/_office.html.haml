@@ -56,15 +56,6 @@
             %br
             %a.btn{:href => "/reports/#{@user.report.id}"} Читать далее
           %p
-            = f.label "Количество участников:"
-            = @user.report.member_count if @user.report.present?
-          %p
-            = f.label "Категория участников:"
-            = @user.report.member_type if @user.report.present?
-          %p
-            = f.label "Место:"
-            = @user.report.venue if @user.report.present?
-          %p
             -if @user.report.present?
               %a.btn.btn-large.btn-success{:href => "#{@user.report.archive}"} Скачать архив
             -else
