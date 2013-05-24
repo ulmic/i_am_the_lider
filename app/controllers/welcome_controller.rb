@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
     @users_last = User.last(3)
     @projects = Project.first(4)
     @news = News.last(2).reverse
+    @blog_posts = BlogPost.last(5).reverse
   end
   
   def first_stage
