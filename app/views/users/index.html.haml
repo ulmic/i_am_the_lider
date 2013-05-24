@@ -19,7 +19,7 @@
             %h4= user.school
           .row-fluid
             %h4= user.group
-        -if user.twitter
+        -unless user.twitter.blank?
           .row-fluid
             %a{:href => user.twitter}
               .span1.logo.mini.twitter
