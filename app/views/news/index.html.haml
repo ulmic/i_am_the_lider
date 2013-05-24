@@ -3,7 +3,7 @@
   %a{:href => "/news/#{news.id}"}
     .well
       %h4= news.title
-      %small= news.pusblished_at
+      %small.grey_text= news.pusblished_at
       %p
         != strip_tags news.body.first(500)
         %b ...
