@@ -9,18 +9,18 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @report = Report.find params[:id]
   end
 
   def edit
-    @report = Report.find(params[:id])
-    unless check_access_to_edit?(@report)
+    @report = Report.find params[:id]
+    unless check_access_to_edit? @report
       redirect_to :root
     end
   end
 
   def create
-    @report = Report.new(params[:report])
+    @report = Report.new params[:report]
     if user_signed_in?
       @report.user_id = current_user.id
       if @report.save
@@ -32,9 +32,9 @@ class ReportsController < ApplicationController
   end
 
   def update
-    @report = Report.find(params[:id])
-    if check_access_to_edit?(@report)
-      if @report.update_attributes(params[:report])
+    @report = Report.find params[:id]
+    if check_access_to_edit? @report
+      if @report.update_attributes params[:report]
         redirect_to @report.user, notice: 'Запись в блоге обновлена.'
       else
         render action: "edit"
@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @report = Report.find(params[:id])
+    @report = Report.find params[:id]
     @report.destroy
     redirect_to reports_url
   end
