@@ -26,10 +26,10 @@
         %a{:href => "/users/#{user.id}"}
           %small.very_small_text= user.first_name
           %br
-          %small.very_small_text= user.middle_name 
+          %small.very_small_text= user.middle_name
   .row.top_row
     -@blog_posts.each do |b|
-      %a{:href => '#{blog_post_path(b.id)}'}
+      %a{:href => blog_post_path(b.id)}
         .well
           %h5= b.user.small_name
           %h4= b.title
