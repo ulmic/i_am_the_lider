@@ -10,7 +10,6 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'validates'
-gem 'ruby-bbcode'
 gem 'ckeditor'
 gem 'coveralls', require: false
 gem 'draper', '~> 1.0'
