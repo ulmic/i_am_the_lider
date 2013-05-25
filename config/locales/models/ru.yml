@@ -41,3 +41,6 @@ ru:
         title: Заголовок
         body: Текст
         pusblished_at: Опубликовано
+      blog_post:
+        title: Заголовок
+        text: Текст

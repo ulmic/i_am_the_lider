@@ -1,5 +1,7 @@
 #encoding: utf-8
 class BlogPostsController < ApplicationController
+  before_filter :check_user_signed, only: [:edit, :update, :destroy, :create, :new]
+
   def index
     @blog_posts = BlogPost.all
   end
@@ -9,32 +11,24 @@ class BlogPostsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
-      @blog_post = BlogPost.new
-      @blog_post.user_id = current_user.id
-    else
-      redirect_to "/404"
-    end
+    @blog_post = BlogPost.new
+    @blog_post.user_id = current_user.id
   end
 
   def edit
     @blog_post = BlogPost.find params[:id]
     unless check_access_to_edit? @blog_post
-      redirect_to :root
+      redirect_to "/404"
     end
   end
 
   def create
-    if user_signed_in?
-      @blog_post = BlogPost.new params[:blog_post]
-      @blog_post.user_id = current_user.id
-      if @blog_post.save
-        redirect_to @blog_post, notice: 'Запись в блог добавлена.'
-      else
-        render action: "new"
-      end
+    @blog_post = BlogPost.new params[:blog_post]
+    @blog_post.user_id = current_user.id
+    if @blog_post.save
+      redirect_to @blog_post, notice: 'Запись в блог добавлена.'
     else
-      redirect_to "404"
+      render action: "new"
     end
   end
 

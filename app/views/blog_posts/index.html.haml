@@ -1,21 +1,14 @@
-%h1 Listing blog_posts
-
-%table
-  %tr
-    %th Title
-    %th Text
-    %th
-    %th
-    %th
-
-  - @blog_posts.each do |blog_post|
-    %tr
-      %td= blog_post.title
-      %td= blog_post.text
-      %td= link_to 'Show', blog_post
-      %td= link_to 'Edit', edit_blog_post_path(blog_post)
-      %td= link_to 'Destroy', blog_post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+%h1 Блоги
+- @blog_posts.each do |blog_post|
+  %a{:href => "/blog_posts/#{blog_post.id}"}
+    .well
+      %h4= blog_post.title
+      %small= blog_post.created_at.to_date
+      %p
+        != strip_tags blog_post.text.first(500)
+        %b ...
+      - if session[:admin_id]
+        %p
+          = link_to 'Изменить', edit_news_path(blog_post), :class => "btn"
+          = link_to 'Удалить', blog_post, :method => :Вы, :delete => { :data => 'уверены?' }, :class => "btn"
 %br
-
-= link_to 'New Blog post', new_blog_post_path
