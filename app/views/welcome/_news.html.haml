@@ -3,7 +3,6 @@
   - @news.each do |news|
     %a{:href => "/news/#{news.id}"}
       %h4= news.title
-      %small= news.pusblished_at
       %p
         != strip_tags news.body.first(200)
-
+      %small= news.pusblished_at
