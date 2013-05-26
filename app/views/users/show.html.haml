@@ -1,9 +1,5 @@
 = render 'office'
 - if (@user.id === session[:user_id]) || (session[:admin_id])
-  - if @user.project.nil?
-    %a.btn.btn-large.btn-success{:href => "/projects/new"} Создать описание проекта |
-  - else
-    %a.btn.btn-large.btn-success{:href => "/projects/#{@user.project.id}/edit"} Изменить описание проекта |
   - if @user.report.nil?
     %a.btn.btn-large.btn-success{:href => "/reports/new"} Создать отчёт о мероприятии |
   - else

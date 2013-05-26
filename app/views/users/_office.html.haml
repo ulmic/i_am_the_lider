@@ -26,28 +26,7 @@
           %b= f.label :twitter
           %a{:href => "#{@user.twitter}"}
             = @user.twitter
-      .span4
-        - if @user.project
-          %h3
-            Проект
-          %p
-            %h3= @user.project.title if @user.project.present?
-          %p
-            = f.label "Описание:"
-            = @user.project.description if @user.project.present?
-          %p
-            = f.label "Цель:"
-            = @user.project.goal if @user.project.present?
-          %p
-            = f.label "Место:"
-            = @user.project.place if @user.project.present?
-          %p
-            = f.label "Целевая аудитория"
-            = @user.project.target_audience if @user.project.present?
-          %p
-            = f.label "Результат:"
-            = @user.project.results if @user.project.present?     
-      .span3
+      .span7
         - if @user.report
           %p
             %h3 Отчёт о мероприятии
