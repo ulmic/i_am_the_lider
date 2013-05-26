@@ -1,1 +1,14 @@
-= render 'login_form'
+%small Пройти авторизацию участника XI конкурса актива учащейся молодёжи 'Я - лидер!'
+- if session[:user_id].nil?
+  = form_tag do
+    Логин
+    %br
+    = text_field_tag :login, params[:login], :class => "span6", :placeholder => "Логин участника конкурса"
+    %br
+    Пароль
+    %br
+    = password_field_tag :password, params[:password], :class => "span6"
+    %br
+    = submit_tag 'Войти'
+%br
+= flash[:notice]
