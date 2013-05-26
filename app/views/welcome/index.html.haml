@@ -3,7 +3,7 @@
   %h3 Отчёты
   -@reports.each do |report|
     %a{:href => "/users/#{report.user_id}"}
-      = report.description.first(140) + "..."
+      != strip_tags report.description.first(140) + "..."
       %br
       %br
       %a{:href => "/users/#{report.user.id}"}  
