@@ -21,7 +21,8 @@
       %a{:href => "/users/new"} Зарегистрируйтесь!
     -@users_first.each do |user|
       .span1.user_ot
-        %img.mini_equal_size.img-circle.small{:src => user.avatar}
+        %a{:href => "/users/#{user.id}"}
+          %img.mini_equal_size.img-circle.small{:src => user.avatar}
         %a{:href => "/users/#{user.id}"}
           %small.very_small_text= user.first_name
           %br

@@ -7,7 +7,6 @@ IAmTheLider::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :news
-  resources :reports
   resources :blog_posts do
     collection do
       delete "destroy" => "blog_posts#destroy"
