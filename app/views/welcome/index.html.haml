@@ -3,7 +3,9 @@
   %h3 Отчёты
   -@reports.each do |report|
     %a{:href => "/users/#{report.user_id}"}
-      != strip_tags report.description.first(140) + "..."
+      #BAD_SPIKE
+      - if report.description
+        != strip_tags report.description.first(140) + "..."
       %br
       %br
       %a{:href => "/users/#{report.user.id}"}  
