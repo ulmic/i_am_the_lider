@@ -9,7 +9,7 @@
       %a{:href => "/users/#{report.user.id}"}  
         %img.mini_equal_size.img-circle.small{:src => report.user.avatar}
       %a{:href => "/users/#{report.user.id}"}
-        = report.user.title
+        = report.user.small_name
       %hr
 .span5
   =render "news"
