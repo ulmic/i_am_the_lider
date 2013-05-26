@@ -5,3 +5,8 @@
   - else
     %a.btn.btn-large.btn-success{:href => "/reports/#{@user.report.id}/edit"} Изменить отчёт о мероприятии |
   %a.btn.btn-large.btn-success{:href => "#{@user.id}/edit"} Изменить аккаунт
+
+%hr
+= render 'blogs'
+- if (@user.id === session[:user_id]) || (session[:admin_id])
+  %a.btn.btn-large.btn-success{:href => "/blog_posts/new"} Добавить запись в блог

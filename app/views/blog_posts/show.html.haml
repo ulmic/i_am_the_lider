@@ -11,5 +11,3 @@
 %p
   != @blog_post.text
   = link_to '<- Блоги', blog_posts_path, :class => "btn"
-  - if session[:admin_id] | session[:user_id] == @blog_post.user_id
-    = link_to 'Изменить',  edit_blog_post_path(@blog_post), :class => "btn"

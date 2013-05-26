@@ -135,7 +135,7 @@ class BlogPostsControllerTest < ActionController::TestCase
       delete :destroy, id: @blog_post
     end
 
-    assert_redirected_to @blog_post
+    assert_redirected_to @blog_post.user
   end
 
 #  test "should not update blog_post with render edit" do

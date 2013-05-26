@@ -51,7 +51,7 @@ class BlogPostsController < ApplicationController
       @blog_post.destroy
       redirect_to blog_posts_url
     else
-      redirect_to @blog_post, notice: "Вы не можете удалить эту запись"
+      redirect_to @blog_post.user, notice: "Вы не можете удалить эту запись"
     end
   end
 end
