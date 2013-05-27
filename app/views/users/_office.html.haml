@@ -34,7 +34,7 @@
           %p
             %h3 Отчёт о мероприятии
           %p
-            != strip_tags @user.report.description.first(200)
+            != strip_tags @user.report.description.first(200) if @user.report.description
             %br
             %a.btn{:href => "/reports/#{@user.report.id}"} Читать далее
           %p
