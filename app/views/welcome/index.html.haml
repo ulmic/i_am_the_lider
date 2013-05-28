@@ -1,54 +1,9 @@
 = stylesheet_link_tag    "welcome", :media => "all"
 .span3
-  %h3 Отчёты
-  -@reports.each do |report|
-    %a{:href => "/users/#{report.user_id}"}
-      #BAD_SPIKE
-      - if report.description
-        != strip_tags report.description.first(140) + "..."
-      %br
-      %br
-      %a{:href => "/users/#{report.user.id}"}  
-        %img.mini_equal_size.img-circle.small{:src => report.user.avatar}
-      %a{:href => "/users/#{report.user.id}"}
-        = report.user.small_name
-      %hr
+  =render "reports"
 .span5
   =render "news"
 .span3
-  %h3 Участники
-  .row.top_row
-    -if @users.blank?
-      Список участников пуст.
-      %a{:href => "/users/new"} Зарегистрируйтесь!
-    -@users.first(3).each do |user|
-      .span1.user_ot
-        %a{:href => "/users/#{user.id}"}
-          %img.mini_equal_size.img-circle.small{:src => user.avatar}
-        %a{:href => "/users/#{user.id}"}
-          %small.very_small_text= user.first_name
-          %br
-          %small.very_small_text= user.middle_name
-    -@users.last(3).each do |user|
-      .span1.user_ot
-        %a{:href => "/users/#{user.id}"}
-          %img.mini_equal_size.img-circle.small{:src => user.avatar}
-        %a{:href => "/users/#{user.id}"}
-          %small.very_small_text= user.first_name
-          %br
-          %small.very_small_text= user.middle_name
-  .row.top_row
-    -@blog_posts.each do |b|
-      %a{:href => blog_post_path(b.id)}
-        .well
-          %h5= b.user.small_name
-          %h4= b.title
-          %p
-            != strip_tags b.text.first(500)
-          %b ...
-      %h5
-        ='Блоги пока что пусты...' if BlogPost.count == 0
-      %hr
-  .row.top_row
-    %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "325431445092958208", :width => 400, :href => "https://twitter.com/search?q=%23%D0%AF%D0%9B%D0%B8%D0%B4%D0%B5%D1%80"} Я - лидер!
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  =render "users"
+  =render "blogs"
+  =render "twitter_timeline"
