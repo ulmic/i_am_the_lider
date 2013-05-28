@@ -1,4 +1,22 @@
 ru:
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+
+  layouts:
+    application:
+      i_am_lider: '"Я - лидер!"'
+      learning_youth_contest: 'Конкурс актива учащейся молодёжи'
+      i_am_participant: 'Я - участник!'
+      participants: 'Участники'
+      competition: 'Положение'
+      contest_news: 'Новости'
+      stages: 'Этапы'
+    footer:
+      organizers: ''
+      ministry_of_education: 'Министерство образования'
+      of_ulyanovsk_region: 'Ульяновской области'
+      youth_initiative_centre: 'Молодёжный инициативный центр'
   date:
     abbr_day_names:
     - Вс
