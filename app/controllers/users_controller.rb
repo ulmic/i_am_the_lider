@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if admin_signed_in?
       @user = User.new params[:user]
       if @user.save
-        redirect_to "/office", notice: 'User was successfully created.'
+        redirect_to @user, notice: 'User was successfully created.'
       else
         render action: "new"
       end
