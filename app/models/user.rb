@@ -22,16 +22,21 @@ class User < ActiveRecord::Base
   has_many :blog_posts
   has_attached_file :avatar
 
-  validates_presence_of :birth_date, :district_id, :email, :first_name, :middle_name, :last_name, :mobile_phone, :password #:avatar
-  validates :email, :uniqueness => true,
+  validates :birth_date, :presence => true
+  validates :district_id, :presence => true
+  validates :email, :presence => true,
+                    :uniqueness => true,
                     :email => true
-  #validates_format_of :login, :with => /^[-a-z]{3,8}$/
-  #validates_format_of :password, :with => /^[-a-z0-9]$/
-  validates :vkontakte, :twitter, :url => true, :allow_blank => true
-  validate :mobile_phone, :phone_number => true
-  validates_length_of :mobile_phone, :is => 12
-  #validates_attachment_content_type :avatar, :content_type => /image/,
-                                             #:message => "не является изображением"
+  validates :first_name, :presence => true
+  validates :middle_name, :presence => true
+  validates :last_name, :presence => true
+  validates :mobile_phone, :presence => true
+  validates :vkontakte, :url => true, 
+                       :allow_blank => true
+  validates :twitter, :url => true, 
+                      :allow_blank => true
+  validates :login, :presence => true
+  validates :password, :presence => true
 
   def title
     "#{first_name} #{middle_name} #{last_name}"
