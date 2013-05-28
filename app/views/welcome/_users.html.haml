@@ -1,0 +1,22 @@
+%h3 Участники
+.row.top_row
+  -if @users.blank?
+    Список участников пуст.
+    %a{:href => "/users/new"} Зарегистрируйтесь!
+  -@users.first(3).each do |user|
+    .span1.user_ot
+      %a{:href => "/users/#{user.id}"}
+        %img.mini_equal_size.img-circle.small{:src => user.avatar}
+      %a{:href => "/users/#{user.id}"}
+        %small.very_small_text= user.first_name
+        %br
+        %small.very_small_text= user.middle_name
+  -@users.last(3).each do |user|
+    .span1.user_ot
+      %a{:href => "/users/#{user.id}"}
+        %img.mini_equal_size.img-circle.small{:src => user.avatar}
+      %a{:href => "/users/#{user.id}"}
+        %small.very_small_text= user.first_name
+        %br
+        %small.very_small_text= user.middle_name
+
