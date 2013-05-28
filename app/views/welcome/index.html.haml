@@ -29,6 +29,14 @@
           %small.very_small_text= user.first_name
           %br
           %small.very_small_text= user.middle_name
+    -@users_last.each do |user|
+      .span1.user_ot
+        %a{:href => "/users/#{user.id}"}
+          %img.mini_equal_size.img-circle.small{:src => user.avatar}
+        %a{:href => "/users/#{user.id}"}
+          %small.very_small_text= user.first_name
+          %br
+          %small.very_small_text= user.middle_name
   .row.top_row
     -@blog_posts.each do |b|
       %a{:href => blog_post_path(b.id)}
