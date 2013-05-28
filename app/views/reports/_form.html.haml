@@ -7,11 +7,6 @@
           %li= msg
   - f.with_options :input_html => {:class => "span6"} do |f|
     .field
-      = f.input :member_type
-      = f.input :member_count
-      = f.input :venue
-      = f.label :date
-      = f.date_select :date
       = f.label :description
       = f.cktext_area :description
       %hr

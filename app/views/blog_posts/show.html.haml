@@ -6,10 +6,8 @@
 %p
   %h2
     = @blog_post.title
-%br
 %p
-  = @blog_post.text
-
-= link_to 'Изменить', edit_blog_post_path(@blog_post)
-\|
-= link_to 'Назад', :back
+  %small= @blog_post.created_at.to_date
+%p
+  != @blog_post.text
+  = link_to '<- Блоги', blog_posts_path, :class => "btn"

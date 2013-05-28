@@ -13,8 +13,9 @@
       = f.input :middle_name
       = f.input :last_name
       = f.association :district, as: :select, label_method: :title, value_method: :id
-      = f.label :birth_date
-      = f.date_select :birth_date
+      = f.input :birth_date, as: :date, start_year: Date.today.year - 23,
+                              end_year: Date.today.year - 10,
+                              order: [:day, :month, :year]
       = f.input :school
       = f.input :group
       = f.input :mobile_phone, :placeholder => "пример: +7960123456"

@@ -37,7 +37,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     attributes = attributes_for :blog_post
 
     post :create, blog_post: attributes
-    assert_redirected_to "404"	
+    assert_redirected_to "/404"
   end
 
   test "should get new" do
@@ -135,7 +135,7 @@ class BlogPostsControllerTest < ActionController::TestCase
       delete :destroy, id: @blog_post
     end
 
-    assert_redirected_to @blog_post
+    assert_redirected_to @blog_post.user
   end
 
 #  test "should not update blog_post with render edit" do

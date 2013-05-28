@@ -16,54 +16,27 @@
         %p
           %b= f.label :birth_date
           = @user.birth_date
-        %p
-          %b= f.label :school
-          = @user.school
-        %p
-          %b= f.label :group
-          = @user.group
-        %p
-          %b= f.label :twitter
-          %a{:href => "#{@user.twitter}"}
-            = @user.twitter
-      .span4
-        - if @user.project
-          %h3
-            Проект
+        - unless @user.school.blank?
           %p
-            %h3= @user.project.title if @user.project.present?
+            %b= f.label :school
+            = @user.school
+        - unless @user.group.blank?
           %p
-            = f.label "Описание:"
-            = @user.project.description if @user.project.present?
+            %b= f.label :group
+            = @user.group
+        -unless @user.twitter.blank?
           %p
-            = f.label "Цель:"
-            = @user.project.goal if @user.project.present?
-          %p
-            = f.label "Место:"
-            = @user.project.place if @user.project.present?
-          %p
-            = f.label "Целевая аудитория"
-            = @user.project.target_audience if @user.project.present?
-          %p
-            = f.label "Результат:"
-            = @user.project.results if @user.project.present?     
-      .span3
+            %b= f.label :twitter
+            %a{:href => "#{@user.twitter}"}
+              = @user.twitter
+      .span7
         - if @user.report
           %p
             %h3 Отчёт о мероприятии
           %p
-            != strip_tags @user.report.description.first(200)
+            != strip_tags @user.report.description.first(200) if @user.report.description
             %br
             %a.btn{:href => "/reports/#{@user.report.id}"} Читать далее
-          %p
-            = f.label "Количество участников:"
-            = @user.report.member_count if @user.report.present?
-          %p
-            = f.label "Категория участников:"
-            = @user.report.member_type if @user.report.present?
-          %p
-            = f.label "Место:"
-            = @user.report.venue if @user.report.present?
           %p
             -if @user.report.present?
               %a.btn.btn-large.btn-success{:href => "#{@user.report.archive}"} Скачать архив
