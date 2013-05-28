@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @users = User.all.shuffle!.first 6
-    @reports = Report.first 4
+    @reports = Report.all.shuffle!.first 4
     @news = News.last(10).reverse
     @blog_posts = BlogPost.last(5).reverse
   end
