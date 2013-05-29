@@ -10,4 +10,4 @@
   %small= @blog_post.created_at.to_date
 %p
   != @blog_post.text
-  = link_to '<- Блоги', blog_posts_path, :class => "btn"
+  = link_to '<- #{t(".blog_posts")}', blog_posts_path, :class => "btn"
