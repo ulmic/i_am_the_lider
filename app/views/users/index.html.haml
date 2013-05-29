@@ -1,6 +1,6 @@
 = stylesheet_link_tag "users", :media => "all"
 %h1
-  Участники конкурса
+  = t('.contest_participants')
 
   -@users.each do |user|
     .row-fluid.has_top_margin

@@ -1,8 +1,8 @@
 = form_for @user, :url => 'logout' do |f|
   - if session[:user_id] == @user.id
-    Здравствуйте,
+    = t('.hello')
     = @user.middle_name
-    = f.submit 'Log out'
+    = f.submit t('.log_out')
   = simple_form_for @user do |f|
     .row-fluid
       .span5
@@ -32,13 +32,16 @@
       .span7
         - if @user.report
           %p
-            %h3 Отчёт о мероприятии
+            %h3= t('.report')
           %p
             != strip_tags @user.report.description.first(200)
             %br
-            %a.btn{:href => "/reports/#{@user.report.id}"} Читать далее
+            %a.btn{:href => "/reports/#{@user.report.id}"} 
+              = t('.read_more')
           %p
             -if @user.report.present?
-              %a.btn.btn-large.btn-success{:href => "#{@user.report.archive}"} Скачать архив
+              %a.btn.btn-large.btn-success{:href => "#{@user.report.archive}"}
+                = t('.download_archive')
             -else
-              %span{:style => "color: #AAA;"}Архив не загружен
+              %span{:style => "color: #AAA;"}
+                = t('.there_is_not_archive')
