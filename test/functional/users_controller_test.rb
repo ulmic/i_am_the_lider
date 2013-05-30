@@ -31,8 +31,8 @@ class UsersControllerTest < ActionController::TestCase
     post :create, user: attributes
     assert_response :redirect
 
-    @user = User.last
-    assert_equal attributes[:first_name], @user.first_name
+    user = User.last
+    assert_equal attributes[:first_name], user.first_name
   end
 
   test "should not create user" do
