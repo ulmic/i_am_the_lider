@@ -1,4 +1,4 @@
-%h1 Новости конкурса
+%h1= t('.contest_news')
 - @news.each do |news|
   %a{:href => "/news/#{news.id}"}
     .well
@@ -9,6 +9,6 @@
         %b ...
       - if session[:admin_id]
         %p
-          = link_to 'Изменить', edit_news_path(news), :class => "btn"
-          = link_to 'Удалить', news, :method => :Вы, :delete => { :data => 'уверены?' }, :class => "btn"
+          = link_to t('.edit'), edit_news_path(news), :class => "btn"
+          = link_to t('.delete'), news, :method => :delete, :class => "btn"
 %br

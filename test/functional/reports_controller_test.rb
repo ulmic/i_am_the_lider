@@ -7,11 +7,6 @@ class ReportsControllerTest < ActionController::TestCase
     @admin = create :admin
   end
 
-  test "should show report" do
-    get :show, id: @report
-    assert_response :success
-  end
-
   test "should get new" do
     user_sign_in(@user)
 

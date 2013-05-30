@@ -1,6 +1,6 @@
 %html
 %head
-  %title Я - лидер!
+  %title= t(".i_am_lider")
   = stylesheet_link_tag "bootstrap", :media => "all"
   = stylesheet_link_tag "bootstrap-responsive", :media => "all"
   = stylesheet_link_tag "bootstrap.min", :media => "all"
@@ -14,31 +14,31 @@
     %a{:href => "http://reformal.ru"}
       %img{:src => "http://media.reformal.ru/reformal.png"}
     %a{:href => "http://lider_ulgood.reformal.ru"}
-      Oтзывы и предложения для lider.ulgood.ru
+      =t('.reformal_message')
   .container-fluid
     .row-fluid
       %a{:href => "http://ulmic.ru"}
         .span2.logo.mic
       %a{:href => "/"}
         .span2.well.well-small.black_link
-          Конкурс актива учащейся молодёжи 
-          %h4 Я -лидер!
+          =t('.learning_youth_contest') 
+          %h4= t('.i_am_lider')
       %ul.nav.nav-pills.nav-buttons
         %li
           %a{:href => "/users/login"}
-            %h3 Я - участник!
+            %h3= t('.i_am_participant')
         %li
           %a{:href => "/users"} 
-            %h3 Участники
+            %h3= t('.participants')
         %li
           %a{:href => "/welcome/competition"} 
-            %h3 Положение
+            %h3= t('.competition')
         %li
           %a{:href => "/news"} 
-            %h3 Новости
+            %h3= t('.contest_news')
         %li
           %a{:href => "/welcome/first_stage"}
-            %h3 Этапы
+            %h3= t('.stages')
     .row-fluid
       .span12.content
         = yield
