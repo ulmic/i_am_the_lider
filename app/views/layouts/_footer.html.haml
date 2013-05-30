@@ -1,5 +1,5 @@
 .row-fluid.left_text_align
-  %h3 Организаторы
+  %h3= t('.organizers')
   %a{:href => "http://ulmic.ru"}
     .logo.mic
   %a{:href => "http://mpol.ulgov.ru"}
@@ -8,14 +8,15 @@
     .logo.gov
   %a{:href => "http://minobr.ulgov.ru"}
     .logo
-      .very_small_text Министерство образования  
-      .very_small_text Ульяновской области
+      .very_small_text= t('.ministry_of_education')  
+      .very_small_text= t('.of_ulyanovsk_region')
 .row-fluid
   .offset2
   .span4
     %hr
     %a &copy 
-    %a{:href => "http://ulmic.ru"} Молодёжный инициативный центр,
+    %a{:href => "http://ulmic.ru"} 
+      = t('.youth_initiative_centre')
     2013
   %a{:href => "http://vk.com/ulmic"}
     .span1.logo.mini.vk.there_is_margin

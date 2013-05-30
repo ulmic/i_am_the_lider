@@ -1,14 +1,14 @@
-%small Пройти авторизацию участника XI конкурса актива учащейся молодёжи 'Я - лидер!'
+%small= t('.pass_auth')
 - if session[:user_id].nil?
   = form_tag do
-    Логин
+    = t('.login')
     %br
-    = text_field_tag :login, params[:login], :class => "span6", :placeholder => "Логин участника конкурса"
+    = text_field_tag :login, params[:login], :class => "span6", :placeholder => "#{t('.login_of_participant')}"
     %br
-    Пароль
+    = t('.password')
     %br
     = password_field_tag :password, params[:password], :class => "span6"
     %br
-    = submit_tag 'Войти'
+    = submit_tag t('.sign_in')
 %br
 = flash[:notice]

@@ -4,5 +4,6 @@
 /log/*.log
 /tmp
 *~
-/public
+/public/*
+!fonts/
 /coverage

@@ -1,4 +1,10 @@
+@font-face {
+    font-family: micfont;
+    src: url(/fonts/PFSquareSansPro-Regular.ttf)
+}
+
 body {
+  font-family: micfont;
   background-color: lightgrey;
   padding-bottom: 20px;
   min-width: 1200px;

@@ -1,4 +1,4 @@
-%h1 Редактирование записи блога
+%h1= t('.editing_blog_post')
 = render 'form'
-= link_to 'Посмотреть', @blog_post, :class => "btn"
-= link_to 'Назад', blog_posts_path, :class => "btn"
+= link_to t('.view_blog_post'), @blog_post, :class => "btn"
+= link_to t('.back'), blog_posts_path, :class => "btn"

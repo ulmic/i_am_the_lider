@@ -1,8 +1,13 @@
-%h4 Здравствуйте, Администратор!!
-%b Вы можете
-%a.btn.btn-large{:href => "/news/new"} Добавить новость
-%a.btn.btn-large{:href => "/users"} Изменить данные участников
-%a.btn.btn-large{:href => "/blog_posts"} Редактировать блоги
-%a.btn.btn-large{:href => "/users/new"} Добавить участника
+%h4= t('.hello_admin')
+%b= t('.you_can')
+%a.btn.btn-large{:href => "/news/new"} 
+  = t('.add_news')
+%a.btn.btn-large{:href => "/users"}
+  = t('.edit_users_data')
+%a.btn.btn-large{:href => "/blog_posts"}
+  = t('.edit_blogs')
+%a.btn.btn-large{:href => "/users/new"}
+  = t('.add_user')
 %p
-  %a.btn{:href => "/admins/logout"} Выйти
+  %a.btn{:href => "/admins/logout"}
+    = t('.sign_out')

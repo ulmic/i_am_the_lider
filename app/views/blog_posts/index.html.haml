@@ -1,4 +1,4 @@
-%h1 Блоги
+%h1= t('.blog_posts')
 - @blog_posts.each do |blog_post|
   %a{:href => "/blog_posts/#{blog_post.id}"}
     .well
