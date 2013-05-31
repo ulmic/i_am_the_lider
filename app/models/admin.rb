@@ -1,8 +1,9 @@
 #encoding: utf-8
 class Admin < ActiveRecord::Base
-  attr_accessible :login, :password
+  attr_accessible 	:login, 
+			:password
 
-  validates :login, :presence => true,
-                    :uniqueness => true
-  validates :password, :presence => true
+  validates :login, 	presence: true,
+                    	uniqueness: true
+  validates :password, 	presence: true
 end

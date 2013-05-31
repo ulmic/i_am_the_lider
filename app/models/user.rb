@@ -22,21 +22,21 @@ class User < ActiveRecord::Base
   has_many :blog_posts
   has_attached_file :avatar
 
-  validates :birth_date, :presence => true
-  validates :district_id, :presence => true
-  validates :email, :presence => true,
-                    :uniqueness => true,
-                    :email => true
-  validates :first_name, :presence => true
-  validates :middle_name, :presence => true
-  validates :last_name, :presence => true
-  validates :mobile_phone, :presence => true
-  validates :vkontakte, :url => true, 
-                       :allow_blank => true
-  validates :twitter, :url => true, 
-                      :allow_blank => true
-  validates :login, :presence => true
-  validates :password, :presence => true
+  validates :birth_date, presence: true
+  validates :district_id, presence: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    email: true
+  validates :first_name, presence: true
+  validates :middle_name, presence: true
+  validates :last_name, presence: true
+  validates :mobile_phone, presence: true
+  validates :vkontakte, url: true, 
+                        allow_blank: true
+  validates :twitter, url: true, 
+                      allow_blank: true
+  validates :login, presence: true
+  validates :password, presence: true
 
   def title
     "#{first_name} #{middle_name} #{last_name}"

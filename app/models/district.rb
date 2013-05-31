@@ -4,5 +4,5 @@ class District < ActiveRecord::Base
 
   has_many :users
  
-  validates :title, :presence => true
+  validates :title, presence: true
 end
