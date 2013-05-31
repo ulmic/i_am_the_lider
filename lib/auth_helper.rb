@@ -33,6 +33,10 @@ module AuthHelper
     session[:admin_id] = nil
   end
 
+  def authenticate_admin?(admin, password)
+    admin.password === password
+  end
+
   #Access
   
   def check_access_to_edit?(instance)

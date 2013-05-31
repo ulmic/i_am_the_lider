@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
       redirect_to "/admins/panel"
     else
       @admin = Admin.find_by_login(params[:login])
-      if @admin && authenticate_user?(@admin, params[:password])
+      if @admin && authenticate_admin?(@admin, params[:password])
         admin_sign_in @admin
         redirect_to "/admins/panel"
       else
