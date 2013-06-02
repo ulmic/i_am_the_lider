@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    if admin_signed_in? || !user_signed_in? 
+      set_viewed_user @user
+    end
   end
 
   def new

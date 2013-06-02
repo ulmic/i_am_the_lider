@@ -9,7 +9,7 @@
         %p
           %h2= @user.title
         %p
-          %img.img-polaroid.big_img{:src => @user.avatar} 
+          %img.img-polaroid.big_img{ :src => @user.avatar } 
         %p
           %b= f.label :district
           = @user.district.title if @user.district.present?

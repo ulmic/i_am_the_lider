@@ -95,6 +95,20 @@ class ReportsControllerTest < ActionController::TestCase
     assert_redirected_to @report.user
   end
 
+  test "should get_viewed_user_id" do
+    admin_sign_in @admin
+    set_viewed_user_id @user
+
+    attributes = attributes_for :report
+    post :create, report: attributes
+    assert_response :redirect
+
+    @report = Report.last
+    assert_equal attributes[:description], @report.description
+
+    assert_equal @user.id, @report.user_id
+  end
+
 #  test "should not update report with render edit" do
 #    attributes = attributes_for :report
 #    attributes[:venue] = nil

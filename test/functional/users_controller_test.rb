@@ -104,13 +104,6 @@ class UsersControllerTest < ActionController::TestCase
     assert_template :new
   end  
 
-#  test "should not update report with render edit" do
-#    attributes = attributes_for :report
-#    attributes[:venue] = nil
-#    put :update, id: @report, report: attributes
-#    assert_template /edit/
-#  end
-
   test "should not sign in with wrong login or password" do
     attributes = attributes_for :user
     post :login, attributes
@@ -120,5 +113,12 @@ class UsersControllerTest < ActionController::TestCase
   test "should sign out user" do
     post :logout
     assert_equal nil, session[:user_id]
+  end
+
+  test "should set_viewed_user_id" do
+    admin_sign_in @admin    
+
+    get :show, id: @user
+    assert_equal viewed_user.id, @user.id
   end
 end
