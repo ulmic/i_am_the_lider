@@ -31,6 +31,9 @@ group :test do
 end
 
 gem 'unicorn'
+gem 'capistrano'
+gem 'rvm-capistrano'
+gem 'capi'
 
 group :development do
   gem 'better_errors'
