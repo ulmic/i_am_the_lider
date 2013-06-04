@@ -30,6 +30,8 @@ group :test do
   gem 'tconsole'
 end
 
+gem 'unicorn'
+
 group :development do
   gem 'better_errors'
 end
