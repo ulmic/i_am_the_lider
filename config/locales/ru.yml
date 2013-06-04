@@ -18,7 +18,7 @@ ru:
       ministry_of_education: 	'Министерство образования'
       of_ulyanovsk_region: 	'Ульяновской области'
       youth_initiative_centre: 	'Молодёжный инициативный центр'
-  
+
   admins:
     login:
       login: 			'Логин'
@@ -38,18 +38,18 @@ ru:
     blog_posts: 		'Блоги'
     edit:
       editing_blog_post: 	'Редактирование записи блога'
-      view_blog_post: 		'Посмотреть'  
+      view_blog_post: 		'Посмотреть'
     form:
       prohibited_this_blog_post_from_being_saved: 'зафиксировано во время сохранения'
       no_more_than_140_characters: 'Не больше 140 символов'
-      save: 			'Сохранить'  
+      save: 			'Сохранить'
     new:
       add_blog_post: 		'Добавить запись в блог'
 
   errors:
     not_found:
       error_404: 		'Ошибка 404. Такой страницы не существует'
-  
+
   news:
     edit:
       edit_news: 		'Редактировать новость'
@@ -96,7 +96,7 @@ ru:
       link_to_twitter_account: 	'Ссылка на аккаунт в твиттере'
       save: 			'Сохранить'
     index:
-      contest_participants: 	'Участники конкурса'
+      semifinalists: 	'Полуфиналисты XI конкурса Я-лидер!'
     login:
       pass_auth: 		"Пройти авторизацию участника XI конкурса актива учащейся молодёжи 'Я - лидер!'"
       login: 			'Логин'
@@ -121,7 +121,7 @@ ru:
       edit_user: 		'Изменить аккаунт'
       add_blog_post: 		'Добавить запись в блог'
 
-  welcome: 
+  welcome:
     index:
       reports: 			'Отчёты'
       participants:		'Участники'
@@ -131,7 +131,7 @@ ru:
       i_am_lider: 		'Я - лидер!'
     news:
       news: 			'Новости конкурса'
-      
+
 
   date:
     abbr_day_names:
@@ -143,7 +143,7 @@ ru:
     - Пт
     - Сб
     abbr_month_names:
-    - 
+    -
     - янв.
     - февр.
     - марта
@@ -169,7 +169,7 @@ ru:
       long: ! '%d %B %Y'
       short: ! '%d %b'
     month_names:
-    - 
+    -
     - января
     - февраля
     - марта
