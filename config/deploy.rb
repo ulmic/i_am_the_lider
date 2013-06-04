@@ -9,6 +9,7 @@ set :rails_env,      "development"
 set :rvm_type, :user
 
 role :web, "ulgood.ru"
+role :db, "ulgood.ru", :primary => true
 
 set :user, "user"  # The server's user for deploys
 
@@ -39,5 +40,15 @@ namespace :db do
   end
 end
 
+namespace :bundler do
+  task :install do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle install"
+  end
+end
+
+
 after 'deploy:create_symlink', 'db:symlink'
+after 'deploy:finalize_update', 'bundler:install'
+after 'deploy:migrate', 'bundler:install'
+
 require 'capistrano_colors'
