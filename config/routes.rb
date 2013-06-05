@@ -6,7 +6,9 @@ IAmTheLider::Application.routes.draw do
   match "admin" => "admins#login"
 
   mount Ckeditor::Engine => '/ckeditor'
+
   resources :news
+  resources :reports
 
   resources :users do
     collection do
@@ -16,8 +18,6 @@ IAmTheLider::Application.routes.draw do
       get "office" => "users#show"
     end
   end
-
-  resources :reports
 
   resources :blog_posts do
     collection do
