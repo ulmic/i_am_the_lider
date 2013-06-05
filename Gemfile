@@ -14,6 +14,12 @@ gem 'ckeditor'
 gem 'coveralls', require: false
 gem 'draper', '~> 1.0'
 
+gem 'unicorn'
+gem 'capistrano'
+gem 'rvm-capistrano'
+gem 'capi'
+gem 'capistrano_colors'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -29,11 +35,6 @@ group :test do
   gem 'turn'
   gem 'tconsole'
 end
-
-gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'capi'
 
 group :development do
   gem 'better_errors'
