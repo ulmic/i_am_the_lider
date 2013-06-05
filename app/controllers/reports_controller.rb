@@ -6,6 +6,7 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find params[:id]
+    redirect_to @report.user
   end
 
   def edit
@@ -19,10 +20,10 @@ class ReportsController < ApplicationController
     @report = Report.new params[:report]
     if admin_signed_in?
       @report.user_id = viewed_user.id
-    else 
+    else
       if user_signed_in?
         @report.user_id = current_user.id
-      end      
+      end
     end
     if (admin_signed_in? || user_signed_in?) && @report.save
       redirect_to @report.user, notice: 'Отчёт о мероприятии успешно добавлен.'
