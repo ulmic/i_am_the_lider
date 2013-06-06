@@ -1,13 +1,18 @@
-i_am_the_lider
+![ILider_Logo](https://raw.github.com/ulmic/i_am_the_lider/master/logo.jpg)
+
+Сайт конкурса "Я - лидер!"
+
 ==============
-Feature
-[![Build Status](https://travis-ci.org/ulmic/i_am_the_lider.png?branch=feature)](https://travis-ci.org/ulmic/i_am_the_lider)
 
 Master
 [![Build Status](https://travis-ci.org/ulmic/i_am_the_lider.png?branch=master)](https://travis-ci.org/ulmic/i_am_the_lider)
 
-Poster contest for students of the asset, "I - the leader".
+С помощью этого сайта участники конкурса могут выкладывать свои конкурсные проекты, отчёты о выполнении конкурсных испытаний, а также личные блоги о конкурсе и "за жизнь".
 
-With this service, participants will be able to conduct their own blogs activity.
+Подробнее о конкурсе актива учащейся молодёжи можно прочитать здесь(http://www.ulmic.ru/programms/lider/-l-r).
 
-![ILider_Logo](https://raw.github.com/ulmic/i_am_the_lider/master/logo.jpg)
+===============
+
+
+
+
