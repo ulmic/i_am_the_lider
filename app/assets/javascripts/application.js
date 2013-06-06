@@ -1,3 +1,8 @@
+//= require jquery
+////= require jquery_ujs
+////= require ckeditor/init
+////= require_tree
+
 var reformalOptions = {
     project_id: 98584,
     project_host: "lider_ulgood.reformal.ru",
