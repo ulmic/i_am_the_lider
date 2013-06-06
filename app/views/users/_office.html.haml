@@ -9,7 +9,7 @@
         %p
           %h2= @user.title
         %p
-          %img.img-polaroid.big_img{ :src => @user.avatar } 
+          %img.img-polaroid.big_img{ :src => @user.avatar }
         %p
           %b= f.label :district
           = @user.district.title if @user.district.present?
@@ -34,10 +34,7 @@
           %p
             %h3= t('.report')
           %p
-            != strip_tags @user.report.description.first(200) if @user.report.description
-            %br
-            %a.btn{:href => "/reports/#{@user.report.id}"} 
-              = t('.read_more')
+            != @user.report.description if @user.report.description
           %p
             -if @user.report.present?
               %a.btn.btn-large.btn-success{:href => "#{@user.report.archive}"}

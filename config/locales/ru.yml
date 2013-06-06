@@ -70,7 +70,7 @@ ru:
       edit: 			'Изменить'
       news: 			'Новости'
 
-  report:
+  reports:
     edit:
       edit_report: 		'Редактировать отчёт'
       back: 			'Назад'
@@ -112,7 +112,6 @@ ru:
       hello: 			'Здравствуйте,'
       log_out: 			'Выйти'
       report: 			'Отчёт о мероприятии'
-      read_more: 		'Читать далее'
       download_archive: 	'Скачать архив'
       there_is_not_archive: 	'Архив не загружен'
     show:
