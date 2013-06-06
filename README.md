@@ -2,8 +2,7 @@
 
 ==============
 
-Master
-[![Build Status](https://travis-ci.org/ulmic/i_am_the_lider.png?branch=master)](https://travis-ci.org/ulmic/i_am_the_lider)
+[![Build Status](https://travis-ci.org/ulmic/i_am_the_lider.png?branch=master)](https://travis-ci.org/ulmic/i_am_the_lider) [![Coverage Status](https://coveralls.io/repos/ulmic/i_am_the_lider/badge.png?branch=master)](https://coveralls.io/r/ulmic/i_am_the_lider?branch=master)
 
 С помощью этого сайта участники конкурса могут выкладывать свои конкурсные проекты, отчёты о выполнении конкурсных испытаний, а также личные блоги о конкурсе и "за жизнь".
 
