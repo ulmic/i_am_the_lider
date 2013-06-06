@@ -9,3 +9,5 @@ Master
 Poster contest for students of the asset, "I - the leader".
 
 With this service, participants will be able to conduct their own blogs activity.
+
+![ILider_Logo](https://raw.github.com/ulmic/i_am_the_lider/master/logo.jpg)
