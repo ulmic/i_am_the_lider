@@ -8,9 +8,8 @@ class BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, id: @user
     assert_response :success
-    assert_not_nil assigns :blog_posts
   end
 
   test "should get edit blog_post by admin" do
@@ -36,19 +35,19 @@ class BlogPostsControllerTest < ActionController::TestCase
   test "should not create blog_post" do
     attributes = attributes_for :blog_post
 
-    post :create, blog_post: attributes
+    post :create, blog_post: attributes, id: @user
     assert_redirected_to not_found_errors_path
   end
 
   test "should get new" do
     user_sign_in @user
 
-    get :new
+    get :new, id: @user
     assert_response :success
   end
 
   test "should not get new" do
-    get :new
+    get :new, id: @user
     assert_redirected_to not_found_errors_path
   end
 
@@ -58,7 +57,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     attributes = attributes_for :blog_post
     attributes[:user_id] = @user.id
 
-    post :create, blog_post: attributes
+    post :create, blog_post: attributes, id: @user
     assert_response :redirect
 
     @blog_post = BlogPost.last
@@ -119,7 +118,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     attributes = attributes_for :blog_post
     attributes[:title] = nil
 
-    post :create, blog_post: attributes
+    post :create, blog_post: attributes, id: @user
     assert_template :new
   end
 
@@ -137,13 +136,4 @@ class BlogPostsControllerTest < ActionController::TestCase
 
     assert_redirected_to @blog_post.user
   end
-
-#  test "should not update blog_post with render edit" do
-#    user_sign_in @user#
-#
-#    attributes = attributes_for :blog_post
-#    attributes[:text] = nil
-#    put :update, id: @blog_post, blog_post: attributes
-#    assert_template "edit"
-#  end
 end

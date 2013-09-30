@@ -39,16 +39,6 @@ module AuthHelper
     admin.password === password
   end
 
-  def set_viewed_user(viewed_user)
-    session[:viewed_user_id] = viewed_user.id
-  end
-
-  def viewed_user
-    viewed_user = User.find(session[:viewed_user_id])
-  end
-
-  #Access
-
   def check_access_to_edit?(instance)
     admin_signed_in? || (user_signed_in? && instance.user_id == current_user.id)
   end

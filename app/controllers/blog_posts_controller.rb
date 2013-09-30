@@ -1,4 +1,3 @@
-#encoding: utf-8
 class BlogPostsController < ApplicationController
   before_filter :check_user_signed, only: [ :new, :create ]
 

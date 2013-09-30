@@ -1,4 +1,3 @@
-#encoding: utf-8
 class User < ActiveRecord::Base
   attr_accessible :birth_date,
                   :district_id,
@@ -31,18 +30,10 @@ class User < ActiveRecord::Base
   validates :middle_name, presence: true
   validates :last_name, presence: true
   validates :mobile_phone, presence: true
-  validates :vkontakte, url: true, 
+  validates :vkontakte, url: true,
                         allow_blank: true
-  validates :twitter, url: true, 
+  validates :twitter, url: true,
                       allow_blank: true
   validates :login, presence: true
   validates :password, presence: true
-
-  def title
-    "#{first_name} #{middle_name} #{last_name}"
-  end
-  
-  def small_name
-    "#{first_name} #{middle_name}"
-  end
 end

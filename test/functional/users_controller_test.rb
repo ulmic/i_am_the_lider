@@ -11,7 +11,6 @@ class UsersControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns :users
   end
 
   test "should get new" do
@@ -113,12 +112,5 @@ class UsersControllerTest < ActionController::TestCase
   test "should sign out user" do
     post :logout
     assert_equal nil, session[:user_id]
-  end
-
-  test "should set_viewed_user_id" do
-    admin_sign_in @admin
-
-    get :show, id: @user
-    assert_equal viewed_user.id, @user.id
   end
 end

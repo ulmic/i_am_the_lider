@@ -12,7 +12,7 @@ gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 gem 'validates'
 gem 'ckeditor'
 gem 'coveralls', require: false
-gem 'draper', '~> 1.0'
+gem 'draper'
 
 gem 'unicorn'
 gem 'capistrano'

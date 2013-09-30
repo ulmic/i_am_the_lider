@@ -1,14 +1,10 @@
-#encoding: utf-8
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = UserDecorator.decorate_collection User.all
   end
 
   def show
-    @user = User.find params[:id]
-    if admin_signed_in? || !user_signed_in?
-      set_viewed_user @user
-    end
+    @user = User.find(params[:id]).decorate
   end
 
   def new
@@ -38,7 +34,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-
     if @user.update_attributes params[:user]
       redirect_to @user
     else

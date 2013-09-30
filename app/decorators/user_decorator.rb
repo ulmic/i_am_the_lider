@@ -1,18 +1,11 @@
 class UserDecorator < Draper::Decorator
   delegate_all
 
-  def district
-    if district.present?
-      model.district
-    else
-      District.first
-    end
+  def title
+    "#{model.first_name} #{model.middle_name} #{model.last_name}"
   end
 
-  def school
-    unless model.group.blank?
-      h.content_tag :b, model.school
-      h.content_tag :span, model.group
-    end
+  def small_name
+    "#{model.first_name} #{model.middle_name}"
   end
 end

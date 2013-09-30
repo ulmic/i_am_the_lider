@@ -211,7 +211,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 3.2.1)
   coveralls
-  draper (~> 1.0)
+  draper
   factory_girl_rails
   haml
   haml-rails
