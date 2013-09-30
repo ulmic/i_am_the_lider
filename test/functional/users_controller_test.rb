@@ -23,7 +23,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     admin_sign_in @admin
-    
+
     district = create :district
     attributes = attributes_for :user
     attributes[:district_id] = district.id
@@ -41,7 +41,7 @@ class UsersControllerTest < ActionController::TestCase
     attributes[:district_id] = district.id
 
     post :create, user: attributes
-    assert_redirected_to "/404"
+    assert_redirected_to not_found_errors_path
   end
 
   test "should show user" do
@@ -50,7 +50,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get edit by admin" do
-    admin_sign_in @admin  
+    admin_sign_in @admin
 
     get :edit, id: @user
     assert_response :success
@@ -58,7 +58,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should update user by admin" do
     admin_sign_in @admin
- 
+
     attributes = attributes_for :user
     put :update, id: @user, user: attributes
     assert_response :redirect
@@ -68,7 +68,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should destroy user" do
-    admin_sign_in @admin    
+    admin_sign_in @admin
 
     assert_difference('User.count', -1) do
       delete :destroy, id: @user
@@ -92,7 +92,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should not get new with no access" do
     get :new
-    assert_redirected_to "/404"
+    assert_redirected_to not_found_errors_path
   end
 
   test "should not create user with render new" do
@@ -102,7 +102,7 @@ class UsersControllerTest < ActionController::TestCase
 
     post :create, user: attributes
     assert_template :new
-  end  
+  end
 
   test "should not sign in with wrong login or password" do
     attributes = attributes_for :user
@@ -116,7 +116,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should set_viewed_user_id" do
-    admin_sign_in @admin    
+    admin_sign_in @admin
 
     get :show, id: @user
     assert_equal viewed_user.id, @user.id

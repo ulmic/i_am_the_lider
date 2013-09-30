@@ -2,7 +2,6 @@ IAmTheLider::Application.routes.draw do
 
   root to: 'welcome#index'
 
-  match "/404" => "errors#not_found"
   match "admin" => "admins#login"
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -19,11 +18,7 @@ IAmTheLider::Application.routes.draw do
     end
   end
 
-  resources :blog_posts do
-    collection do
-      delete "destroy" => "blog_posts#destroy"
-    end
-  end
+  resources :blog_posts
 
   resource :welcome do
     collection do
@@ -40,6 +35,12 @@ IAmTheLider::Application.routes.draw do
       post "login"
       get "logout" => "admins#logout"
       get "panel" => "admins#panel"
+    end
+  end
+
+  resource :errors do
+    collection do
+      get "not_found"
     end
   end
 end

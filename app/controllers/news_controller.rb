@@ -19,21 +19,19 @@ class NewsController < ApplicationController
 
   def create
     @news = News.new params[:news]
-
     if @news.save
       redirect_to @news
     else
-      render action: "new"
+      render action: :new
     end
   end
 
   def update
     @news = News.find params[:id]
-
     if @news.update_attributes params[:news]
       redirect_to @news
     else
-      render action: "edit"
+      render action: :edit
     end
   end
 

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    if admin_signed_in? || !user_signed_in? 
+    if admin_signed_in? || !user_signed_in?
       set_viewed_user @user
     end
   end
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if admin_signed_in?
       @user = User.new
     else
-      redirect_to "/404"
+      redirect_to not_found_errors_path
     end
   end
 
@@ -29,10 +29,10 @@ class UsersController < ApplicationController
       if @user.save
         redirect_to @user, notice: 'User was successfully created.'
       else
-        render action: "new"
+        render action: :new
       end
     else
-      redirect_to "/404"
+      redirect_to not_found_errors_path
     end
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     if @user.update_attributes params[:user]
       redirect_to @user
     else
-      render action: "edit"
+      render action: :edit
     end
   end
 
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   def logout
     user_sign_out
     redirect_to :root

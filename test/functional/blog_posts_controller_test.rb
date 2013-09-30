@@ -15,7 +15,7 @@ class BlogPostsControllerTest < ActionController::TestCase
 
   test "should get edit blog_post by admin" do
     admin_sign_in @admin
-    
+
     get :edit, id: @blog_post
     assert_response :success
   end
@@ -23,7 +23,7 @@ class BlogPostsControllerTest < ActionController::TestCase
   test "should get edit blog_post by user" do
     @user.id = @blog_post.user_id
     user_sign_in @user
-    
+
     get :edit, id: @blog_post
     assert_response :success
   end
@@ -37,11 +37,11 @@ class BlogPostsControllerTest < ActionController::TestCase
     attributes = attributes_for :blog_post
 
     post :create, blog_post: attributes
-    assert_redirected_to "/404"
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get new" do
-    user_sign_in @user 
+    user_sign_in @user
 
     get :new
     assert_response :success
@@ -49,12 +49,12 @@ class BlogPostsControllerTest < ActionController::TestCase
 
   test "should not get new" do
     get :new
-    assert_redirected_to "/404"
+    assert_redirected_to not_found_errors_path
   end
 
   test "should create blog_post" do
     user_sign_in @user
-    
+
     attributes = attributes_for :blog_post
     attributes[:user_id] = @user.id
 
@@ -70,30 +70,30 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update blog_post" do  
+  test "should update blog_post" do
     @user.id = @blog_post.id
-    user_sign_in @user    
+    user_sign_in @user
 
     attributes = attributes_for :blog_post
     put :update, id: @blog_post, blog_post: attributes
     assert_response :redirect
-    
+
     @blog_post.reload
     assert_equal attributes[:title], @blog_post.title
   end
 
-  test "should update blog_post by admin" do  
+  test "should update blog_post by admin" do
     admin_sign_in @admin
 
     attributes = attributes_for :blog_post
     put :update, id: @blog_post, blog_post: attributes
     assert_response :redirect
-    
+
     @blog_post.reload
     assert_equal attributes[:title], @blog_post.title
   end
 
-  test "should destroy blog_post" do  
+  test "should destroy blog_post" do
     @user.id = @blog_post.user_id
     user_sign_in @user
 
@@ -126,7 +126,7 @@ class BlogPostsControllerTest < ActionController::TestCase
   test "should not update blog_post with no access" do
     attributes = attributes_for :blog_post
     put :update, id: @blog_post, blog_post: attributes
-    
+
     assert_redirected_to @blog_post
   end
 

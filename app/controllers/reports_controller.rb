@@ -26,9 +26,9 @@ class ReportsController < ApplicationController
       end
     end
     if (admin_signed_in? || user_signed_in?) && @report.save
-      redirect_to @report.user, notice: 'Отчёт о мероприятии успешно добавлен.'
+      redirect_to @report.user, notice: t('.report_added')
     else
-      render action: "new"
+      render action: :new
     end
   end
 
@@ -36,12 +36,12 @@ class ReportsController < ApplicationController
     @report = Report.find params[:id]
     if check_access_to_edit? @report
       if @report.update_attributes params[:report]
-        redirect_to @report.user, notice: 'Запись в блоге обновлена.'
+        redirect_to @report.user, notice: t('.report_updated')
       else
-        render action: "edit"
+        render action: :edit
       end
     else
-      redirect_to @report.user, notice: 'Вы не можете редактировать эту запись!'
+      redirect_to @report.user, notice: t('without_access_to_edit')
     end
   end
 
