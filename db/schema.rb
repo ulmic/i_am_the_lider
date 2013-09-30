@@ -11,54 +11,54 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130524203658) do
+ActiveRecord::Schema.define(:version => 20130524203658) do
 
-  create_table "admins", force: true do |t|
+  create_table "admins", :force => true do |t|
     t.string   "login"
     t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "blog_posts", force: true do |t|
+  create_table "blog_posts", :force => true do |t|
     t.string   "title"
     t.string   "text"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "ckeditor_assets", force: true do |t|
-    t.string   "data_file_name",                  null: false
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
     t.integer  "width"
     t.integer  "height"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
-  create_table "districts", force: true do |t|
+  create_table "districts", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "news", force: true do |t|
+  create_table "news", :force => true do |t|
     t.string   "title"
     t.string   "body"
     t.date     "pusblished_at"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  create_table "projects", force: true do |t|
+  create_table "projects", :force => true do |t|
     t.string   "title"
     t.string   "goal"
     t.string   "tasks"
@@ -67,18 +67,18 @@ ActiveRecord::Schema.define(version: 20130524203658) do
     t.string   "description"
     t.date     "date"
     t.string   "results"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "user_id"
   end
 
-  create_table "reports", force: true do |t|
+  create_table "reports", :force => true do |t|
     t.string   "member_type"
     t.integer  "member_count"
     t.string   "venue"
     t.date     "date"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "archive_file_name"
     t.string   "archive_content_type"
     t.integer  "archive_file_size"
@@ -87,15 +87,15 @@ ActiveRecord::Schema.define(version: 20130524203658) do
     t.string   "description"
   end
 
-  create_table "stages", force: true do |t|
+  create_table "stages", :force => true do |t|
     t.string   "title"
     t.string   "epigraph"
     t.string   "hypertext"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "password"
     t.string   "first_name"
@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(version: 20130524203658) do
     t.string   "email"
     t.string   "vkontakte"
     t.string   "twitter"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

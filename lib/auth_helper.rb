@@ -17,7 +17,9 @@ module AuthHelper
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id])
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    end
   end
 
   #Admin auth
@@ -46,7 +48,7 @@ module AuthHelper
   end
 
   #Access
-  
+
   def check_access_to_edit?(instance)
     admin_signed_in? || (user_signed_in? && instance.user_id == current_user.id)
   end

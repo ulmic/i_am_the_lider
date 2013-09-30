@@ -1,43 +1,43 @@
 %html
 %head
   %title= t(".i_am_lider")
-  = stylesheet_link_tag "bootstrap", :media => "all"
-  = stylesheet_link_tag "bootstrap-responsive", :media => "all"
-  = stylesheet_link_tag "bootstrap.min", :media => "all"
-  = stylesheet_link_tag    "application", :media => "all"
+  = stylesheet_link_tag "bootstrap"
+  = stylesheet_link_tag "bootstrap-responsive"
+  = stylesheet_link_tag "bootstrap.min"
+  = stylesheet_link_tag    "application"
   = javascript_include_tag "application"
   = csrf_meta_tags
 %body
-  %script{:type => "text/javascript"}
+  %script{ type: "text/javascript" }
     refrm();
   %noscript
-    %a{:href => "http://reformal.ru"}
-      %img{:src => "http://media.reformal.ru/reformal.png"}
-    %a{:href => "http://lider_ulgood.reformal.ru"}
+    %a{ href: "http://reformal.ru" }
+      %img{ src: "http://media.reformal.ru/reformal.png" }
+    %a{ href: "http://lider_ulgood.reformal.ru" }
       =t('.reformal_message')
   .container-fluid
     .row-fluid
-      %a{:href => "http://ulmic.ru"}
+      %a{ href: "http://ulmic.ru" }
         .span2.logo.mic
-      %a{:href => "/"}
+      %a{ href: root_path }
         .span2.well.well-small.black_link
-          =t('.learning_youth_contest') 
+          =t('.learning_youth_contest')
           %h4= t('.i_am_lider')
       %ul.nav.nav-pills.nav-buttons
         %li
-          %a{:href => "/users/login"}
+          %a{ href: login_users_path }
             %h3= t('.i_am_participant')
         %li
-          %a{:href => "/users"} 
+          %a{ href: users_path }
             %h3= t('.participants')
         %li
-          %a{:href => "/welcome/competition"} 
+          %a{ href: competition_welcome_path }
             %h3= t('.competition')
         %li
-          %a{:href => "/news"} 
+          %a{ href: '/news' }
             %h3= t('.contest_news')
         %li
-          %a{:href => "/welcome/first_stage"}
+          %a{ href: first_stage_welcome_path }
             %h3= t('.stages')
     .row-fluid
       .span12.content

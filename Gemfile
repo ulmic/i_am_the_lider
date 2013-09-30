@@ -8,7 +8,7 @@ gem 'rspec'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 gem 'validates'
 gem 'ckeditor'
 gem 'coveralls', require: false
@@ -29,13 +29,14 @@ end
 gem 'jquery-rails'
 
 group :test do
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
   gem 'minitest'
-  gem 'factory_girl_rails', :require => false
+  gem 'factory_girl_rails', require: false
   gem 'turn'
   gem 'tconsole'
 end
 
 group :development do
   gem 'better_errors'
+  gem 'syntax_fix', '0.0.3'
 end
