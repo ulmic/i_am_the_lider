@@ -1,13 +1,13 @@
 %h4= t('.hello_admin')
 %b= t('.you_can')
-%a.btn.btn-large{:href => "/news/new"} 
+%a.btn.btn-large{ href: "/news/new" }
   = t('.add_news')
-%a.btn.btn-large{:href => "/users"}
+%a.btn.btn-large{ href: "/users" }
   = t('.edit_users_data')
-%a.btn.btn-large{:href => "/blog_posts"}
+%a.btn.btn-large{ href: "/blog_posts" }
   = t('.edit_blogs')
-%a.btn.btn-large{:href => "/users/new"}
+%a.btn.btn-large{ href: "/users/new" }
   = t('.add_user')
 %p
-  %a.btn{:href => "/admins/logout"}
+  %a.btn{ href: "/admins/logout" }
     = t('.sign_out')

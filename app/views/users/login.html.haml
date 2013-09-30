@@ -3,11 +3,11 @@
   = form_tag do
     = t('.login')
     %br
-    = text_field_tag :login, params[:login], :class => "span6", :placeholder => "#{t('.login_of_participant')}"
+    = text_field_tag :login, params[:login], class: "span6", placeholder: "#{ t('.login_of_participant') }"
     %br
     = t('.password')
     %br
-    = password_field_tag :password, params[:password], :class => "span6"
+    = password_field_tag :password, params[:password], class: "span6"
     %br
     = submit_tag t('.sign_in')
 %br
