@@ -1,10 +1,9 @@
-= stylesheet_link_tag "users", media: "all"
+= stylesheet_link_tag "users"
 %h1
   = t('.semifinalists')
-
-  -@users.each do |user|
+  - @users.each do |user|
     .row-fluid.has_top_margin
-      %a{ href: "users/#{ user.id }" }
+      %a{ href: user_path(user) }
         .span2
           %img.img-polaroid.width-200px{ src: user.avatar }
         .span3
@@ -19,7 +18,7 @@
             %h4= user.school
           .row-fluid
             %h4= user.group
-        -unless user.twitter.blank?
+        - unless user.twitter.blank?
           .row-fluid
             %a{ href: user.twitter }
               .span1.logo.mini.twitter

@@ -1,21 +1,21 @@
 %h3 Участники
 .row.top_row
-  -if @users.blank?
+  - if @users.blank?
     Список участников пуст.
-    %a{:href => "/users/new"} Зарегистрируйтесь!
-  -@users.first(3).each do |user|
+    %a{ href: new_user_path } Зарегистрируйтесь!
+  - @users.first(3).each do |user|
     .span1.user_ot
-      %a{:href => "/users/#{user.id}"}
-        %img.mini_equal_size.img-circle.small{:src => user.avatar}
-      %a{:href => "/users/#{user.id}"}
+      %a{ href: user_path(user) }
+        %img.mini_equal_size.img-circle.small{ src: user.avatar }
+      %a{ href: user_path(user) }
         %small.very_small_text= user.first_name
         %br
         %small.very_small_text= user.middle_name
-  -@users.last(3).each do |user|
+  - @users.last(3).each do |user|
     .span1.user_ot
-      %a{:href => "/users/#{user.id}"}
-        %img.mini_equal_size.img-circle.small{:src => user.avatar}
-      %a{:href => "/users/#{user.id}"}
+      %a{ href: user_path(user) }
+        %img.mini_equal_size.img-circle.small{ src: user.avatar }
+      %a{ href: user_path(user) }
         %small.very_small_text= user.first_name
         %br
         %small.very_small_text= user.middle_name

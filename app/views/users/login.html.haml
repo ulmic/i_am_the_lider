@@ -1,5 +1,5 @@
 %small= t('.pass_auth')
-- if session[:user_id].nil?
+- if user_signed_in?
   = form_tag do
     = t('.login')
     %br

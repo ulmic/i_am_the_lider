@@ -1,15 +1,15 @@
 = render 'office'
-- if (@user.id === session[:user_id]) || (session[:admin_id])
+- if current_user || admin_signed_in?
   - if @user.report.nil?
-    %a.btn.btn-large.btn-success{ href: "/reports/new" }
+    %a.btn.btn-large.btn-success{ href: new_report_path }
       = t('.create_report')
   - else
-    %a.btn.btn-large.btn-success{ href: "/reports/#{ @user.report.id }/edit" }
+    %a.btn.btn-large.btn-success{ href: edit_report_path(@user.report) }
       = t('.edit_report')
-  %a.btn.btn-large.btn-success{ href: "#{ @user.id }/edit" }
+  %a.btn.btn-large.btn-success{ href: edit_user_path(@user) }
     = t('.edit_user')
 %hr
 = render 'blogs'
-- if (@user.id === session[:user_id]) || (session[:admin_id])
-  %a.btn.btn-large.btn-success{ href: "/blog_posts/new" }
+- if current_user || admin_signed_in?
+  %a.btn.btn-large.btn-success{ href: new_blog_post_path }
     = t('.add_blog_post')

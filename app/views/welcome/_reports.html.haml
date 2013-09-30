@@ -1,13 +1,12 @@
 %h3 Отчёты
--@reports.each do |report|
-  %a{ href: "/users/#{ report.user_id }" }
+- @reports.each do |report|
+  %a{ href: user_path(report.user) }
     #BAD_SPIKE
-    - if report.description
-      != strip_tags report.description.first(140) + "..."
+    != strip_tags report.description.first(140) + "..." if report.description
     %br
     %br
-    %a{ href: "/users/#{ report.user.id }" }
+    %a{ href: user_path(report.user) }
       %img.mini_equal_size.img-circle.small{ src: report.user.avatar }
-    %a{ href: "/users/#{ report.user.id }" }
+    %a{ href: user_path(report.user) }
       = report.user.small_name
     %hr

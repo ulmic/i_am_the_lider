@@ -1,5 +1,5 @@
 .row.top_row
-  -@blog_posts.each do |b|
+  - @blog_posts.each do |b|
     %a{ href: blog_post_path(b.id) }
       .well
         %h5= b.user.small_name

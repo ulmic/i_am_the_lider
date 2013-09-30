@@ -4,6 +4,6 @@
   %small= @news.pusblished_at
 %p
   != @news.body
-  = link_to '<- #{t(".news")}', news_index_path, :class => "btn"
-- if session[:admin_id]
-  = link_to t('.edit'), edit_news_path(@news), :class => "btn"
+  = link_to '<- #{ t(".news") }', news_index_path, class: "btn"
+- if admin_signed_in?
+  = link_to t('.edit'), edit_news_path(@news), class: "btn"

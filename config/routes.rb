@@ -25,12 +25,13 @@ IAmTheLider::Application.routes.draw do
     end
   end
 
-  resources :welcome do
+  resource :welcome do
     collection do
-      get "first_stage"
-      get "second_stage"
-      get "third_stage"
-      get "competition"
+      get "index" => "welcome#index"
+      get "first_stage" => "welcome#first_stage"
+      get "second_stage" => "welcome#second_stage"
+      get "third_stage" => "welcome#third_stage"
+      get "competition" => "welcome#competition"
     end
   end
 
