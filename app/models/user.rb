@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   has_one :project
   has_one :report
   has_many :blog_posts
-  has_attached_file :avatar
+  mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name
 
   validates :birth_date, presence: true
   validates :district_id, presence: true
