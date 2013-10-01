@@ -1,8 +1,10 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
   sequence :date do |n|
     DateTime.now
   end
-  
+
   sequence :string, aliases: [:title] do |n|
     "string-#{n}"
   end
@@ -38,4 +40,9 @@ FactoryGirl.define do
   sequence :login do |n|
     "login#{n}"
   end
+
+  sequence :file do |n|
+    fixture_file_upload('app/assets/images/logo.png', 'image/png')
+  end
+
 end

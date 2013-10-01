@@ -14,6 +14,6 @@ FactoryGirl.define do
     school       { generate :string }
     twitter      { generate :url }
     vkontakte    { generate :url }
-    #avatar       { fixture_file_upload("test/fixtures/files/rails.jpg", "image/jpg") }
+    avatar       { generate :file }
   end
 end
