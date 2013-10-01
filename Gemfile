@@ -3,22 +3,17 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'sqlite3'
-gem 'rspec'
 
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
+gem 'carrierwave'
+gem 'rmagick'
 gem 'validates'
 gem 'ckeditor'
 gem 'coveralls', require: false
 gem 'draper'
-
-gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'capi'
-gem 'capistrano_colors'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -39,4 +34,13 @@ end
 group :development do
   gem 'better_errors'
   gem 'syntax_fix', '0.0.3'
+end
+
+group :production do
+  gem 'unicorn'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+  gem 'capi'
+  gem 'capistrano_colors'
+  gem 'pg'
 end
