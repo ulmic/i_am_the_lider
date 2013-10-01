@@ -1,5 +1,3 @@
-# coding: UTF-8
-
 APP_PATH = "/srv/i_am_the_lider"
 
 worker_processes 1

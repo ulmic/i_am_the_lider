@@ -1,5 +1,5 @@
 ru:
-  wrong_login: Неверный логин или пароль
+  wrong_login:               Неверный логин или пароль
   without_access_to_edit:    Вы не можете редактировать эту запись
   without_access_to_destroy: Вы не можете удалить эту запись
   time:
@@ -8,19 +8,19 @@ ru:
 
   layouts:
     application:
-      i_am_lider: 		'"Я - лидер!"'
-      learning_youth_contest: 	'Конкурс актива учащейся молодёжи'
-      i_am_participant: 	'Я - участник!'
-      participants: 		'Участники'
-      competition: 		'Положение'
-      contest_news: 		'Новости'
-      stages: 			'Этапы'
-      reformal_message:		'Oтзывы и предложения для lider.ulgood.ru'
+      i_am_lider:             '"Я - лидер!"'
+      learning_youth_contest: 'Конкурс актива учащейся молодёжи'
+      i_am_participant:       'Я - участник!'
+      participants:           'Участники'
+      competition:            'Положение'
+      contest_news:           'Новости'
+      stages:                 'Этапы'
+      reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
     footer:
-      organizers: 		'Организаторы'
-      ministry_of_education: 	'Министерство образования'
-      of_ulyanovsk_region: 	'Ульяновской области'
-      youth_initiative_centre: 	'Молодёжный инициативный центр'
+      organizers:              'Организаторы'
+      ministry_of_education:   'Министерство образования'
+      of_ulyanovsk_region:     'Ульяновской области'
+      youth_initiative_centre: 'Молодёжный инициативный центр'
 
   admins:
     login:
@@ -28,24 +28,24 @@ ru:
       password: 		'Пароль'
       enter: 			'Войти'
     panel:
-      hello_admin: 		'Здравствуйте, Администратор!!'
-      you_can: 			'Вы можете'
-      add_news: 		'Добавить новость'
-      edit_users_data: 		'Изменить данные участников'
-      edit_blogs: 		'Редактировать блоги'
-      add_user: 		'Добавить участника'
-      sign_out: 		'Выйти'
+      hello_admin:     'Здравствуйте, Администратор!!'
+      you_can:         'Вы можете'
+      add_news:        'Добавить новость'
+      edit_users_data: 'Изменить данные участников'
+      edit_blogs:      'Редактировать блоги'
+      add_user:        'Добавить участника'
+      sign_out:        'Выйти'
 
   blog_posts:
-    back: 			'Назад'
-    blog_posts: 		'Блоги'
+    back:       'Назад'
+    blog_posts: 'Блоги'
     edit:
       editing_blog_post: 	'Редактирование записи блога'
       view_blog_post: 		'Посмотреть'
     form:
       prohibited_this_blog_post_from_being_saved: 'зафиксировано во время сохранения'
       no_more_than_140_characters: 'Не больше 140 символов'
-      save: 			'Сохранить'
+      save:                        'Сохранить'
     new:
       add_blog_post:             Добавить запись в блог
       blog_post_added:           Запись в блог добавлена
@@ -61,12 +61,12 @@ ru:
       back: 			'Назад'
     form:
       prohibite_this_news_from_being_saved: 'зафиксировано во время сохранения'
-      no_more_than_140_characters: 'Не больше 140 символов'
-      save: 			'Сохранить'
+      no_more_than_140_characters:          'Не больше 140 символов'
+      save:                                 'Сохранить'
     index:
-      contest_news: 		'Новости конкурса'
-      edit: 			'Изменить'
-      delete: 			'Удалить'
+      contest_news: 'Новости конкурса'
+      edit:         'Изменить'
+      delete:       'Удалить'
     new:
       add_news: 		'Добавить новость'
       back: 			'Назад'
@@ -80,7 +80,7 @@ ru:
       back: 			'Назад'
     form:
       prohibited_this_report_from_being_saved: 'зафиксировано во время сохранения'
-      save: 			'Сохранить'
+      save: 'Сохранить'
     new:
       create_report:  Создать отчёт о мероприятии
       back:           Назад
@@ -115,29 +115,27 @@ ru:
       new_user: 		'Регистрация участника'
       back: 			'Назад'
     office:
-      hello: 			'Здравствуйте,'
-      log_out: 			'Выйти'
-      report: 			'Отчёт о мероприятии'
-      download_archive: 	'Скачать архив'
-      there_is_not_archive: 	'Архив не загружен'
+      hello:                'Здравствуйте,'
+      log_out:              'Выйти'
+      report:               'Отчёт о мероприятии'
+      download_archive:     'Скачать архив'
+      there_is_not_archive: 'Архив не загружен'
     show:
-      create_report: 		'Создать отчёт о мероприятии'
-      edit_report: 		'Изменить отчёт о мероприятии'
-      edit_user: 		'Изменить аккаунт'
-      add_blog_post: 		'Добавить запись в блог'
+      create_report: 'Создать отчёт о мероприятии'
+      edit_report:   'Изменить отчёт о мероприятии'
+      edit_user:     'Изменить аккаунт'
+      add_blog_post: 'Добавить запись в блог'
 
   welcome:
     index:
-      reports: 			'Отчёты'
+      reports:                 'Отчёты'
       participants:		'Участники'
-      participants_list_empty: 	'Список участников пуст.'
-      sign_up: 			'Зарегистрируйтесь!'
-      blog_posts_empty: 	'Блоги пока что пусты...'
-      i_am_lider: 		'Я - лидер!'
+      participants_list_empty: 'Список участников пуст.'
+      sign_up:                 'Зарегистрируйтесь!'
+      blog_posts_empty:        'Блоги пока что пусты...'
+      i_am_lider:              'Я - лидер!'
     news:
       news: 			'Новости конкурса'
-
-
   date:
     abbr_day_names:
     - Вс

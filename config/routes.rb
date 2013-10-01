@@ -1,13 +1,9 @@
 IAmTheLider::Application.routes.draw do
 
   root to: 'welcome#index'
-
   match "admin" => "admins#login"
-
   mount Ckeditor::Engine => '/ckeditor'
-
   resources :news
-
   resources :users do
     member do
       resources :reports
@@ -20,7 +16,6 @@ IAmTheLider::Application.routes.draw do
       get "office" => "users#show"
     end
   end
-
   resource :welcome do
     collection do
       get "index" => "welcome#index"
@@ -30,7 +25,6 @@ IAmTheLider::Application.routes.draw do
       get "competition" => "welcome#competition"
     end
   end
-
   resources :admins do
     collection do
       post "login"
@@ -38,7 +32,6 @@ IAmTheLider::Application.routes.draw do
       get "panel" => "admins#panel"
     end
   end
-
   resource :errors do
     collection do
       get "not_found"

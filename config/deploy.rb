@@ -3,15 +3,12 @@ require "rvm/capistrano"
 
 set :application, "i_am_the_lider"
 set :rails_env,      "development"
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
 set :rvm_type, :user
 
 role :web, "ulgood.ru"
 role :db, "ulgood.ru", primary: true
 
-set :user, "user"  # The server's user for deploys
+set :user, "user"
 
 set :use_sudo, false
 
