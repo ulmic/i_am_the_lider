@@ -23,11 +23,15 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new params[:blog_post]
-    @blog_post.user_id = current_user.id
-    if @blog_post.save
-      redirect_to @blog_post, notice: t('blog_post_added')
+    if (admin_signed_in? or user_signed_in?)
+      @blog_post.user_id = params[:id]
+      if @blog_post.save
+        redirect_to @blog_post.user
+      else
+        render action: :new
+      end
     else
-      render action: :new
+      redirect_to User.find params[:id]
     end
   end
 

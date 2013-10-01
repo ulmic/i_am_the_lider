@@ -18,17 +18,15 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new params[:report]
-    if admin_signed_in?
-      @report.user_id = viewed_user.id
-    else
-      if user_signed_in?
-        @report.user_id = current_user.id
+    if (admin_signed_in? or user_signed_in?)
+      @report.user_id = params[:id]
+      if @report.save
+        redirect_to @report.user, notice: t('.report_added')
+      else
+        render action: :new
       end
-    end
-    if (admin_signed_in? || user_signed_in?) && @report.save
-      redirect_to @report.user, notice: t('.report_added')
     else
-      render action: :new
+      redirect_to User.find params[:id]
     end
   end
 
