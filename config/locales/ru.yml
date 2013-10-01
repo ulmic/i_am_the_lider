@@ -2,6 +2,7 @@ ru:
   wrong_login:               Неверный логин или пароль
   without_access_to_edit:    Вы не можете редактировать эту запись
   without_access_to_destroy: Вы не можете удалить эту запись
+  auth_error:                Ошибка авторизации
   time:
     formats:
       default: "%d-%m-%Y %H:%M"

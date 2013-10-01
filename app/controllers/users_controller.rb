@@ -57,7 +57,7 @@ class UsersController < ApplicationController
         user_sign_in @user
         redirect_to @user
       else
-        flash.now[:error] = "Ошибка авторизации"
+        flash.now[:error] = t('auth_error')
       end
     end
   end
