@@ -14,6 +14,7 @@ gem 'validates'
 gem 'ckeditor'
 gem 'coveralls', require: false
 gem 'draper'
+gem 'twitter-bootstrap-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
