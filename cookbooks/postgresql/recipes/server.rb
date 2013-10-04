@@ -9,6 +9,7 @@ pg_version = node["postgresql"]["version"]
 
 # install the package
 package "postgresql-#{pg_version}"
+package "libpq-dev"
 
 
 # environment

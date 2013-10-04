@@ -3,7 +3,7 @@ define :pg_user, :action => :create do
   when :create
     privileges = {
       :superuser => false,
-      :createdb => false,
+      :createdb => true,
       :login => true
     }
     privileges.merge! params[:privileges] if params[:privileges]
