@@ -13,3 +13,4 @@
 *.swm
 /config/database.yml
 /.sass-cache
+.vagrant
