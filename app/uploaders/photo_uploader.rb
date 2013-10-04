@@ -5,7 +5,6 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def paperclip_path
     ":rails_root/public/uploads/:id/:attachment/:style_:basename.:extension"
   end
-  include CarrierWave::RMagick
   storage :file
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
