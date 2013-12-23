@@ -2,7 +2,7 @@ class BlogPostsController < ApplicationController
   before_filter :check_user_signed, only: [ :new, :create ]
 
   def index
-    @blog_posts = BlogPost.all
+    @blog_posts = BlogPost.all.reverse
   end
 
   def show
