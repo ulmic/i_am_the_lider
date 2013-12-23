@@ -35,12 +35,10 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should not create user" do
-    district = create :district
-    attributes = attributes_for :user
-    attributes[:district_id] = district.id
+    attributes = { login: @user.login, password: @user.password }
 
     post :create, user: attributes
-    assert_redirected_to not_found_errors_path
+    assert_response :success
   end
 
   test "should show user" do
@@ -87,20 +85,6 @@ class UsersControllerTest < ActionController::TestCase
     attributes = { login: @user.login, password: @user.password }
     post :login, attributes
     assert_response :redirect
-  end
-
-  test "should not get new with no access" do
-    get :new
-    assert_redirected_to not_found_errors_path
-  end
-
-  test "should not create user with render new" do
-    admin_sign_in @admin
-    attributes = attributes_for :user
-    attributes[:first_name] = nil
-
-    post :create, user: attributes
-    assert_template :new
   end
 
   test "should not sign in with wrong login or password" do
