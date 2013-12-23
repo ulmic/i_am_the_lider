@@ -41,7 +41,7 @@ module AuthHelper
 
   def authenticate_admin!
     unless admin_signed_in?
-      redirect_to new_session_path
+      redirect_to new_admin_session_path
     end
   end
 

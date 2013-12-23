@@ -32,4 +32,5 @@ IAmTheLider::Application.routes.draw do
     resources :users
     resources :reports, only: [ :edit, :update, :destroy ]
   end
+  get "admin" => "admin/welcome#index"
 end
