@@ -74,27 +74,4 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to users_path
   end
 
-  test "should sign_in user" do
-    attributes = { login: @user.login, password: @user.password }
-    post :login, attributes
-    assert_response :redirect
-  end
-
-  test "should redirect because user is signed in" do
-    user_sign_in @user
-    attributes = { login: @user.login, password: @user.password }
-    post :login, attributes
-    assert_response :redirect
-  end
-
-  test "should not sign in with wrong login or password" do
-    attributes = attributes_for :user
-    post :login, attributes
-    assert_response :success
-  end
-
-  test "should sign out user" do
-    post :logout
-    assert_equal nil, session[:user_id]
-  end
 end

@@ -38,24 +38,4 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_url
   end
-
-  def login
-    if user_signed_in?
-      @user = current_user
-      redirect_to @user
-    else
-      @user = User.find_by_login params[:login]
-      if @user && authenticate_user?(@user, params[:password])
-        user_sign_in @user
-        redirect_to @user
-      else
-        flash.now[:error] = t('auth_error')
-      end
-    end
-  end
-
-  def logout
-    user_sign_out
-    redirect_to :root
-  end
 end

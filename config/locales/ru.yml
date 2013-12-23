@@ -1,4 +1,7 @@
 ru:
+  auth:                      Авторизация
+  sign_out:                  Выйти
+  cancel:                    Отмена
   wrong_login:               Неверный логин или пароль
   without_access_to_edit:    Вы не можете редактировать эту запись
   without_access_to_destroy: Вы не можете удалить эту запись
