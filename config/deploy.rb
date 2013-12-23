@@ -1,14 +1,13 @@
+set :stages, %w(production vagrant)
+set :default_stage, "vagrant"
+
+require 'capistrano/ext/multistage'
 require 'capi/unicorn'
 require "rvm/capistrano"
+require 'bundler/capistrano'
 
 set :application, "i_am_the_lider"
-set :rails_env,      "development"
-set :rvm_type, :user
-
-role :web, "ulgood.ru"
-role :db, "ulgood.ru", primary: true
-
-set :user, "user"
+set :rvm_type, :system
 
 set :use_sudo, false
 
@@ -22,30 +21,11 @@ default_run_options[:pty] = true
 
 set :repository, "https://github.com/ulmic/i_am_the_lider.git"  # Your clone URL
 set :scm, "git"
-set :branch, "master"
 set :deploy_via, :remote_cache
 
 desc "Seed database data"
 task :seed_data do
   run "cd #{current_path} && RAILS_ENV=#{rails_env} #{rake} db:seed"
 end
-
-namespace :db do
-  desc "Symlink to sqlite db"
-  task :symlink do
-    run "cd #{current_path}/db && ln -s #{app_dir}/shared/db/development.sqlite3"
-  end
-end
-
-namespace :bundler do
-  task :install do
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle install"
-  end
-end
-
-
-after 'deploy:create_symlink', 'db:symlink'
-after 'deploy:finalize_update', 'bundler:install'
-after 'deploy:migrate', 'bundler:install'
 
 #require 'capistrano_colors'

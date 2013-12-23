@@ -5,6 +5,7 @@ IAmTheLider::Application.configure do
   config.serve_static_assets = false
   config.assets.compress = true
   config.assets.compile = true
+  config.assets.precompile += %w( *.js *.css *.scss *.coffee *.ttf )
   config.assets.digest = true
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
