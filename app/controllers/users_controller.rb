@@ -8,11 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    if admin_signed_in?
-      @user = User.new
-    else
-      redirect_to not_found_errors_path
-    end
+    @user = User.new
   end
 
   def edit
