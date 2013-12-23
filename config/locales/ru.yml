@@ -9,6 +9,8 @@ ru:
   save:                      Сохранить
   view:                      Посмотреть
   actions: Действия
+  edit: Изменить
+  back: Назад
 
   time:
     formats:
