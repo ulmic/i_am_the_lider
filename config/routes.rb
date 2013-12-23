@@ -1,7 +1,6 @@
 IAmTheLider::Application.routes.draw do
-
   root to: 'welcome#index'
-  match "admin" => "admins#login"
+  get "admin" => "sessions#new"
   resource :session, only: [:new, :create, :destroy]
   mount Ckeditor::Engine => '/ckeditor'
   resources :news
@@ -25,8 +24,6 @@ IAmTheLider::Application.routes.draw do
   end
   resources :admins do
     collection do
-      post "login"
-      get "logout" => "admins#logout"
       get "panel" => "admins#panel"
     end
   end
