@@ -1,5 +1,6 @@
 IAmTheLider::Application.routes.draw do
   root to: 'welcome#index'
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :news, only: [ :show, :index ]
@@ -9,13 +10,9 @@ IAmTheLider::Application.routes.draw do
       resources :reports
       resources :blog_posts
     end
-    collection do
-      get "office" => "users#show"
-    end
   end
-  resource :welcome do
+  resource :welcome, only: :index do
     collection do
-      get "index" => "welcome#index"
       get "first_stage" => "welcome#first_stage"
       get "second_stage" => "welcome#second_stage"
       get "third_stage" => "welcome#third_stage"
@@ -28,6 +25,7 @@ IAmTheLider::Application.routes.draw do
     end
   end
   namespace :admin do
+    root to: "admin/welcome#index"
     resource :session, only: [ :new, :create, :destroy ]
     resources :welcome, only: [ :index ]
     resources :blog_posts, except: [:create, :new]
