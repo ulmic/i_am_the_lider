@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]).decorate
+    if user_signed_in?
+      @user = User.find(params[:id]).decorate
+    else
+      redirect_to new_session_path
+    end
   end
 
   def new
