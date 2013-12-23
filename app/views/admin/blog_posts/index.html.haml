@@ -1,10 +1,23 @@
-%h1= t('.blog_posts')
-- @blog_posts.each do |blog_post|
-  %a{ href: blog_post_path(blog_post) }
-    .well
-      %h4= blog_post.title
-      %small= blog_post.created_at.to_date
-      %p
-        != strip_tags blog_post.text.first(500)
-        %b ...
-%br
+- model_class = BlogPost
+.page-header
+  %h1=t '.title', default: model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:text)
+      %th= model_class.human_attribute_name(:user_id)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t 'actions', default: t("helpers.actions")
+  %tbody
+    - @blog_posts.each do |blog_post|
+      %tr
+        %td= link_to blog_post.id, blog_post_path(blog_post)
+        %td= blog_post.title
+        %td= blog_post.text
+        %td= blog_post.user_id
+        %td=l blog_post.created_at
+        %td
+          = link_to t('.edit', default: t("helpers.links.edit")), edit_blog_post_path(blog_post), class: 'btn btn-mini'
+          = link_to t('.destroy', default: t("helpers.links.destroy")), blog_post_path(blog_post), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'

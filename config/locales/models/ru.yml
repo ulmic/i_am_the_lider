@@ -46,6 +46,8 @@ ru:
       blog_post:
         title: Заголовок
         text: Текст
+        user_id: Автор
+        created_at: Создан
       admin:
         login: Логин
         password: Пароль
