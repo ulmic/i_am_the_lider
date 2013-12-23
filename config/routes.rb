@@ -11,9 +11,6 @@ IAmTheLider::Application.routes.draw do
       resources :blog_posts
     end
     collection do
-      get "login"
-      post "login"
-      put "logout"
       get "office" => "users#show"
     end
   end

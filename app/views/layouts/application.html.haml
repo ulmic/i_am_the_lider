@@ -3,7 +3,7 @@
   %title= t(".i_am_lider")
   = stylesheet_link_tag    "bootstrap_and_overrides"
   = stylesheet_link_tag    "application"
-  =# javascript_include_tag "application"
+  = javascript_include_tag "application"
   = favicon_link_tag 'favicon.ico'
   = csrf_meta_tags
 %body
@@ -24,7 +24,7 @@
           %h4= t('.i_am_lider')
       %ul.nav.nav-pills.nav-buttons
         %li
-          %a{ href: login_users_path }
+          %a{ href: new_session_path }
             %h3= t('.i_am_participant')
         %li
           %a{ href: users_path }
