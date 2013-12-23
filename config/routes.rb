@@ -33,5 +33,6 @@ IAmTheLider::Application.routes.draw do
     resources :blog_posts, except: [:create, :new]
     resources :news
     resources :users
+    resources :reports, only: [ :edit, :update, :destroy ]
   end
 end
