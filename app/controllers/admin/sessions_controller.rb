@@ -7,7 +7,7 @@ class Admin::SessionsController < ApplicationController
     @admin = Admin.find_by_login params[:admin][:login]
     if @admin && authenticate_admin?(@admin, params[:admin][:password])
       admin_sign_in @admin
-      redirect_to admin_path @admin
+      kedirect_to admin_welcome_index
     else
       @admin = Admin.new params[:admin]
       flash[:notice] = t('wrong_login')
