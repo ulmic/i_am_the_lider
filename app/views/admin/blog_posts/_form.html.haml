@@ -1,0 +1,14 @@
+= simple_form_for @blog_post do |f|
+  - if @blog_post.errors.any?
+    #error_explanation
+      %h2= "#{ pluralize(@blog_post.errors.count, "error") } #{ t('.prohibited_this_blog_post_from_being_saved') }:"
+      %ul
+        - @blog_post.errors.full_messages.each do |msg|
+          %li= msg
+  - f.with_options input_html: { class: "span6" } do |f|
+    = f.input :title, placeholder: "#{ t('.no_more_than_140_characters') }"
+    = f.label :text
+    = f.cktext_area :text
+    %br
+    .actions
+      = f.submit t('.save'), class: "btn"
