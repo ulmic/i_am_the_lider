@@ -6,6 +6,10 @@ ru:
   without_access_to_edit:    Вы не можете редактировать эту запись
   without_access_to_destroy: Вы не можете удалить эту запись
   auth_error:                Ошибка авторизации
+  save:                      Сохранить
+  view:                      Посмотреть
+  actions: Действия
+
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
@@ -35,6 +39,18 @@ ru:
         edit_users_data: 'Изменить данные участников'
         edit_blogs:      'Редактировать блоги'
         add_user:        'Добавить участника'
+    news:
+      edit:
+        edit_news: 		'Редактировать новость'
+      form:
+        prohibite_this_news_from_being_saved: 'зафиксировано во время сохранения'
+        no_more_than_140_characters:          'Не больше 140 символов'
+      new:
+        add_news: 		'Добавить новость'
+        back: 			'Назад'
+    blog_posts:
+      index:
+        title: Записи в блогах
 
   blog_posts:
     back:       'Назад'
@@ -55,21 +71,10 @@ ru:
       error_404: 		'Ошибка 404. Такой страницы не существует'
 
   news:
-    edit:
-      edit_news: 		'Редактировать новость'
-      view: 			'Посмотреть'
-      back: 			'Назад'
-    form:
-      prohibite_this_news_from_being_saved: 'зафиксировано во время сохранения'
-      no_more_than_140_characters:          'Не больше 140 символов'
-      save:                                 'Сохранить'
     index:
       contest_news: 'Новости конкурса'
       edit:         'Изменить'
       delete:       'Удалить'
-    new:
-      add_news: 		'Добавить новость'
-      back: 			'Назад'
     show:
       edit: 			'Изменить'
       news: 			'Новости'
