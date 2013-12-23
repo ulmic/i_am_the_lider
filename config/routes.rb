@@ -25,7 +25,6 @@ IAmTheLider::Application.routes.draw do
     end
   end
   namespace :admin do
-    root to: "admin/welcome#index"
     resource :session, only: [ :new, :create, :destroy ]
     resources :welcome, only: [ :index ]
     resources :blog_posts, except: [:create, :new]
