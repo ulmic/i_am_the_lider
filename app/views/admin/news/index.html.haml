@@ -9,6 +9,6 @@
         %b ...
       - if session[:admin_id]
         %p
-          = link_to t('.edit'), edit_admin_news_path(news), class: "btn"
-          = link_to t('.delete'), news, method: :delete, class: "btn"
+          = link_to t('edit'), edit_admin_news_path(news), class: "btn"
+          = link_to t('delete'), news, method: :delete, class: "btn"
 %br
