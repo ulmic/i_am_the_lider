@@ -32,4 +32,7 @@ IAmTheLider::Application.routes.draw do
       get "not_found"
     end
   end
+  namespace :admin do
+    resource :session, only: [ :new, :create, :destroy ]
+  end
 end
