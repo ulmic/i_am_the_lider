@@ -33,6 +33,6 @@ IAmTheLider::Application.routes.draw do
   end
   namespace :admin do
     resource :session, only: [ :new, :create, :destroy ]
-    resource :welcome, only: [ :index ]
+    resources :welcome, only: [ :index ]
   end
 end
