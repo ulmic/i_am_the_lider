@@ -26,19 +26,15 @@ ru:
       of_ulyanovsk_region:     'Ульяновской области'
       youth_initiative_centre: 'Молодёжный инициативный центр'
 
-  admins:
-    login:
-      login: 			'Логин'
-      password: 		'Пароль'
-      enter: 			'Войти'
-    panel:
-      hello_admin:     'Здравствуйте, Администратор!!'
-      you_can:         'Вы можете'
-      add_news:        'Добавить новость'
-      edit_users_data: 'Изменить данные участников'
-      edit_blogs:      'Редактировать блоги'
-      add_user:        'Добавить участника'
-      sign_out:        'Выйти'
+  admin:
+    welcome:
+      index:
+        hello_admin:     'Здравствуйте, Администратор!!'
+        you_can:         'Вы можете'
+        add_news:        'Добавить новость'
+        edit_users_data: 'Изменить данные участников'
+        edit_blogs:      'Редактировать блоги'
+        add_user:        'Добавить участника'
 
   blog_posts:
     back:       'Назад'
