@@ -1,0 +1,10 @@
+%h1= t('.blog_posts')
+- @blog_posts.each do |blog_post|
+  %a{ href: blog_post_path(blog_post) }
+    .well
+      %h4= blog_post.title
+      %small= blog_post.created_at.to_date
+      %p
+        != strip_tags blog_post.text.first(500)
+        %b ...
+%br

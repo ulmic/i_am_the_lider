@@ -39,6 +39,12 @@ module AuthHelper
     admin.password === password
   end
 
+  def authenticate_admin!
+    unless admin_signed_in?
+      redirect_to new_session_path
+    end
+  end
+
   def check_access_to_edit?(instance)
     admin_signed_in? || (user_signed_in? && instance.user_id == current_user.id)
   end
