@@ -1,0 +1,8 @@
+%h4= t('.hello_admin')
+%b= t('.you_can')
+%a.btn.btn-large{ href: new_admin_news_path }
+  = t('.add_news')
+%a.btn.btn-large{ href: admin_blog_posts_path }
+  = t('.edit_blogs')
+%p
+  = link_to t('sign_out'), admin_session_path, method: :delete, class: :btn

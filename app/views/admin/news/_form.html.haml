@@ -1,0 +1,10 @@
+= simple_form_for @news, url: admin_news_index_path do |f|
+  = f.error_notification
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :title, placeholder: t('.no_more_than_140_characters')
+    = f.label :body
+    = f.cktext_area :body
+    = f.label :pusblished_at
+    = f.date_select :pusblished_at
+    .actions
+      = f.button :submit, class: :btn

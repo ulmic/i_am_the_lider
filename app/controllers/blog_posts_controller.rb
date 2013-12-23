@@ -2,7 +2,7 @@ class BlogPostsController < ApplicationController
   before_filter :check_user_signed, only: [ :new, :create ]
 
   def index
-    @blog_posts = BlogPost.all
+    @blog_posts = BlogPost.all.reverse
   end
 
   def show
@@ -23,7 +23,7 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new params[:blog_post]
-    if (admin_signed_in? or user_signed_in?)
+    if user_signed_in?
       @blog_post.user_id = params[:id]
       if @blog_post.save
         redirect_to @blog_post.user
