@@ -1,7 +1,8 @@
 IAmTheLider::Application.routes.draw do
   root to: 'welcome#index'
   mount Ckeditor::Engine => '/ckeditor'
-  resources :news
+
+  resources :news, only: [ :show, :index ]
   resource :session, only: [:new, :create, :destroy]
   resources :users do
     member do
