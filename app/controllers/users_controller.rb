@@ -16,15 +16,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    if admin_signed_in?
-      @user = User.new params[:user]
-      if @user.save
-        redirect_to @user, notice: 'User was successfully created.'
-      else
-        render action: :new
-      end
+    @user = User.new params[:user]
+    if @user.save
+      redirect_to @user, notice: 'User was successfully created.'
     else
-      redirect_to not_found_errors_path
+      render action: :new
     end
   end
 
