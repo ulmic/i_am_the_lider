@@ -21,11 +21,6 @@ IAmTheLider::Application.routes.draw do
       get "competition" => "welcome#competition"
     end
   end
-  resources :admins do
-    collection do
-      get "panel" => "admins#panel"
-    end
-  end
   resource :errors do
     collection do
       get "not_found"
@@ -34,5 +29,6 @@ IAmTheLider::Application.routes.draw do
   namespace :admin do
     resource :session, only: [ :new, :create, :destroy ]
     resources :welcome, only: [ :index ]
+    resources :blog_posts, except: [:create, :new]
   end
 end
