@@ -2,6 +2,7 @@ IAmTheLider::Application.routes.draw do
 
   root to: 'welcome#index'
   match "admin" => "admins#login"
+  resource :session, only: [:new, :create, :destroy]
   mount Ckeditor::Engine => '/ckeditor'
   resources :news
   resources :users do
