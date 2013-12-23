@@ -1,15 +1,15 @@
 = simple_form_for @news do |f|
   - if @news.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@news.errors.count, "error")} #{t(".prohibite_this_news_from_being_saved")}:"
+      %h2= "#{ pluralize(@news.errors.count, "error") } #{t(".prohibite_this_news_from_being_saved")}:"
       %ul
         - @news.errors.full_messages.each do |msg|
           %li= msg
-  - f.with_options :input_html => {:class => "span6"} do |f|
-    = f.input :title, :placeholder => "#{t('.no_more_than_140_characters')}"
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :title, placeholder: t('.no_more_than_140_characters')
     = f.label :body
     = f.cktext_area :body
     = f.label :pusblished_at
     = f.date_select :pusblished_at
     .actions
-      = f.submit t('.save'), :class => "btn"
+      = f.submit t('save'), class: "btn"
