@@ -15,9 +15,16 @@
   .span4
     %hr
     %a &copy
+    = copyright_notice_year_range(2013)
     %a{ href: "http://ulmic.ru" }
       = t('.youth_initiative_centre')
-    2013
+    %br
+    %small
+      = t('.this_project_develop_by_programmers_of_ulmic')
+    %br
+    %small
+      %a{ href: "http://github.com/ulmic/i_am_the_lider" }
+        = t('.this_project_on_the_Github')
   %a{ href: "http://vk.com/ulmic" }
     .span1.logo.mini.vk.there_is_margin
   %a{ href: "https://www.facebook.com/molcenter" }
