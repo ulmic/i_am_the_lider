@@ -15,6 +15,7 @@ gem 'ckeditor'
 gem 'coveralls', require: false
 gem 'draper'
 gem 'twitter-bootstrap-rails'
+gem 'russian'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
