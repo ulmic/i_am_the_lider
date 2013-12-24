@@ -11,10 +11,10 @@ ru:
         success: Запись удалена
     reports:
       create:
-        success: Отчёт создана
+        success: Отчёт создан
         error: Ошибка в заполнении полей
       update:
-        success: Отчёт обновлена
+        success: Отчёт обновлен
         error: Ошибка в заполении полей
       destroy:
         success: Отчёт удален
@@ -30,3 +30,39 @@ ru:
         error: Ошибка в заполении полей
       destroy:
         success: Анкета удалена
+    admin:
+      blog_posts:
+        update:
+          success: Запись обновлена
+          error: Ошибка в заполении полей
+        destroy:
+          success: Запись удалена
+      news:
+        create:
+          success: Новость создана
+          error: Ошибка в заполнении полей
+        update:
+          success: Новость обновлена
+          error: Ошибка в заполении полей
+        destroy:
+          success: Новость удалена
+      reports:
+        update:
+          success: Отчёт обновлен
+          error: Ошибка в заполении полей
+        destroy:
+          success: Отчёт удален
+      sessions:
+        create:
+          success: Авторизация прошла успешно
+        destroy:
+          success: 'Кто главный? Админ главный'
+      users:
+        create:
+          success: Пользователь создан
+          error: Ошибка в заполнении полей
+        update:
+          success: Пользователь обновлен
+          error: Ошибка в заполении полей
+        destroy:
+          success: Пользователь удален
