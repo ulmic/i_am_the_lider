@@ -43,6 +43,7 @@ GEM
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap_flash_messages (0.0.7)
     builder (3.0.4)
     capi (0.1.1)
       capistrano
@@ -215,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap_flash_messages
   capi
   capistrano
   capistrano_colors

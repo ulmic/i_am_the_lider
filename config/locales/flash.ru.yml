@@ -1,0 +1,32 @@
+ru:
+  flash_messages:
+    blog_posts:
+      create:
+        success: Запись создана
+        error: Ошибка в заполнении полей
+      update:
+        success: Запись обновлена
+        error: Ошибка в заполении полей
+      destroy:
+        success: Запись удалена
+    reports:
+      create:
+        success: Отчёт создана
+        error: Ошибка в заполнении полей
+      update:
+        success: Отчёт обновлена
+        error: Ошибка в заполении полей
+      destroy:
+        success: Отчёт удален
+    sessions:
+      create:
+        success: Авторизация прошла успешно
+    users:
+      create:
+        success: Заявка подана
+        error: Ошибка в заполнении полей
+      update:
+        success: Анкета обновлена
+        error: Ошибка в заполении полей
+      destroy:
+        success: Анкета удалена

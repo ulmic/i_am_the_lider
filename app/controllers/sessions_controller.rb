@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email params[:user][:email]
     if @user && authenticate_user?(@user, params[:user][:password])
       user_sign_in @user
+      flash_now! :success
       redirect_to user_path @user
     else
       @user = User.new params[:user]
