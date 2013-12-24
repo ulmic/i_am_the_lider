@@ -2,13 +2,13 @@ class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
       t.string :title
-      t.string :goal
-      t.string :tasks
-      t.string :target_audience
-      t.string :place
-      t.string :description
+      t.text :goal
+      t.text :tasks
+      t.text :target_audience
+      t.text :place
+      t.text :description
       t.date :date
-      t.string :results
+      t.text :results
 
       t.timestamps
     end

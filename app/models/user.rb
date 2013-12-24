@@ -36,8 +36,9 @@ class User < ActiveRecord::Base
                         allow_blank: true
   validates :twitter, url: true,
                       allow_blank: true
-  validates :login, presence: true, length: { minimum: 4, maximum: 8 }
+  validates :login, presence: true, length: { minimum: 4, maximum: 8 }, login: true
   validates :password, presence: true, length: { minimum: 8, maximum: 16 }
   validates :adress_index, presence: true, length: { is: 6 }
   validates :locality, presence: true
+  validates :avatar, presence: true
 end
