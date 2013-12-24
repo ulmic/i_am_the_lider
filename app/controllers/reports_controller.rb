@@ -18,11 +18,13 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new params[:report]
-    if (admin_signed_in? or user_signed_in?)
+    if user_signed_in?
       @report.user_id = params[:id]
       if @report.save
-        redirect_to @report.user, notice: t('.report_added')
+        flash_now! :success
+        redirect_to @report.user
       else
+        flash_now! :error
         render action: :new
       end
     else
@@ -34,8 +36,10 @@ class ReportsController < ApplicationController
     @report = Report.find params[:id]
     if check_access_to_edit? @report
       if @report.update_attributes params[:report]
-        redirect_to @report.user, notice: t('.report_updated')
+        flash_now! :success
+        redirect_to @report.user
       else
+        flash_now! :error
         render action: :edit
       end
     else
@@ -46,6 +50,7 @@ class ReportsController < ApplicationController
   def destroy
     @report = Report.find params[:id]
     @report.destroy
+    flash_now! :success
     redirect_to reports_url
   end
 end

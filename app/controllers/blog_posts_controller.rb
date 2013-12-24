@@ -26,8 +26,10 @@ class BlogPostsController < ApplicationController
     if user_signed_in?
       @blog_post.user_id = params[:id]
       if @blog_post.save
+        flash_now!(:success)
         redirect_to @blog_post.user
       else
+        flash_now!(:error)
         render action: :new
       end
     else
@@ -39,8 +41,10 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find params[:id]
     if check_access_to_edit? @blog_post
       if @blog_post.update_attributes params[:blog_post]
+        flash_now!(:success)
         redirect_to @blog_post, notice: t('blog_post_added')
       else
+        flash_now!(:error)
         render action: :edit
       end
     else
@@ -52,6 +56,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find params[:id]
     if check_access_to_edit? @blog_post
       @blog_post.destroy
+      flash_now! :success
       redirect_to blog_posts_url
     else
       redirect_to @blog_post.user, notice: t('without_access_to_destroy')
