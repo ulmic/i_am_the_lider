@@ -30,6 +30,7 @@ group :test do
   gem 'factory_girl_rails', require: false
   gem 'turn'
   gem 'tconsole'
+  gem 'pry'
 end
 
 group :development do
