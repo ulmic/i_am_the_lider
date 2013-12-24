@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :middle_name, presence: true
   validates :last_name, presence: true
+  validates :home_phone, phone: true
   validates :mobile_phone, presence: true, phone: true
   validates :vkontakte, url: true,
                         allow_blank: true
