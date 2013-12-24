@@ -48,6 +48,7 @@
             %h3= t('.stages')
     .row-fluid
       .span12.content
+        = flash_messages :close
         = yield
     .row-fluid
       = render 'layouts/footer'
