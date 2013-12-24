@@ -18,29 +18,24 @@ class Admin::UsersController < Admin::ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
-      flash_now! :success
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to @user, flash: :success
     else
-      flash_now! :error
-      render action: :new
+      render action: :new, flash: :error
     end
   end
 
   def update
     @user = User.find params[:id]
     if @user.update_attributes params[:user]
-      flash_now! :success
-      redirect_to @user
+      redirect_to @user, flash: :success
     else
-      flash_now! :error
-      render action: :edit
+      render action: :edit, flash: :error
     end
   end
 
   def destroy
     @user = User.find params[:id]
     @user.destroy
-    flash_now! :success
-    redirect_to users_url
+    redirect_to users_url, flash: :success
   end
 end

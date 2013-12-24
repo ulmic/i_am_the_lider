@@ -10,18 +10,15 @@ class Admin::BlogPostsController < Admin::ApplicationController
   def update
     @blog_post = BlogPost.find params[:id]
     if @blog_post.update_attributes params[:blog_post]
-      flash_now! :success
-      redirect_to @blog_post, notice: t('blog_post_added')
+      redirect_to @blog_post, flash: :success
     else
-      flash_now! :error
-      render action: :edit
+      render action: :edit, flash: :error
     end
   end
 
   def destroy
     @blog_post = BlogPost.find params[:id]
     @blog_post.destroy
-    flash_now! :success
-    redirect_to admin_blog_posts_url
+    redirect_to admin_blog_posts_url, flash: :success
   end
 end

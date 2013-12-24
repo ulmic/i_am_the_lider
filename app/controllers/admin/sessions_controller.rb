@@ -7,8 +7,7 @@ class Admin::SessionsController < ApplicationController
     @admin = Admin.find_by_login params[:admin][:login]
     if @admin && authenticate_admin?(@admin, params[:admin][:password])
       admin_sign_in @admin
-      flash_now! :success
-      redirect_to admin_welcome_index_path
+      redirect_to admin_welcome_index_path, flash: :success
     else
       @admin = Admin.new params[:admin]
       flash[:notice] = t('wrong_login')
@@ -18,7 +17,6 @@ class Admin::SessionsController < ApplicationController
 
   def destroy
     admin_sign_out
-    flash_now! :success
-    redirect_to :root
+    redirect_to :root, flash: :success
   end
 end
