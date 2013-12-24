@@ -2,7 +2,7 @@
 - @news.each do |news|
   %a{ href: news_path(news) }
     .well
-      = image_tag news.photo.thumb, class: :main_photo_thumb
+      = image_tag news.photo.big_thumb, class: :main_photo_big_thumb
       %h4= news.title
       %small= news.pusblished_at
       %p
