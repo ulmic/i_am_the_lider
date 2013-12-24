@@ -1,4 +1,6 @@
 %h1
-  = t('.new_user')
+  = t('apply_for_participation')
+= render 'annotation'
+%hr
 = render 'form'
-= link_to t('.back'), users_path
+= link_to t('.back'), users_path, class: 'btn'

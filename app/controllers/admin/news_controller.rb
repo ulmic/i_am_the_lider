@@ -18,24 +18,24 @@ class Admin::NewsController < Admin::ApplicationController
   def create
     @news = News.new params[:news]
     if @news.save
-      redirect_to news_path @news
+      redirect_to admin_news_index_path, flash: :success
     else
-      render action: :new
+      render action: :new, flash: :error
     end
   end
 
   def update
     @news = News.find params[:id]
     if @news.update_attributes params[:news]
-      redirect_to @news
+      redirect_to admin_news_index_path, flash: :success
     else
-      render action: :edit
+      render action: :edit, flash: :error
     end
   end
 
   def destroy
     @news = News.find params[:id]
     @news.destroy
-    redirect_to news_index_url
+    redirect_to news_index_url, flash: :success
   end
 end

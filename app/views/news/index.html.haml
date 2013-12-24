@@ -2,13 +2,14 @@
 - @news.each do |news|
   %a{ href: news_path(news) }
     .well
+      = image_tag news.photo.big_thumb, class: :main_photo_big_thumb
       %h4= news.title
       %small= news.pusblished_at
       %p
         != strip_tags news.body.first(1000)
         %b ...
-      - if session[:admin_id]
+      - if admin_signed_in?
         %p
-          = link_to t('.edit'), edit_news_path(news), class: "btn"
+          = link_to t('.edit'), edit_admin_news_path(news), class: "btn"
           = link_to t('.delete'), news, method: :delete, class: "btn"
 %br

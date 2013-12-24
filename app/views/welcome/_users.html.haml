@@ -3,7 +3,7 @@
   - if @users.blank?
     Список участников пуст.
     %a{ href: new_user_path } Зарегистрируйтесь!
-  - @users.first(3).each do |user|
+  - @users.each do |user|
     .span1.user_ot
       %a{ href: user_path(user) }
         %img.mini_equal_size.img-circle.small{ src: user.avatar }
@@ -11,12 +11,6 @@
         %small.very_small_text= user.first_name
         %br
         %small.very_small_text= user.middle_name
-  - @users.last(3).each do |user|
-    .span1.user_ot
-      %a{ href: user_path(user) }
-        %img.mini_equal_size.img-circle.small{ src: user.avatar }
-      %a{ href: user_path(user) }
-        %small.very_small_text= user.first_name
-        %br
-        %small.very_small_text= user.middle_name
-
+.row
+  %p{ align: :center }
+    = link_to t('.view_competitors_list'), users_path, class: 'btn btn-primary'

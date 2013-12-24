@@ -1,11 +1,11 @@
 .well
   %h4 Новости конкурса
   - @news.each do |news|
-    %hr
-    %a{ href: news_path(news) }
-      %h4= news.title
-      %p
-        != strip_tags news.body.first(600)
-        %b ...
-      %small= news.pusblished_at
-    %hr
+    .well
+      = image_tag news.photo.thumb, class: :main_photo_thumb
+      %a{ href: news_path(news) }
+        %h4= news.title
+        %p
+          != strip_tags news.body.first(600)
+          %b ...
+        %small= news.pusblished_at

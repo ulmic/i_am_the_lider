@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
                   :school,
                   :twitter,
                   :vkontakte,
-                  :avatar
+                  :avatar,
+                  :locality,
+                  :adress_index
 
   belongs_to :district
   has_one :project
@@ -29,11 +31,14 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :middle_name, presence: true
   validates :last_name, presence: true
-  validates :mobile_phone, presence: true
+  validates :mobile_phone, presence: true, phone: true
   validates :vkontakte, url: true,
                         allow_blank: true
   validates :twitter, url: true,
                       allow_blank: true
-  validates :login, presence: true
+  validates :login, presence: true, length: { minimum: 4, maximum: 8 }, login: true
   validates :password, presence: true, length: { minimum: 8, maximum: 16 }
+  validates :adress_index, presence: true, length: { is: 6 }
+  validates :locality, presence: true
+  validates :avatar, presence: true
 end

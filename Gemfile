@@ -15,6 +15,8 @@ gem 'ckeditor'
 gem 'coveralls', require: false
 gem 'draper'
 gem 'twitter-bootstrap-rails'
+gem 'russian'
+gem 'bootstrap_flash_messages'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -30,6 +32,7 @@ group :test do
   gem 'factory_girl_rails', require: false
   gem 'turn'
   gem 'tconsole'
+  gem 'pry'
 end
 
 group :development do

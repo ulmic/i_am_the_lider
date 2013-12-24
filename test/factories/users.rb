@@ -15,5 +15,7 @@ FactoryGirl.define do
     twitter      { generate :url }
     vkontakte    { generate :url }
     avatar       { generate :file }
+    locality     { generate :string }
+    adress_index "432000"
   end
 end

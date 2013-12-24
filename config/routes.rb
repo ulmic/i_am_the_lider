@@ -3,7 +3,7 @@ IAmTheLider::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :news
+  resources :news, only: [ :show, :index ]
   resource :session, only: [:new, :create, :destroy]
   resources :users do
     member do

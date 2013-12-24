@@ -8,13 +8,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.integer :district_id
       t.date :birth_date
-      t.string :school
-      t.string :group
+      t.text :school
+      t.text :group
       t.string :mobile_phone
       t.string :home_phone
-      t.string :email
-      t.string :vkontakte
-      t.string :twitter
+      t.text :email
+      t.text :vkontakte
+      t.text :twitter
 
       t.timestamps
     end
