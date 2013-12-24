@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class PhotoUploader < CarrierWave::Uploader::Base
+  include CarrierWave::RMagick
   include CarrierWave::Compatibility::Paperclip
   def paperclip_path
     ":rails_root/public/uploads/:id/:attachment/:style_:basename.:extension"
@@ -11,5 +12,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
   def extension_white_list
     %w(jpg jpeg gif png)
+  end
+  version :thumb do
+    process resize_to_fit: [100, 100]
   end
 end

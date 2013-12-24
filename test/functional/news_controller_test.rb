@@ -4,6 +4,7 @@ class NewsControllerTest < ActionController::TestCase
   setup do
     @news = create :news
     @admin = create :admin
+    admin_sign_in @admin
   end
 
   test "should get index" do

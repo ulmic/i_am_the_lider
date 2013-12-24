@@ -1,9 +1,12 @@
+= stylesheet_link_tag :news
 %p
   %h2= @news.title
 %p
   %small= @news.pusblished_at
 %p
+  = image_tag @news.photo, class: :main_photo
+%p
   != @news.body
   = link_to t('back'), news_index_path, class: "btn"
 - if admin_signed_in?
-  = link_to t('edit'), edit_news_path(@news), class: "btn"
+  = link_to t('edit'), edit_admin_news_path(@news), class: "btn"
