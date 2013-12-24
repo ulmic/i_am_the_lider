@@ -6,3 +6,5 @@ ru:
           attributes:
             mobile_phone:
               phone: введён неправильно
+            login:
+              login: должен содержать только латинские буквы и цифры
