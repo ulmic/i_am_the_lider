@@ -11,3 +11,6 @@
         %small.very_small_text= user.first_name
         %br
         %small.very_small_text= user.middle_name
+.row
+  %p{ align: :center }
+    = link_to t('.view_competitors_list'), users_path, class: 'btn btn-primary'

@@ -143,10 +143,12 @@ ru:
   welcome:
     index:
       reports:                 'Отчёты'
-      participants:		'Участники'
+      participants:            'Участники'
       participants_list_empty: 'Список участников пуст.'
       sign_up:                 'Зарегистрируйтесь!'
       blog_posts_empty:        'Блоги пока что пусты...'
       i_am_lider:              'Я - лидер!'
+    users:
+      view_competitors_list:   'Посмотреть список участников'
     news:
       news: 			'Новости конкурса'
