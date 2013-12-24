@@ -23,6 +23,8 @@ ru:
         twitter: Аккаунт в твиттере
         vkontakte: Аккаунт ВКонтакте
         avatar_content_type: Загруженный файл
+        locality: Населённый пункт
+        adress_index: Почтовый индекс
       report:
         date: Дата проведения
         member_count: Количество участников

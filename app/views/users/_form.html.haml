@@ -14,6 +14,8 @@
       = f.input :middle_name
       = f.input :last_name
       = f.association :district, as: :select, label_method: :title, value_method: :id
+      = f.input :locality
+      = f.input :adress_index, as: :string
       = f.input :birth_date, as: :date, start_year: Date.today.year - 21,
                               end_year: Date.today.year - 10,
                               order: [:day, :month, :year]
