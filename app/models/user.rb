@@ -40,4 +40,5 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 8, maximum: 16 }
   validates :adress_index, presence: true, length: { is: 6 }
   validates :locality, presence: true
+  validates :avatar, presence: true
 end
