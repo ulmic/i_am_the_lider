@@ -1,5 +1,6 @@
 ru:
   auth:                      Авторизация
+  sign_in:                   Войти
   sign_out:                  Выйти
   cancel:                    Отмена
   wrong_login:               Неверный логин или пароль
@@ -11,6 +12,11 @@ ru:
   actions: Действия
   edit: Изменить
   back: Назад
+  apply_for_participation: Подать заявку
+  apply_for_participation_on_competition: 'Подать заявку на XII областной конкурс актива учащейся молодёжи'
+  i_am_lider: '"Я-лидер!"'
+  important_fields: '* - обязательные поля отмечены звёздочкой'
+  important_field: '*'
 
   time:
     formats:
@@ -101,8 +107,8 @@ ru:
       back: 			'Назад'
     form:
       prohibited_this_user_from_being_saved: 'зафиксировано во время сохранения'
-      login_no_thin_than_3_characters_and_no_more_than_8_characters: 'Логин больше 3 и меньше 8 символов'
-      password_no_thin_than_3_characters_and_no_more_than_8_characters: 'Пароль больше 3 и меньше 8 символов'
+      login_no_thin_than_3_characters_and_no_more_than_8_characters: 'Твой личный логин на это сайте. Логин больше 3 и меньше 8 символов'
+      password_no_thin_than_3_characters_and_no_more_than_8_characters: 'Пароль для входа на сайт. Пароль больше 3 и меньше 8 символов'
       example_mobile_phone: 	'пример: +7960123456'
       example_home_phone: 	'пример +78422212121'
       link_to_vk_account: 	'Ссылка на Вашу страницу ВКонтакте'
@@ -110,6 +116,7 @@ ru:
       save: 			'Сохранить'
     index:
       semifinalists: 	'Полуфиналисты XI конкурса Я-лидер!'
+      competitors_list: Список участников
     login:
       pass_auth: 		"Пройти авторизацию участника XI конкурса актива учащейся молодёжи 'Я - лидер!'"
       login: 			'Логин'

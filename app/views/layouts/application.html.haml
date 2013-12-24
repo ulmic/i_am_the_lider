@@ -23,9 +23,17 @@
           =t('.learning_youth_contest')
           %h4= t('.i_am_lider')
       %ul.nav.nav-pills.nav-buttons
-        %li
-          %a{ href: new_session_path }
-            %h3= t('.i_am_participant')
+        - if user_signed_in?
+          %li
+            %a{ href: user_path(current_user) }
+              %h3= t('.i_am_participant')
+        - else
+          %li
+            %a{ href: new_user_path }
+              %h3= t('apply_for_participation')
+          %li
+            %a{ href: new_session_path }
+              %h3= t('sign_in')
         %li
           %a{ href: users_path }
             %h3= t('.participants')

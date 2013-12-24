@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524203658) do
+ActiveRecord::Schema.define(:version => 20131223234304) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -116,6 +116,8 @@ ActiveRecord::Schema.define(:version => 20130524203658) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "adress_index"
+    t.string   "locality"
   end
 
 end
