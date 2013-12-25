@@ -8,8 +8,9 @@
           %li= msg
   - f.with_options input_html: { class: :span6 }, html: {  multipart: true  } do |f|
     .field
-      = f.input :login, placeholder: "#{ t('.login_no_thin_than_3_characters_and_no_more_than_8_characters') }"
-      = f.input :password, placeholder: "#{ t('.password_no_thin_than_3_characters_and_no_more_than_8_characters') }"
+      - unless @user.login.present?
+        = f.input :login, placeholder: "#{ t('.login_no_thin_than_3_characters_and_no_more_than_8_characters') }"
+        = f.input :password, placeholder: "#{ t('.password_no_thin_than_3_characters_and_no_more_than_8_characters') }"
       = f.input :first_name
       = f.input :middle_name
       = f.input :last_name
@@ -28,6 +29,8 @@
       = f.input :twitter, placeholder: "#{ t('.link_to_twitter_account') }"
       %hr
       = f.label :avatar
+      - if @user.avatar.present?
+        = image_tag @user.avatar.thumb
       = t('important_field')
       = f.file_field :avatar
     %br
