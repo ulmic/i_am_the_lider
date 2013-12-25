@@ -131,8 +131,6 @@ ru:
       new_user: 		'Регистрация участника'
       back: 			'Назад'
     office:
-      hello:                'Здравствуйте,'
-      log_out:              'Выйти'
       report:               'Отчёт о мероприятии'
       download_archive:     'Скачать архив'
       there_is_not_archive: 'Архив не загружен'
