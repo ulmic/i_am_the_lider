@@ -5,7 +5,7 @@
     .row-fluid.has_top_margin
       %a{ href: user_path(user) }
         .span2
-          %img.img-polaroid.width-200px{ src: user.avatar }
+          %img.img-polaroid{ src: user.avatar.thumb_fill }
         .span3
           .row-fluid
             %h4= user.title
