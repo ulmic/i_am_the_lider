@@ -15,3 +15,10 @@ production:
   pool: 5
   username: lider
   password: lider73
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: lider_staging
+  pool: 5
+  username: lider
+  password: lider73
