@@ -143,6 +143,8 @@ ru:
       edit_report:   'Изменить отчёт о мероприятии'
       edit_user:     'Изменить аккаунт'
       add_blog_post: 'Добавить запись в блог'
+      accept_user: Подтвердить заявку
+      reserve_user: Оставить не подтверждённой
 
   welcome:
     index:

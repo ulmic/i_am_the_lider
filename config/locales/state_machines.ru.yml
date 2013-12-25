@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    state_machines:
+      user:
+        confirm_state:
+          new:      Новая заявка
+          accepted: Подтверждёна
+          reserver: На данный момент не подтверждёна
+          busted: Удалена
