@@ -1,8 +1,7 @@
 %h4= t('.hello_admin')
+%h3= t('.all_light_blue_buttons_are_admins_buttons')
 %b= t('.you_can')
-%a.btn.btn-large{ href: new_admin_news_path }
-  = t('.add_news')
-%a.btn.btn-large{ href: admin_blog_posts_path }
-  = t('.edit_blogs')
-%p
-  = link_to t('sign_out'), admin_session_path, method: :delete, class: :btn
+%br
+= link_to t('.add_news'), new_admin_news_path, class: 'btn btn-large btn-info'
+= link_to t('.edit_blogs'), admin_blog_posts_path, class: 'btn btn-large btn-info'
+= link_to t('sign_out'), admin_session_path, method: :delete, class: 'btn btn-large btn-info'
