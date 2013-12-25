@@ -35,7 +35,19 @@ class Admin::UsersController < Admin::ApplicationController
 
   def destroy
     @user = User.find params[:id]
-    @user.destroy
+    @user.bust
     redirect_to users_url, flash: :success
+  end
+
+  def accept
+    @user = User.find params[:id]
+    @user.accept
+    redirect_to @user
+  end
+
+  def reserve
+    @user = User.find params[:id]
+    @user.reserve
+    redirect_to @user
   end
 end

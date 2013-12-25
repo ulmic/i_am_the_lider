@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
                   :vkontakte,
                   :avatar,
                   :locality,
-                  :adress_index
+                  :adress_index,
+                  :confirm_state
 
   belongs_to :district
   has_one :project
@@ -40,4 +41,25 @@ class User < ActiveRecord::Base
   validates :adress_index, presence: true, length: { is: 6 }
   validates :locality, presence: true
   validates :avatar, presence: true
+  validates :confirm_state, presence: true
+
+  state_machine :confirm_state, initial: :new do
+    state :new
+    state :accepted
+    state :busted
+    state :reserved
+
+    event :accept do
+      transition [ :new, :reserved ] => :accepted
+    end
+
+    event :bust do
+      transition [ :new, :reserved ] => :busted
+    end
+
+    event :reserve do
+      transition [ :new ] => :reserved
+    end
+
+  end
 end

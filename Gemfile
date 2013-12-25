@@ -17,6 +17,7 @@ gem 'draper'
 gem 'twitter-bootstrap-rails'
 gem 'russian'
 gem 'bootstrap_flash_messages'
+gem 'state_machine'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
