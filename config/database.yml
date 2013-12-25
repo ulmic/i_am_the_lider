@@ -9,13 +9,9 @@ test:
   pool: 5
   timeout: 5000
 production:
-#  adapter: postgresql
-#  encoding: unicode
-#  database: lider_production
-#  pool: 5
-#  username: lider
-#  password: lider73
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: lider_production
   pool: 5
-  timeout: 5000
+  username: lider
+  password: lider73
