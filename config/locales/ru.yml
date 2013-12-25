@@ -55,6 +55,7 @@ ru:
       form:
         prohibite_this_news_from_being_saved: 'зафиксировано во время сохранения'
         no_more_than_140_characters:          'Не больше 140 символов'
+        this_is_main_photo: Это фото будет отображаться как главное фото в новости
       new:
         add_news: 		'Добавить новость'
         back: 			'Назад'
