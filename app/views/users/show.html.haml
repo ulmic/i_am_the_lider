@@ -1,4 +1,6 @@
 = render 'office'
-- if current_user || admin_signed_in?
+- if current_user
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-success'
   = link_to t('sign_out'), session_path, method: :delete, class: 'btn btn-large btn-important'
+- if admin_signed_in?
+  = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-info'
