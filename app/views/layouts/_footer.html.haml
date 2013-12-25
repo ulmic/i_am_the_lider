@@ -2,14 +2,18 @@
   %h3= t('.organizers')
   %a{ href: "http://ulmic.ru" }
     .logo.mic
-  %a{ href: "http://mpol.ulgov.ru" }
-    .logo.dep
-  %a{ href: "http://minobr.ulgov.ru" }
-    .logo.gov
-  %a{ href: "http://minobr.ulgov.ru" }
-    .logo
-      .very_small_text= t('.ministry_of_education')
-      .very_small_text= t('.of_ulyanovsk_region')
+.row-fluid.left_text_align
+  %h3= t('.partners')
+  .span2.center_text_align
+    %a{ href: "http://minobr.ulgov.ru" }
+      Министерство образования и науки Ульяновской области
+  .span2.center_text_align
+    %a{ href: "http://mvp.ulgov.ru" }
+      Министерство внутренней политики Ульяновской области
+  .span2
+    %a{ href: "http://hh.ru" }
+      = image_tag "head-hunter.png", style: "width: 150px"
+
 .row-fluid
   .offset2
   .span4

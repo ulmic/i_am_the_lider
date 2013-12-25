@@ -38,12 +38,13 @@ ru:
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
     footer:
-      organizers:              'Организаторы'
+      organizers:              Организатор
       ministry_of_education:   'Министерство образования'
       of_ulyanovsk_region:     'Ульяновской области'
       youth_initiative_centre: 'Молодёжный инициативный центр'
       this_project_develop_by_programmers_of_ulmic: Команда разработчиков ИТ-проектов МИЦ
       this_project_on_the_Github: Этот проект на Github
+      partners: Партнёры
 
   admin:
     welcome:
