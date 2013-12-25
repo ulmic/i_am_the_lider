@@ -33,6 +33,7 @@ IAmTheLider::Application.routes.draw do
       member do
         put :accept
         put :reserve
+        resource :reserve_reason, except: [ :index, :show ]
       end
     end
     resources :reports, only: [ :edit, :update, :destroy ]
