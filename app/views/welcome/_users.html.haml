@@ -7,7 +7,7 @@
   - @users.each do |user|
     .span1.user_ot
       %a{ href: user_path(user) }
-        %img.mini_equal_size.img-circle.small{ src: user.avatar }
+        %img.mini_equal_size.img-circle.small{ src: user.avatar.thumb_fill }
       %a{ href: user_path(user) }
         %small.very_small_text= user.first_name
         %br
