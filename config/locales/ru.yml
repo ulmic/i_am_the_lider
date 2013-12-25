@@ -51,6 +51,7 @@ ru:
         edit_blogs:      'Редактировать блоги'
         add_user:        'Добавить участника'
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
+        new_users: Неотмеченные заявки
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -142,6 +143,8 @@ ru:
       edit_report:   'Изменить отчёт о мероприятии'
       edit_user:     'Изменить аккаунт'
       add_blog_post: 'Добавить запись в блог'
+      accept_user: Подтвердить заявку
+      reserve_user: Оставить не подтверждённой
 
   welcome:
     index:
