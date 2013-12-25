@@ -7,7 +7,6 @@ FactoryGirl.define do
     last_name    { generate :string }
     group        { generate :string }
     home_phone   { generate :phone }
-    login        { generate :login }
     middle_name  { generate :string }
     mobile_phone { generate :phone }
     password
