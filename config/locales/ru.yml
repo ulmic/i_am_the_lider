@@ -150,5 +150,7 @@ ru:
       i_am_lider:              'Я - лидер!'
     users:
       view_competitors_list:   'Посмотреть список участников'
+      be_the_first: 'Стать первым!'
     news:
       news: 			'Новости конкурса'
+      add_news:         Добавить новость

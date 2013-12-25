@@ -8,25 +8,24 @@
           %li= msg
   - f.with_options input_html: { class: :span6 }, html: {  multipart: true  } do |f|
     .field
-      - unless @user.login.present?
-        = f.input :login, placeholder: "#{ t('.login_no_thin_than_3_characters_and_no_more_than_8_characters') }"
+      - unless @user.password.present?
+        = f.input :email, as: :string
         = f.input :password, placeholder: "#{ t('.password_no_thin_than_3_characters_and_no_more_than_8_characters') }"
       = f.input :first_name
       = f.input :middle_name
       = f.input :last_name
       = f.association :district, as: :select, label_method: :title, value_method: :id
-      = f.input :locality
+      = f.input :locality, as: :string
       = f.input :adress_index, as: :string
       = f.input :birth_date, as: :date, start_year: Date.today.year - 21,
                               end_year: Date.today.year - 10,
                               order: [:day, :month, :year]
-      = f.input :school
-      = f.input :group
+      = f.input :school, as: :string
+      = f.input :group, as: :string
       = f.input :mobile_phone, placeholder: "#{ t('.example_mobile_phone') }"
       = f.input :home_phone, placeholder: "#{ t('.example_home_phone') }"
-      = f.input :email
-      = f.input :vkontakte, placeholder: "#{ t('.link_to_vk_account') }"
-      = f.input :twitter, placeholder: "#{ t('.link_to_twitter_account') }"
+      = f.input :vkontakte, placeholder: "#{ t('.link_to_vk_account') }", as: :string
+      = f.input :twitter, placeholder: "#{ t('.link_to_twitter_account') }", as: :string
       %hr
       = f.label :avatar
       - if @user.avatar.present?

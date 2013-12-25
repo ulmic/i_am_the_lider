@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20131224030355) do
   end
 
   create_table "blog_posts", :force => true do |t|
-    t.string   "title"
-    t.string   "text"
+    t.text     "title"
+    t.text     "text"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(:version => 20131224030355) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "districts", :force => true do |t|
-    t.string   "title"
+    t.text     "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "news", :force => true do |t|
-    t.string   "title"
-    t.string   "body"
+    t.text     "title"
+    t.text     "body"
     t.date     "pusblished_at"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -61,22 +61,22 @@ ActiveRecord::Schema.define(:version => 20131224030355) do
 
   create_table "projects", :force => true do |t|
     t.string   "title"
-    t.string   "goal"
-    t.string   "tasks"
-    t.string   "target_audience"
-    t.string   "place"
-    t.string   "description"
+    t.text     "goal"
+    t.text     "tasks"
+    t.text     "target_audience"
+    t.text     "place"
+    t.text     "description"
     t.date     "date"
-    t.string   "results"
+    t.text     "results"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "user_id"
   end
 
   create_table "reports", :force => true do |t|
-    t.string   "member_type"
+    t.text     "member_type"
     t.integer  "member_count"
-    t.string   "venue"
+    t.text     "venue"
     t.date     "date"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
@@ -88,29 +88,20 @@ ActiveRecord::Schema.define(:version => 20131224030355) do
     t.string   "description"
   end
 
-  create_table "stages", :force => true do |t|
-    t.string   "title"
-    t.string   "epigraph"
-    t.string   "hypertext"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
-    t.string   "login"
     t.string   "password"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
     t.integer  "district_id"
     t.date     "birth_date"
-    t.string   "school"
-    t.string   "group"
+    t.text     "school"
+    t.text     "group"
     t.string   "mobile_phone"
     t.string   "home_phone"
-    t.string   "email"
-    t.string   "vkontakte"
-    t.string   "twitter"
+    t.text     "email"
+    t.text     "vkontakte"
+    t.text     "twitter"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "avatar_file_name"
@@ -118,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20131224030355) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "adress_index"
-    t.string   "locality"
+    t.text     "locality"
   end
 
 end

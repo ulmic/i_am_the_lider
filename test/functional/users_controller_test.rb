@@ -35,7 +35,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should not create user" do
-    attributes = { login: @user.login, password: @user.password }
+    attributes = { email: @user.email, password: @user.password }
 
     post :create, user: attributes
     assert_response :success
