@@ -42,12 +42,12 @@ class Admin::UsersController < Admin::ApplicationController
   def accept
     @user = User.find params[:id]
     @user.accept
-    redirect_to @user
+    redirect_to user_path @user
   end
 
   def reserve
     @user = User.find params[:id]
     @user.reserve
-    redirect_to @user
+    redirect_to user_path @user
   end
 end

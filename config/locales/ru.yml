@@ -1,23 +1,27 @@
 ru:
-  auth:                      Авторизация
-  sign_in:                   Войти
-  sign_out:                  Выйти
-  cancel:                    Отмена
-  wrong_login:               Неверный логин или пароль
+  accepted_user:       Подтверждённая заявка
+  reserve_user:        На данный момент не подтверждённая заявка
+  busted_user:         Удалённая заявка
+  new_user:            Новая заявка
+  auth:                   Авторизация
+  sign_in:                Войти
+  sign_out:               Выйти
+  cancel:                 Отмена
+  wrong_login:            Неверный логин или пароль
   without_access_to_edit:    Вы не можете редактировать эту запись
   without_access_to_destroy: Вы не можете удалить эту запись
-  auth_error:                Ошибка авторизации
-  save:                      Сохранить
-  delete:                    Удалить
-  view:                      Посмотреть
-  actions: Действия
-  edit: Изменить
-  back: Назад
+  auth_error:             Ошибка авторизации
+  save:                   Сохранить
+  delete:                 Удалить
+  view:                   Посмотреть
+  actions:          Действия
+  edit:             Изменить
+  back:             Назад
   apply_for_participation: Подать заявку
   apply_for_participation_on_competition: 'Подать заявку на XII областной конкурс актива учащейся молодёжи'
-  i_am_lider: '"Я-лидер!"'
+  i_am_lider:       '"Я-лидер!"'
   important_fields: '* - обязательные поля отмечены звёздочкой'
-  important_field: '*'
+  important_field:  '*'
 
   time:
     formats:

@@ -6,9 +6,9 @@
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-info'
   %br
   %h3
-    = @user.confirm_state
+    = @user.confirm_state_locales
   - if @user.new? || @user.reserved?
-    = link_to t('.accept_user'), accept_admin_user_path(@user), class: 'btn btn-info'
+    = link_to t('.accept_user'), accept_admin_user_path(@user), method: :put, class: 'btn btn-info'
     = link_to t('delete'), user_path(@user), method: :delete, class: 'btn btn-info'
   - if @user.new?
-    = link_to t('.reserve_user'), reserve_admin_user_path(@user), class: 'btn btn-info'
+    = link_to t('.reserve_user'), reserve_admin_user_path(@user), method: :put, class: 'btn btn-info'
