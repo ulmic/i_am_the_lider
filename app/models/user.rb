@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
   validates :avatar, presence: true
   validates :confirm_state, presence: true
 
+  include UsefullScopes
+
   state_machine :confirm_state, initial: :new do
     state :new
     state :accepted

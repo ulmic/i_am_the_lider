@@ -18,6 +18,7 @@ gem 'twitter-bootstrap-rails'
 gem 'russian'
 gem 'bootstrap_flash_messages'
 gem 'state_machine'
+gem 'usefull_scopes'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

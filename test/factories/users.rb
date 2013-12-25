@@ -16,5 +16,6 @@ FactoryGirl.define do
     avatar       { generate :file }
     locality     { generate :string }
     adress_index "432000"
+    confirm_state :new
   end
 end
