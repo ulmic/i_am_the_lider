@@ -1,4 +1,10 @@
 module AuthHelper
+  def basic_auth
+    authenticate_or_request_with_http_basic do |user, password|
+      user === "admin" && password === "adminislider"
+    end
+  end
+
   # User auth
   def user_sign_in(user)
     session[:user_id] = user.id
