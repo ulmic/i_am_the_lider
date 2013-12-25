@@ -45,6 +45,7 @@ ru:
         title: Заголовок
         body: Текст
         pusblished_at: Опубликовано
+        photo: Главное фото новости
       blog_post:
         title: Заголовок
         text: Текст
