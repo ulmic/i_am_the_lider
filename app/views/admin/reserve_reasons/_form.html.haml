@@ -1,0 +1,5 @@
+= simple_form_for @reserve_reason, url: admin_reserve_reason_path do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :description, as: :string
+  .actions
+    = f.button :submit, t('.add_user_to_reserve')

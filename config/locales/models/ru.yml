@@ -6,6 +6,7 @@ ru:
       project: Описание мероприятия
       news: Новость
       admin: Администратор
+      reserve_reason: Недочёт в заявке
     attributes:
       user:
         login: Логин
@@ -54,3 +55,5 @@ ru:
       admin:
         login: Логин
         password: Пароль
+      reserve_reason:
+        description: Описание недочёта

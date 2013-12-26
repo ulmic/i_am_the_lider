@@ -4,6 +4,10 @@
   = link_to t('sign_out'), session_path, method: :delete, class: 'btn btn-large btn-important'
 - if admin_signed_in?
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-info'
+- if (admin_signed_in? or current_user_on_page(@user)) and @user.reserved?
+  %h3
+    = t('.user_reserved_because')
+    = @user.reserve_reason.description
   %br
   %h3
     = @user.confirm_state_locales

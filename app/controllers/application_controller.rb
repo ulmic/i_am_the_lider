@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_user_on_page?(user)
+    current_user.id === user.id
+  end
+
   protect_from_forgery
 
   before_filter :basic_auth if Rails.env.staging?
