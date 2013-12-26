@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131225045456) do
+ActiveRecord::Schema.define(:version => 20131225103858) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(:version => 20131225045456) do
     t.string   "description"
   end
 
+  create_table "reserve_reasons", :force => true do |t|
+    t.text     "description"
+    t.integer  "admin_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "password"
     t.string   "first_name"
@@ -111,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20131225045456) do
     t.integer  "adress_index"
     t.text     "locality"
     t.string   "confirm_state"
+    t.text     "reserve_reason"
   end
 
 end

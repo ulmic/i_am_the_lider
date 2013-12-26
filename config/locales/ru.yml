@@ -70,6 +70,13 @@ ru:
     blog_posts:
       index:
         title: Записи в блогах
+    reserve_reasons:
+      new:
+        new_reserve_reason: Напишите причину, по которой заявка отложена
+      form:
+        add_user_to_reserve: Отложить заявку
+      edit:
+        edit_reserve_reason: Изменить описание недочёта
 
   blog_posts:
     back:       'Назад'
@@ -149,7 +156,9 @@ ru:
       edit_user:     'Изменить аккаунт'
       add_blog_post: 'Добавить запись в блог'
       accept_user: Подтвердить заявку
+      edit_reserve_reason: Изменить описание недочёта
       reserve_user: Оставить не подтверждённой
+      user_reserved_because: 'Заявка отложена по причине:'
 
   welcome:
     index:

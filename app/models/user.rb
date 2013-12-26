@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
                   :confirm_state
 
   belongs_to :district
-  has_one :project
+  has_one :reserve_reason
   has_one :report
   has_many :blog_posts
   mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name
