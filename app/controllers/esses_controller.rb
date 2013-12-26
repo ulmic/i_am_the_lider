@@ -1,11 +1,7 @@
 class EssesController < ApplicationController
+  before_filter :check_user_signed
   def new
-    @esse = esse.new
-  end
-
-  def show
-    @esse = Esse.find params[:id]
-    redirect_to @esse.user
+    @esse = Esse.new
   end
 
   def edit
@@ -17,15 +13,11 @@ class EssesController < ApplicationController
 
   def create
     @esse = Esse.new params[:esse]
-    if user_signed_in?
-      @esse.user_id = params[:id]
-      if @esse.save
-        redirect_to @esse.user, flash: :success
-      else
-        render action: :new, flash: :error
-      end
+    @esse.user = User.find params[:id]
+    if @esse.save
+      redirect_to @esse.user, flash: :success
     else
-      redirect_to User.find params[:id]
+      render action: :new, flash: :error
     end
   end
 
@@ -44,7 +36,8 @@ class EssesController < ApplicationController
 
   def destroy
     @esse = Esse.find params[:id]
+    user = @esse.user
     @esse.destroy
-    redirect_to esses_url, flash: :success
+    redirect_to user_path user, flash: :success
   end
 end
