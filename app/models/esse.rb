@@ -3,6 +3,8 @@ class Esse < ActiveRecord::Base
 
   belongs_to :user
 
+  mount_uploader :file, EsseUploader
+
   validates :user_id, presence: true
   validates :file, presence: true
 end
