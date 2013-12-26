@@ -8,4 +8,5 @@ class UserDecorator < Draper::Decorator
   def small_name
     "#{model.first_name} #{model.middle_name}"
   end
+
 end

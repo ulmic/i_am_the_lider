@@ -1,23 +1,27 @@
 ru:
-  auth:                      Авторизация
-  sign_in:                   Войти
-  sign_out:                  Выйти
-  cancel:                    Отмена
-  wrong_login:               Неверный логин или пароль
+  accepted_user:       Подтверждённая заявка
+  reserve_user:        На данный момент не подтверждённая заявка
+  busted_user:         Удалённая заявка
+  new_user:            Новая заявка
+  auth:                   Авторизация
+  sign_in:                Войти
+  sign_out:               Выйти
+  cancel:                 Отмена
+  wrong_login:            Неверный логин или пароль
   without_access_to_edit:    Вы не можете редактировать эту запись
   without_access_to_destroy: Вы не можете удалить эту запись
-  auth_error:                Ошибка авторизации
-  save:                      Сохранить
-  delete:                    Удалить
-  view:                      Посмотреть
-  actions: Действия
-  edit: Изменить
-  back: Назад
+  auth_error:             Ошибка авторизации
+  save:                   Сохранить
+  delete:                 Удалить
+  view:                   Посмотреть
+  actions:          Действия
+  edit:             Изменить
+  back:             Назад
   apply_for_participation: Подать заявку
   apply_for_participation_on_competition: 'Подать заявку на XII областной конкурс актива учащейся молодёжи'
-  i_am_lider: '"Я-лидер!"'
+  i_am_lider:       '"Я-лидер!"'
   important_fields: '* - обязательные поля отмечены звёздочкой'
-  important_field: '*'
+  important_field:  '*'
 
   time:
     formats:
@@ -34,12 +38,13 @@ ru:
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
     footer:
-      organizers:              'Организаторы'
+      organizers:              Организатор
       ministry_of_education:   'Министерство образования'
       of_ulyanovsk_region:     'Ульяновской области'
       youth_initiative_centre: 'Молодёжный инициативный центр'
       this_project_develop_by_programmers_of_ulmic: Команда разработчиков ИТ-проектов МИЦ
       this_project_on_the_Github: Этот проект на Github
+      partners: Партнёры
 
   admin:
     welcome:
@@ -51,6 +56,7 @@ ru:
         edit_blogs:      'Редактировать блоги'
         add_user:        'Добавить участника'
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
+        new_users: Неотмеченные заявки
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -64,6 +70,13 @@ ru:
     blog_posts:
       index:
         title: Записи в блогах
+    reserve_reasons:
+      new:
+        new_reserve_reason: Напишите причину, по которой заявка отложена
+      form:
+        add_user_to_reserve: Отложить заявку
+      edit:
+        edit_reserve_reason: Изменить описание недочёта
 
   blog_posts:
     back:       'Назад'
@@ -142,6 +155,10 @@ ru:
       edit_report:   'Изменить отчёт о мероприятии'
       edit_user:     'Изменить аккаунт'
       add_blog_post: 'Добавить запись в блог'
+      accept_user: Подтвердить заявку
+      edit_reserve_reason: Изменить описание недочёта
+      reserve_user: Оставить не подтверждённой
+      user_reserved_because: 'Заявка отложена по причине:'
 
   welcome:
     index:

@@ -56,11 +56,21 @@ class Admin::UsersControllerTest < ActionController::TestCase
   end
 
   test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, id: @user
-    end
-
+    delete :destroy, id: @user
+    @user.reload
+    assert @user.busted?
     assert_redirected_to users_path
   end
 
+  test "should accept user" do
+    put :accept, id: @user
+    @user.reload
+    assert @user.accepted?
+  end
+
+  test "should reserve user" do
+    put :reserve, id: @user
+    @user.reload
+    assert @user.reserved?
+  end
 end

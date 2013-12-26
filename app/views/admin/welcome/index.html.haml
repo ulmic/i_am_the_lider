@@ -5,3 +5,14 @@
 = link_to t('.add_news'), new_admin_news_path, class: 'btn btn-large btn-info'
 = link_to t('.edit_blogs'), admin_blog_posts_path, class: 'btn btn-large btn-info'
 = link_to t('sign_out'), admin_session_path, method: :delete, class: 'btn btn-large btn-info'
+- if @new_users.any?
+  %h3= t('.new_users')
+%table.table.table-stripped.table-hover
+  - @new_users.each do |user|
+    %tr{ onclick: "return location.href = '#{user_path(user)}'"}
+      %td
+        = image_tag user.avatar.mini_thumb_fill
+      %td
+        = user.title
+      %td
+        = user.school

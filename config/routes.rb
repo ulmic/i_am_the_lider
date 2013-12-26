@@ -29,7 +29,13 @@ IAmTheLider::Application.routes.draw do
     resources :welcome, only: [ :index ]
     resources :blog_posts, except: [:create, :new]
     resources :news
-    resources :users
+    resources :users do
+      member do
+        put :accept
+        put :reserve
+        resource :reserve_reason, except: [ :index, :show ]
+      end
+    end
     resources :reports, only: [ :edit, :update, :destroy ]
   end
   get "admin" => "admin/welcome#index"
