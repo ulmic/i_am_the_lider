@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131225103858) do
+ActiveRecord::Schema.define(:version => 20131226212331) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20131225103858) do
 
   create_table "districts", :force => true do |t|
     t.text     "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "esses", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "file"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -90,7 +97,6 @@ ActiveRecord::Schema.define(:version => 20131225103858) do
 
   create_table "reserve_reasons", :force => true do |t|
     t.text     "description"
-    t.integer  "admin_id"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -119,7 +125,6 @@ ActiveRecord::Schema.define(:version => 20131225103858) do
     t.integer  "adress_index"
     t.text     "locality"
     t.string   "confirm_state"
-    t.text     "reserve_reason"
   end
 
 end
