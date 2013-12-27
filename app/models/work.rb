@@ -6,5 +6,5 @@ class Work < ActiveRecord::Base
   mount_uploader :file, WorkUploader
 
   validates :user_id, presence: true
-  validates :file, presence: true
+  validates :file, presence: true, file_size: { maximum: 25.megabytes.to_i }
 end

@@ -1,4 +1,9 @@
 = simple_form_for @work do |f|
+  - if @work.errors.any?
+    #error_explanation
+      %ul
+        - @work.errors.full_messages.each do |msg|
+          %li= msg
   - f.with_options input_html: { class: :span6 } do |f|
     = f.label :file
     = f.file_field :file
