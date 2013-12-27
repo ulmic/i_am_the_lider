@@ -1,4 +1,6 @@
 = simple_form_for @work do |f|
-  = f.input :file
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.label :file
+    = f.file_field :file
   .actions
-    = f.submit t('save')
+    = f.submit t('upload'), class: 'btn btn-success'

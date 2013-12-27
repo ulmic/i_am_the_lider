@@ -12,6 +12,7 @@ ru:
   without_access_to_destroy: Вы не можете удалить эту запись
   auth_error:             Ошибка авторизации
   save:                   Сохранить
+  upload:                 Загрузить
   delete:                 Удалить
   view:                   Посмотреть
   actions:          Действия
@@ -159,6 +160,12 @@ ru:
       edit_reserve_reason: Изменить описание недочёта
       reserve_user: Оставить не подтверждённой
       user_reserved_because: 'Заявка отложена по причине:'
+      add_work: Добавить творческую работу
+      edit_work: Изменить творческую работу
+      download_work: Загрузить творческую работу
+  works:
+    new:
+      title: Добавить творческую работу
 
   welcome:
     index:

@@ -4,7 +4,7 @@ ru:
       user:
         confirm_state:
           states:
-            new:      Новая заявка
+            new:      Заявка не отсмотрена
             accepted: Подтверждёна
-            reserver: На данный момент не подтверждёна
+            reserved: На данный момент не подтверждёна
             busted: Удалена
