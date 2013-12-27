@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :esse do
+  factory :work do
     file
     user
   end

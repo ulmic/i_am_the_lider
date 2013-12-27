@@ -50,13 +50,6 @@ ActiveRecord::Schema.define(:version => 20131226212331) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "esses", :force => true do |t|
-    t.integer  "user_id"
-    t.text     "file"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "news", :force => true do |t|
     t.text     "title"
     t.text     "body"
@@ -125,6 +118,13 @@ ActiveRecord::Schema.define(:version => 20131226212331) do
     t.integer  "adress_index"
     t.text     "locality"
     t.string   "confirm_state"
+  end
+
+  create_table "works", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "file"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

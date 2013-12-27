@@ -1,6 +1,6 @@
-class CreateEsses < ActiveRecord::Migration
+class CreateWorks < ActiveRecord::Migration
   def change
-    create_table :esses do |t|
+    create_table :works do |t|
       t.integer :user_id
       t.text :file
 

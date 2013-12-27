@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class EsseUploader < CarrierWave::Uploader::Base
+class WorkUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   storage :file
   def store_dir
