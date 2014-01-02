@@ -1,7 +1,7 @@
 = render 'office'
 - if current_user_on_page?(@user)
   - if @user.work
-    = link_to t('.edit_work'), edit_works_path(@user.work), class: 'btn btn-large btn-success'
+    = link_to t('.edit_work'), edit_work_path(@user.work), class: 'btn btn-large btn-success'
   - else
     = link_to t('.add_work'), new_works_path(@user), class: 'btn btn-large btn-success'
 - if current_user
