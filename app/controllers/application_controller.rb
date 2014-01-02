@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_on_page?(user)
-    current_user.id === user.id
+    if current_user
+      current_user.id === user.id
+    end
   end
 
   protect_from_forgery
