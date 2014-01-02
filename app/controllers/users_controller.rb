@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   def index
-    @users = UserDecorator.decorate_collection User.all
+    @users = UserDecorator.decorate_collection User.with_confirm_state :accepted
   end
 
   def show
     @user = User.find(params[:id]).decorate
+    unless @user.accepted? or current_user_on_page? @user
+      redirect_to not_found_errors_path
+    end
   end
 
   def new

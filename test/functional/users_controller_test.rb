@@ -42,6 +42,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should show user" do
+    user_sign_in @user
     get :show, id: @user
     assert_response :success
   end
