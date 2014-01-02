@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   before_filter :check_user_signed
+
   def new
     @work = Work.new
   end
