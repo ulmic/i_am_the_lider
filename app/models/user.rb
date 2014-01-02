@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
   belongs_to :district
   has_one :reserve_reason
+  has_one :work
   has_one :report
   has_many :blog_posts
   mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name

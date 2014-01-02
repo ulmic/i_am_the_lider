@@ -1,16 +1,24 @@
 = render 'office'
+- if current_user_on_page?(@user)
+  - if @user.work
+    = link_to t('.edit_work'), edit_works_path(@user.work), class: 'btn btn-large btn-success'
+  - else
+    = link_to t('.add_work'), new_works_path(@user), class: 'btn btn-large btn-success'
 - if current_user
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-success'
   = link_to t('sign_out'), session_path, method: :delete, class: 'btn btn-large btn-important'
 - if admin_signed_in?
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-info'
-- if (admin_signed_in? or current_user_on_page?(@user)) and @user.reserved?
+- if admin_signed_in? or current_user_on_page?(@user)
   %h3
     = @user.human_confirm_state_name
   - if @user.reserved?
     %h3
       = t('.user_reserved_because')
       = @user.reserve_reason.description
+  - if @user.work
+    %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
+      = t('.download_work')
 - if admin_signed_in?
   %br
   - if @user.new? || @user.reserved?

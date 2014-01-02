@@ -9,6 +9,7 @@ IAmTheLider::Application.routes.draw do
     member do
       resources :reports
       resources :blog_posts
+      resource :works, except: [ :index, :show ]
     end
   end
   resource :welcome, only: :index do
