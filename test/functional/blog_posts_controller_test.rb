@@ -56,6 +56,18 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_equal attributes[:title], @blog_post.title
   end
 
+  test "should not update blog_post with render edit" do
+    @user.id = @blog_post.id
+    user_sign_in @user
+
+    attributes = attributes_for :blog_post
+    attributes[:title] = nil
+    put :update, id: @blog_post, blog_post: attributes
+    assert_response :success
+
+    assert_template :edit
+  end
+
   test "should show blog_post" do
     get :show, id: @blog_post
     assert_response :success

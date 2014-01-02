@@ -23,15 +23,11 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new params[:blog_post]
-    if user_signed_in?
-      @blog_post.user_id = params[:id]
-      if @blog_post.save
-        redirect_to @blog_post.user, flash: :success
-      else
-        render action: :new, flash: :error
-      end
+    @blog_post.user_id = params[:id]
+    if @blog_post.save
+      redirect_to @blog_post.user, flash: :success
     else
-      redirect_to User.find params[:id]
+      render action: :new, flash: :error
     end
   end
 
