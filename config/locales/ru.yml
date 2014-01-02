@@ -166,6 +166,8 @@ ru:
   works:
     new:
       title: Добавить творческую работу
+    edit:
+      title: Загрузить новую творческую работу
 
   welcome:
     index:

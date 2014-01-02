@@ -1,4 +1,4 @@
-= simple_form_for @work do |f|
+= simple_form_for @work, url: works_path(@work) do |f|
   - if @work.errors.any?
     #error_explanation
       %ul
