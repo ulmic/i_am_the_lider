@@ -1,18 +1,21 @@
-.row-fluid.left_text_align
-  %h3= t('.organizers')
-  %a{ href: "http://ulmic.ru" }
-    .logo.mic
-.row-fluid.left_text_align
-  %h3= t('.partners')
-  .span2.center_text_align
-    %a{ href: "http://minobr.ulgov.ru" }
-      Министерство образования и науки Ульяновской области
-  .span2.center_text_align
-    %a{ href: "http://mvp.ulgov.ru" }
-      Министерство внутренней политики Ульяновской области
+.row-fluid
   .span2
-    %a{ href: "http://hh.ru" }
-      = image_tag "head-hunter.png", style: "width: 150px"
+    .center_text_align
+      %h3= t('.organizers')
+      .logo.mic
+        %a{ href: "http://ulmic.ru" }
+  .span6
+    .center_text_align
+      %h3= t('.partners')
+      .span4
+        %a{ href: "http://minobr.ulgov.ru" }
+          Министерство образования и науки Ульяновской области
+      .span4
+        %a{ href: "http://mvp.ulgov.ru" }
+          Министерство внутренней политики Ульяновской области
+      .span3
+        %a{ href: "http://hh.ru" }
+          = image_tag "head-hunter.png", style: "width: 150px"
 
 .row-fluid
   .offset2
