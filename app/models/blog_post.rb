@@ -9,7 +9,4 @@ class BlogPost < ActiveRecord::Base
   validates :title, presence: true
   validates :user_id, presence: true
 
-  def get_html_text
-    self.text.bbcode_to_html
-  end
 end

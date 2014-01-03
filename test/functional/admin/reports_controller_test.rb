@@ -21,6 +21,13 @@ class Admin::ReportsControllerTest < ActionController::TestCase
     assert_equal attributes[:description], @report.description
   end
 
+  test "should not update report with render edit" do
+    attributes = attributes_for :report
+    attributes[:venue] = nil
+    put :update, id: @report, report: attributes
+    assert_template :edit
+  end
+
   test "should destroy report" do
     assert_difference('Report.count', -1) do
       delete :destroy, id: @report

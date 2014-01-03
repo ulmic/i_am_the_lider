@@ -55,6 +55,16 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert_equal attributes[:first_name], @user.first_name
   end
 
+  test "should not update user with render edit" do
+    attributes = attributes_for :user
+    attributes[:first_name] = nil
+    put :update, id: @user, user: attributes
+
+    assert_response :success
+
+    assert_template :edit
+  end
+
   test "should destroy user" do
     delete :destroy, id: @user
     @user.reload
