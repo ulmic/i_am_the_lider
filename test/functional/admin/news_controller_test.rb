@@ -7,6 +7,11 @@ class Admin::NewsControllerTest < ActionController::TestCase
     admin_sign_in @admin
   end
 
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -20,6 +25,13 @@ class Admin::NewsControllerTest < ActionController::TestCase
 
     @news = News.last
     assert_equal attributes[:title], @news.title
+  end
+
+  test "should not create news with render new" do
+    attributes = attributes_for :news
+    attributes[:title] = nil
+    post :create, news: attributes
+    assert_template :new
   end
 
   test "should show news" do

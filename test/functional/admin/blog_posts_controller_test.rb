@@ -31,6 +31,16 @@ class Admin::BlogPostsControllerTest < ActionController::TestCase
     assert_equal attributes[:title], @blog_post.title
   end
 
+  test "should not update blog_post" do
+    attributes = attributes_for :blog_post
+    attributes[:title] = nil
+    put :update, id: @blog_post, blog_post: attributes
+    assert_response :success
+
+    assert_template :edit
+  end
+
+
   test "should destroy blog_post" do
     assert_difference('BlogPost.count', -1) do
       delete :destroy, id: @blog_post
