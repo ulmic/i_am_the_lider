@@ -2,7 +2,7 @@
 = simple_form_for @user do |f|
   - if @user.errors.any?
     #error_explanation
-      %h2= "#{ pluralize(@user.errors.count, "error") } #{ t('.prohibited_this_user_from_being_saved') }:"
+      %h2= "#{ t('.prohibited_this_user_from_being_saved') }:"
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
