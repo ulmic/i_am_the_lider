@@ -125,9 +125,9 @@ ru:
       view: 			'Показать'
       back: 			'Назад'
     form:
-      prohibited_this_user_from_being_saved: 'зафиксировано во время сохранения'
+      prohibited_this_user_from_being_saved: 'Ошибки зафиксированы во время сохранения'
       login_no_thin_than_3_characters_and_no_more_than_8_characters: 'Твой личный логин на это сайте. Логин больше 3 и меньше 8 символов'
-      password_no_thin_than_3_characters_and_no_more_than_8_characters: 'Пароль для входа на сайт. Пароль больше 3 и меньше 8 символов'
+      password_no_thin_than_8_characters_and_no_more_than_16_characters: 'Пароль для входа на сайт. Пароль больше 8 и меньше 16 символов'
       example_mobile_phone: 	'пример: +7960123456'
       example_home_phone: 	'пример +78422212121'
       link_to_vk_account: 	'Ссылка на Вашу страницу ВКонтакте'
