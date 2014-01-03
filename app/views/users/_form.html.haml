@@ -2,15 +2,14 @@
 = simple_form_for @user do |f|
   - if @user.errors.any?
     #error_explanation
-      %h2= "#{ pluralize(@user.errors.count, "error") } #{ t('.prohibited_this_user_from_being_saved') }:"
+      %h2= "#{ t('.prohibited_this_user_from_being_saved') }:"
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
   - f.with_options input_html: { class: :span6 }, html: {  multipart: true  } do |f|
     .field
-      - unless @user.password.present?
-        = f.input :email, as: :string
-        = f.input :password, placeholder: "#{ t('.password_no_thin_than_3_characters_and_no_more_than_8_characters') }"
+      = f.input :email, as: :string
+      = f.input :password, placeholder: "#{ t('.password_no_thin_than_8_characters_and_no_more_than_16_characters') }"
       = f.input :first_name
       = f.input :middle_name
       = f.input :last_name

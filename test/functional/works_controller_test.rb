@@ -25,6 +25,14 @@ class WorksControllerTest < ActionController::TestCase
     assert_equal @user.id, @work.user_id
   end
 
+  test "should get edit" do
+    @user.id = @work.user_id
+    user_sign_in @user
+
+    get :edit, id: @work
+    assert_response :success
+  end
+
   test "should update work" do
     user_sign_in @user
 
@@ -35,6 +43,15 @@ class WorksControllerTest < ActionController::TestCase
 
     @work.reload
     assert_equal attributes[:user_id], @work.user_id
+  end
+
+  test "should not update work with render edit" do
+    user_sign_in @user
+
+    attributes = attributes_for :work
+    attributes[:user_id] = nil
+    put :update, id: @work, work: attributes
+    assert_template :edit
   end
 
   test "should destroy work" do

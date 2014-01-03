@@ -47,6 +47,11 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not show user with no access" do
+    get :show, id: @user
+    assert_redirected_to not_found_errors_path
+  end
+
   test "should get edit by admin" do
     admin_sign_in @admin
 
@@ -63,6 +68,15 @@ class UsersControllerTest < ActionController::TestCase
 
     @user.reload
     assert_equal attributes[:first_name], @user.first_name
+  end
+
+  test "should not update with render edit" do
+    attributes = attributes_for :user
+    attributes[:first_name] = nil
+    put :update, id: @user, user: attributes
+    assert_response :success
+
+    assert_template :edit
   end
 
   test "should destroy user" do

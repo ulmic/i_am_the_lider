@@ -5,6 +5,12 @@ class Admin::ReserveReasonsControllerTest < ActionController::TestCase
     @reserve_reason = create :reserve_reason
     @admin = create :admin
     admin_sign_in @admin
+    @user = create :user
+  end
+
+  test "should get new" do
+    get :new, id: @user
+    assert_response :success
   end
 
   test "should create reserve_reason" do
@@ -15,6 +21,14 @@ class Admin::ReserveReasonsControllerTest < ActionController::TestCase
 
     @reserve_reason = ReserveReason.last
     assert_equal attributes[:description], @reserve_reason.description
+  end
+
+  test "should not create reserve_reason with render new" do
+    attributes = attributes_for :reserve_reason
+    attributes[:description] = nil
+    @user = create :user
+    post :create, reserve_reason: attributes, id: @user
+    assert_template :new
   end
 
   test "should get edit reserve_reason" do
