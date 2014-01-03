@@ -8,9 +8,8 @@
           %li= msg
   - f.with_options input_html: { class: :span6 }, html: {  multipart: true  } do |f|
     .field
-      - unless @user.password.present?
-        = f.input :email, as: :string
-        = f.input :password, placeholder: "#{ t('.password_no_thin_than_3_characters_and_no_more_than_8_characters') }"
+      = f.input :email, as: :string
+      = f.input :password, placeholder: "#{ t('.password_no_thin_than_8_characters_and_no_more_than_16_characters') }"
       = f.input :first_name
       = f.input :middle_name
       = f.input :last_name
