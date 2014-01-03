@@ -13,11 +13,11 @@
     %a{ href: "http://reformal.ru" }
       %img{ src: "http://media.reformal.ru/reformal.png" }
     %a{ href: "http://lider_ulgood.reformal.ru" }
-      =t('.reformal_message')
+      = t('.reformal_message')
   .container-fluid
-    .row-fluid
-      %a{ href: "http://ulmic.ru" }
-        .span2.logo.mic
+    .row-fluid.header
+      .span2.logo.mic
+        %a{ href: "http://ulmic.ru" }
       %a{ href: root_path }
         .span2.well.well-small.black_link
           =t('.learning_youth_contest')
@@ -31,9 +31,6 @@
           %li
             %a{ href: new_user_path }
               %h3= t('apply_for_participation')
-          %li
-            %a{ href: new_session_path }
-              %h3= t('sign_in')
         %li
           %a{ href: users_path }
             %h3= t('.participants')
@@ -50,5 +47,5 @@
       .span12.content
         = flash_messages :close
         = yield
-    .row-fluid
+    .row-fluid.footer
       = render 'layouts/footer'
