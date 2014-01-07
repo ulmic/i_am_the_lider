@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]).decorate
-    unless @user.accepted? or current_user_on_page? @user
+    unless @user.accepted? or current_user_on_page? @user or admin_signed_in?
       redirect_to not_found_errors_path
     end
   end

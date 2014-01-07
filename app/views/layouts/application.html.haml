@@ -13,7 +13,7 @@
     %a{ href: "http://reformal.ru" }
       %img{ src: "http://media.reformal.ru/reformal.png" }
     %a{ href: "http://lider_ulgood.reformal.ru" }
-      =t('.reformal_message')
+      = t('.reformal_message')
   .container-fluid
     .row-fluid.header
       %a{ href: root_path }
@@ -31,9 +31,6 @@
             %li
               %a{ href: new_user_path }
                 %h3= t('apply_for_participation')
-            %li
-              %a{ href: new_session_path }
-                %h3= t('sign_in')
           %li
             %a{ href: users_path }
               %h3= t('.participants')
