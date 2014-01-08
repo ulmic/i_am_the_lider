@@ -5,6 +5,6 @@ ru:
         confirm_state:
           states:
             new:      Заявка не отсмотрена
-            accepted: Подтверждёна
+            accepted: Подтверждена
             reserved: На данный момент не подтверждёна
             busted: Удалена

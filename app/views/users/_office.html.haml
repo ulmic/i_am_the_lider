@@ -1,7 +1,11 @@
 .row-fluid
   .span5
     %p
-      %h2= @user.title
+      %h2
+        - if admin_signed_in?
+          = @user.title
+        - else
+          = @user.small_name
     %p
       %img.img-polaroid.big_img{  src: @user.avatar  }
     %p
@@ -18,11 +22,21 @@
       %p
         %b= t('activerecord.attributes.user.group')
         = @user.group
-    -unless @user.twitter.blank?
+    - unless @user.twitter.blank?
       %p
         %b= t('activerecord.attributes.user.twitter')
         %a{ href: "#{ @user.twitter }" }
           = @user.twitter
+    - if admin_signed_in?
+      %p
+        %b= t('activerecord.attributes.user.mobile_phone')
+        = @user.mobile_phone
+      %p
+        %b= t('activerecord.attributes.user.home_phone')
+        = @user.home_phone
+      %p
+        %b= t('activerecord.attributes.user.email')
+        = @user.email
   .span7
     - if @user.report
       %p
