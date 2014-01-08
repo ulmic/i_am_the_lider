@@ -1,23 +1,48 @@
+@mixin text-shadow($color1,$color2)
+  text-shadow: $color1 1px 0px, $color1 1px 1px, $color1 0px 1px, $color1 -1px 1px, $color1 -1px 0px, $color1 -1px -1px, $color1 0px -1px, $color1 1px -1px, $color1 2px 0px 1px, $color1 2px 2px 1px, $color1 0px 2px 1px, $color1 -2px 2px 1px, $color1 -2px 0px 1px, $color1 -2px -2px 1px, $color1 0px -2px 1px, $color1 2px -2px 1px, $color2 3px 0px 5px, $color2 3px 3px 5px, $color2 0px 3px 5px, $color2 -3px 3px 5px, $color2 -3px 0px 5px, $color2 -3px -3px 5px, $color2 0px -3px 5px, $color2 3px -3px 5px
+
 @font-face
   font-family: micfont
   src: url(PFBeauSansPro-Reg.ttf)
 
 body
   font-family: micfont
-  background-color: #FFFBCA
-  padding-bottom: 20px
-  min-width: 1200px
-    
+  background-color: #FFFBCA /* Old browsers */
+  background: -moz-linear-gradient(top, #fffbca 0%, #ffb847 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fffbca), color-stop(100%,#ffb847)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fffbca 0%,#ffb847 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fffbca 0%,#ffb847 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fffbca 0%,#ffb847 100%) /* IE10+ */
+  background: linear-gradient(top bottom, #fffbca 0%,#ffb847 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbca', endColorstr='#ffb847',GradientType=0 ) /* IE6-9 */
+  &>.container-fluid
+    background: transparent url(logo-mic-opacity30.png) no-repeat
+    background-position: -50px -20px
+    padding: 0 3% 30px
+
 label
   font-weight: bold
 
-body>.container-fluid
-  padding: 0 3%
-
 .header
-  margin: 0 3%
+  .description
+    color: black
   .logo
     margin-top: 15px
+  .nav
+    display: inline-block
+    margin: auto
+    li
+      a:hover
+        background-color: transparent
+        @include text-shadow(white, #FFA300)
+  .font-logo
+    text-align: center
+    margin: auto
+    h4
+      line-height: 100px
+      font-size: 120px
+      font-family: Molot
+      color: #FFB800
 
 .span12.content
   padding: 20px 35px
@@ -26,8 +51,18 @@ body>.container-fluid
 
 .footer
   .logo.mic
-    margin-left: 25%
-      
+    margin: auto
+    float: none
+    background-position: center center
+    background-size: 90% 100%
+    background-color: white
+    border-radius: 10px
+  .mini-logos
+    .mini.logo
+      margin-left: 20px
+  .partners
+    float: right
+
 .text
   text-align: justify
 
@@ -41,11 +76,12 @@ body>.container-fluid
     width: 100%
     height: 100%
     display: block
-    
+
 
 .mini
   width: 50px
   height: 50px
+
 
 .mic
   background-image: url(logo-mic.png)
@@ -92,7 +128,7 @@ body>.container-fluid
   margin-right: 4%
   &>li>a:hover
     background-color: #FFEC89
-    
+
 .nav-buttons
   float: right
   margin-top: 75px

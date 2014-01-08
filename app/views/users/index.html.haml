@@ -8,7 +8,11 @@
           %img.img-polaroid{ src: user.avatar.thumb_fill }
         .span3
           .row-fluid
-            %h4= user.title
+            %h4
+              - if admin_signed_in?
+                = user.title
+              - else
+                = user.small_name
           .row-fluid
             %h4= user.district.title
           .row-fluid

@@ -1,7 +1,8 @@
 .row-fluid
-  .span2
-    .center_text_align
-      %h3= t('.organizers')
+  .span4
+    .row
+      .text-center
+        %h3= t('.organizers')
       .logo.mic
         %a{ href: "http://ulmic.ru" }
   .span6
@@ -17,7 +18,7 @@
         %a{ href: "http://hh.ru" }
           = image_tag "head-hunter.png", style: "width: 150px"
 
-.row-fluid
+.row
   .offset2
   .span4
     %hr
@@ -32,15 +33,16 @@
     %small
       %a{ href: "http://github.com/ulmic/i_am_the_lider" }
         = t('.this_project_on_the_Github')
-  %a{ href: "http://vk.com/ulmic" }
-    .span1.logo.mini.vk.there_is_margin
-  %a{ href: "https://www.facebook.com/molcenter" }
-    .span1.logo.mini.facebook.there_is_margin
-  %a{ href: "https://twitter.com/ulmicru" }
-    .span1.logo.mini.twitter.there_is_margin
-  %a{ href: "https://plus.google.com/109518417712111969312/" }
-    .span1.logo.mini.gplus.there_is_margin
-  %a{ href: "http://www.youtube.com/user/ulmic73" }
-    .span1.logo.mini.youtube.there_is_margin
-  %a{ href: "https://github.com/ulmic" }
-    .span1.logo.mini.github.there_is_margin
+  .span6.mini-logos
+    .logo.mini.vk.there_is_margin
+      %a{ href: "http://vk.com/ulmic" }
+    .logo.mini.facebook.there_is_margin
+      %a{ href: "https://www.facebook.com/molcenter" }
+    .logo.mini.twitter.there_is_margin
+      %a{ href: "https://twitter.com/ulmicru" }
+    .logo.mini.gplus.there_is_margin
+      %a{ href: "https://plus.google.com/109518417712111969312/" }
+    .logo.mini.youtube.there_is_margin
+      %a{ href: "http://www.youtube.com/user/ulmic73" }
+    .logo.mini.github.there_is_margin
+      %a{ href: "https://github.com/ulmic" }
