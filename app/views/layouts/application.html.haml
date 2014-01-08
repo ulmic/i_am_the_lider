@@ -13,39 +13,36 @@
     %a{ href: "http://reformal.ru" }
       %img{ src: "http://media.reformal.ru/reformal.png" }
     %a{ href: "http://lider_ulgood.reformal.ru" }
-      =t('.reformal_message')
+      = t('.reformal_message')
   .container-fluid
     .row-fluid.header
-      .span2.logo.mic
-        %a{ href: "http://ulmic.ru" }
       %a{ href: root_path }
-        .span2.well.well-small.black_link
+        .span4.offset3.description
           =t('.learning_youth_contest')
+        .span12.font-logo
           %h4= t('.i_am_lider')
-      %ul.nav.nav-pills.nav-buttons
-        - if user_signed_in?
+      .text-center
+        %ul.nav.nav-pills
+          - if user_signed_in?
+            %li
+              %a{ href: user_path(current_user) }
+                %h3= t('.i_am_participant')
+          - else
+            %li
+              %a{ href: new_user_path }
+                %h3= t('apply_for_participation')
           %li
-            %a{ href: user_path(current_user) }
-              %h3= t('.i_am_participant')
-        - else
+            %a{ href: users_path }
+              %h3= t('.participants')
           %li
-            %a{ href: new_user_path }
-              %h3= t('apply_for_participation')
+            %a{ href: competition_welcome_path }
+              %h3= t('.competition')
           %li
-            %a{ href: new_session_path }
-              %h3= t('sign_in')
-        %li
-          %a{ href: users_path }
-            %h3= t('.participants')
-        %li
-          %a{ href: competition_welcome_path }
-            %h3= t('.competition')
-        %li
-          %a{ href: '/news' }
-            %h3= t('.contest_news')
-        %li
-          %a{ href: first_stage_welcome_path }
-            %h3= t('.stages')
+            %a{ href: '/news' }
+              %h3= t('.contest_news')
+          %li
+            %a{ href: first_stage_welcome_path }
+              %h3= t('.stages')
     .row-fluid
       .span12.content
         = flash_messages :close
