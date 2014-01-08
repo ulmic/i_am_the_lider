@@ -33,6 +33,7 @@ ru:
       i_am_lider:             '"Я - лидер!"'
       learning_youth_contest: 'Конкурс актива учащейся молодёжи'
       i_am_participant:       'Я - участник!'
+      home:                   'Главная'
       participants:           'Участники'
       competition:            'Положение'
       contest_news:           'Новости'

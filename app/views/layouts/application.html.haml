@@ -23,6 +23,9 @@
           %h4= t('.i_am_lider')
       .text-center
         %ul.nav.nav-pills
+          %li
+            %a{ href: root_path }
+              %h3= t('.home')
           - if user_signed_in?
             %li
               %a{ href: user_path(current_user) }
@@ -31,9 +34,6 @@
             %li
               %a{ href: new_user_path }
                 %h3= t('apply_for_participation')
-          %li
-            %a{ href: users_path }
-              %h3= t('.participants')
           %li
             %a{ href: competition_welcome_path }
               %h3= t('.competition')
