@@ -1,12 +1,11 @@
 .row-fluid
   .span4
-    .row
-      .text-center
-        %h3= t('.organizers')
-      .logo.mic
-        %a{ href: "http://ulmic.ru" }
-  .span6
-    .center_text_align
+    .text-center
+      %h3= t('.organizers')
+    .logo.mic
+      %a{ href: "http://ulmic.ru" }
+  .span7
+    .text-center
       %h3= t('.partners')
       .span6
         %a{ href: "http://minobr.ulgov.ru" }
@@ -18,7 +17,7 @@
         %a{ href: "http://hh.ru" }
           = image_tag "head-hunter.png", style: "width: 150px"
 
-.row
+.row-fluid
   .offset2
   .span4
     %hr
