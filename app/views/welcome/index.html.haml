@@ -1,9 +1,11 @@
 = stylesheet_link_tag "welcome"
-.span7
-  = render "text_about_lider"
-  %hr
-  = render "users"
-.span4
-  = render "news"
-  = render "blogs"
-  = render "twitter_timeline"
+.row-fluid
+  .span8
+    = render "text_about_lider"
+    %hr
+    .users
+      = render "users"
+  .span4
+    = render "news"
+    = render "blogs"
+    = render "twitter_timeline"
