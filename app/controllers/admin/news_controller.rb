@@ -27,7 +27,7 @@ class Admin::NewsController < Admin::ApplicationController
   def update
     @news = News.find params[:id]
     if @news.update_attributes params[:news]
-      redirect_to admin_news_index_path, flash: :success
+      redirect_to @news, flash: :success
     else
       render action: :edit, flash: :error
     end
