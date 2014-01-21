@@ -1,11 +1,4 @@
 class Admin::NewsController < Admin::ApplicationController
-  def index
-    @news = News.all.reverse
-  end
-
-  def show
-    @news = News.find params[:id]
-  end
 
   def new
     @news = News.new
@@ -18,7 +11,7 @@ class Admin::NewsController < Admin::ApplicationController
   def create
     @news = News.new params[:news]
     if @news.save
-      redirect_to admin_news_index_path, flash: :success
+      redirect_to news_index_path, flash: :success
     else
       render action: :new, flash: :error
     end
