@@ -4,7 +4,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   include CarrierWave::Compatibility::Paperclip
   def paperclip_path
-    ":rails_root/public/uploads/:id/:attachment/:style_:basename.:extension"
+    ":rails_root/public/system/:id/:attachment/:style_:basename.:extension"
   end
   storage :file
   def store_dir
