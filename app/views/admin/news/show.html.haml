@@ -1,9 +1,0 @@
-%p
-  %h2= @news.title
-%p
-  %small= @news.pusblished_at
-%p
-  != @news.body
-  = link_to t("news"), news_index_path, class: "btn"
-- if admin_signed_in?
-  = link_to t('edit'), edit_admin_news_path(@news), class: "btn"

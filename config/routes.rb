@@ -29,7 +29,7 @@ IAmTheLider::Application.routes.draw do
     resource :session, only: [ :new, :create, :destroy ]
     resources :welcome, only: [ :index ]
     resources :blog_posts, except: [:create, :new]
-    resources :news
+    resources :news, except: [ :index, :show ]
     resources :users do
       member do
         put :accept
