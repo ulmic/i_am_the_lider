@@ -12,12 +12,6 @@ class Admin::NewsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns :news
-  end
-
   test "should create news" do
     attributes = attributes_for :news
     post :create, news: attributes
@@ -32,11 +26,6 @@ class Admin::NewsControllerTest < ActionController::TestCase
     attributes[:title] = nil
     post :create, news: attributes
     assert_template :new
-  end
-
-  test "should show news" do
-    get :show, id: @news
-    assert_response :success
   end
 
   test "should get edit news" do
