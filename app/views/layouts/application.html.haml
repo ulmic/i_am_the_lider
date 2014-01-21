@@ -35,6 +35,9 @@
               %a{ href: new_user_path }
                 %h3= t('apply_for_participation')
           %li
+            %a{ href: users_path }
+              %h3= t('.participants')
+          %li
             %a{ href: competition_welcome_path }
               %h3= t('.competition')
           %li
@@ -43,6 +46,10 @@
           %li
             %a{ href: first_stage_welcome_path }
               %h3= t('.stages')
+          - if admin_signed_in?
+            %li
+              %a{ href: admin_welcome_index_path }
+                %h3= t('.admin_home')
     .row-fluid
       .span12.content
         = flash_messages :close
