@@ -19,6 +19,8 @@
   - if @user.work
     %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
       = t('.download_work')
+  - else
+    = t('.work_is_unavalaible')
 - if admin_signed_in?
   %br
   - if @user.new? || @user.reserved?
