@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
   has_many :blog_posts
   mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name
 
-  validates :birth_date, presence: true
+  validates :birth_date, presence: true,
+                         inclusion: { in: Time.now.years_ago(21).to_date..Time.now.years_ago(14).to_date}
   validates :district_id, presence: true
   validates :email, presence: true,
                     uniqueness: true,
