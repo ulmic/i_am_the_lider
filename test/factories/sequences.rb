@@ -5,6 +5,10 @@ FactoryGirl.define do
     DateTime.now
   end
 
+  sequence :age18 do |n|
+    Time.now.years_ago(18).to_date
+  end
+
   sequence :string, aliases: [:title] do |n|
     "string-#{n}"
   end

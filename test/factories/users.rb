@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    birth_date   { generate :date}
+    birth_date   { generate :age18}
     district
     email
     first_name   { generate :string }

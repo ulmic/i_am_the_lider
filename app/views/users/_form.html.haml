@@ -16,7 +16,7 @@
       = f.association :district, as: :select, label_method: :title, value_method: :id
       = f.input :locality, as: :string
       = f.input :adress_index, as: :string
-      = f.input :birth_date, as: :date, start_year: Date.today.year - 21,
+      = f.input :birth_date, as: :date, start_year: Date.today.year - 22,
                               end_year: Date.today.year - 10,
                               order: [:day, :month, :year]
       = f.input :school, as: :string
