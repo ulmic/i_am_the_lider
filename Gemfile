@@ -19,6 +19,7 @@ gem 'russian'
 gem 'bootstrap_flash_messages'
 gem 'state_machine'
 gem 'usefull_scopes'
+gem 'auto_html', git: "git://github.com/dejan/auto_html"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
