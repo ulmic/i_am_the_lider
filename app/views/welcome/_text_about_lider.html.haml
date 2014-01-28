@@ -5,14 +5,19 @@
   %span На разных площадках, организованных в рамках «Я-лидера!», конкурсанты учатся методам командообразования, планирования деятельности, технике публичных выступлений и управлению проектами, что позволяет полноценно готовить лидеров общественного сектора.
   %br
   %br
-  - unless user_signed_in?
-    %p{ align: :center }
-      %a{ href: new_user_path, class: 'btn btn-success btn-large' }
-        = t('apply_for_participation_on_competition')
-        %br
-        = t('i_am_lider')
-      %br
-      %br
-      Если ты уже подал заявку, то можешь зайти в свой аккаунт
-      %br
-      = link_to t('sign_in'), new_session_path, class: 'btn btn-primary'
+  .row
+    .span6
+      .center
+        = youtube_video('http://www.youtube.com/watch?feature=player_embedded&v=Pfi7jvfaOBs')
+    .span6
+      - unless user_signed_in?
+        %p{ align: :center }
+          %a{ href: new_user_path, class: 'btn btn-success btn-large' }
+            = t('apply_for_participation_on_competition')
+            %br
+            = t('i_am_lider')
+          %br
+          %br
+          Если ты уже подал заявку, то можешь зайти в свой аккаунт
+          %br
+          = link_to t('sign_in'), new_session_path, class: 'btn btn-primary'
