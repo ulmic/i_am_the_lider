@@ -20,10 +20,10 @@ module ApplicationHelper
     end
   end
 
-  def youtube_video(link)
+  def youtube_video(link, width = 350, height = 197)
     if link
       auto_html link do
-        youtube width: 384, height: 240
+        youtube width: width, height: height
       end
     end
   end
