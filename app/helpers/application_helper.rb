@@ -27,4 +27,9 @@ module ApplicationHelper
       end
     end
   end
+
+  def image_path_url(image)
+    request.protocol + request.host_with_port + image.url
+  end
+  
 end
