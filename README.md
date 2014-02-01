@@ -8,7 +8,7 @@
 
 Подробнее о конкурсе актива учащейся молодёжи можно прочитать здесь (http://www.ulmic.ru/programms/lider/-l-r).
 
-Сам проект расположен по адресу http://lider.ulgood.ru
+Сам проект расположен по адресу http://ul-lider.ru
 
 ===============
 
@@ -16,4 +16,4 @@ With this website, contestants can upload their competitive projects, reports on
 
 Read more about the contest asset of students can be found here (http://www.ulmic.ru/programms/lider/-l-r (in Russian))
 
-http://lider.ulgood.ru
+http://ul-lider.ru
