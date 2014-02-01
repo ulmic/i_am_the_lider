@@ -8,6 +8,7 @@
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
     = f.label :file
     = f.file_field :file
+    %br
     %small
       = t('.link_if_you_need')
     = f.input :link
