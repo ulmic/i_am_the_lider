@@ -8,5 +8,8 @@
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
     = f.label :file
     = f.file_field :file
+    %small
+      = t('.link_if_you_need')
+    = f.input :link
   .actions
     = f.submit t('upload'), class: 'btn btn-success'
