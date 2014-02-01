@@ -7,8 +7,8 @@
   %br
   .row
     .span6
-      .center
-        = youtube_video('http://www.youtube.com/watch?feature=player_embedded&v=Pfi7jvfaOBs')
+      .center.youtube-video
+        = youtube_video('http://www.youtube.com/watch?feature=player_embedded&v=Pfi7jvfaOBs', "100%")
     .span6
       - unless user_signed_in?
         %p{ align: :center }
