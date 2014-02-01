@@ -7,7 +7,9 @@
   = image_tag @news.photo, class: :main_photo
 %p
   != @news.body
+  .share42init{data: {url: news_url(@news), title: @news.title, image: image_path_url(@news.photo), description: @news.body.first(100) + "..." }}
   = link_to t('back'), news_index_path, class: "btn"
 - if admin_signed_in?
   = link_to t('edit'), edit_admin_news_path(@news), class: "btn btn-info"
   = link_to t('delete'), admin_news_path(@news), method: :delete, class: "btn btn-info"
+= javascript_include_tag "share42"

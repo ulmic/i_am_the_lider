@@ -1,15 +1,17 @@
 %h1= t('.contest_news')
 - @news.each do |new|
-  %a{ href: news_path(new) }
-    .well
+  .well
+    %a{ href: news_path(new) }
       = image_tag new.photo.big_thumb, class: :main_photo_big_thumb
       %h4= new.title
       %small= new.pusblished_at
       %p
         != strip_tags new.body.first(1000)
         %b ...
-      - if admin_signed_in?
-        %p
-          = link_to t('edit'), edit_admin_news_path(new), class: "btn btn-info"
-          = link_to t('delete'), admin_news_path(new), method: :delete, class: "btn btn-info"
+    .share42init{data: {url: news_url(new), title: new.title, image: image_path_url(new.photo), description: new.body.first(100) + "..." }}
+    - if admin_signed_in?
+      %p
+        = link_to t('edit'), edit_admin_news_path(new), class: "btn btn-info"
+        = link_to t('delete'), admin_news_path(new), method: :delete, class: "btn btn-info"
 %br
+= javascript_include_tag "share42"
