@@ -7,5 +7,5 @@ class Work < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :file, file_size: { maximum: 25.megabytes.to_i }
-  validates :link, url: true
+  validates :link, url: true, allow_blank: true
 end
