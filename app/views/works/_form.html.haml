@@ -11,6 +11,6 @@
     %br
     %small
       = t('.link_if_you_need')
-    = f.input :link
+    = f.input :link, as: :string
   .actions
     = f.submit t('upload'), class: 'btn btn-success'
