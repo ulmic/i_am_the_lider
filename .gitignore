@@ -15,3 +15,4 @@
 /.sass-cache
 .vagrant
 *.sqlite3-journal
+*.directory
