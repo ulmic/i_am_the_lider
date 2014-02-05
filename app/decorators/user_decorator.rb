@@ -9,4 +9,7 @@ class UserDecorator < Draper::Decorator
     "#{model.first_name} #{model.middle_name}"
   end
 
+  def twitter_account
+    "@#{model.twitter.split('/').last}"
+  end
 end
