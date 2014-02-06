@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140201031224) do
+ActiveRecord::Schema.define(:version => 20140206052133) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(:version => 20140201031224) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "jurors", :force => true do |t|
+    t.text     "first_name"
+    t.string   "last_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "news", :force => true do |t|
     t.text     "title"
     t.text     "body"
@@ -71,6 +78,23 @@ ActiveRecord::Schema.define(:version => 20140201031224) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "user_id"
+  end
+
+  create_table "rating_criterions", :force => true do |t|
+    t.text     "title"
+    t.integer  "stage_number"
+    t.integer  "maximum"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "rating_evaluations", :force => true do |t|
+    t.integer  "criterion_id"
+    t.integer  "participant_id"
+    t.integer  "juror_id"
+    t.integer  "value"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "reports", :force => true do |t|
