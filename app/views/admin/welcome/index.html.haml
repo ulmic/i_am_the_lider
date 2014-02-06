@@ -8,6 +8,7 @@
     = link_to t('.edit_news'), news_index_path, class: 'admin-action btn btn-large btn-info'
   .span3
     = link_to t('.edit_users_data'), users_path, class: 'admin-action btn btn-large btn-info'
+    = link_to t('.complete_evaluation_of_participants'), admin_stages_path, class: 'admin-action btn btn-large btn-info'
   .span3
     = link_to t('.edit_blogs'), admin_blog_posts_path, class: 'admin-action btn btn-large btn-info'
   .span3
@@ -20,6 +21,6 @@
       %td
         = image_tag user.avatar.mini_thumb_fill
       %td
-        = user.title        
+        = user.title
       %td
         = user.school

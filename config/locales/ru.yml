@@ -62,6 +62,7 @@ ru:
         add_user:        'Добавить участника'
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
         new_users: Неотмеченные заявки
+        complete_evaluation_of_participants: Заполнить оценки участников
     news:
       edit:
         edit_news: 		'Редактировать новость'
