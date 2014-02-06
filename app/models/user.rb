@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_one :work
   has_one :report
   has_many :blog_posts
+  has_many :evaluations
   mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name
 
   validates :birth_date, presence: true,
