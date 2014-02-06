@@ -1,6 +1,6 @@
 class Admin::CriterionsController < ApplicationController
   def index
-    @criterions = Rating::Criterion.all
+    @criterions = Rating::Criterion.where(stage_id: params[:id])
   end
 
   def new
@@ -13,6 +13,7 @@ class Admin::CriterionsController < ApplicationController
 
   def create
     @criterion = Rating::Criterion.new params[:criterion]
+    @criterion.stage_id = params[:id]
     if @criterion.save
       redirect_to admin_criterions_path, flash: :success
     else

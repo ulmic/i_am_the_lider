@@ -4,16 +4,17 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
   setup do
     @criterion = create :rating_criterion
     @admin = create :admin
+    @stage = create :stage
     admin_sign_in @admin
   end
 
   test "should get index" do
-    get :index
+    get :index, id: @stage
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new, id: @stage
     assert_response :success
   end
 
@@ -21,7 +22,7 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
     attributes = attributes_for :rating_criterion
     attributes[:stage_id] = 1
 
-    post :create, criterion: attributes
+    post :create, id: @stage, criterion: attributes
     assert_response :redirect
 
     criterion = Rating::Criterion.last
@@ -31,7 +32,7 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
   test "should not create criterion" do
     attributes = { title: @criterion.title }
 
-    post :create, criterion: attributes
+    post :create, id: @stage, criterion: attributes
     assert_response :success
   end
 
