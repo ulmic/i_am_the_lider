@@ -13,7 +13,7 @@ class Admin::CriterionsController < ApplicationController
   end
 
   def create
-    @criterion = Rating::Criterion.new params[:criterion]
+    @criterion = Rating::Criterion.new params[:rating_criterion]
     @criterion.stage_id = params[:id]
     if @criterion.save
       redirect_to admin_criterions_path, flash: :success
@@ -24,7 +24,7 @@ class Admin::CriterionsController < ApplicationController
 
   def update
     @criterion = Rating::Criterion.find params[:id]
-    if @criterion.update_attributes params[:criterion]
+    if @criterion.update_attributes params[:rating_criterion]
       redirect_to admin_criterions_path, flash: :success
     else
       render action: :edit, flash: :error

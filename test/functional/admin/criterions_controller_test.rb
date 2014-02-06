@@ -22,7 +22,7 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
     attributes = attributes_for :rating_criterion
     attributes[:stage_id] = 1
 
-    post :create, id: @stage, criterion: attributes
+    post :create, id: @stage, rating_criterion: attributes
     assert_response :redirect
 
     criterion = Rating::Criterion.last
@@ -32,7 +32,7 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
   test "should not create criterion" do
     attributes = { title: @criterion.title }
 
-    post :create, id: @stage, criterion: attributes
+    post :create, id: @stage, rating_criterion: attributes
     assert_response :success
   end
 
@@ -43,7 +43,7 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
 
   test "should update criterion by admin" do
     attributes = attributes_for :rating_criterion
-    put :update, id: @criterion, criterion: attributes
+    put :update, id: @criterion, rating_criterion: attributes
     assert_response :redirect
 
     @criterion.reload
@@ -53,7 +53,7 @@ class Admin::CriterionsControllerTest < ActionController::TestCase
   test "should not update criterion with render edit" do
     attributes = attributes_for :rating_criterion
     attributes[:title] = nil
-    put :update, id: @criterion, criterion: attributes
+    put :update, id: @criterion, rating_criterion: attributes
 
     assert_response :success
 
