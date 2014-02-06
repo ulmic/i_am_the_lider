@@ -1,7 +1,8 @@
 = simple_form_for @criterion, url: admin_criterions_path, html: { class: 'form-horizontal' } do |f|
-  = f.input :title
-  = f.input :stage_id
-  = f.input :maximum
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :title, as: :string
+    = f.input :stage_id, as: :hidden
+    = f.input :maximum
   .form-actions
-    = f.button :submit, class: 'btn-primary'
-    = link_to t('.cancel', default: t("helpers.links.cancel")), admin_criterions_path, class: 'btn'
+    = f.button :submit, class: 'btn btn-primary'
+    = link_to t('cancel', default: t("helpers.links.cancel")), admin_criterions_path, class: 'btn'

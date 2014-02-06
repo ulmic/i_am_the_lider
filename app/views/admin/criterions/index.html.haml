@@ -1,25 +1,23 @@
 - model_class = Rating::Criterion
 .page-header
-  %h1=t '.title', default: model_class.model_name.human.pluralize.titleize
+  %h1
+    = t '.title'
+    '
+    = @stage.title
+    '
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:title)
-      %th= model_class.human_attribute_name(:stage_id)
-      %th= model_class.human_attribute_name(:maximum)
-      %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', default: t("helpers.actions")
+      %th= t 'title'
+      %th= t 'maximum'
+      %th=t 'actions', default: t("helpers.actions")
   %tbody
     - @criterions.each do |criterion|
       %tr
-        %td= link_to criterion.id, admin_criterion_path(criterion)
         %td= criterion.title
-        %td= criterion.stage_id
         %td= criterion.maximum
-        %td=l criterion.created_at
         %td
-          = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_criterion_path(criterion), class: 'btn btn-mini'
-          = link_to t('.destroy', default: t("helpers.links.destroy")), admin_criterion_path(criterion), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+          = link_to t('edit', default: t("helpers.links.edit")), edit_admin_criterion_path(criterion), class: 'btn btn-mini'
+          = link_to t('destroy', default: t("helpers.links.destroy")), admin_criterion_path(criterion), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
 
-= link_to t('.new', default: t("helpers.links.new")), new_admin_criterion_path, class: 'btn btn-primary'
+= link_to t('new', default: t("helpers.links.new")), new_admin_criterion_path, class: 'btn btn-primary'

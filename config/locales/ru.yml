@@ -25,6 +25,8 @@ ru:
   important_field:  '*'
   new: Добавить
   destroy: Удалить
+  title: Название
+  maximum: Максимальный балл по критерию
 
   time:
     formats:
@@ -90,6 +92,11 @@ ru:
         title: Выберите этап
       new:
         title: Новый этап конкурса
+    criterions:
+      index:
+        title: Критерии этапа
+      new:
+        title: Добавить новый критерий
 
   blog_posts:
     back:       'Назад'

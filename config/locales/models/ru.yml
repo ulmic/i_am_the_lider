@@ -9,6 +9,7 @@ ru:
       reserve_reason: Недочёт в заявке
       work: Творческая работа
       stage: Этап конкурса
+      criterion: Критерий оценки
     attributes:
       user:
         login: Логин
@@ -65,3 +66,7 @@ ru:
       stage:
         title: Название
         description: Описание
+      criterion:
+        title: Название
+        stage_id: Этап конкурса
+        maximum: Максимальный балл по критерию

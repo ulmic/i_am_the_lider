@@ -1,5 +1,6 @@
 class Admin::CriterionsController < ApplicationController
   def index
+    @stage = Stage.find params[:id]
     @criterions = Rating::Criterion.where(stage_id: params[:id])
   end
 
