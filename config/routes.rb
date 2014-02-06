@@ -39,8 +39,11 @@ IAmTheLider::Application.routes.draw do
     end
     resources :reports, only: [ :edit, :update, :destroy ]
     resources :jurors, except: :show
-    resources :stages, except: :show
-    resources :criterions, except: :show
+    resources :stages, except: :show do
+      member do
+        resources :criterions, except: :show
+      end
+    end
   end
   get "admin" => "admin/welcome#index"
 end

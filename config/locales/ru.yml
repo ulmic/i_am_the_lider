@@ -24,6 +24,7 @@ ru:
   important_fields: '* - обязательные поля отмечены звёздочкой'
   important_field:  '*'
   new: Добавить
+  destroy: Удалить
 
   time:
     formats:
