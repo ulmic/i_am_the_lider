@@ -23,6 +23,7 @@ ru:
   i_am_lider:       '"Я-лидер!"'
   important_fields: '* - обязательные поля отмечены звёздочкой'
   important_field:  '*'
+  new: Добавить
 
   time:
     formats:
@@ -83,6 +84,11 @@ ru:
         add_user_to_reserve: Отложить заявку
       edit:
         edit_reserve_reason: Изменить описание недочёта
+    stages:
+      index:
+        title: Выберите этап
+      new:
+        title: Новый этап конкурса
 
   blog_posts:
     back:       'Назад'
