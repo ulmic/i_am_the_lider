@@ -22,7 +22,8 @@
             %h4= user.school
           .row-fluid
             %h4= user.group
-        - unless user.twitter.blank?
-          .row-fluid
-            %a{ href: user.twitter }
-              .span1.logo.mini.twitter
+        .offset1.span1
+          - unless user.twitter.blank?
+            .row-fluid
+              %a{ href: user.twitter }
+                .logo.mini.twitter
