@@ -48,6 +48,7 @@ ru:
       this_project_develop_by_programmers_of_ulmic: Команда разработчиков ИТ-проектов МИЦ
       this_project_on_the_Github: Этот проект на Github
       partners: Партнёры
+      designer_page: Страница нашего дизайнера
 
   admin:
     welcome:
@@ -60,7 +61,8 @@ ru:
         edit_blogs:      'Редактировать блоги'
         add_user:        'Добавить участника'
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
-        new_users: Неотмеченные заявки
+        new_users: Новые заявки
+        reserved_users: Отложенные заявки
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -154,7 +156,6 @@ ru:
       report:               'Отчёт о мероприятии'
       download_archive:     'Скачать архив'
       there_is_not_archive: 'Архив не загружен'
-      work_is_unavalaible: Работа не загружена
     show:
       create_report: 'Создать отчёт о мероприятии'
       edit_report:   'Изменить отчёт о мероприятии'
@@ -167,11 +168,15 @@ ru:
       add_work: Добавить творческую работу
       edit_work: Изменить творческую работу
       download_work: Загрузить творческую работу
+      download_work_from_file_storage: Загрузить работу с файлообменника
+      work_is_unavalaible: Работа не загружена
   works:
     new:
-      title: Добавить творческую работу
+      title: 'Добавить творческую работу "Кого лидер ведёт за собой?"'
     edit:
-      title: Загрузить новую творческую работу
+      title: 'Загрузить новую творческую работу "Кого лидер ведёт за собой?"'
+    form:
+      link_if_you_need: 'Если файл, который вы собираетесь загрузить превышает допустимый объём - 25 мб, то загрузите его на один из файлообменников и выложите сюда ссылку'
 
   welcome:
     index:

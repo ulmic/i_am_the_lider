@@ -17,7 +17,6 @@
 
 body
   font-family: micfont
-  background-color: #FFFBCA /* Old browsers */
   background: -moz-linear-gradient(top, #fffbca 0%, #ffb847 100%) /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fffbca), color-stop(100%,#ffb847)) /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, #fffbca 0%,#ffb847 100%) /* Chrome10+,Safari5.1+ */
@@ -25,9 +24,11 @@ body
   background: -ms-linear-gradient(top, #fffbca 0%,#ffb847 100%) /* IE10+ */
   background: linear-gradient(top bottom, #fffbca 0%,#ffb847 100%) /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbca', endColorstr='#ffb847',GradientType=0 ) /* IE6-9 */
+  background: transparent url(background-image.jpg) no-repeat
+  background-color: #ffda56 /* Old browsers */
+  background-size: 100%
+  background-position: fixed
   &>.container-fluid
-    background: transparent url(logo-mic-opacity30.png) no-repeat
-    background-position: -50px -20px
     padding: 0 3% 30px
 
 label
@@ -52,7 +53,7 @@ label
       line-height: 100px
       font-size: 120px
       font-family: Molot
-      color: #FFB800
+      color: #FFFFFF
 
 .span12.content
   padding: 35px 35px

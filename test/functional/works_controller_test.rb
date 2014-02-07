@@ -71,15 +71,6 @@ class WorksControllerTest < ActionController::TestCase
     assert_redirected_to not_found_errors_path
   end
 
-  test "should not create work with render new" do
-    user_sign_in @user
-    attributes = attributes_for :work
-    attributes[:file] = nil
-
-    post :create, work: attributes, id: @user
-    assert_template :new
-  end
-
   test "should not update work with no access" do
     attributes = attributes_for :work
     put :update, id: @work, work: attributes

@@ -17,8 +17,12 @@
       = t('.user_reserved_because')
       = @user.reserve_reason.description
   - if @user.work
-    %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
-      = t('.download_work')
+    - if @user.work.file.present?
+      %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
+        = t('.download_work')
+    - unless @user.work.link.blank?
+      %a{ href: @user.work.link, class: 'btn btn-large btn-success' }
+        = t('.download_work_from_file_storage')
   - else
     = t('.work_is_unavalaible')
 - if admin_signed_in?
