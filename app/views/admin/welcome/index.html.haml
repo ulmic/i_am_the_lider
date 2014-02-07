@@ -14,12 +14,26 @@
     = link_to t('sign_out'), admin_session_path, method: :delete, class: 'btn btn-large btn-danger'
 - if @new_users.any?
   %h3= t('.new_users')
-%table.table.table-stripped.table-hover.proposals
-  - @new_users.each do |user|
-    %tr{ onclick: "return location.href = '#{user_path(user)}'"}
-      %td
-        = image_tag user.avatar.mini_thumb_fill
-      %td
-        = user.title        
-      %td
-        = user.school
+  %table.table.table-stripped.table-hover.proposals
+    - @new_users.each do |user|
+      %tr{ onclick: "return location.href = '#{user_path(user)}'"}
+        %td
+          = image_tag user.avatar.mini_thumb_fill
+        %td
+          = user.title
+        %td
+          = user.school
+- if @reserved_users.any?
+  %h3
+    = t('.reserved_users')
+  %table.table.table-stripped.table-hover.proposals
+    - @reserved_users.each do |user|
+      %tr{ onclick: "return localtion.href = '#{user_path(user)}'" }
+        %td
+          = image_tag user.avatar.mini_thumb_fill
+        %td
+          = user.title
+        %td
+          = user.school
+
+
