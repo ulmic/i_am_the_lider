@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(:version => 20140201031224) do
     t.integer  "adress_index"
     t.text     "locality"
     t.string   "confirm_state"
-    t.text     "link"
   end
 
   create_table "works", :force => true do |t|
