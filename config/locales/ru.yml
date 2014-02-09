@@ -170,6 +170,7 @@ ru:
       download_work: Загрузить творческую работу
       download_work_from_file_storage: Загрузить работу с файлообменника
       work_is_unavalaible: Работа не загружена
+      return_to_reserved: Вернуть в отложенные
   works:
     new:
       title: 'Добавить творческую работу "Кого лидер ведёт за собой?"'
