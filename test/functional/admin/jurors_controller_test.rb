@@ -3,6 +3,7 @@ require 'test_helper'
 class Admin::JurorsControllerTest < ActionController::TestCase
   setup do
     @juror = create :juror
+    @stage = create :stage
     @admin = create :admin
     admin_sign_in @admin
   end
@@ -19,8 +20,7 @@ class Admin::JurorsControllerTest < ActionController::TestCase
 
   test "should create juror" do
     attributes = attributes_for :juror
-
-    post :create, juror: attributes
+    post :create, juror: attributes, id: @stage
     assert_response :redirect
 
     juror = Juror.last

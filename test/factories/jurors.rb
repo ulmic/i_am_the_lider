@@ -4,6 +4,6 @@ FactoryGirl.define do
     last_name { generate :string }
     login
     password
-    stage
+    stage_id 1
   end
 end
