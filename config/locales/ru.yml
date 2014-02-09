@@ -107,6 +107,8 @@ ru:
     jurors:
       new:
         title: Добавить члена жюри
+      index:
+        title: Члены жюри
 
   blog_posts:
     back:       'Назад'
