@@ -27,6 +27,7 @@ ru:
   destroy: Удалить
   title: Название
   maximum: Максимальный балл по критерию
+  add: Добавить
 
   time:
     formats:
@@ -103,6 +104,9 @@ ru:
         title: Добавить новый критерий
       edit:
         title: Редактировать критерий
+    jurors:
+      new:
+        title: Добавить члена жюри
 
   blog_posts:
     back:       'Назад'

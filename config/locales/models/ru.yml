@@ -10,6 +10,7 @@ ru:
       work: Творческая работа
       stage: Этап конкурса
       criterion: Критерий оценки
+      juror: Член жюри
     attributes:
       user:
         login: Логин
@@ -70,3 +71,9 @@ ru:
         title: Название
         stage_id: Этап конкурса
         maximum: Максимальный балл по критерию
+      juror:
+        first_name: Фамилия
+        last_name: Имя
+        stage_id: Этап конкурса, в котором участвует
+        login: Логин
+        password: Пароль
