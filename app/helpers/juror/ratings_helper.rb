@@ -1,2 +1,0 @@
-module Juror::RatingsHelper
-end
