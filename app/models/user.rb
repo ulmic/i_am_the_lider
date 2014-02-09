@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
     end
 
     event :reserve do
-      transition [ :new ] => :reserved
+      transition [ :new, :accepted ] => :reserved
     end
 
   end
