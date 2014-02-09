@@ -1,19 +1,19 @@
 class Admin::CriterionsController < ApplicationController
   def index
     @stage = Stage.find params[:id]
-    @criterions = Rating::Criterion.where(stage_id: params[:id])
+    @criterions = Criterion.where(stage_id: params[:id])
   end
 
   def new
-    @criterion = Rating::Criterion.new
+    @criterion = Criterion.new
   end
 
   def edit
-    @criterion = Rating::Criterion.find params[:id]
+    @criterion = Criterion.find params[:id]
   end
 
   def create
-    @criterion = Rating::Criterion.new params[:rating_criterion]
+    @criterion = Criterion.new params[:criterion]
     @criterion.stage_id = params[:id]
     if @criterion.save
       redirect_to admin_criterions_path(@criterion.stage), flash: :success
@@ -23,8 +23,8 @@ class Admin::CriterionsController < ApplicationController
   end
 
   def update
-    @criterion = Rating::Criterion.find params[:id]
-    if @criterion.update_attributes params[:rating_criterion]
+    @criterion = Criterion.find params[:id]
+    if @criterion.update_attributes params[:criterion]
       redirect_to admin_criterions_path(@criterion.stage), flash: :success
     else
       render action: :edit, flash: :error
@@ -32,7 +32,7 @@ class Admin::CriterionsController < ApplicationController
   end
 
   def destroy
-    @criterion = Rating::Criterion.find params[:id]
+    @criterion = Criterion.find params[:id]
     @criterion.destroy
     redirect_to admin_criterions_path, flash: :success
   end
