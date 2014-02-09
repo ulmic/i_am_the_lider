@@ -14,7 +14,8 @@ class Admin::JurorsController < Admin::ApplicationController
   def create
     @juror = Juror.new params[:juror]
     if @juror.save
-      redirect_to admin_jurors_path, flash: :success
+      #FIXME какой бул щит, в rake routes ничего нет.
+      redirect_to "admin/jurors#index", flash: :success
     else
       render action: :new, flash: :error
     end

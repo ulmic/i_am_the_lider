@@ -16,8 +16,9 @@
         %td= juror.first_name
         %td= juror.last_name
         %td=l juror.created_at
+        %td= juror.stage.title
         %td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_juror_path(juror), class: 'btn btn-mini'
           = link_to t('.destroy', default: t("helpers.links.destroy")), admin_juror_path(juror), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
 
-= link_to t('.new', default: t("helpers.links.new")), new_admin_juror_path, class: 'btn btn-primary'
+= link_to t('.new', default: t("helpers.links.new")), new_admin_juror_path(params[:id]), class: 'btn btn-primary'
