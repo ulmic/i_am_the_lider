@@ -14,12 +14,10 @@ class Juror::EvaluationsController < ApplicationController
     end
   end
 
-  def update
+  def destroy
     @evaluation = Evaluation.find params[:id]
-    if @evaluation.update_attributes params[:evaluation]
-      redirect_to juror_evaluations_path(@evaluation.participant), flash: :success
-    else
-      redirect_to juror_evaluations_path(@evaluation.participant), flash: :error
-    end
+    user = @evaluation.participant
+    @evaluation.destroy
+    redirect_to juror_evaluations_path(user)
   end
 end
