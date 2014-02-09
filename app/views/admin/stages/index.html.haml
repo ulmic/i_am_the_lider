@@ -10,7 +10,11 @@
     - @stages.each do |stage|
       %tr
         %td
-          = link_to stage.title, admin_criterions_path(stage)
+          = stage.title
+        %td
+          = link_to t('.add_juror'), new_admin_juror_path(stage), class: 'btn btn-success'
+        %td
+          = link_to t('.add_criterion'), new_admin_criterion_path(stage), class: 'btn btn-success'
         %td
           = link_to t('edit', default: t("helpers.links.edit")), edit_admin_stage_path(stage), class: 'btn btn-mini'
           = link_to t('destroy', default: t("helpers.links.destroy")), admin_stage_path(stage), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'

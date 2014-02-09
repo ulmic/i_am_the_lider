@@ -92,6 +92,8 @@ ru:
     stages:
       index:
         title: Выберите этап
+        add_criterion: Добавить критерий оценки
+        add_juror: Добавить члена жюри
       new:
         title: Новый этап конкурса
     criterions:
