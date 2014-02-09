@@ -1,0 +1,35 @@
+%p
+  %h2
+    - if admin_signed_in?
+      = @user.title
+    - else
+      = @user.small_name
+%p
+  %img.img-polaroid.big_img{  src: @user.avatar  }
+%p
+  %b= t('activerecord.attributes.user.district')
+  = @user.district.title if @user.district.present?
+%p
+  %b= t('activerecord.attributes.user.birth_date')
+  = @user.birth_date
+- unless @user.school.blank?
+  %p
+    %b= t('activerecord.attributes.user.school')
+    = @user.school
+- unless @user.group.blank?
+  %p
+    %b= t('activerecord.attributes.user.group')
+    = @user.group
+- unless @user.twitter.blank?
+  %p
+    %b= t('activerecord.attributes.user.twitter')
+    %a{ href: "#{ @user.twitter }" }
+      = @user.twitter_account
+- if @user.work
+  - if @user.work.file.present?
+    %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
+      = t('.download_work')
+  - unless @user.work.link.blank?
+    = link_to t('.download_work_from_file_storage'), @user.work.link, class: 'btn btn-large btn-success'
+- else
+  = t('.work_is_unavalaible')

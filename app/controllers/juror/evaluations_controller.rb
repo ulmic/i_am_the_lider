@@ -1,7 +1,7 @@
 class Juror::EvaluationsController < ApplicationController
   def index
     @criterions = current_juror.stage.criterions
-    @user = User.find params[:id]
+    @user = User.find(params[:id]).decorate
     @evaluation = Evaluation.new
   end
 

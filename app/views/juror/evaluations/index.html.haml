@@ -1,7 +1,5 @@
-%table.table.table-stripped
-  - @criterions.each do |criterion|
-    %tr
-      %td
-        = criterion.title
-      %td
-        = criterion.maximum
+.row-fluid
+  .span4
+    = render 'user_office'
+  .span7
+    = render 'eval_table'
