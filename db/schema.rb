@@ -58,11 +58,21 @@ ActiveRecord::Schema.define(:version => 20140206055313) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "evaluations", :force => true do |t|
+    t.integer  "criterion_id"
+    t.integer  "participant_id"
+    t.integer  "juror_id"
+    t.integer  "value"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "jurors", :force => true do |t|
     t.text     "first_name"
     t.string   "last_name"
     t.string   "login"
     t.string   "password"
+    t.integer  "stage_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -88,15 +98,6 @@ ActiveRecord::Schema.define(:version => 20140206055313) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "user_id"
-  end
-
-  create_table "rating_evaluations", :force => true do |t|
-    t.integer  "criterion_id"
-    t.integer  "participant_id"
-    t.integer  "juror_id"
-    t.integer  "value"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
   end
 
   create_table "reports", :force => true do |t|

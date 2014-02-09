@@ -65,7 +65,7 @@ module AuthHelper
   end
 
   def juror_sign_out
-    session[:admin_id] = nil
+    session[:juror_id] = nil
   end
 
   def authenticate_juror?(juror, password)
@@ -75,6 +75,12 @@ module AuthHelper
   def authenticate_juror!
     unless juror_signed_in?
       redirect_to new_juror_session_path
+    end
+  end
+
+  def current_juror
+    if session[:juror_id]
+      @current_juror ||= Juror.find(session[:juror_id])
     end
   end
 end

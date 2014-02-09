@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :rating_criterion, class: 'Rating::Criterion' do
+  factory :criterion do
     title
     stage
     maximum { generate :integer }
