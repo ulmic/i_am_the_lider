@@ -1,4 +1,4 @@
-class Juror::EvaluationsController < ApplicationController
+class Juror::EvaluationsController < Juror::ApplicationController
   def index
     @criterions = current_juror.stage.criterions
     @user = User.find(params[:id]).decorate
@@ -8,16 +8,16 @@ class Juror::EvaluationsController < ApplicationController
   def create
     @evaluation = Evaluation.new params[:evaluation]
     if @evaluation.save
-      redirect_to juror_evaluations_path(@evaluation.participant), flash: :success
+      redirect_to juror_evaluations_path @evaluation.user, flash: :success
     else
-      redirect_to juror_evaluations_path(@evaluation.participant), flash: :error
+      redirect_to juror_evaluations_path params[:id], flash: :error
     end
   end
 
   def destroy
     @evaluation = Evaluation.find params[:id]
-    user = @evaluation.participant
+    user = @evaluation.user
     @evaluation.destroy
-    redirect_to juror_evaluations_path(user)
+    redirect_to juror_evaluations_path user
   end
 end

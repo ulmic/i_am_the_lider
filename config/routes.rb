@@ -55,7 +55,7 @@ IAmTheLider::Application.routes.draw do
         resources :evaluations, only: :index
       end
     end
-    resources :evaluations, only: [:create, :update]
+    resources :evaluations, only: [:create, :destroy]
   end
   get "juror" => "juror/welcome#index"
 end

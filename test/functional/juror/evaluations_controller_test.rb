@@ -3,6 +3,7 @@ require 'test_helper'
 class Juror::EvaluationsControllerTest < ActionController::TestCase
   setup do
     @user = create :user
+    @stage = create :stage
     @evaluation = create :evaluation
     @juror = create :juror
     juror_sign_in @juror
@@ -19,10 +20,12 @@ class Juror::EvaluationsControllerTest < ActionController::TestCase
     assert_equal attributes[:value], Evaluation.last.value
   end
 
-  test "should put update" do
-    attributes = attributes_for :evaluation
-    put :update, id: @evaluation, evaluation: attributes
-    @evaluation.reload
-    assert_equal attributes[:value], @evaluation.value
+  test "should destroy evaluation" do
+    user = @evaluation.user
+    assert_difference('Evaluation.count', -1) do
+      delete :destroy, id: @evaluation
+    end
+
+    assert_redirected_to juror_evaluations_path user
   end
 end
