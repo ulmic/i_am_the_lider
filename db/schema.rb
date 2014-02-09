@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(:version => 20140206055313) do
 
   create_table "evaluations", :force => true do |t|
     t.integer  "criterion_id"
-    t.integer  "participant_id"
+    t.integer  "user_id"
     t.integer  "juror_id"
     t.integer  "value"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "jurors", :force => true do |t|
