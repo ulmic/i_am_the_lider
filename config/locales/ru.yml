@@ -23,6 +23,10 @@ ru:
   i_am_lider:       '"Я-лидер!"'
   important_fields: '* - обязательные поля отмечены звёздочкой'
   important_field:  '*'
+  new: Добавить
+  destroy: Удалить
+  title: Название
+  maximum: Максимальный балл по критерию
 
   time:
     formats:
@@ -63,6 +67,8 @@ ru:
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
         new_users: Новые заявки
         reserved_users: Отложенные заявки
+        complete_evaluation_of_participants: Заполнить оценки участников
+        admin_compeptition: Администрировать конкурс
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -83,6 +89,18 @@ ru:
         add_user_to_reserve: Отложить заявку
       edit:
         edit_reserve_reason: Изменить описание недочёта
+    stages:
+      index:
+        title: Выберите этап
+      new:
+        title: Новый этап конкурса
+    criterions:
+      index:
+        title: Критерии этапа
+      new:
+        title: Добавить новый критерий
+      edit:
+        title: Редактировать критерий
 
   blog_posts:
     back:       'Назад'

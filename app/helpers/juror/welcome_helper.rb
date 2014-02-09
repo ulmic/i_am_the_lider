@@ -1,0 +1,2 @@
+module Juror::WelcomeHelper
+end

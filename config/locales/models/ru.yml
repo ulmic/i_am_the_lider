@@ -8,6 +8,8 @@ ru:
       admin: Администратор
       reserve_reason: Недочёт в заявке
       work: Творческая работа
+      stage: Этап конкурса
+      criterion: Критерий оценки
     attributes:
       user:
         login: Логин
@@ -61,3 +63,10 @@ ru:
       work:
         file: Файл
         link: Ссылка на файлообменник
+      stage:
+        title: Название
+        description: Описание
+      criterion:
+        title: Название
+        stage_id: Этап конкурса
+        maximum: Максимальный балл по критерию

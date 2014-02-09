@@ -54,4 +54,33 @@ module AuthHelper
   def check_access_to_edit?(instance)
     admin_signed_in? || (user_signed_in? && instance.user_id == current_user.id)
   end
+
+  #Jurors
+  def juror_sign_in(juror)
+    session[:juror_id] = juror.id
+  end
+
+  def juror_signed_in?
+    session[:juror_id] && Juror.find_by_id(session[:juror_id])
+  end
+
+  def juror_sign_out
+    session[:juror_id] = nil
+  end
+
+  def authenticate_juror?(juror, password)
+    juror.password === password
+  end
+
+  def authenticate_juror!
+    unless juror_signed_in?
+      redirect_to new_juror_session_path
+    end
+  end
+
+  def current_juror
+    if session[:juror_id]
+      @current_juror ||= Juror.find(session[:juror_id])
+    end
+  end
 end
