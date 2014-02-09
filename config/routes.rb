@@ -49,5 +49,6 @@ IAmTheLider::Application.routes.draw do
   namespace :juror do
     resource :session, only: [ :new, :create, :destroy ]
     resources :welcome, only: :index
+    resources :users, only: :index
   end
 end
