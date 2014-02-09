@@ -12,6 +12,7 @@
         %td
           = stage.title
         %td
+          = link_to t('.view_jurors'), admin_jurors_path
           = link_to t('.add_juror'), new_admin_juror_path(stage), class: 'btn btn-success'
         %td
           = link_to t('.add_criterion'), new_admin_criterion_path(stage), class: 'btn btn-success'
