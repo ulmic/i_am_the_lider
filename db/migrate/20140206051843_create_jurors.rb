@@ -3,6 +3,8 @@ class CreateJurors < ActiveRecord::Migration
     create_table :jurors do |t|
       t.text :first_name
       t.string :last_name
+      t.string :login
+      t.string :password
 
       t.timestamps
     end
