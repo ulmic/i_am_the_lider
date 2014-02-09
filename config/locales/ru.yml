@@ -95,6 +95,8 @@ ru:
         title: Выберите этап
         add_criterion: Добавить критерий оценки
         add_juror: Добавить члена жюри
+        view_jurors: Посмотреть список жюри
+        view_criterions: Посмотреть критерии этого этапа
       new:
         title: Новый этап конкурса
     criterions:
@@ -109,6 +111,7 @@ ru:
         title: Добавить члена жюри
       index:
         title: Члены жюри
+        stages: Этапы конкурса
 
   blog_posts:
     back:       'Назад'
