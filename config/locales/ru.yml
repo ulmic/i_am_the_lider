@@ -236,3 +236,5 @@ ru:
         download_work: Загрузить творческую работу
         download_work_from_file_storage: Загрузить работу с файлообменника
         work_is_unavalaible: Работа не загружена
+      eval_table:
+        criterions: Критерии оценки

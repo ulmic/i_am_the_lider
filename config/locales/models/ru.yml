@@ -11,6 +11,7 @@ ru:
       stage: Этап конкурса
       criterion: Критерий оценки
       juror: Член жюри
+      evaluation: Оценка
     attributes:
       user:
         login: Логин
@@ -77,3 +78,5 @@ ru:
         stage_id: Этап конкурса, в котором участвует
         login: Логин
         password: Пароль
+      evaluation:
+        value: Оценка
