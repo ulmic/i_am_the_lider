@@ -3,7 +3,7 @@
   = t('.title')
   - @users.each do |user|
     .row-fluid.has_top_margin
-      %a{ href: juror_evaluations_path(user) }
+      %a{ href: new_juror_rating_path(user) }
         .span2
           %img.img-polaroid{ src: user.avatar.thumb_fill }
         .span3

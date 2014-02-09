@@ -5,6 +5,7 @@ class Juror::RatingsControllerTest < ActionController::TestCase
     @user = create :user
     @juror = create :juror
     @rating = create :rating
+    @stage = create :stage
     juror_sign_in @juror
   end
 

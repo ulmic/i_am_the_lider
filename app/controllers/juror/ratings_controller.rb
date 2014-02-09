@@ -1,9 +1,11 @@
 class Juror::RatingsController < ApplicationController
   def show
-    user = User.find params[:id]
+    @user = User.find(params[:id]).decorate
     @rating = (user.ratings & current_juror.ratings).first
   end
   def new
+    @user = User.find(params[:id]).decorate
+    @criterions = current_juror.stage.criterions
     @rating = Rating.new
   end
   def create

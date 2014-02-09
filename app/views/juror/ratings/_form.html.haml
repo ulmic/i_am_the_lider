@@ -1,0 +1,9 @@
+= simple_form_for @rating, url: juror_rating_path do |f|
+  = f.input :user_id, as: :hidden, input_html: { value: params[:id] }
+  = f.input :juror_id, as: :hidden, input_html: { value: current_juror.id }
+  - @criterions.each do |criterion|
+    = f.simple_fields_for :evaluations do |eval|
+      - eval.with_options input_html: { class: :span6 } do |f|
+        = eval.input :value, as: :integer, input_html: { max: criterion.maximum, min: 0 }, label: false
+        = eval.input :criterion_id, as: :hidden, input_html: { value: criterion.id }
+  = f.submit

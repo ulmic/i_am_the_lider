@@ -1,52 +1,34 @@
-.row-fluid
-  .span5
-    %p
-      %h2
-        - if admin_signed_in?
-          = @user.title
-        - else
-          = @user.small_name
-    %p
-      %img.img-polaroid.big_img{  src: @user.avatar  }
-    %p
-      %b= t('activerecord.attributes.user.district')
-      = @user.district.title if @user.district.present?
-    %p
-      %b= t('activerecord.attributes.user.birth_date')
-      = @user.birth_date
-    - unless @user.school.blank?
-      %p
-        %b= t('activerecord.attributes.user.school')
-        = @user.school
-    - unless @user.group.blank?
-      %p
-        %b= t('activerecord.attributes.user.group')
-        = @user.group
-    - unless @user.twitter.blank?
-      %p
-        %b= t('activerecord.attributes.user.twitter')
-        %a{ href: "#{ @user.twitter }" }
-          = @user.twitter_account
+%p
+  %h2
     - if admin_signed_in?
-      %p
-        %b= t('activerecord.attributes.user.mobile_phone')
-        = @user.mobile_phone
-      %p
-        %b= t('activerecord.attributes.user.home_phone')
-        = @user.home_phone
-      %p
-        %b= t('activerecord.attributes.user.email')
-        = @user.email
-  .span7
-    - if @user.report
-      %p
-        %h3= t('.report')
-      %p
-        != @user.report.description if @user.report.description
-      %p
-        -if @user.report.present?
-          %a.btn.btn-large.btn-success{ href: "#{ @user.report.archive }" }
-            = t('.download_archive')
-        -else
-          %span{ style: "color: #AAA;" }
-            = t('.there_is_not_archive')
+      = @user.title
+    - else
+      = @user.small_name
+%p
+  %img.img-polaroid.big_img{  src: @user.avatar  }
+%p
+  %b= t('activerecord.attributes.user.district')
+  = @user.district.title if @user.district.present?
+%p
+  %b= t('activerecord.attributes.user.birth_date')
+  = @user.birth_date
+- unless @user.school.blank?
+  %p
+    %b= t('activerecord.attributes.user.school')
+    = @user.school
+- unless @user.group.blank?
+  %p
+    %b= t('activerecord.attributes.user.group')
+    = @user.group
+- unless @user.twitter.blank?
+  %p
+    %b= t('activerecord.attributes.user.twitter')
+    %a{ href: "#{ @user.twitter }" }
+      = @user.twitter_account
+- if @user.work
+  - if @user.work.file.present?
+    %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
+      = t('.download_work')
+  - unless @user.work.link.blank?
+    %a{ href: @user.work.link, class: 'btn btn-large btn-success' }
+      = t('.download_work_from_file_storage')
