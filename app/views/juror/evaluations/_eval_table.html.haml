@@ -15,5 +15,6 @@
         = criterion.maximum
       %td
         = simple_form_for @evaluation, url: juror_evaluation_path, method: :post do |f|
-          = f.input :value, label: false, input_html: { max: criterion.maximum, min: 0 }
-          = f.submit
+          - f.with_options input_html: { class: :span6 } do |f|
+            = f.input :value, label: false, input_html: { max: criterion.maximum, min: 0 }
+            = f.button :submit, t('.accept_eval'), class: 'btn btn-success'
