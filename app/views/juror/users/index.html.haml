@@ -1,6 +1,6 @@
 = stylesheet_link_tag "users"
 %h1
-  = t('.competitors_list')
+  = t('.title')
   - @users.each do |user|
     .row-fluid.has_top_margin
       %a{ href: user_path(user) }

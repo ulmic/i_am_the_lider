@@ -90,3 +90,7 @@ ru:
         update:
           success: Критерий отредактирован
           error: Ошибка при редактировании критерия
+    juror:
+      sessions:
+        create:
+          success: Авторизация прошла успешно
