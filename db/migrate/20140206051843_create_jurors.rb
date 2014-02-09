@@ -5,6 +5,7 @@ class CreateJurors < ActiveRecord::Migration
       t.string :last_name
       t.string :login
       t.string :password
+      t.integer :stage_id
 
       t.timestamps
     end
