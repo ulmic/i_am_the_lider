@@ -27,6 +27,7 @@ ru:
   destroy: Удалить
   title: Название
   maximum: Максимальный балл по критерию
+  add: Добавить
 
   time:
     formats:
@@ -92,6 +93,10 @@ ru:
     stages:
       index:
         title: Выберите этап
+        add_criterion: Добавить критерий оценки
+        add_juror: Добавить члена жюри
+        view_jurors: Посмотреть список жюри
+        view_criterions: Посмотреть критерии этого этапа
       new:
         title: Новый этап конкурса
     criterions:
@@ -101,6 +106,12 @@ ru:
         title: Добавить новый критерий
       edit:
         title: Редактировать критерий
+    jurors:
+      new:
+        title: Добавить члена жюри
+      index:
+        title: Члены жюри
+        stages: Этапы конкурса
 
   blog_posts:
     back:       'Назад'
@@ -211,3 +222,20 @@ ru:
     news:
       news: 			'Новости конкурса'
       add_news:         Добавить новость
+
+  juror:
+    welcome:
+      index:
+        welcome: 'Добро пожаловать, '
+        begin_to_assess_the_work: Приступить к оценке работ
+    users:
+      index:
+        title: "Участники конкурса Я-лидер"
+    evaluations:
+      user_office:
+        download_work: Загрузить творческую работу
+        download_work_from_file_storage: Загрузить работу с файлообменника
+        work_is_unavalaible: Работа не загружена
+      eval_table:
+        criterions: Критерии оценки
+        accept_eval: Подтвердить оценку

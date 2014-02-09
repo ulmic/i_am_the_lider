@@ -5,7 +5,7 @@ class Juror < ActiveRecord::Base
                   :password,
                   :stage_id
 
-  has_many :evaluations
+  has_many :ratings
   belongs_to :stage
 
   validates :first_name, presence: true

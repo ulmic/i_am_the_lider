@@ -52,9 +52,10 @@ IAmTheLider::Application.routes.draw do
     resources :welcome, only: :index
     resources :users, only: :index do
       member do
-        resources :evaluations, only: :index
+        resources :ratings, only: [:new, :show]
       end
     end
-    resources :evaluations, only: [:create, :update]
+    resources :ratings, only: [:create, :edit, :update]
   end
+  get "juror" => "juror/welcome#index"
 end

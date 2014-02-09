@@ -9,12 +9,12 @@ class Admin::JurorsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, id: @stage
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new, id: @stage
     assert_response :success
   end
 

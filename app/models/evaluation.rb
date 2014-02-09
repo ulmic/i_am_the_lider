@@ -1,12 +1,10 @@
 class Evaluation < ActiveRecord::Base
-  attr_accessible :criterion_id, :juror_id, :participant_id, :value
+  attr_accessible :criterion_id, :value, :rating_id
 
   belongs_to :criterion
-  belongs_to :juror
-  belongs_to :participant, class_name: "User"
+  belongs_to :rating
 
   validates :criterion_id, presence: true
-  validates :juror_id, presence: true
-  validates :participant_id, presence: true
   validates :value, presence: true
+  validates :rating_id, presence: true
 end

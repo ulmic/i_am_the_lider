@@ -90,3 +90,18 @@ ru:
         update:
           success: Критерий отредактирован
           error: Ошибка при редактировании критерия
+      jurors:
+        create:
+          success: Член жюри добавлен
+          error: Ошибка в заполнении полей
+        update:
+          success: Данные члена жюри обновлены
+          error: Ошибка в заполении полей
+        destroy:
+          success: Член жюри удалён
+    juror:
+      sessions:
+        create:
+          success: Авторизация прошла успешно
+        destroy:
+          success: Вы успешно покинули сайт
