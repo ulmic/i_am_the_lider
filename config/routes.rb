@@ -46,4 +46,8 @@ IAmTheLider::Application.routes.draw do
     end
   end
   get "admin" => "admin/welcome#index"
+  namespace :juror do
+    resource :session, only: [ :new, :create, :destroy ]
+    resources :welcome, only: :index
+  end
 end
