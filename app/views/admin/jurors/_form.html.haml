@@ -5,9 +5,9 @@
     = f.input :login, as: :string
     = f.input :password, as: :string
     - unless @juror.stage
-      = f.input :stage_id, input_html: { value: params[:id] }
+      = f.input :stage_id, as: :hidden, input_html: { value: params[:id] }
     - else
-      = f.input :stage_id, input_html: { value: @juror.stage.id }
+      = f.input :stage_id, as: :hidden, input_html: { value: @juror.stage.id }
   .form-actions
     = f.button :submit, t('add'), class: 'btn btn-primary'
     = link_to t('cancel', default: t("helpers.links.cancel")), admin_jurors_path, class: 'btn'
