@@ -31,7 +31,7 @@
             %li
               %a{ href: user_path(current_user) }
                 %h3= t('.i_am_participant')
-          - else
+          - elsif can_registred?
             %li
               %a{ href: new_user_path }
                 %h3= t('apply_for_participation')

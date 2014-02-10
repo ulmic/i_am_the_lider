@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include AuthHelper
+  include RegistrationHelper
 
   def check_user_signed
     unless user_signed_in?
