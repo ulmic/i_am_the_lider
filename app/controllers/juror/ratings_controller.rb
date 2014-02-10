@@ -3,11 +3,14 @@ class Juror::RatingsController < ApplicationController
     @user = User.find(params[:id]).decorate
     @rating = (user.ratings & current_juror.ratings).first
   end
+
   def new
     @user = User.find(params[:id]).decorate
     @criterions = current_juror.stage.criterions
     @rating = Rating.new
+    @rating.evaluations.build
   end
+
   def create
     @rating = Rating.new params[:rating]
     if @rating.save
