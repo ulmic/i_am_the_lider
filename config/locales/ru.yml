@@ -239,3 +239,6 @@ ru:
       form:
         estimate: Оценить
         criterions: Критерии оценки
+      edit_form:
+        estimate: Оценить
+        criterions: Критерии оценки

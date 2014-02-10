@@ -1,0 +1,18 @@
+%h2
+  = t('.criterions')
+= simple_form_for @rating, url: juror_rating_path do |f|
+  = f.input :user_id, as: :hidden
+  = f.input :juror_id, as: :hidden
+  %table.table.table-stripped
+    %thead
+      %th= t('activerecord.attributes.criterion.title')
+      %th= t('activerecord.attributes.evaluation.value')
+    = f.simple_fields_for :evaluations do |eval|
+      - eval.with_options input_html: { class: :span6 } do |f|
+        %tr
+          %td
+            = eval.object.criterion.title
+          %td
+            = f.input :value, as: :integer, label: false, input_html: { max: eval.object.criterion.maximum, min: 0 }
+            = f.input :criterion_id, as: :hidden, input_html: { value: eval.object.criterion.id }
+  = f.button :submit, t('.estimate'), class: 'btn btn-success'

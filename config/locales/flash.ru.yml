@@ -105,3 +105,11 @@ ru:
           success: Авторизация прошла успешно
         destroy:
           success: Вы успешно покинули сайт
+      users:
+        create:
+          success: Оценки добавлены
+      ratings:
+        create:
+          success: Оценки добавлены
+        update:
+          success: Оценки исправлены
