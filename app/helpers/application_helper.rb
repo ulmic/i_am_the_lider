@@ -31,5 +31,9 @@ module ApplicationHelper
   def image_path_url(image)
     request.protocol + request.host_with_port + image.url
   end
-  
+
+  def can_registred?
+    end_time = Time.zone.parse configus.end_reg_time
+    Time.current <= end_time
+  end
 end
