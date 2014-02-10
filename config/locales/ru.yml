@@ -233,16 +233,19 @@ ru:
   juror:
     welcome:
       index:
-        welcome: 'Добро пожаловать, '
+        welcome: 'Добро пожаловать!'
         begin_to_assess_the_work: Приступить к оценке работ
     users:
       index:
         title: "Участники конкурса Я-лидер"
-    evaluations:
+    ratings:
       user_office:
         download_work: Загрузить творческую работу
         download_work_from_file_storage: Загрузить работу с файлообменника
         work_is_unavalaible: Работа не загружена
-      eval_table:
+      form:
+        estimate: Оценить
         criterions: Критерии оценки
-        accept_eval: Подтвердить оценку
+      edit_form:
+        estimate: Оценить
+        criterions: Критерии оценки

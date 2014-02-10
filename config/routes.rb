@@ -53,7 +53,7 @@ IAmTheLider::Application.routes.draw do
     resources :welcome, only: :index
     resources :users, only: :index do
       member do
-        resources :ratings, only: [:new, :show]
+        resources :ratings, only: :new
       end
     end
     resources :ratings, only: [:create, :edit, :update]

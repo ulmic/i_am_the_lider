@@ -9,11 +9,6 @@ class Juror::RatingsControllerTest < ActionController::TestCase
     juror_sign_in @juror
   end
 
-  test "should get show" do
-    get :show, id: @user
-    assert_response :success
-  end
-
   test "should get new" do
     get :new, id: @user
     assert_response :success
