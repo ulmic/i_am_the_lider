@@ -21,5 +21,8 @@ class WelcomeController < ApplicationController
   end
 
   def reg_end
+    if can_registred?
+      redirect_to new_user_path
+    end
   end
 end
