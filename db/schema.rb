@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140201031224) do
+ActiveRecord::Schema.define(:version => 20140209165152) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -44,8 +44,34 @@ ActiveRecord::Schema.define(:version => 20140201031224) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "criterions", :force => true do |t|
+    t.text     "title"
+    t.integer  "stage_id"
+    t.integer  "maximum"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "districts", :force => true do |t|
     t.text     "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "evaluations", :force => true do |t|
+    t.integer  "criterion_id"
+    t.integer  "value"
+    t.integer  "rating_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "jurors", :force => true do |t|
+    t.text     "first_name"
+    t.string   "last_name"
+    t.string   "login"
+    t.string   "password"
+    t.integer  "stage_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -73,6 +99,13 @@ ActiveRecord::Schema.define(:version => 20140201031224) do
     t.integer  "user_id"
   end
 
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "juror_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reports", :force => true do |t|
     t.text     "member_type"
     t.integer  "member_count"
@@ -91,6 +124,13 @@ ActiveRecord::Schema.define(:version => 20140201031224) do
   create_table "reserve_reasons", :force => true do |t|
     t.text     "description"
     t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "stages", :force => true do |t|
+    t.text     "title"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

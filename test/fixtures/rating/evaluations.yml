@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  criterion_id: 1
+  participant_id: 1
+  juror_id: 1
+  value: 1
+
+two:
+  criterion_id: 1
+  participant_id: 1
+  juror_id: 1
+  value: 1

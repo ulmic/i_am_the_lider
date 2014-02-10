@@ -1,0 +1,23 @@
+- model_class = Criterion
+.page-header
+  %h1
+    = t '.title'
+    '
+    = @stage.title
+    '
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t 'title'
+      %th= t 'maximum'
+      %th=t 'actions', default: t("helpers.actions")
+  %tbody
+    - @criterions.each do |criterion|
+      %tr
+        %td= criterion.title
+        %td= criterion.maximum
+        %td
+          = link_to t('edit', default: t("helpers.links.edit")), edit_admin_criterion_path(criterion), class: 'btn btn-mini'
+          = link_to t('destroy', default: t("helpers.links.destroy")), admin_criterion_path(criterion), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+
+= link_to t('new', default: t("helpers.links.new")), new_admin_criterion_path, class: 'btn btn-primary'

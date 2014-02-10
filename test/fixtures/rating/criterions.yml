@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyText
+  stage_number: 1
+  maximum: 1
+
+two:
+  title: MyText
+  stage_number: 1
+  maximum: 1

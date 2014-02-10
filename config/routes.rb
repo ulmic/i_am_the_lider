@@ -39,6 +39,24 @@ IAmTheLider::Application.routes.draw do
       end
     end
     resources :reports, only: [ :edit, :update, :destroy ]
+    resources :jurors, except: [:show, :new]
+    resources :stages, except: :show do
+      member do
+        resources :criterions, except: :show
+        resources :jurors, only: [:new]
+      end
+    end
   end
   get "admin" => "admin/welcome#index"
+  namespace :juror do
+    resource :session, only: [ :new, :create, :destroy ]
+    resources :welcome, only: :index
+    resources :users, only: :index do
+      member do
+        resources :ratings, only: [:new, :show]
+      end
+    end
+    resources :ratings, only: [:create, :edit, :update]
+  end
+  get "juror" => "juror/welcome#index"
 end

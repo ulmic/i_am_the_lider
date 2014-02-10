@@ -20,6 +20,7 @@ gem 'bootstrap_flash_messages'
 gem 'state_machine'
 gem 'usefull_scopes'
 gem 'auto_html', git: "git://github.com/dejan/auto_html"
+gem 'enumerize'
 gem 'configus'
 
 group :assets do

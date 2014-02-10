@@ -23,6 +23,11 @@ ru:
   i_am_lider:       '"Я-лидер!"'
   important_fields: '* - обязательные поля отмечены звёздочкой'
   important_field:  '*'
+  new: Добавить
+  destroy: Удалить
+  title: Название
+  maximum: Максимальный балл по критерию
+  add: Добавить
 
   time:
     formats:
@@ -63,6 +68,8 @@ ru:
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
         new_users: Новые заявки
         reserved_users: Отложенные заявки
+        complete_evaluation_of_participants: Заполнить оценки участников
+        admin_compeptition: Администрировать конкурс
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -83,6 +90,28 @@ ru:
         add_user_to_reserve: Отложить заявку
       edit:
         edit_reserve_reason: Изменить описание недочёта
+    stages:
+      index:
+        title: Выберите этап
+        add_criterion: Добавить критерий оценки
+        add_juror: Добавить члена жюри
+        view_jurors: Посмотреть список жюри
+        view_criterions: Посмотреть критерии этого этапа
+      new:
+        title: Новый этап конкурса
+    criterions:
+      index:
+        title: Критерии этапа
+      new:
+        title: Добавить новый критерий
+      edit:
+        title: Редактировать критерий
+    jurors:
+      new:
+        title: Добавить члена жюри
+      index:
+        title: Члены жюри
+        stages: Этапы конкурса
 
   blog_posts:
     back:       'Назад'
@@ -200,3 +229,20 @@ ru:
       add_news:         Добавить новость
     reg_end:
       registration_ended: Регистрация окончена
+
+  juror:
+    welcome:
+      index:
+        welcome: 'Добро пожаловать, '
+        begin_to_assess_the_work: Приступить к оценке работ
+    users:
+      index:
+        title: "Участники конкурса Я-лидер"
+    evaluations:
+      user_office:
+        download_work: Загрузить творческую работу
+        download_work_from_file_storage: Загрузить работу с файлообменника
+        work_is_unavalaible: Работа не загружена
+      eval_table:
+        criterions: Критерии оценки
+        accept_eval: Подтвердить оценку

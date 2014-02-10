@@ -1,0 +1,28 @@
+= stylesheet_link_tag "users"
+%h1
+  = t('.title')
+  - @users.each do |user|
+    .row-fluid.has_top_margin
+      %a{ href: new_juror_rating_path(user) }
+        .span2
+          %img.img-polaroid{ src: user.avatar.thumb_fill }
+        .span3
+          .row-fluid
+            %h4
+              - if admin_signed_in?
+                = user.title
+              - else
+                = user.small_name
+          .row-fluid
+            %h4= user.district.title
+          .row-fluid
+            %h4 Дата рождения #{ user.birth_date }
+        .span3
+          .row_fluid
+            %h4= user.school
+          .row-fluid
+            %h4= user.group
+        - unless user.twitter.blank?
+          .row-fluid
+            %a{ href: user.twitter }
+              .span1.logo.mini.twitter

@@ -1,0 +1,2 @@
+module Juror::SessionsHelper
+end
