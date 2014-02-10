@@ -6,5 +6,4 @@ class Evaluation < ActiveRecord::Base
 
   validates :criterion_id, presence: true
   validates :value, presence: true
-  validates :rating_id, presence: true
 end
