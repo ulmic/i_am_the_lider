@@ -16,7 +16,7 @@
   %tbody
     - @jurors.each do |juror|
       %tr
-        %td= link_to juror.id, admin_juror_path(juror)
+        %td= juror.id
         %td= juror.first_name
         %td= juror.last_name
         %td= juror.stage.title
