@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if can_registred?
+      @user = User.new
+    else
+      redirect_to reg_end_welcome_path
+    end
   end
 
   def edit

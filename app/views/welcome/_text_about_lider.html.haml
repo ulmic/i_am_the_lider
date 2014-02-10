@@ -12,12 +12,18 @@
     .span6
       - unless user_signed_in?
         %p{ align: :center }
-          %a{ href: new_user_path, class: 'btn btn-success btn-large' }
-            = t('apply_for_participation_on_competition')
+          - if can_registred?
+            %a{ href: new_user_path, class: 'btn btn-success btn-large' }
+              = t('apply_for_participation_on_competition')
+              %br
+              = t('i_am_lider')
             %br
-            = t('i_am_lider')
-          %br
-          %br
-          Если ты уже подал заявку, то можешь зайти в свой аккаунт
-          %br
-          = link_to t('sign_in'), new_session_path, class: 'btn btn-primary'
+            %br
+            Если ты уже подал заявку, то можешь зайти в свой аккаунт
+            %br
+            = link_to t('sign_in'), new_session_path, class: 'btn btn-primary'
+          - else
+            = t('.registration_ended')
+            = link_to t('.if_you_are_participant'), new_session_path, class: 'btn btn-primary btn-large'
+            = t('.forward_market_dream')
+            = link_to t('.apply_participation_to_market_dream'), configus.apply_participation_to_market_dream, class: 'btn btn-success btn-large', target: "_blank"

@@ -1,6 +1,7 @@
 module ApplicationHelper
   include AuthHelper
   include AutoHtml
+  include RegistrationHelper
 
   def copyright_notice_year_range(start_year)
     start_year = start_year.to_i
@@ -31,5 +32,5 @@ module ApplicationHelper
   def image_path_url(image)
     request.protocol + request.host_with_port + image.url
   end
-  
+
 end
