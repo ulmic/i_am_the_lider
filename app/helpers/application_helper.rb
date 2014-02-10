@@ -1,6 +1,7 @@
 module ApplicationHelper
   include AuthHelper
   include AutoHtml
+  include RegistrationHelper
 
   def copyright_notice_year_range(start_year)
     start_year = start_year.to_i
@@ -32,8 +33,4 @@ module ApplicationHelper
     request.protocol + request.host_with_port + image.url
   end
 
-  def can_registred?
-    end_time = Time.zone.parse configus.end_reg_time
-    Time.current <= end_time
-  end
 end

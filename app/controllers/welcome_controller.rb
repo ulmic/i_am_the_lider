@@ -19,4 +19,7 @@ class WelcomeController < ApplicationController
 
   def competition
   end
+
+  def reg_end
+  end
 end

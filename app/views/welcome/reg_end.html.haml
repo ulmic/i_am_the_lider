@@ -1,0 +1,18 @@
+.page-header
+  %h1
+    = t('.registration_ended')
+.row-fluid
+  .span7
+    = image_tag "too_late.jpg", class: 'img-rounded'
+  .span4
+    %h4
+      Регистрация на XII конкурс актива учащейся молодёжи "Я-лидер!" закончена.
+      %br
+      %br
+      Если ты участник, то ты можешь войти в свой профиль.
+      %br
+      = link_to t('sign_in'), new_session_path, class: 'btn btn-primary btn-success'
+      %br
+      Чтобы поучаствовать в мероприятиях конкурса "Я-лидер!", подай заявку на смену "Ярмарка идей".
+      %br
+      = link_to t('apply_for_participation'), configus.apply_part_in_market_dream_url, target: "_blank", class: 'btn btn-success btn-large'

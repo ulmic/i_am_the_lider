@@ -18,6 +18,7 @@ IAmTheLider::Application.routes.draw do
       get "second_stage" => "welcome#second_stage"
       get "third_stage" => "welcome#third_stage"
       get "competition" => "welcome#competition"
+      get "reg_end" => "welcome#reg_end"
     end
   end
   resource :errors do

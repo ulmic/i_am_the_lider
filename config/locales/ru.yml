@@ -198,3 +198,5 @@ ru:
     news:
       news: 			'Новости конкурса'
       add_news:         Добавить новость
+    reg_end:
+      registration_ended: Регистрация окончена

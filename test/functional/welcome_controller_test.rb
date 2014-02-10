@@ -26,4 +26,9 @@ class WelcomeControllerTest < ActionController::TestCase
      get :third_stage
      assert_response :success
    end
+
+   test "should get reg_end" do
+     get :reg_end
+     assert_response :success
+   end
 end
