@@ -1,6 +1,6 @@
 module Juror::UsersHelper
   def user_has_rating?(user, juror)
-    user_ratings user, juror
+    not (user_ratings user, juror).empty?
   end
 
   def user_ratings(user, juror)
