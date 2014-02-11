@@ -221,6 +221,7 @@ ru:
       registration_ended: 'Регистрация на конкурс завершена'
       forward_market_dream: "Впереди Ярмарка идей!"
       apply_participation_to_market_dream: 'Подать заявку на Ярмарку идей 2014'
+      days_to_market_dreams: ДО ЯРМАРКИ ИДЕЙ ОСТАЛОСЬ
     users:
       view_competitors_list:   'Посмотреть список участников'
       be_the_first: 'Стать первым!'

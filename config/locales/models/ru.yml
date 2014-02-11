@@ -68,6 +68,8 @@ ru:
       stage:
         title: Название
         description: Описание
+        begin_date: Начало этапа
+        end_date: Конец этапа
       criterion:
         title: Название
         stage_id: Этап конкурса
