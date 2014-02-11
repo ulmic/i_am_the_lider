@@ -28,7 +28,7 @@ class Admin::StagesControllerTest < ActionController::TestCase
   end
 
   test "should not create stage" do
-    attributes = { title: @stage.title }
+    attributes = { description: @stage.description }
 
     post :create, stage: attributes
     assert_response :success
