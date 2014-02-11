@@ -1,5 +1,5 @@
 = render 'office'
-- if current_user_on_page?(@user)
+- if current_user_on_page?(@user) or admin_signed_in?
   - if @user.work
     = link_to t('.edit_work'), edit_works_path(@user.work), class: 'btn btn-large btn-success'
   - else
