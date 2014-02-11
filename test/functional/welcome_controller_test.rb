@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class WelcomeControllerTest < ActionController::TestCase
+  setup do
+    #if market_dreams_is_soon
+    @stage = create :stage
+    @stage.title = "Ярмарка идей"
+    @stage.save
+    #endif
+  end
    test "get Index page" do
      @user = create :user
      get :index
