@@ -198,7 +198,7 @@ ru:
       edit_work: Изменить творческую работу
       download_work: Загрузить творческую работу
       download_work_from_file_storage: Загрузить работу с файлообменника
-      work_is_unavalaible: Работа не загружена
+      work_is_unavalaible: Работа не загружена на сайт
       return_to_reserved: Вернуть в отложенные
   works:
     new:
