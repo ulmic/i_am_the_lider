@@ -29,3 +29,13 @@ district_titles = [
 district_titles.each do |title|
   District.find_or_create_by_title title
 end
+
+stages_titles = [
+                  'Время быть лидером',
+                  'Ярмарка идей',
+                  'Время реальных дел'
+]
+
+stages_titles.each do |title|
+  Stage.find_or_create_by_title title
+end

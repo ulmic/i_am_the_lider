@@ -2,6 +2,8 @@
   - f.with_options input_html: { class: :span6 } do |f|
     = f.input :title, as: :string
     = f.input :description
+    = f.input :begin_date
+    = f.input :end_date
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
     = link_to t('cancel', default: t("helpers.links.cancel")), admin_stages_path, class: 'btn'
