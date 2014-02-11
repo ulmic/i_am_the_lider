@@ -5,13 +5,12 @@
   %span На разных площадках, организованных в рамках «Я-лидера!», конкурсанты учатся методам командообразования, планирования деятельности, технике публичных выступлений и управлению проектами, что позволяет полноценно готовить лидеров общественного сектора.
   %br
   %br
-  .row
+  .row-fluid
     - if market_dreams_coming_soon?
-      %a{ href: configus.apply_part_in_market_dream_url, target: '_blank' }
-        .offset1.span5.well.center.link
-          %h3
-            = t('.days_to_market_dreams')
-            = days_to_market_dreams
+      .span6.link.center.market_dreams_photo.well{ onclick: "return location.href = '#{configus.apply_part_in_market_dream_url}'", target: "_blank" }
+        %h2
+          = t('.days_to_market_dreams')
+          = days_to_market_dreams
     .span6
       - unless user_signed_in?
         %p{ align: :center }
