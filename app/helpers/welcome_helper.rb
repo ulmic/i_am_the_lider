@@ -4,8 +4,9 @@ module WelcomeHelper
   end
 
   def days_to_market_dreams
-    days = Stage.find_by_title("Ярмарка идей").begin_date.day - Date.today.day
+    days = Stage.find_by_title(I18n.t('stages.market_dreams')).begin_date.day - Date.today.day
     days.to_s + " " +
-    Russian.p(days, "день", "дня", "дней")
+    #FIXME найти другой способ локализации
+    Russian.p(days, I18n.t('days.day'), I18n.t('days.few_days'), I18n.t("days.many_days"))
   end
 end
