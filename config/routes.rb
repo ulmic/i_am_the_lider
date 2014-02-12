@@ -46,6 +46,7 @@ IAmTheLider::Application.routes.draw do
         resources :jurors, only: [:new]
       end
     end
+    resources :ratings, only: :index
   end
   get "admin" => "admin/welcome#index"
   namespace :juror do
