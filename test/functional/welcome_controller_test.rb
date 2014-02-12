@@ -4,7 +4,7 @@ class WelcomeControllerTest < ActionController::TestCase
   setup do
     #if market_dreams_is_soon
     @stage = create :stage
-    @stage.title = "Ярмарка идей"
+    @stage.title = I18n.t 'stages.market_dreams'
     @stage.save
     #endif
   end

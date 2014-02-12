@@ -29,6 +29,11 @@ ru:
   maximum: Максимальный балл по критерию
   add: Добавить
 
+  stages:
+    time_to_be_lider: Время быть лидером
+    market_dreams: Ярмарка идей
+    time_for_real_deals: Время реальных дел
+
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
