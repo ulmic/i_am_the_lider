@@ -34,6 +34,11 @@ ru:
     market_dreams: Ярмарка идей
     time_for_real_deals: Время реальных дел
 
+  days:
+    day: день
+    few_days: дня
+    many_days: дней
+
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
