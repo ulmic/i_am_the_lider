@@ -17,7 +17,11 @@ class UsersControllerTest < ActionController::TestCase
     admin_sign_in @admin
 
     get :new
-    assert_response :success
+    if can_registred?
+      assert_response :success
+    else
+      assert_response :redirect
+    end
   end
 
   test "should create user" do

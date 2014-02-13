@@ -36,6 +36,10 @@ class WelcomeControllerTest < ActionController::TestCase
 
    test "should get reg_end" do
      get :reg_end
-     assert_response :redirect
+     if can_registred?
+      assert_response :redirect
+    else
+      assert_response :success
+    end
    end
 end

@@ -4,5 +4,6 @@ FactoryGirl.define do
     description { generate :string }
     begin_date { generate :date }
     end_date{ generate :date }
+    average { generate :integer }
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140211214538) do
+ActiveRecord::Schema.define(:version => 20140213092210) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(:version => 20140211214538) do
     t.datetime "updated_at",  :null => false
     t.date     "begin_date"
     t.date     "end_date"
+    t.integer  "average"
   end
 
   create_table "users", :force => true do |t|
