@@ -44,6 +44,7 @@ IAmTheLider::Application.routes.draw do
       member do
         resources :criterions, except: :show
         resources :jurors, only: [:new]
+        resources :ratings, only: :index
       end
     end
   end

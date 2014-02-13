@@ -12,4 +12,31 @@ class UserDecorator < Draper::Decorator
   def twitter_account
     "@#{model.twitter.split('/').last}"
   end
+
+  def average_eval
+    sum = 0
+    model.ratings.each do |r|
+      sum += r.decorate.sum
+    end
+    average = sum / model.ratings.count
+  end
+
+  def has_entered?(stage)
+    if stage.average
+      if average_eval >= stage.average
+        h.content_tag :h2, color: :green do
+          I18n.t('admin.ratings.index.has_entered_to_next_stage')
+        end
+      else
+        h.content_tag :h2, color: :red do
+          I18n.t('admin.ratings.index.has_not_entered_to_next_stage')
+        end
+      end
+    else
+      h.content_tag :a, class: 'btn btn-info',
+                           href: "/admin/stages/#{stage.id}/edit" do
+        I18n.t('admin.ratings.index.add_stage_average')
+      end
+    end
+  end
 end

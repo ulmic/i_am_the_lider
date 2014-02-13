@@ -79,7 +79,7 @@ ru:
         new_users: Новые заявки
         reserved_users: Отложенные заявки
         complete_evaluation_of_participants: Заполнить оценки участников
-        admin_compeptition: Администрировать конкурс
+        admin_compeptition: Этапы конкурса
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -106,6 +106,7 @@ ru:
         add_criterion: Добавить критерий оценки
         add_juror: Добавить члена жюри
         view_jurors: Посмотреть список жюри
+        view_users_ratings: Посмотреть оценки участников
         view_criterions: Посмотреть критерии этого этапа
       new:
         title: Новый этап конкурса
@@ -122,6 +123,13 @@ ru:
       index:
         title: Члены жюри
         stages: Этапы конкурса
+    ratings:
+      index:
+        title: Оценки участников
+        average_eval: Средний бал
+        has_entered_to_next_stage: Проходит в следующий этап
+        has_not_entered_to_next_stage: Не проходит в следующий этап
+        add_stage_average: Добавить среднюю оценку к текущему этапу конкурса
 
   blog_posts:
     back:       'Назад'

@@ -2,6 +2,7 @@ module ApplicationHelper
   include AuthHelper
   include AutoHtml
   include RegistrationHelper
+  include StageHelper
 
   def copyright_notice_year_range(start_year)
     start_year = start_year.to_i
