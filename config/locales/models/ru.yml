@@ -70,6 +70,7 @@ ru:
         description: Описание
         begin_date: Начало этапа
         end_date: Конец этапа
+        average: Средний бал
       criterion:
         title: Название
         stage_id: Этап конкурса

@@ -24,9 +24,13 @@ class UserDecorator < Draper::Decorator
   def has_entered?(stage)
     if stage.average
       if average_eval >= stage.average
-        I18n.t('admin.ratings.index.has_entered_to_next_stage')
+        h.content_tag :h2, color: :green do
+          I18n.t('admin.ratings.index.has_entered_to_next_stage')
+        end
       else
-        I18n.t('admin.ratings.index.has_not_entered_to_next_stage')
+        h.content_tag :h2, color: :red do
+          I18n.t('admin.ratings.index.has_not_entered_to_next_stage')
+        end
       end
     else
       h.content_tag :a, class: 'btn btn-info',

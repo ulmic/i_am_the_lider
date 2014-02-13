@@ -44,9 +44,9 @@ IAmTheLider::Application.routes.draw do
       member do
         resources :criterions, except: :show
         resources :jurors, only: [:new]
+        resources :ratings, only: :index
       end
     end
-    resources :ratings, only: :index
   end
   get "admin" => "admin/welcome#index"
   namespace :juror do

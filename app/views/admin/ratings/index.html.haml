@@ -30,4 +30,4 @@
                 = t('.average_eval')
                 = user.average_eval
     .span3
-      = user.has_entered?(current_stage)
+      = user.has_entered?(@stage)
