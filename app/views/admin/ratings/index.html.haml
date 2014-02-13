@@ -15,15 +15,9 @@
                 = user.small_name
           .row-fluid
             %h4= user.district.title
-          .row-fluid
-            %h4 Дата рождения #{ user.birth_date }
         .span3
-          .row_fluid
-            %h4= user.school
-          .row-fluid
-            %h4= user.group
-        .offset1.span1
-          - unless user.twitter.blank?
-            .row-fluid
-              %a{ href: user.twitter }
-                .logo.mini.twitter
+          - if user.ratings.any?
+            %table.table.table-striped
+              - user.ratings.each do |rating|
+                = rating.decorate.average_eval
+
