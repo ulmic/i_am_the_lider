@@ -29,3 +29,5 @@
               %td
                 = t('.average_eval')
                 = user.average_eval
+    .span3
+      = user.has_entered?(current_stage)

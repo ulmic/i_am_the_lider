@@ -4,6 +4,7 @@
     = f.input :description
     = f.input :begin_date
     = f.input :end_date
+    = f.input :average
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
     = link_to t('cancel', default: t("helpers.links.cancel")), admin_stages_path, class: 'btn'

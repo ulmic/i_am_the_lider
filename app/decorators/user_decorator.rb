@@ -20,4 +20,19 @@ class UserDecorator < Draper::Decorator
     end
     average = sum / model.ratings.count
   end
+
+  def has_entered?(stage)
+    if stage.average
+      if average_eval >= stage.average
+        I18n.t('admin.ratings.index.has_entered_to_next_stage')
+      else
+        I18n.t('admin.ratings.index.has_not_entered_to_next_stage')
+      end
+    else
+      h.content_tag :a, class: 'btn btn-info',
+                           href: "/admin/stages/#{stage.id}/edit" do
+        I18n.t('admin.ratings.index.add_stage_average')
+      end
+    end
+  end
 end
