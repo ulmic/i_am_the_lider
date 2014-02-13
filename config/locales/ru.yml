@@ -80,6 +80,7 @@ ru:
         reserved_users: Отложенные заявки
         complete_evaluation_of_participants: Заполнить оценки участников
         admin_compeptition: Администрировать конкурс
+        view_users_ratings: Посмотреть оценки участников
     news:
       edit:
         edit_news: 		'Редактировать новость'
@@ -122,6 +123,10 @@ ru:
       index:
         title: Члены жюри
         stages: Этапы конкурса
+    ratings:
+      index:
+        title: Оценки участников
+        average_eval: Средний бал
 
   blog_posts:
     back:       'Назад'

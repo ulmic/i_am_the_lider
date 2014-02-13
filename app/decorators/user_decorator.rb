@@ -12,4 +12,12 @@ class UserDecorator < Draper::Decorator
   def twitter_account
     "@#{model.twitter.split('/').last}"
   end
+
+  def average_eval
+    sum = 0
+    model.ratings.each do |r|
+      sum += r.decorate.sum
+    end
+    average = sum / model.ratings.count
+  end
 end

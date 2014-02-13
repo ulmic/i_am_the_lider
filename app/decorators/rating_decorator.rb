@@ -1,12 +1,12 @@
 class RatingDecorator < Draper::Decorator
   delegate_all
 
-  def average_eval
+  def sum
     sum = 0
     model.evaluations.each do |eval|
-      sum += evaluations.value
+      sum += eval.value
     end
-    average = sum / model.evaluations.count
+    sum
   end
 
 end

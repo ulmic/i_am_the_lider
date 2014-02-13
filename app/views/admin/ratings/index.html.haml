@@ -1,23 +1,31 @@
 = stylesheet_link_tag "users"
-%h1
-  = t('.competitors_list')
-  - @users.each do |user|
-    .row-fluid.has_top_margin
-      %a{ href: user_path(user) }
-        .span2
-          %img.img-polaroid{ src: user.avatar.thumb_fill }
-        .span3
-          .row-fluid
-            %h4
-              - if admin_signed_in?
-                = user.title
-              - else
-                = user.small_name
-          .row-fluid
-            %h4= user.district.title
-        .span3
-          - if user.ratings.any?
-            %table.table.table-striped
-              - user.ratings.each do |rating|
-                = rating.decorate.average_eval
-
+.page-header
+  %h1
+    = t('.title')
+- @users.each do |user|
+  .row-fluid.has_top_margin
+    .span2
+      %img.img-polaroid{ src: user.avatar.thumb_fill }
+    .span3
+      .row-fluid
+        %h4
+          - if admin_signed_in?
+            = user.title
+          - else
+            = user.small_name
+      .row-fluid
+        %h4= user.district.title
+    .span3
+      - if user.ratings.any?
+        %h4
+          %table.table.table-striped.table-bordered
+            - user.ratings.each do |rating|
+              %tr
+                %td
+                  = rating.juror.decorate.full_name
+                  -
+                  = rating.decorate.sum
+            %tr
+              %td
+                = t('.average_eval')
+                = user.average_eval
