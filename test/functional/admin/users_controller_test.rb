@@ -12,6 +12,11 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get index xls" do
+    get :index, format: :xls
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
