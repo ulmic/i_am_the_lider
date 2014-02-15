@@ -3,12 +3,12 @@ ru:
     welcome:
       index:
         hello_admin:     'Здравствуйте, Администратор!!'
-        you_can:         'Вы можете'
-        add_news:        'Добавить новость'
-        edit_news:       'Редактировать новости'
-        edit_users_data: 'Изменить данные участников'
-        edit_blogs:      'Редактировать блоги'
-        add_user:        'Добавить участника'
+        you_can:         Вы можете
+        add_news:        Добавить новость
+        edit_news:       Редактировать новости
+        edit_users_data: Список участников конкурса
+        edit_blogs:      Редактировать блоги
+        add_user:        Добавить участника
         all_light_blue_buttons_are_admins_buttons: Все кнопки голубого цвета на этом сайте - это кнопки администратора.
         new_users: Новые заявки
         reserved_users: Отложенные заявки
@@ -20,14 +20,14 @@ ru:
         users_excel: Загрузить список в формате Excel
     news:
       edit:
-        edit_news: 		'Редактировать новость'
+        edit_news: 		Редактировать новость
       form:
-        prohibite_this_news_from_being_saved: 'зафиксировано во время сохранения'
-        no_more_than_140_characters:          'Не больше 140 символов'
+        prohibite_this_news_from_being_saved: зафиксировано во время сохранения
+        no_more_than_140_characters:          Не больше 140 символов
         this_is_main_photo: Это фото будет отображаться как главное фото в новости
       new:
-        add_news: 		'Добавить новость'
-        back: 			'Назад'
+        add_news: 		Добавить новость
+        back: 			Назад
     blog_posts:
       index:
         title: Записи в блогах
