@@ -22,6 +22,7 @@ gem 'usefull_scopes'
 gem 'auto_html', git: "git://github.com/dejan/auto_html"
 gem 'enumerize'
 gem 'configus'
+gem 'to_xls-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
