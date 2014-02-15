@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::ApplicationController
     @users = User.all
     respond_to do |format|
       format.html { @users = UserDecorator.decorate_collection @users }
-      format.xls { send_data @users.to_xls }
+      format.xls { send_data @users.to_xls(header: :false, only: [:first_name, :middle_name, :last_name, :mobile_phone, :email]) }
     end
   end
 
