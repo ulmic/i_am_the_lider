@@ -1,4 +1,4 @@
-- unless market_dreams_coming_soon?
+- if market_dreams_coming_soon?
   .row-fluid
     .span6.link.center.market_dreams_photo.well{ onclick: "return location.href = '#{configus.market_dreams.apply_part}'", target: "_blank" }
       %h2
@@ -25,5 +25,5 @@
               = link_to t('.apply_participation_to_market_dream'), configus.apply_part_in_market_dream_url, class: 'btn btn-success btn-large', target: "_blank"
   .row-fluid
     = render "users"
-- else market_dreams_during?
+- elsif market_dreams_during?
   = render "news"

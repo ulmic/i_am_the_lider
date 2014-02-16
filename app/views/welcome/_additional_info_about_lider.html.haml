@@ -1,1 +1,4 @@
-= render "news"
+- unless market_dreams_coming_soon?
+  = render "news"
+- else
+  = render "users"
