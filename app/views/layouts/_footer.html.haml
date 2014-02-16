@@ -18,9 +18,9 @@
           = image_tag "head-hunter.png", style: "width: 150px"
 
 .row-fluid
+  %hr
   .offset2
   .span4
-    %hr
     %a &copy
     = copyright_notice_year_range(2013)
     %a{ href: "http://ulmic.ru" }
@@ -36,16 +36,19 @@
     %small
       %a{ href: "http://vk.com/ugosever", target: "_blank" }
         = t('.designer_page')
-  .span6.mini-logos
-    .logo.mini.vk.there_is_margin
+  .span2
+    %a{ href: configus.apps.chrome_web_store_url, target: "_blank" }
+      = image_tag "app_markets/chrome_web_store.png", href: "google.com"
+  .span5.mini-logos
+    .logo.mini.vk
       %a{ href: "http://vk.com/ulmic", target: "_blank" }
-    .logo.mini.facebook.there_is_margin
+    .logo.mini.facebook
       %a{ href: "https://www.facebook.com/molcenter", target: "_blank" }
-    .logo.mini.twitter.there_is_margin
+    .logo.mini.twitter
       %a{ href: "https://twitter.com/ulmicru", target: "_blank" }
-    .logo.mini.gplus.there_is_margin
+    .logo.mini.gplus
       %a{ href: "https://plus.google.com/109518417712111969312/", target: "_blank" }
-    .logo.mini.youtube.there_is_margin
+    .logo.mini.youtube
       %a{ href: "http://www.youtube.com/user/ulmic73", target: "_blank" }
-    .logo.mini.github.there_is_margin
+    .logo.mini.github
       %a{ href: "https://github.com/ulmic", target: "_blank" }
