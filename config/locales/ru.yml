@@ -180,6 +180,8 @@ ru:
     news:
       news: 			'Новости конкурса'
       add_news:         Добавить новость
+      news_from_market_dreams: Вести с Ярмарки идей
+      all_news: Все новости
     reg_end:
       registration_ended: Регистрация окончена
 
