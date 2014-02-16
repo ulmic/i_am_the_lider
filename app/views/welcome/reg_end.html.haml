@@ -13,6 +13,7 @@
       %br
       = link_to t('sign_in'), new_session_path, class: 'btn btn-primary btn-success'
       %br
-      Чтобы поучаствовать в мероприятиях конкурса "Я-лидер!", подай заявку на смену "Ярмарка идей".
-      %br
-      = link_to t('apply_for_participation'), configus.apply_part_in_market_dream_url, target: "_blank", class: 'btn btn-success btn-large'
+      - if can_registred_to_market_dreams?
+        Чтобы поучаствовать в мероприятиях конкурса "Я-лидер!", подай заявку на смену "Ярмарка идей".
+        %br
+        = link_to t('apply_for_participation'), configus.market_dreams.apply_part, target: "_blank", class: 'btn btn-success btn-large'
