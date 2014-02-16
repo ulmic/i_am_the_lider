@@ -1,0 +1,29 @@
+- if market_dreams_coming_soon?
+  .row-fluid
+    .span6.link.center.market_dreams_photo.well{ onclick: "return location.href = '#{configus.market_dreams.apply_part}'", target: "_blank" }
+      %h2
+        = t('.days_to_market_dreams')
+        = days_to_market_dreams
+    .span6
+      - unless user_signed_in?
+        %p{ align: :center }
+          - if can_registred?
+            %a{ href: new_user_path, class: 'btn btn-success btn-large' }
+              = t('apply_for_participation_on_competition')
+              %br
+              = t('i_am_lider')
+            %br
+            %br
+            Если ты уже подал заявку, то можешь зайти в свой аккаунт
+            %br
+            = link_to t('sign_in'), new_session_path, class: 'btn btn-primary'
+          - else
+            = t('.registration_ended')
+            = link_to t('.if_you_are_participant'), new_session_path, class: 'btn btn-primary btn-large'
+            - if can_registred_to_market_dreams?
+              = t('.forward_market_dream')
+              = link_to t('.apply_participation_to_market_dream'), configus.apply_part_in_market_dream_url, class: 'btn btn-success btn-large', target: "_blank"
+  .row-fluid
+    = render "users"
+- elsif market_dreams_during?
+  = render "news"

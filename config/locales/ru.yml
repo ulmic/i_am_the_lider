@@ -168,7 +168,7 @@ ru:
       sign_up:                 'Зарегистрируйтесь!'
       blog_posts_empty:        'Блоги пока что пусты...'
       i_am_lider:              'Я - лидер!'
-    text_about_lider:
+    market_dreams:
       if_you_are_participant: 'Если ты участник конкурса, войди в свой профиль'
       registration_ended: 'Регистрация на конкурс завершена'
       forward_market_dream: "Впереди Ярмарка идей!"
@@ -180,6 +180,8 @@ ru:
     news:
       news: 			'Новости конкурса'
       add_news:         Добавить новость
+      news_from_market_dreams: Вести с Ярмарки идей
+      all_news: Все новости
     reg_end:
       registration_ended: Регистрация окончена
 

@@ -9,4 +9,9 @@ module WelcomeHelper
     #FIXME найти другой способ локализации
     Russian.p(days, I18n.t('days.day'), I18n.t('days.few_days'), I18n.t("days.many_days"))
   end
+
+  def market_dreams_during?
+    Date.today > Stage.find_by_title(I18n.t('stages.market_dreams')).begin_date and
+    Date.today < Stage.find_by_title(I18n.t('stages.market_dreams')).end_date
+  end
 end
