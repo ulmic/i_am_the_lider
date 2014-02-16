@@ -7,13 +7,7 @@
   = favicon_link_tag 'favicon.ico'
   = csrf_meta_tags
 %body
-  %script{ type: "text/javascript" }
-    refrm();
-  %noscript
-    %a{ href: "http://reformal.ru" }
-      %img{ src: "http://media.reformal.ru/reformal.png" }
-    %a{ href: "http://lider_ulgood.reformal.ru" }
-      = t('.reformal_message')
+  = render 'layouts/reformal'
   = render 'layouts/metrics'
   .container-fluid
     .row-fluid.header
