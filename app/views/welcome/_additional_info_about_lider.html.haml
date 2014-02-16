@@ -1,4 +1,4 @@
-- unless market_dreams_coming_soon?
+- if market_dreams_coming_soon?
   = render "news"
-- else
+- elsif market_dreams_during?
   = render "users"
