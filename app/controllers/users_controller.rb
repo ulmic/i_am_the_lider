@@ -23,6 +23,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    #FIXME реализовать иное назначение last_stage_id
+    params[:user][:last_stage_id] = 1
+
     @user = User.new params[:user]
     if @user.save
       user_sign_in @user

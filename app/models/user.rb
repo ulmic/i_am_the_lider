@@ -15,9 +15,11 @@ class User < ActiveRecord::Base
                   :avatar,
                   :locality,
                   :adress_index,
-                  :confirm_state
+                  :confirm_state,
+                  :last_stage_id
 
   belongs_to :district
+  belongs_to :last_stage, class_name: "Stage"
   has_one :reserve_reason
   has_one :work
   has_one :report

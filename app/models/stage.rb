@@ -7,6 +7,7 @@ class Stage < ActiveRecord::Base
 
   has_many :criterions
   has_many :jurors
+  has_many :users
 
   validates :title, presence: true
 end
