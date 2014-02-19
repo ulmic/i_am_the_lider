@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213092210) do
+ActiveRecord::Schema.define(:version => 20140218110638) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20140213092210) do
     t.integer  "adress_index"
     t.text     "locality"
     t.string   "confirm_state"
+    t.integer  "last_stage_id"
   end
 
   create_table "works", :force => true do |t|
