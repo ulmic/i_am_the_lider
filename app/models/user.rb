@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include UsefullScopes
+
   attr_accessible :birth_date,
                   :district_id,
                   :email,

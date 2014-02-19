@@ -7,6 +7,11 @@ class Admin::StagesController < ApplicationController
     @stage = Stage.new
   end
 
+  def show
+    @stage = Stage.find params[:id]
+    @users = User.with last_stage_id: params[:id]
+  end
+
   def edit
     @stage = Stage.find params[:id]
   end

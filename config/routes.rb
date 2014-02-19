@@ -35,12 +35,13 @@ IAmTheLider::Application.routes.draw do
       member do
         put :accept
         put :reserve
+        put :move_next_stage
         resource :reserve_reason, except: [ :index, :show ]
       end
     end
     resources :reports, only: [ :edit, :update, :destroy ]
     resources :jurors, except: [:show, :new]
-    resources :stages, except: :show do
+    resources :stages do
       member do
         resources :criterions, except: :show
         resources :jurors, only: [:new]
