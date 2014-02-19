@@ -9,7 +9,7 @@ class Admin::StagesController < ApplicationController
 
   def show
     @stage = Stage.find params[:id]
-    @users = User.with last_stage_id: params[:id]
+    @users = UserDecorator.decorate_collection User.with last_stage_id: params[:id]
   end
 
   def edit
