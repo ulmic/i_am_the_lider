@@ -11,7 +11,7 @@ module WelcomeHelper
   end
 
   def market_dreams_during?
-    Date.today > Stage.find_by_title(I18n.t('stages.market_dreams')).begin_date and
-    Date.today < Stage.find_by_title(I18n.t('stages.market_dreams')).end_date
+    Date.today >= Stage.find_by_title(I18n.t('stages.market_dreams')).begin_date and
+    Date.today <= Stage.find_by_title(I18n.t('stages.market_dreams')).end_date
   end
 end
