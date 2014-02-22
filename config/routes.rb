@@ -35,7 +35,7 @@ IAmTheLider::Application.routes.draw do
       member do
         put :accept
         put :reserve
-        put :move_next_stage
+        put :up_stage
         resource :reserve_reason, except: [ :index, :show ]
       end
     end

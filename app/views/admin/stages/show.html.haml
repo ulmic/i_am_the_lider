@@ -15,8 +15,10 @@
             = image_tag user.avatar.mini_thumb_fill
           %td
             = link_to user.title, user_path(user)
+          %td
+            = link_to t('.up_user_stage'), up_stage_admin_user_path(user), method: :put, class: 'btn btn-success'
 
 = link_to t('back'), admin_stages_path, class: "btn"
-- if admin_signed_in
+- if admin_signed_in?
   = link_to t('edit'), edit_admin_stage_path(@stage), class: "btn btn-info"
   = link_to t('delete'), admin_stage_path(@stage), method: :delete, class: "btn btn-info"
