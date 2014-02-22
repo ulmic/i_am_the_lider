@@ -10,7 +10,7 @@
     .triple
       .row
         - user_triple.each do |user|
-          .span4.well.link{ onclick: "return location.href = '#{user_path(user)}'" }
+          .span4.link{ onclick: "return location.href = '#{user_path(user)}'" }
             .row-fluid
               %img.mini_equal_size.img-rounded.small{ src: user.avatar.thumb_fill }
             .row-fluid

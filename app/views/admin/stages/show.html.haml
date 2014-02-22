@@ -17,6 +17,6 @@
             = link_to user.title, user_path(user)
 
 = link_to t('back'), admin_stages_path, class: "btn"
-- if admin_signed_in
+- if admin_signed_in?
   = link_to t('edit'), edit_admin_stage_path(@stage), class: "btn btn-info"
   = link_to t('delete'), admin_stage_path(@stage), method: :delete, class: "btn btn-info"
