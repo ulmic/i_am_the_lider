@@ -60,7 +60,7 @@ class Admin::UsersController < Admin::ApplicationController
     if @user.last_stage.next
       @user.last_stage = @user.last_stage.next
       @user.save
-      redirect_to admin_stage_path(@user.last_stage.prev), flash: :success
+      redirect_to admin_stage_path(@user.last_stage.previous), flash: :success
     else
       redirect_to admin_stage_path(@user.last_stage), flash: :success
     end

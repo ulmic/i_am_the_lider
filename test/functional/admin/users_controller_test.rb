@@ -94,6 +94,6 @@ class Admin::UsersControllerTest < ActionController::TestCase
     @user.last_stage = stage
     @user.save
     put :up_stage, id: @user
-    assert_redirected_to admin_stage_path(@user.last_stage.prev)
+    assert_redirected_to admin_stage_path @user.last_stage.previous
   end
 end
