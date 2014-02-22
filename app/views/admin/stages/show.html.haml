@@ -16,7 +16,7 @@
           %td
             = link_to user.title, user_path(user)
           %td
-            = link_to t('.up_user_stage'), up_stage_admin_user(user), class: 'btn btn-success'
+            = link_to t('.up_user_stage'), up_stage_admin_user_path(user), method: :put, class: 'btn btn-success'
 
 = link_to t('back'), admin_stages_path, class: "btn"
 - if admin_signed_in?

@@ -50,6 +50,9 @@ ru:
         participants_who_ends_on_this_stage: 'Участники, которые остановились на этом этапе'
       new:
         title: Новый этап конкурса
+      show:
+        up_user_stage: Отправить в следующий этап
+        participants_who_ends_on_this_stage: 'Участники конкурса, которые остановились на этом этапе'
     criterions:
       index:
         title: Критерии этапа
