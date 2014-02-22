@@ -46,10 +46,14 @@ ru:
         view_jurors: Посмотреть список жюри
         view_users_ratings: Посмотреть оценки участников
         view_criterions: Посмотреть критерии этого этапа
+        view_stage: Посмотреть описание
       show:
         participants_who_ends_on_this_stage: 'Участники, которые остановились на этом этапе'
       new:
         title: Новый этап конкурса
+      show:
+        up_user_stage: Отправить в следующий этап
+        participants_who_ends_on_this_stage: 'Участники конкурса, которые остановились на этом этапе'
     criterions:
       index:
         title: Критерии этапа

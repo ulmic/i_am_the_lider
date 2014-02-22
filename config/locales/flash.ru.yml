@@ -76,6 +76,8 @@ ru:
           error: Ошибка в заполении полей
         destroy:
           success: Пользователь удален
+        up_stage:
+          success: Участник отправлен в следующий этап
       stages:
         create:
           success: Этап конкурса добавлен успешно

@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     accepted_users = User.with_confirm_state :accepted
     @users = accepted_users.shuffle!.first 12
     @reports = Report.all.shuffle!.first 4
-    @news = News.last(2).reverse
+    @news = News.last(5).reverse
     @blog_posts = BlogPost.last(5).reverse
     @users_count = accepted_users.count
   end
