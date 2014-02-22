@@ -91,9 +91,11 @@ class Admin::UsersControllerTest < ActionController::TestCase
 
   test "should up stage" do
     stage = create :stage
+    create :stage
     @user.last_stage = stage
     @user.save
     put :up_stage, id: @user
+    @user.reload
     assert_redirected_to admin_stage_path @user.last_stage.previous
   end
 end
