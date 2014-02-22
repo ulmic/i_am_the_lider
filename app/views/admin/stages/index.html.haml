@@ -10,7 +10,9 @@
     - @stages.each do |stage|
       %tr
         %td
-          = link_to stage.title, admin_stage_path(stage)
+          = stage.title
+          %br
+          = link_to t('.view_stage'), admin_stage_path(stage), class: 'btn btn-mini btn-info'
         %td
           = link_to t('.add_juror'), new_admin_juror_path(stage), class: 'btn btn-success'
           %br
