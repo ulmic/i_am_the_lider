@@ -15,6 +15,6 @@ module WelcomeHelper
   end
 
   def time_of_real_deals_during?
-    current_stage.title == I18n.t('stage.time_of_real_deals')
+    current_stage.title == I18n.t('stages.time_of_real_deals')
   end
 end
