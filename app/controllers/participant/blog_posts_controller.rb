@@ -1,6 +1,4 @@
-class BlogPostsController < ApplicationController
-  before_filter :check_user_signed, only: [ :new, :create ]
-
+class Participant::BlogPostsController < Participant::ApplicationController
   def index
     @blog_posts = BlogPost.all.reverse
   end
