@@ -117,3 +117,11 @@ ru:
           success: Оценки добавлены
         update:
           success: Оценки исправлены
+    participant:
+      blog_posts:
+        create:
+          success: Запись добавлена в ваш дневник
+        destroy:
+          success: Запись удалена
+        update:
+          success: Запись отредактирована

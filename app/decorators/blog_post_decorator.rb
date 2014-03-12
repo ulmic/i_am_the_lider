@@ -4,4 +4,5 @@ class BlogPostDecorator < Draper::Decorator
   def get_html_text
     model.text.bbcode_to_html
   end
+
 end

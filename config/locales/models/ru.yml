@@ -57,6 +57,7 @@ ru:
         text: Текст
         user_id: Автор
         created_at: Создан
+        photo: Фото
       admin:
         login: Логин
         password: Пароль

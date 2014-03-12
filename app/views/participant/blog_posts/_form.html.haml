@@ -6,9 +6,10 @@
         - @blog_post.errors.full_messages.each do |msg|
           %li= msg
   - f.with_options input_html: { class: "span6" } do |f|
-    = f.input :title, placeholder: "#{ t('.no_more_than_140_characters') }"
+    = f.input :title, placeholder: "#{ t('.no_more_than_140_characters') }", as: :string
     = f.label :text
     = f.cktext_area :text
+    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
     %br
     .actions
-      = f.submit t('.save'), class: "btn"
+      = f.submit t('save'), class: "btn"

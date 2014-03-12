@@ -6,13 +6,15 @@ ru:
         add_blog: Добавить запись
         all_blog: Посмотреть все мои записи
     blog_posts:
+      index:
+        blog_posts: Ваш дневник активности
+        you_has_not_any_blog_posts: У вас пока нет записей
+        create_the_first: Создайте первую
       edit:
-        editing_blog_post: 	'Редактирование записи блога'
-        view_blog_post: 		'Посмотреть'
+        editing_blog_post: 	Редактирование записи
       form:
         prohibited_this_blog_post_from_being_saved: 'зафиксировано во время сохранения'
         no_more_than_140_characters: 'Не больше 140 символов'
-        save:                        'Сохранить'
       new:
         add_blog_post:             Добавить запись в блог
         blog_post_added:           Запись в блог добавлена

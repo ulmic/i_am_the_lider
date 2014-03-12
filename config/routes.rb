@@ -29,7 +29,7 @@ IAmTheLider::Application.routes.draw do
     resources :users do
       member do
         resources :welcome, only: :index
-        resources :blog_posts, only: [ :index, :show, :new, :create ]
+        resources :blog_posts
       end
     end
   end

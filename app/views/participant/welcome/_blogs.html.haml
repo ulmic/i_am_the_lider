@@ -3,7 +3,7 @@
     = t('.my_blogs')
     = link_to t(".all_blog"), blog_posts_path(current_user), class: 'btn'
   - @blogs.each do |blog|
-    .well.link{ onclick: "return location.href = '#{blog_path(blog)}'" }
+    .well.link{ onclick: "return location.href = '#{blog_post_path(blog)}'" }
       %a{ href: blog_post_path(blog) }
         = image_tag blog.photo.thumb, class: :main_photo_thumb
       %h4= blog.title

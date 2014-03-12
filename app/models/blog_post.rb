@@ -6,7 +6,6 @@ class BlogPost < ActiveRecord::Base
   belongs_to :user
 
   validates :text, presence: true
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
-
 end
