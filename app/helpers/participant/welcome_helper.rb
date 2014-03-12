@@ -1,0 +1,2 @@
+module Participant::WelcomeHelper
+end
