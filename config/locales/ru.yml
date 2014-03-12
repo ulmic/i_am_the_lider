@@ -55,6 +55,7 @@ ru:
       contest_news:           'Новости'
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
+      blog_posts: Дневники активности
     footer:
       organizers:              Организатор
       ministry_of_education:   'Министерство образования'
@@ -173,6 +174,8 @@ ru:
       all_news: Все новости
     reg_end:
       registration_ended: Регистрация окончена
+    auth_form:
+      to_office: Войти в личный кабинет
 
   juror:
     welcome:

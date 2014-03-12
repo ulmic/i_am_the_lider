@@ -33,6 +33,10 @@
               %a{ href: users_path }
                 %h3= t('.participants')
             %li
+              = link_to blog_posts_path do
+                %h3
+                  = t('.blog_posts')
+            %li
               %a{ href: competition_welcome_path }
                 %h3= t('.competition')
             %li
