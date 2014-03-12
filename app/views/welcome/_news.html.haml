@@ -2,9 +2,8 @@
   %h4
     = t('.news_from_market_dreams')
 - else
-  = link_to news_index_path do
-    %h2
-      = t('.news')
+  %h2
+    = t('.news')
 - if admin_signed_in?
   = link_to t('.add_news'), new_admin_news_path, class: 'btn btn-info'
 - @news.each do |news|
@@ -15,4 +14,4 @@
     %p
       != strip_tags news.body.first(200)
       %b ...
-    %small= news.pusblished_at
+    %small=l news.pusblished_at

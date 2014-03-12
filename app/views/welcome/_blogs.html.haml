@@ -10,4 +10,4 @@
       %p
         != strip_tags blog.text.first(200)
         %b ...
-      %small= blog.created_at
+      %small=l blog.created_at.to_date

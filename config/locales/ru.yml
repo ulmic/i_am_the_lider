@@ -165,6 +165,7 @@ ru:
       apply_participation_to_market_dream: 'Подать заявку на Ярмарку идей 2014'
       days_to_market_dreams: ДО ЯРМАРКИ ИДЕЙ ОСТАЛОСЬ
     users:
+      semifinalists: Полуфиналисты конкурса
       view_competitors_list:   'Посмотреть список участников'
       be_the_first: 'Стать первым!'
     news:
