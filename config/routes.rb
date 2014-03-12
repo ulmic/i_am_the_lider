@@ -5,6 +5,7 @@ IAmTheLider::Application.routes.draw do
 
   resources :news, only: [ :show, :index ]
   resource :session, only: [:new, :create, :destroy]
+  resources :blog_posts, only: [ :index, :show ]
   resources :users do
     member do
       resources :reports

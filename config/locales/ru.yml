@@ -155,6 +155,8 @@ ru:
       sign_up:                 'Зарегистрируйтесь!'
       blog_posts_empty:        'Блоги пока что пусты...'
       i_am_lider:              'Я - лидер!'
+    blogs:
+      blogs:                    Дневники активности
     market_dreams:
       if_you_are_participant: 'Если ты участник конкурса, войди в свой профиль'
       registration_ended: 'Регистрация на конкурс завершена'
@@ -191,3 +193,6 @@ ru:
       edit_form:
         estimate: Оценить
         criterions: Критерии оценки
+  blog_posts:
+    index:
+      blog_posts: Дневники активности

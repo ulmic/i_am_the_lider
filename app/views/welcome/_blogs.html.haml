@@ -1,12 +1,13 @@
-.row.top_row
-  - @blog_posts.each do |b|
-    %a{ href: blog_post_path(b.id) }
-      .well
-        %h5= b.user.small_name
-        %h4= b.title
-        %p
-          != strip_tags b.text.first(500)
+.well
+  %h4
+    = link_to blog_posts_path do
+      = t('.blogs')
+  - @blogs.each do |blog|
+    .well.link{ onclick: "return location.href = '#{blog_post_path(blog)}'" }
+      %a{ href: blog_post_path(blog) }
+        = image_tag blog.user.avatar.thumb
+      %h4= blog.title
+      %p
+        != strip_tags blog.text.first(200)
         %b ...
-    %h5
-      ='Блоги пока что пусты...' if BlogPost.count == 0
-    %hr
+      %small= blog.created_at

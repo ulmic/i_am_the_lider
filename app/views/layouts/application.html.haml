@@ -41,6 +41,10 @@
             %li
               %a{ href: first_stage_welcome_path }
                 %h3= t('.stages')
+            - if user_signed_in?
+              %li
+                = link_to session_path, method: :delete do
+                  %h3= t('sign_out')
             - if admin_signed_in?
               %li
                 %a{ href: admin_welcome_index_path }
