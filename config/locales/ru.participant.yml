@@ -1,6 +1,8 @@
 ru:
   participant:
     welcome:
+      index:
+        create_event: Создать Анонс мероприятия
       blogs:
         my_blogs: Мой дневник
         add_blog: Добавить запись
