@@ -12,4 +12,4 @@
       %small= blog_post.created_at
 - else
   %h3= t('.you_has_not_any_blog_posts')
-  = link_to t('.create_the_first'), new_blog_post_path(current_user), class: 'btn btn-success btn-large'
+  = link_to t('.create_the_first'), new_participant_blog_post_path(current_user), class: 'btn btn-success btn-large'

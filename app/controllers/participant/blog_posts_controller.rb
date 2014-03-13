@@ -38,6 +38,6 @@ class Participant::BlogPostsController < Participant::ApplicationController
     @blog_post = BlogPost.find params[:id]
     user = @blog_post.user
     @blog_post.destroy
-    redirect_to blog_posts_path(user), flash: :success
+    redirect_to participant_blog_posts_path(user), flash: :success
   end
 end

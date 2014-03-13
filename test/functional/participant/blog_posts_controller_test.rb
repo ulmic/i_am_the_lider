@@ -4,6 +4,7 @@ class Participant::BlogPostsControllerTest < ActionController::TestCase
   setup do
     @blog_post = create :blog_post
     @user = create :user
+    user_sign_in @user
   end
 
   test "should get index" do
@@ -20,11 +21,13 @@ class Participant::BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should not get edit blog_post" do
+    user_sign_out
     get :edit, id: @blog_post
     assert_response :redirect
   end
 
   test "should not create blog_post" do
+    user_sign_out
     attributes = attributes_for :blog_post
 
     post :create, blog_post: attributes, id: @user
@@ -39,6 +42,7 @@ class Participant::BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should not get new" do
+    user_sign_out
     get :new, id: @user
     assert_redirected_to not_found_errors_path
   end
@@ -93,7 +97,7 @@ class Participant::BlogPostsControllerTest < ActionController::TestCase
       delete :destroy, id: @blog_post
     end
 
-    assert_redirected_to blog_posts_path
+    assert_redirected_to participant_blog_posts_path @user
   end
 
   test "should not create blog_post with render new" do
@@ -113,10 +117,11 @@ class Participant::BlogPostsControllerTest < ActionController::TestCase
   end
 
   test "should not destroy blog_post with no access" do
+    user_sign_out
     assert_difference('BlogPost.count', 0) do
       delete :destroy, id: @blog_post
     end
 
-    assert_redirected_to @blog_post.user
+    assert_redirected_to not_found_errors_path
   end
 end
