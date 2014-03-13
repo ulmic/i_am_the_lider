@@ -11,8 +11,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :adress, presence: true,
-                     url: true
+  validates :adress, presence: true
   validates :begin_date, presence: true
   validates :end_date, presence: true
   validates :description, presence: true,
