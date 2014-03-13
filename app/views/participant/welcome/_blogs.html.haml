@@ -1,11 +1,11 @@
 .well
   %h3
-    = link_to "blog_posts" do
+    = link_to participant_blog_posts_path(current_user) do
       = t('.my_blogs')
-    = link_to t(".add_blog"), new_blog_post_path(current_user), class: 'btn btn-success'
+    = link_to t('.add_blog'), new_participant_blog_post_path(current_user), class: 'btn btn-primary'
   - @blogs.each do |blog|
-    .well.link{ onclick: "return location.href = '#{blog_post_path(blog)}'" }
-      %a{ href: blog_post_path(blog) }
+    .well.link{ onclick: "return location.href = '#{participant_blog_post_path(blog)}'" }
+      %a{ href: participant_blog_post_path(blog) }
         = image_tag blog.user.avatar.thumb
       %h4= blog.title
       %p

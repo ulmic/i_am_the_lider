@@ -28,7 +28,7 @@ class Participant::BlogPostsController < Participant::ApplicationController
   def update
     @blog_post = BlogPost.find params[:id]
     if @blog_post.update_attributes params[:blog_post]
-      redirect_to @blog_post, flash: :success
+      redirect_to participant_blog_post_path(@blog_post), flash: :success
     else
       render action: :edit, flash: :error
     end

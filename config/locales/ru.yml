@@ -30,7 +30,7 @@ ru:
   add: Добавить
 
   stages:
-    time_to_be_lider: Время быть лидером
+    time_to_be_the_lider: Время быть лидером
     market_dreams: Ярмарка идей
     time_of_real_deals: Время реальных дел
 
@@ -140,6 +140,8 @@ ru:
       download_work_from_file_storage: Загрузить работу с файлообменника
       work_is_unavalaible: Работа не загружена на сайт
       return_to_reserved: Вернуть в отложенные
+    blogs:
+      blogs: Дневник активности
   works:
     new:
       title: 'Добавить творческую работу "Кого лидер ведёт за собой?"'
