@@ -26,7 +26,7 @@ IAmTheLider::Application.routes.draw do
       get "not_found"
     end
   end
-  scope module: :participant do
+  namespace :participant do
     resources :users do
       member do
         resources :welcome, only: :index

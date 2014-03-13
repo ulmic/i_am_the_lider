@@ -19,7 +19,7 @@ class Participant::BlogPostsController < Participant::ApplicationController
   def create
     @blog_post = BlogPost.new params[:blog_post]
     if @blog_post.save
-      redirect_to blog_posts_path(@blog_post.user), flash: :success
+      redirect_to participant_blog_posts_path(@blog_post.user), flash: :success
     else
       render action: :new, flash: :error
     end

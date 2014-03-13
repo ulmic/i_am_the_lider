@@ -23,7 +23,7 @@
                 %h3= t('.home')
             - if user_signed_in?
               %li
-                %a{ href: welcome_index_path(current_user) }
+                %a{ href: participant_welcome_index_path(current_user) }
                   %h3= t('.i_am_participant')
             - elsif can_registred?
               %li

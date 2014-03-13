@@ -7,7 +7,7 @@ ru:
         all_blog: Посмотреть все мои записи
     blog_posts:
       index:
-        blog_posts: Ваш дневник активности
+        blog_posts: Мой дневник активности
         you_has_not_any_blog_posts: У вас пока нет записей
         create_the_first: Создайте первую
       edit:
