@@ -5,11 +5,13 @@
   JotForm.init(function(){
      $('input_3').hint('ex: myname@example.com');
   });
+= stylesheet_link_tag "participant/events"
 = stylesheet_link_tag "http://cdn.jotfor.ms/static/formCss.css?3.1.774"
 = stylesheet_link_tag "http://cdn.jotfor.ms/css/styles/nova.css?3.1.774"
 = stylesheet_link_tag "http://cdn.jotfor.ms/css/printForm.css?3.1.774", media: :print
 :javascript
   document.getElementById("si" + "mple" + "_spc").value = "31324630345445-31324630345445";
+
 = simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     = f.input :title, as: :string, placeholder: t('.not_more_than_140_characters')
@@ -21,8 +23,9 @@
     = f.input :end_date
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
     %br
-    = t('.mark_your_location_on_the_map')
-    #googleMap{style: "width: 50%; height: 527px; background: #5A8E4A;"}
+    %h3
+      = t('.mark_your_location_on_the_map')
+    #googleMap.google_map_style
       Map
     = f.input :adress, as: :hidden, input_html: { class: 'form-hidden', id: "input_15" }
   .form-actions
