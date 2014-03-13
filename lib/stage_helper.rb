@@ -5,5 +5,6 @@ module StageHelper
         return stage
       end
     end
+    Stage.last
   end
 end

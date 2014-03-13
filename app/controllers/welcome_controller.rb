@@ -2,9 +2,8 @@ class WelcomeController < ApplicationController
   def index
     current_users = User.with last_stage_id: current_stage.id
     @users = current_users.shuffle!.first 12
-    @reports = Report.all.shuffle!.first 4
     @news = News.last(2).reverse
-    @blog_posts = BlogPost.last(5).reverse
+    @blogs = BlogPost.last(5).reverse
     @users_count = current_users.count
   end
 

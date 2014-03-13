@@ -1,0 +1,6 @@
+- model_class = Event
+.page-header
+  %h1=t '.title', default: [:'helpers.titles.new', 'Новое %{model}'], model: model_class.model_name.human.titleize
+%h3
+  = t('.you_can_edit_event_data_around_ten_days_before_begin_date')
+= render partial: "form"

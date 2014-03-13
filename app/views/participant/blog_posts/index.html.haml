@@ -1,0 +1,15 @@
+= stylesheet_link_tag "participant/blog_posts"
+.page-header
+  %h1= t('.blog_posts')
+- if @blog_posts.any?
+  - @blog_posts.each do |blog_post|
+    .well.link{ onclick: "return location.href = '#{participant_blog_post_path(blog_post)}'" }
+      = image_tag blog_post.user.avatar.thumb
+      %h4= blog_post.title
+      %p
+        != strip_tags blog_post.text.first(250)
+        %b ...
+      %small= blog_post.created_at
+- else
+  %h3= t('.you_has_not_any_blog_posts')
+  = link_to t('.create_the_first'), new_participant_blog_post_path(current_user), class: 'btn btn-success btn-large'

@@ -1,0 +1,2 @@
+module Participant::EventsHelper
+end

@@ -12,6 +12,7 @@ ru:
       criterion: Критерий оценки
       juror: Член жюри
       evaluation: Оценка
+      event: Мероприятие
     attributes:
       user:
         login: Логин
@@ -57,6 +58,7 @@ ru:
         text: Текст
         user_id: Автор
         created_at: Создан
+        photo: Фото
       admin:
         login: Логин
         password: Пароль
@@ -83,3 +85,12 @@ ru:
         password: Пароль
       evaluation:
         value: Оценка
+      event:
+        title: Название мероприятия
+        goal: Цель мероприятия
+        tasks: Задачи
+        participant_category: Целевая аудитория
+        description: Краткое описание
+        begin_date: Дата и время начала
+        end_date: Дата и время окончания
+        adress: Адрес

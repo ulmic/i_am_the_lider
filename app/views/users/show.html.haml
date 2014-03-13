@@ -1,12 +1,12 @@
 = render 'office'
 - if current_user_on_page?(@user) or admin_signed_in?
-  - if @user.work
-    = link_to t('.edit_work'), edit_works_path(@user.work), class: 'btn btn-large btn-success'
-  - else
-    = link_to t('.add_work'), new_works_path(@user), class: 'btn btn-large btn-success'
+  - if time_to_be_the_lider_during?
+    - if @user.work
+      = link_to t('.edit_work'), edit_works_path(@user.work), class: 'btn btn-large btn-success'
+    - else
+      = link_to t('.add_work'), new_works_path(@user), class: 'btn btn-large btn-success'
 - if current_user
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-success'
-  = link_to t('sign_out'), session_path, method: :delete, class: 'btn btn-large btn-important'
 - if admin_signed_in?
   = link_to t('.edit_user'), edit_user_path(@user), class: 'btn btn-large btn-info'
 - if admin_signed_in? or current_user_on_page?(@user)
@@ -36,3 +36,4 @@
     = link_to t('.edit_reserve_reason'), edit_admin_reserve_reason_path(@user.reserve_reason), class: 'btn btn-info'
   - if @user.accepted?
     = link_to t('.return_to_reserved'), reserve_admin_user_path(@user), method: :put, class: 'btn btn-info'
+= render "blogs"

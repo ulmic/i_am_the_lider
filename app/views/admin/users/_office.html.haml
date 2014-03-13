@@ -29,16 +29,3 @@
           %b= f.label :twitter
           %a{href: "#{@user.twitter}"}
             = @user.twitter
-    .span7
-      - if @user.report
-        %p
-          %h3= t('.report')
-        %p
-          != @user.report.description if @user.report.description
-        %p
-          -if @user.report.present?
-            %a.btn.btn-large.btn-success{href: "#{@user.report.archive}"}
-              = t('.download_archive')
-          -else
-            %span{style: "color: #AAA;"}
-              = t('.there_is_not_archive')

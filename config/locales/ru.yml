@@ -30,7 +30,7 @@ ru:
   add: Добавить
 
   stages:
-    time_to_be_lider: Время быть лидером
+    time_to_be_the_lider: Время быть лидером
     market_dreams: Ярмарка идей
     time_of_real_deals: Время реальных дел
 
@@ -55,6 +55,7 @@ ru:
       contest_news:           'Новости'
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
+      blog_posts: Дневники активности
     footer:
       organizers:              Организатор
       ministry_of_education:   'Министерство образования'
@@ -65,19 +66,6 @@ ru:
       partners: Партнёры
       designer_page: Страница нашего дизайнера
 
-  blog_posts:
-    back:       'Назад'
-    blog_posts: 'Блоги'
-    edit:
-      editing_blog_post: 	'Редактирование записи блога'
-      view_blog_post: 		'Посмотреть'
-    form:
-      prohibited_this_blog_post_from_being_saved: 'зафиксировано во время сохранения'
-      no_more_than_140_characters: 'Не больше 140 символов'
-      save:                        'Сохранить'
-    new:
-      add_blog_post:             Добавить запись в блог
-      blog_post_added:           Запись в блог добавлена
 
   errors:
     not_found:
@@ -152,6 +140,8 @@ ru:
       download_work_from_file_storage: Загрузить работу с файлообменника
       work_is_unavalaible: Работа не загружена на сайт
       return_to_reserved: Вернуть в отложенные
+    blogs:
+      blogs: Дневник активности
   works:
     new:
       title: 'Добавить творческую работу "Кого лидер ведёт за собой?"'
@@ -168,6 +158,8 @@ ru:
       sign_up:                 'Зарегистрируйтесь!'
       blog_posts_empty:        'Блоги пока что пусты...'
       i_am_lider:              'Я - лидер!'
+    blogs:
+      blogs:                    Дневники активности
     market_dreams:
       if_you_are_participant: 'Если ты участник конкурса, войди в свой профиль'
       registration_ended: 'Регистрация на конкурс завершена'
@@ -175,6 +167,7 @@ ru:
       apply_participation_to_market_dream: 'Подать заявку на Ярмарку идей 2014'
       days_to_market_dreams: ДО ЯРМАРКИ ИДЕЙ ОСТАЛОСЬ
     users:
+      semifinalists: Полуфиналисты конкурса
       view_competitors_list:   'Посмотреть список участников'
       be_the_first: 'Стать первым!'
     news:
@@ -184,6 +177,8 @@ ru:
       all_news: Все новости
     reg_end:
       registration_ended: Регистрация окончена
+    auth_form:
+      to_office: Войти в личный кабинет
 
   juror:
     welcome:
@@ -204,3 +199,6 @@ ru:
       edit_form:
         estimate: Оценить
         criterions: Критерии оценки
+  blog_posts:
+    index:
+      blog_posts: Дневники активности

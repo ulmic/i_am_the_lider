@@ -1,12 +1,16 @@
+= stylesheet_link_tag "participant/blog_posts"
 %p#notice= notice
 %p
-  %h3
-    = @blog_post.user.decorate.small_name
+  = link_to user_path(@blog_post.user) do
+    = image_tag @blog_post.user.avatar.thumb
+    %h3
+      = @blog_post.user.decorate.small_name
+
+  =l @blog_post.created_at.to_date
 %p
   %h2
     = @blog_post.title
 %p
-  %small= @blog_post.created_at.to_date
-%p
   != @blog_post.text
-  = link_to '<- #{ t(".blog_posts") }', blog_posts_path, class: "btn"
+%p
+  = link_to t('back'), blog_posts_path(@blog_post.user), class: "btn"
