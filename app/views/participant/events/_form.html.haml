@@ -1,51 +1,15 @@
-%script{src: "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true"}
-  :cdata
-%script{src: "https://dl.dropboxusercontent.com/u/44188862/ScriptFiles/geoMarker.js", type: "text/javascript"}
-  :cdata
-/ End of custom Script
-%script{src: "http://cdn.jotfor.ms/static/jotform.js?3.1.774", type: "text/javascript"}
+= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true"
+= javascript_include_tag "https://dl.dropboxusercontent.com/u/44188862/ScriptFiles/geoMarker.js"
+= javascript_include_tag "http://cdn.jotfor.ms/static/jotform.js?3.1.774"
 :javascript
   JotForm.init(function(){
      $('input_3').hint('ex: myname@example.com');
   });
-%link{href: "http://cdn.jotfor.ms/static/formCss.css?3.1.774", rel: "stylesheet", type: "text/css"}/
-%link{href: "http://cdn.jotfor.ms/css/styles/nova.css?3.1.774", rel: "stylesheet", type: "text/css"}/
-%link{href: "http://cdn.jotfor.ms/css/printForm.css?3.1.774", media: "print", rel: "stylesheet", type: "text/css"}/
-:css
-  .form-label{
-          width:150px !important;
-      }
-      .form-label-left{
-          width:150px !important;
-      }
-      .form-line{
-          padding-top:12px;
-          padding-bottom:12px;
-      }
-      .form-label-right{
-          width:150px !important;
-      }
-      .form-all{
-          width:690px;
-          color:#555 !important;
-          font-family:'Lucida Grande';
-          font-size:14px;
-      }
-      .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
-          color:#555;
-      }
-
-      /* Injected CSS Code */
-  .form-line-active{
-  color:black;
-  }
-  .form-all
-  {
-  margin-left: 0px;
-  }
+= stylesheet_link_tag "http://cdn.jotfor.ms/static/formCss.css?3.1.774"
+= stylesheet_link_tag "http://cdn.jotfor.ms/css/styles/nova.css?3.1.774"
+= stylesheet_link_tag "http://cdn.jotfor.ms/css/printForm.css?3.1.774", media: :print
 :javascript
-    document.getElementById("si" + "mple" + "_spc").value = "31324630345445-31324630345445";
-    %input#input_15.form-hidden{name: "q15_geolocation", type: "hidden", value: ""}/
+  document.getElementById("si" + "mple" + "_spc").value = "31324630345445-31324630345445";
 = simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     = f.input :title, as: :string, placeholder: t('.not_more_than_140_characters')
