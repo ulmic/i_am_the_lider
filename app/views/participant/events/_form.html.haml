@@ -1,0 +1,32 @@
+= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true"
+= javascript_include_tag "https://dl.dropboxusercontent.com/u/44188862/ScriptFiles/geoMarker.js"
+= javascript_include_tag "http://cdn.jotfor.ms/static/jotform.js?3.1.774"
+:javascript
+  JotForm.init(function(){
+     $('input_3').hint('ex: myname@example.com');
+  });
+= stylesheet_link_tag "participant/events"
+= stylesheet_link_tag "http://cdn.jotfor.ms/static/formCss.css?3.1.774"
+= stylesheet_link_tag "http://cdn.jotfor.ms/css/styles/nova.css?3.1.774"
+= stylesheet_link_tag "http://cdn.jotfor.ms/css/printForm.css?3.1.774", media: :print
+:javascript
+  document.getElementById("si" + "mple" + "_spc").value = "31324630345445-31324630345445";
+
+= simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :title, as: :string, placeholder: t('.not_more_than_140_characters')
+    = f.input :goal, as: :string
+    = f.input :tasks
+    = f.input :participant_category, placeholder: t('.please_describe_participant_category')
+    = f.input :description, placeholder: t('.not_more_than_1000_characters')
+    = f.input :begin_date
+    = f.input :end_date
+    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    %br
+    %h3
+      = t('.mark_your_location_on_the_map')
+    #googleMap.google_map_style
+      Map
+    = f.input :adress, as: :hidden, input_html: { class: 'form-hidden', id: "input_15" }
+  .form-actions
+    = f.button :submit, t('save'), class: 'btn btn-primary'
