@@ -1,11 +1,11 @@
+.page-header
+  %h2
+    - if admin_signed_in?
+      = @user.title
+    - else
+      = @user.small_name
 .row-fluid
   .span5
-    %p
-      %h2
-        - if admin_signed_in?
-          = @user.title
-        - else
-          = @user.small_name
     %p
       %img.img-polaroid.big_img{  src: @user.avatar  }
     %p

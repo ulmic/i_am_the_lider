@@ -23,7 +23,7 @@
                 %h3= t('.home')
             - if user_signed_in?
               %li
-                %a{ href: user_path(current_user) }
+                %a{ href: participant_welcome_index_path(current_user) }
                   %h3= t('.i_am_participant')
             - elsif can_registred?
               %li
@@ -33,6 +33,10 @@
               %a{ href: users_path }
                 %h3= t('.participants')
             %li
+              = link_to blog_posts_path do
+                %h3
+                  = t('.blog_posts')
+            %li
               %a{ href: competition_welcome_path }
                 %h3= t('.competition')
             %li
@@ -41,6 +45,10 @@
             %li
               %a{ href: first_stage_welcome_path }
                 %h3= t('.stages')
+            - if user_signed_in?
+              %li
+                = link_to session_path, method: :delete do
+                  %h3= t('sign_out')
             - if admin_signed_in?
               %li
                 %a{ href: admin_welcome_index_path }

@@ -5,10 +5,10 @@ IAmTheLider::Application.routes.draw do
 
   resources :news, only: [ :show, :index ]
   resource :session, only: [:new, :create, :destroy]
+  resources :blog_posts, only: [ :index, :show ]
   resources :users do
     member do
       resources :reports
-      resources :blog_posts
       resource :works, except: [ :index, :show ]
     end
   end
@@ -24,6 +24,14 @@ IAmTheLider::Application.routes.draw do
   resource :errors do
     collection do
       get "not_found"
+    end
+  end
+  namespace :participant do
+    resources :users do
+      member do
+        resources :welcome, only: :index
+        resources :blog_posts
+      end
     end
   end
   namespace :admin do

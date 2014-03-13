@@ -15,6 +15,7 @@ FactoryGirl.define do
     vkontakte    { generate :url }
     avatar       { generate :file }
     locality     { generate :string }
+    last_stage_id 1
     adress_index "432000"
     confirm_state :new
   end
