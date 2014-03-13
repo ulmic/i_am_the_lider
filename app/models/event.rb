@@ -1,3 +1,26 @@
 class Event < ActiveRecord::Base
-  attr_accessible :adress, :begin_date, :description, :end_date, :goal, :participant_category, :tasks, :title
+  attr_accessible :adress,
+                  :begin_date,
+                  :description,
+                  :end_date,
+                  :goal,
+                  :participant_category,
+                  :tasks,
+                  :title,
+                  :user_id
+
+  belongs_to :user
+
+  validates :adress, presence: true,
+                     url: true
+  validates :begin_date, presence: true
+  validates :end_date, presence: true
+  validates :description, presence: true,
+                          length: { maximum: 1000 }
+  validates :goal, presence: true
+  validates :participant_category, presence: true
+  validates :tasks, presence: true
+  validates :title, presence: true,
+                    length: { maximum: 140 }
+  validates :user_id, presence: true
 end

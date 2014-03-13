@@ -1,0 +1,12 @@
+= simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
+  = f.input :title
+  = f.input :goal
+  = f.input :tasks
+  = f.input :participant_category
+  = f.input :description
+  = f.input :begin_date
+  = f.input :end_date
+  = f.input :adress
+  = f.input :user_id
+  .form-actions
+    = f.button :submit, class: 'btn-primary'

@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   belongs_to :last_stage, class_name: "Stage"
   has_one :reserve_reason
   has_one :work
-  has_one :report
   has_many :blog_posts
+  has_one :event
   has_many :ratings
   mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name
 

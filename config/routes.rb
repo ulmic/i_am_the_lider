@@ -31,6 +31,7 @@ IAmTheLider::Application.routes.draw do
       member do
         resources :welcome, only: :index
         resources :blog_posts
+        resource :event
       end
     end
   end
