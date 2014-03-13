@@ -1,12 +1,13 @@
 = simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
-  = f.input :title
-  = f.input :goal
-  = f.input :tasks
-  = f.input :participant_category
-  = f.input :description
-  = f.input :begin_date
-  = f.input :end_date
-  = f.input :adress
-  = f.input :user_id
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :title, as: :string
+    = f.input :goal, as: :string
+    = f.input :tasks
+    = f.input :participant_category, as: :string
+    = f.input :description
+    = f.input :begin_date
+    = f.input :end_date
+    = f.input :adress, as: :string
+    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions
     = f.button :submit, class: 'btn-primary'

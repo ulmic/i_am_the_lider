@@ -6,8 +6,8 @@ class CreateEvents < ActiveRecord::Migration
       t.text :tasks
       t.text :participant_category
       t.text :description
-      t.date :begin_date
-      t.date :end_date
+      t.datetime :begin_date
+      t.datetime :end_date
       t.text :adress
       t.integer :user_id
 
