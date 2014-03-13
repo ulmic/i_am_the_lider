@@ -113,7 +113,7 @@ class Participant::BlogPostsControllerTest < ActionController::TestCase
     attributes = attributes_for :blog_post
     put :update, id: @blog_post, blog_post: attributes
 
-    assert_redirected_to @blog_post
+    assert_redirected_to participant_blog_post_path @blog_post
   end
 
   test "should not destroy blog_post with no access" do
