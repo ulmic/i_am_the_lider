@@ -1,13 +1,13 @@
 = simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
-    = f.input :title, as: :string
+    = f.input :title, as: :string, placeholder: t('.not_more_than_140_characters')
     = f.input :goal, as: :string
     = f.input :tasks
-    = f.input :participant_category, as: :string
-    = f.input :description
+    = f.input :participant_category, placeholder: t('.please_describe_participant_category')
+    = f.input :description, placeholder: t('.not_more_than_1000_characters')
     = f.input :begin_date
     = f.input :end_date
     = f.input :adress, as: :string
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions
-    = f.button :submit, class: 'btn-primary'
+    = f.button :submit, t('save'), class: 'btn btn-primary'
