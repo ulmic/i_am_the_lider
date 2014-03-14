@@ -31,10 +31,6 @@ function placeMarker(location) {
       animation:google.maps.Animation.BOUNCE,
       map: map,
     });
-    //var infowindow = new google.maps.InfoWindow({
-    //  Content: ''+ location
-    //});
-    //infowindow.open(map,marker);
     clickFlag = 1;
   }
   else {
@@ -43,6 +39,5 @@ function placeMarker(location) {
   }
   input_value = String(location).replace(/[()]/g, '');
   document.getElementById("input_map").value = input_value;
-  //alert(document.getElementById("mapLatLang").value);
 }
 google.maps.event.addDomListener(window, 'load', initialize);

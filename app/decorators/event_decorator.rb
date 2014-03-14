@@ -9,7 +9,7 @@ class EventDecorator < Draper::Decorator
 
   def longitude
     if model.coordinates.present?
-      model.coordinates.split('  ')[1]
+      model.coordinates.split(' ')[1]
     end
   end
 end
