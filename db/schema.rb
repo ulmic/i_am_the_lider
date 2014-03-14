@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20140313012327) do
     t.datetime "begin_date"
     t.datetime "end_date"
     t.text     "adress"
+    t.text     "coordinates"
     t.integer  "user_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false

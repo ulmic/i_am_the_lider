@@ -7,7 +7,8 @@ class Event < ActiveRecord::Base
                   :participant_category,
                   :tasks,
                   :title,
-                  :user_id
+                  :user_id,
+                  :coordinates
 
   belongs_to :user
 

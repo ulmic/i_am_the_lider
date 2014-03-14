@@ -1,5 +1,5 @@
 = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true"
-= javascript_include_tag "https://dl.dropboxusercontent.com/u/44188862/ScriptFiles/geoMarker.js"
+= javascript_include_tag "google_maps_archive/geoMarker"
 = javascript_include_tag "http://cdn.jotfor.ms/static/jotform.js?3.1.774"
 :javascript
   JotForm.init(function(){
@@ -22,11 +22,12 @@
     = f.input :begin_date
     = f.input :end_date
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    = f.input :adress, as: :string
     %br
     %h3
       = t('.mark_your_location_on_the_map')
     #googleMap.google_map_style
       Map
-    = f.input :adress, as: :hidden, input_html: { class: 'form-hidden', id: "input_15" }
+    = f.input :coordinates, as: :hidden, input_html: { class: 'form-hidden', id: "input_15" }
   .form-actions
     = f.button :submit, t('save'), class: 'btn btn-primary'
