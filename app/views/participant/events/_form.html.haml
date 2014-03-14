@@ -1,16 +1,6 @@
 = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true&language=ru"
 = javascript_include_tag "google_maps_archive/geoMarker"
-= javascript_include_tag "http://cdn.jotfor.ms/static/jotform.js?3.1.774"
-:javascript
-  JotForm.init(function(){
-     $('input_3').hint('ex: myname@example.com');
-  });
 = stylesheet_link_tag "participant/events"
-= stylesheet_link_tag "http://cdn.jotfor.ms/static/formCss.css?3.1.774"
-= stylesheet_link_tag "http://cdn.jotfor.ms/css/styles/nova.css?3.1.774"
-= stylesheet_link_tag "http://cdn.jotfor.ms/css/printForm.css?3.1.774", media: :print
-:javascript
-  document.getElementById("si" + "mple" + "_spc").value = "31324630345445-31324630345445";
 
 = simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
@@ -26,8 +16,12 @@
     %br
     %h3
       = t('.mark_your_location_on_the_map')
+    - if @event.coordinates.present?
+      :javascript
+        initMyCenter(#{@event.latitude}, #{@event.longitude});
     #googleMap.google_map_style
       Map
-    = f.input :coordinates, as: :hidden, input_html: { class: 'form-hidden', id: "input_15" }
+
+    = f.input :coordinates, as: :hidden, input_html: { class: 'form-hidden', id: "input_map" }
   .form-actions
     = f.button :submit, t('save'), class: 'btn btn-primary'

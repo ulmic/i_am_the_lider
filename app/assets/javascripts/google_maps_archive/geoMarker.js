@@ -1,9 +1,11 @@
-/* Script for Google maps geo Marker */
-var geolocationID = 15;
 var map;
 var marker;
 var clickFlag = 0;
-var myCenter=new google.maps.LatLng(54.2863343, 48.3477731);
+var myCenter = new google.maps.LatLng(54.2863343, 48.3477731);
+
+function initMyCenter(latitude, longitude) {
+  myCenter = new google.maps.LatLng(latitude, longitude);
+}
 function initialize()
 {
   var mapProp = {
@@ -20,6 +22,7 @@ function initialize()
   google.maps.event.addListener(map, 'click', function(event) {
     placeMarker(event.latLng);
   });
+
 }
 function placeMarker(location) {
   if(clickFlag == 0) {
@@ -38,8 +41,8 @@ function placeMarker(location) {
     marker.setPosition( location);
     map.panTo(location);
   }
-  //this ID of the hidden field should be common.
-  document.getElementById("input_"+geolocationID).value = location;
+  input_value = String(location).replace(/[()]/g, '');
+  document.getElementById("input_map").value = input_value;
   //alert(document.getElementById("mapLatLang").value);
 }
 google.maps.event.addDomListener(window, 'load', initialize);

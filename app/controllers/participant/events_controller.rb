@@ -8,10 +8,11 @@ class Participant::EventsController < Participant::ApplicationController
   end
 
   def edit
-    @event = Event.find params[:id]
+    @event = Event.find(params[:id]).decorate
   end
 
   def create
+    raise params.inspect
     @event = Event.new params[:event]
     if @event.save
       redirect_to participant_event_path(@event), flash: :success
