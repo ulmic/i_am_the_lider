@@ -3,6 +3,8 @@ ru:
     welcome:
       index:
         create_event: Создать Анонс мероприятия
+        edit_event: Изменить Анонс мероприятия
+        here: здесь
       blogs:
         my_blogs: Мой дневник
         add_blog: Добавить запись
