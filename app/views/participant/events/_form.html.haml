@@ -14,11 +14,13 @@
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
     = f.input :adress, as: :string
     %br
-    %h3
-      = t('.mark_your_location_on_the_map')
     - if @event.coordinates.present?
       :javascript
         init_my_center(#{@event.latitude}, #{@event.longitude});
+      = t('.your_event_already_has_map')
+    - else
+      %h3
+        = t('.mark_your_location_on_the_map')
     #googleMap.google_map_style
       Map
     = f.input :coordinates, as: :hidden, input_html: { class: 'form-hidden', id: "input_map" }
