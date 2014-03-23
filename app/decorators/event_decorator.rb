@@ -1,15 +1,8 @@
 class EventDecorator < Draper::Decorator
   delegate_all
 
-  def latitude
-    if model.coordinates.present?
-      model.coordinates.split(',')[0]
-    end
+  def can_edit?
+    (model.begin_date.day - Time.now.day).abs >= 10
   end
 
-  def longitude
-    if model.coordinates.present?
-      model.coordinates.split(' ')[1]
-    end
-  end
 end

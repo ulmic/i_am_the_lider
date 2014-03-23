@@ -9,20 +9,9 @@
     = f.input :tasks
     = f.input :participant_category, placeholder: t('.please_describe_participant_category')
     = f.input :description, placeholder: t('.not_more_than_1000_characters')
-    = f.input :begin_date
-    = f.input :end_date
+    = f.input :begin_date, input_html: { class: :span1 }
+    = f.input :end_date, input_html: { class: :span1 }
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
     = f.input :adress, as: :string
-    %br
-    - if @event.coordinates.present?
-      :javascript
-        init_my_center(#{@event.latitude}, #{@event.longitude});
-      = t('.your_event_already_has_map')
-    - else
-      %h3
-        = t('.mark_your_location_on_the_map')
-    #googleMap.google_map_style
-      Map
-    = f.input :coordinates, as: :hidden, input_html: { class: 'form-hidden', id: "input_map" }
   .form-actions
     = f.button :submit, t('save'), class: 'btn btn-primary'
