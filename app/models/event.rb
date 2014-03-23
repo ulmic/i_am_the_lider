@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+  geocoded_by :adress
+  #after_validation :geocode, if: :adress_changed?
+
   attr_accessible :adress,
                   :begin_date,
                   :description,
@@ -7,7 +10,9 @@ class Event < ActiveRecord::Base
                   :participant_category,
                   :tasks,
                   :title,
-                  :user_id
+                  :user_id,
+                  :latitude,
+                  :longtitude
 
   belongs_to :user
 
