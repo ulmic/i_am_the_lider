@@ -24,6 +24,8 @@ gem 'enumerize'
 gem 'configus'
 gem 'to_xls-rails'
 gem 'next_record'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
