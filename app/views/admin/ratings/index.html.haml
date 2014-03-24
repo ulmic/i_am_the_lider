@@ -18,10 +18,10 @@
       .row-fluid
         %h4= user.district.title
     .span3
-      - if user.ratings.any?
+      - if user.has_ratings_on_stage?(@stage)
         %h4
           %table.table.table-striped.table-bordered
-            - user.ratings.each do |rating|
+            - user.ratings_on_stage(@stage).each do |rating|
               %tr
                 %td
                   = rating.juror.decorate.full_name
@@ -30,6 +30,6 @@
             %tr
               %td
                 = t('.average_eval')
-                = user.average_eval
+                = user.average_eval(@stage)
     .span3
       = user.has_entered?(@stage)

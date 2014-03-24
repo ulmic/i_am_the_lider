@@ -109,3 +109,4 @@ ru:
         has_entered_to_next_stage: Проходит в следующий этап
         has_not_entered_to_next_stage: Не проходит в следующий этап
         add_stage_average: Добавить среднюю оценку к текущему этапу конкурса
+        juror_has_not_evaluate_yet: Жюри пока не опубликовало оценки этого участника
