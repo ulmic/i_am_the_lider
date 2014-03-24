@@ -15,4 +15,5 @@
         %b ...
 - else
   %h3= t('.you_has_not_any_blog_posts')
-  = link_to t('.create_the_first'), new_blog_post_path(current_user), class: 'btn btn-success btn-large'
+  - if user_signed_in?
+    = link_to t('.create_the_first'), new_blog_post_path(current_user), class: 'btn btn-success btn-large'
