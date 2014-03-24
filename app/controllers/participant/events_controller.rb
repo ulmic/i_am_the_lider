@@ -1,6 +1,6 @@
 class Participant::EventsController < Participant::ApplicationController
   def show
-    @event = Event.find_by_user_id params[:id]
+    @event = Event.find_by_user_id(params[:id]).decorate
   end
 
   def new
