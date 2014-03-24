@@ -21,6 +21,7 @@ IAmTheLider::Application.routes.draw do
       get "reg_end" => "welcome#reg_end"
     end
   end
+  resources :events, only: [ :index, :show ]
   resource :errors do
     collection do
       get "not_found"
