@@ -14,6 +14,6 @@
         != strip_tags blog_post.text.first(250)
         %b ...
 - else
-  %h3= t('.you_has_not_any_blog_posts')
+  %h3= t('.there_are_not_any_blog_posts')
   - if user_signed_in?
     = link_to t('.create_the_first'), new_blog_post_path(current_user), class: 'btn btn-success btn-large'
