@@ -53,6 +53,7 @@ ru:
       participants:           'Участники'
       competition:            'Положение'
       contest_news:           'Новости'
+      events:                 Мероприятия
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
       blog_posts: Дневники активности
@@ -136,7 +137,7 @@ ru:
       user_reserved_because: 'Заявка отложена по причине:'
       add_work: Добавить творческую работу
       edit_work: Изменить творческую работу
-      download_work: Загрузить творческую работу
+      download_work: Скачать творческую работу
       download_work_from_file_storage: Загрузить работу с файлообменника
       work_is_unavalaible: Работа не загружена на сайт
       return_to_reserved: Вернуть в отложенные
@@ -202,3 +203,7 @@ ru:
   blog_posts:
     index:
       blog_posts: Дневники активности
+
+  events:
+    index:
+      events: Мероприятия

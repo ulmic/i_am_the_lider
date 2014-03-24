@@ -27,4 +27,9 @@ class Event < ActiveRecord::Base
   validates :title, presence: true,
                     length: { maximum: 140 }
   validates :user_id, presence: true
+
+  #FIXME for simple calendar gem
+  def start_time
+    begin_date
+  end
 end

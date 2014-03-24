@@ -33,18 +33,19 @@
               %a{ href: users_path }
                 %h3= t('.participants')
             %li
+              %a{ href: events_path }
+                %h3= t('.events')
+            %li
               = link_to blog_posts_path do
                 %h3
                   = t('.blog_posts')
             %li
               %a{ href: competition_welcome_path }
                 %h3= t('.competition')
-            %li
-              %a{ href: '/news' }
-                %h3= t('.contest_news')
-            %li
-              %a{ href: first_stage_welcome_path }
-                %h3= t('.stages')
+            - unless user_signed_in?
+              %li
+                %a{ href: '/news' }
+                  %h3= t('.contest_news')
             - if user_signed_in?
               %li
                 = link_to session_path, method: :delete do

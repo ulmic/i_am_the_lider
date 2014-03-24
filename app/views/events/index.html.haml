@@ -1,0 +1,15 @@
+= stylesheet_link_tag "events"
+.page-header
+  %h1= t('.events')
+- if @events.any?
+  - @events.each do |event|
+    .well.link{ onclick: "return location.href = '#{event_path(event)}'" }
+      = image_tag event.user.avatar.thumb
+      %small
+        = event.user.decorate.small_name
+        |
+        =l event.begin_date.to_date
+      %h4= event.title
+      %p
+        != strip_tags event.description.first(250)
+        %b ...
