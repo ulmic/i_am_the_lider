@@ -1,10 +1,16 @@
-- @user.blog_posts.each do |blog_post|
-  %a{ href: blog_post_path(blog_post) }
-    .well
-      %h4= blog_post.title
-      %small= blog_post.created_at.to_date
-      %p
-        != strip_tags blog_post.text.first(500)
-        %b ...
-
-%hr
+.well
+  %h3
+    = t('.blogs')
+  - if @user.blog_posts.any?
+    - @user.blog_posts.each do |blog|
+      .well.link{ onclick: "return location.href = '#{participant_blog_post_path(blog)}'" }
+        %a{ href: participant_blog_post_path(blog) }
+          = image_tag blog.user.avatar.thumb
+        %h4= blog.title
+        %p
+          != strip_tags blog.text.first(200)
+          %b ...
+        %small=l blog.created_at.to_date
+    %br
+  - else
+    = t('.participant_has_not_write_anything')
