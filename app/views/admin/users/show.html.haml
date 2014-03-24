@@ -1,6 +1,43 @@
-= render 'office'
-- if current_user || admin_signed_in?
-  %a.btn.btn-large.btn-success{ href: edit_user_path(@user) }
-    = t('.edit_user')
-%hr
-= render 'blogs'
+.page-header
+  %h2
+    - if admin_signed_in?
+      = @user.title
+    - else
+      = @user.small_name
+.row-fluid
+  .span5
+    = render 'office'
+    - if time_to_be_the_lider_during?
+      - if @user.work
+        = link_to t('.edit_work'), edit_works_path(@user.work), class: 'btn btn-large btn-success'
+      - else
+        = link_to t('.add_work'), new_works_path(@user), class: 'btn btn-large btn-success'
+    = link_to t('.edit_user'), edit_admin_user_path(@user), class: 'btn btn-large btn-info'
+    = link_to t('.destroy_user'), admin_user_path(@user), class: 'btn btn-large btn-info'
+    %h3
+      = @user.human_confirm_state_name
+    - if @user.reserved?
+      %h3
+        = t('.user_reserved_because')
+        = @user.reserve_reason.description
+    - if @user.work
+      - if @user.work.file.present?
+        %a{ href: @user.work.file, class: 'btn btn-large btn-success' }
+          = t('.download_work')
+      - unless @user.work.link.blank?
+        %a{ href: @user.work.link, class: 'btn btn-large btn-success' }
+          = t('.download_work_from_file_storage')
+    - else
+      = t('.work_is_unavalaible')
+    %br
+    - if @user.new? || @user.reserved?
+      = link_to t('.accept_user'), accept_admin_user_path(@user), method: :put, class: 'btn btn-info'
+      = link_to t('delete'), user_path(@user), method: :delete, class: 'btn btn-info'
+    - if @user.new?
+      = link_to t('.reserve_user'), reserve_admin_user_path(@user), method: :put, class: 'btn btn-info'
+    - if @user.reserved?
+      = link_to t('.edit_reserve_reason'), edit_admin_reserve_reason_path(@user.reserve_reason), class: 'btn btn-info'
+    - if @user.accepted?
+      = link_to t('.return_to_reserved'), reserve_admin_user_path(@user), method: :put, class: 'btn btn-info'
+  .span7
+    = render "blogs"

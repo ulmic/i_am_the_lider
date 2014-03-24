@@ -1,13 +1,16 @@
 .well
   %h3
     = t('.blogs')
-  - @user.blog_posts.each do |blog|
-    .well.link{ onclick: "return location.href = '#{participant_blog_post_path(blog)}'" }
-      %a{ href: participant_blog_post_path(blog) }
-        = image_tag blog.user.avatar.thumb
-      %h4= blog.title
-      %p
-        != strip_tags blog.text.first(200)
-        %b ...
-      %small=l blog.created_at.to_date
-  %br
+  - if @user.blog_posts.any?
+    - @user.blog_posts.each do |blog|
+      .well.link{ onclick: "return location.href = '#{participant_blog_post_path(blog)}'" }
+        %a{ href: participant_blog_post_path(blog) }
+          = image_tag blog.user.avatar.thumb
+        %h4= blog.title
+        %p
+          != strip_tags blog.text.first(200)
+          %b ...
+        %small=l blog.created_at.to_date
+    %br
+  - else
+    = t('.participant_has_not_write_anything')
