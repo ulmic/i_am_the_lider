@@ -204,6 +204,7 @@ ru:
   blog_posts:
     index:
       blog_posts: Дневники активности
+      there_are_not_any_blog_posts: Пока нет ни одной записи
 
   events:
     index:
