@@ -53,6 +53,7 @@ ru:
       participants:           'Участники'
       competition:            'Положение'
       contest_news:           'Новости'
+      events:                 Мероприятия
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
       blog_posts: Дневники активности
@@ -202,3 +203,7 @@ ru:
   blog_posts:
     index:
       blog_posts: Дневники активности
+
+  events:
+    index:
+      events: Мероприятия
