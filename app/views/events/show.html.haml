@@ -24,10 +24,6 @@
       %strong= model_class.human_attribute_name(:description) + ':'
       %br
       = @event.description
-    %p
-      %strong= model_class.human_attribute_name(:adress) + ':'
-      %br
-      = @event.adress
   .span6
     .row
       .button{ onclick: "return location.href = '#{user_path(@event.user)}'" }
@@ -48,21 +44,3 @@
     -#.row
       %div{style: "width: 800px;"}
         #google_map{style: "width: 800px; height: 400px;"}
-:javascript
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'google_map'}}, function(){
-    markers = handler.addMarkers([
-      {
-        "lat": #{@event.latitude},
-        "lng": #{@event.longtitude},
-        "picture": {
-          "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-          "width":  36,
-          "height": 36
-        },
-        "infowindow": "hello!"
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });

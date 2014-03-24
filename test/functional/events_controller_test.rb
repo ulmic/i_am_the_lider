@@ -2,6 +2,7 @@ require 'test_helper'
 
 class EventsControllerTest < ActionController::TestCase
   setup do
+    @user = create :user
     @event = create :event
   end
 
