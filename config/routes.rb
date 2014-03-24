@@ -50,11 +50,11 @@ IAmTheLider::Application.routes.draw do
       end
     end
     resources :reports, only: [ :edit, :update, :destroy ]
-    resources :jurors, except: [:show, :new]
+    resources :jurors, except: [:show, :new, :index]
     resources :stages do
       member do
         resources :criterions, except: :show
-        resources :jurors, only: [:new]
+        resources :jurors, only: [:new, :index]
         resources :ratings, only: :index
       end
     end

@@ -1,6 +1,6 @@
 class Admin::JurorsController < Admin::ApplicationController
   def index
-    @jurors = Juror.all
+    @jurors = Juror.with stage_id: params[:id]
   end
 
   def new
