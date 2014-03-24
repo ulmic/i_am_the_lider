@@ -22,7 +22,7 @@ class Admin::UsersController < Admin::ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
-      redirect_to @user, flash: :success
+      redirect_to admin_user_path(@user), flash: :success
     else
       render action: :new, flash: :error
     end
