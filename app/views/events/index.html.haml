@@ -13,3 +13,5 @@
       %p
         != strip_tags event.description.first(250)
         %b ...
+- else
+  = t('.no_events')

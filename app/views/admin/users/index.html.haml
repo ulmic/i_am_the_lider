@@ -3,9 +3,10 @@
   %h1
     = t('.title')
   = link_to t('.users_excel'), admin_users_path(format: :xls), class: 'btn btn-success'
+= link_to t('.add_user'), new_admin_user_path, class: 'btn btn-info'
 - @users.each do |user|
   .row-fluid.has_top_margin
-    %a{ href: user_path(user) }
+    %a{ href: admin_user_path(user) }
       .span2
         %img.img-polaroid.width-200px{ src: user.avatar }
       .span3

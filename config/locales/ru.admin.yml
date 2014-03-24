@@ -18,6 +18,30 @@ ru:
       index:
         title: Список участников
         users_excel: Загрузить список в формате Excel
+        add_user: Добавить участника
+      office:
+        report:               'Отчёт о мероприятии'
+        download_archive:     'Скачать архив'
+        there_is_not_archive: 'Архив не загружен'
+      show:
+        create_report: 'Создать отчёт о мероприятии'
+        edit_report:   'Изменить отчёт о мероприятии'
+        edit_user:     'Изменить аккаунт'
+        add_blog_post: 'Добавить запись в блог'
+        accept_user: Подтвердить заявку
+        edit_reserve_reason: Изменить описание недочёта
+        reserve_user: Оставить не подтверждённой
+        user_reserved_because: 'Заявка отложена по причине:'
+        add_work: Добавить творческую работу
+        edit_work: Изменить творческую работу
+        download_work: Скачать творческую работу
+        download_work_from_file_storage: Загрузить работу с файлообменника
+        work_is_unavalaible: Работа не загружена на сайт
+        return_to_reserved: Вернуть в отложенные
+        destroy_user: Удалить участника
+      blogs:
+        blogs: Дневник активности
+        participant_has_not_write_anything: Участник ничего не написал на данный момент
     news:
       edit:
         edit_news: 		Редактировать новость
