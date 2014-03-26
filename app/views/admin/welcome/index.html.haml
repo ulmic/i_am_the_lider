@@ -16,7 +16,7 @@
 %h3= t('.events')
 %table.table.table-stripped.table-hover.proposals
   - @events.each do |event|
-    %tr.link{ onclick: "return location.href = '#{admin_event_path(event.user)}'"}
+    %tr.link{ onclick: "return location.href = '#{admin_event_path(event)}'"}
       %td
         = image_tag event.user.avatar.mini_thumb_fill
       %td
