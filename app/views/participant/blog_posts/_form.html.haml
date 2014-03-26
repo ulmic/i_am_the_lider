@@ -1,4 +1,4 @@
-= simple_form_for @blog_post, url: participant_blog_post_path do |f|
+= simple_form_for @blog_post, url: "/participant/users/#{params[:id]}/blog_posts" do |f|
   - if @blog_post.errors.any?
     #error_explanation
       %h2= "#{ pluralize(@blog_post.errors.count, "error") } #{ t('.prohibited_this_blog_post_from_being_saved') }:"

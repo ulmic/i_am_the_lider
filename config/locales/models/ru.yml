@@ -32,6 +32,7 @@ ru:
         avatar_content_type: Загруженный файл
         locality: Населённый пункт
         adress_index: Почтовый индекс
+        last_stage_id: "Этап, на котором остановился участник"
       report:
         date: Дата проведения
         member_count: Количество участников

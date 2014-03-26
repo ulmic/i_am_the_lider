@@ -84,6 +84,7 @@ ru:
         view_stage: Посмотреть описание
       show:
         participants_who_ends_on_this_stage: 'Участники, которые остановились на этом этапе'
+        stage_select: Переместить участника на этап
       new:
         title: Новый этап конкурса
       show:

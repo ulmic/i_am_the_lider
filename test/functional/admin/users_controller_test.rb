@@ -89,13 +89,13 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert @user.reserved?
   end
 
-  test "should up stage" do
+  test "should update stage" do
     stage = create :stage
     create :stage
     @user.last_stage = stage
     @user.save
-    put :up_stage, id: @user
+    put :update_stage, id: @user, user: { last_stage_id: stage.id }
     @user.reload
-    assert_redirected_to admin_stage_path @user.last_stage.previous
+    assert_redirected_to admin_stage_path stage
   end
 end

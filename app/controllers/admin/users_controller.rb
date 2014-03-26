@@ -55,14 +55,11 @@ class Admin::UsersController < Admin::ApplicationController
     redirect_to new_admin_reserve_reason_path @user
   end
 
-  def up_stage
+  def update_stage
     @user = User.find params[:id]
-    if @user.last_stage.next
-      @user.last_stage = @user.last_stage.next
-      @user.save
-      redirect_to admin_stage_path(@user.last_stage.previous), flash: :success
-    else
-      redirect_to admin_stage_path(@user.last_stage), flash: :success
-    end
+    last_stage_previous = @user.last_stage
+    @user.last_stage_id = params[:user][:last_stage_id]
+    @user.save
+    redirect_to admin_stage_path(last_stage_previous), flash: :success
   end
 end
