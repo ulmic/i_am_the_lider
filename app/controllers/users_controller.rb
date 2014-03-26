@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = UserDecorator.decorate_collection User.with last_stage_id: current_stage.id
+    @users = UserDecorator.decorate_collection User.with(last_stage_id: current_stage.id).shuffle!
   end
 
   def show
