@@ -33,6 +33,6 @@ class Admin::EventsController < Admin::ApplicationController
     @event = Event.find params[:id]
     user = @event.user
     @event.destroy
-    redirect_to admin_welcome_index_path(user), flash: :success
+    redirect_to admin_welcome_index_path, flash: :success
   end
 end
