@@ -11,7 +11,7 @@
     = f.input :description, placeholder: t('.not_more_than_1000_characters')
     = f.input :begin_date, input_html: { class: :span1 }
     = f.input :end_date, input_html: { class: :span1 }
-    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    = f.input :user_id, as: :hidden, input_html: { value: params[:id] }
     = f.input :adress, as: :string
   .form-actions
     = f.button :submit, t('save'), class: 'btn btn-primary'

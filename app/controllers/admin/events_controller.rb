@@ -14,7 +14,7 @@ class Admin::EventsController < Admin::ApplicationController
   def create
     @event = Event.new params[:event]
     if @event.save
-      redirect_to participant_event_path(@event), flash: :success
+      redirect_to admin_event_path(@event), flash: :success
     else
       render action: :new, flash: :error
     end
@@ -23,7 +23,7 @@ class Admin::EventsController < Admin::ApplicationController
   def update
     @event = Event.find params[:id]
     if @event.update_attributes params[:event]
-      redirect_to participant_event_path(@event), flash: :success
+      redirect_to admin_event_path(@event), flash: :success
     else
       render action: :edit, flash: :error
     end
@@ -33,6 +33,6 @@ class Admin::EventsController < Admin::ApplicationController
     @event = Event.find params[:id]
     user = @event.user
     @event.destroy
-    redirect_to participant_welcome_index_path(user), flash: :success
+    redirect_to admin_welcome_index_path(user), flash: :success
   end
 end
