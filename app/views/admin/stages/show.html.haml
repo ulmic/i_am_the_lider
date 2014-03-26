@@ -2,27 +2,25 @@
 .page-header
   %h2
     = @stage.title
-.row-fluid
-  .span4
-    %p
-      != @stage.description
-  .span7
-    = t('.participants_who_ends_on_this_stage')
-    %table.table.table-bordered.table-striped
-      - @users.each do |user|
-        %tr
-          %td
-            = image_tag user.avatar.mini_thumb_fill
-          %td
-            = link_to user.title, user_path(user)
-          = simple_form_for user, url: update_stage_admin_user_path do |f|
-            %td
-              = f.association :last_stage
-            %td
-              -#FIXME реализовать через локали
-              = f.submit "Переместить участника", class: 'btn btn-success'
-
-= link_to t('back'), admin_stages_path, class: "btn"
-- if admin_signed_in?
   = link_to t('edit'), edit_admin_stage_path(@stage), class: "btn btn-info"
   = link_to t('delete'), admin_stage_path(@stage), method: :delete, class: "btn btn-info"
+  = link_to t('back'), admin_stages_path, class: "btn"
+.row-fluid
+  %p
+    != @stage.description
+.row-fluid
+  = t('.participants_who_ends_on_this_stage')
+  %table.table.table-bordered.table-striped
+    - @users.each do |user|
+      %tr
+        %td
+          = image_tag user.avatar.mini_thumb_fill
+        %td
+          = link_to user.title, user_path(user)
+        = simple_form_for user, url: update_stage_admin_user_path do |f|
+          %td
+            = f.association :last_stage
+          %td
+            -#FIXME реализовать через локали
+            = f.submit "Переместить участника", class: 'btn btn-success'
+
