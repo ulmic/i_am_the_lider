@@ -1,6 +1,6 @@
 class Admin::EventsController < Admin::ApplicationController
   def show
-    @event = Event.find_by_user_id(params[:id]).decorate
+    @event = Event.find(params[:id]).decorate
   end
 
   def new
