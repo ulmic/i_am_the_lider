@@ -41,6 +41,7 @@ IAmTheLider::Application.routes.draw do
     resources :welcome, only: [ :index ]
     resources :blog_posts, except: [:create, :new]
     resources :news, except: [ :index, :show ]
+    resources :events
     resources :users do
       member do
         put :accept
