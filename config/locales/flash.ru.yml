@@ -103,6 +103,9 @@ ru:
           error: Ошибка в заполении полей
         destroy:
           success: Член жюри удалён
+      events:
+        update:
+          success: Анонс мероприятия успешно изменён
     juror:
       sessions:
         create:
