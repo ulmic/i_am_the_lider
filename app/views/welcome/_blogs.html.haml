@@ -4,7 +4,7 @@
       = t('.blogs')
   - @blogs.each do |blog|
     .well.link{ onclick: "return location.href = '#{blog_post_path(blog)}'" }
-      %a{ href: blog_post_path(blog) }
+      %a.blog_post_image{ href: blog_post_path(blog) }
         = image_tag blog.user.avatar.thumb
       %h4= blog.title
       %p

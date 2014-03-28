@@ -9,6 +9,8 @@
         = event.user.decorate.small_name
         |
         =l event.begin_date.to_date
+        |
+        = event.adress
       %h4= event.title
       %p
         != strip_tags event.description.first(250)
