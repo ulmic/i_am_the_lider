@@ -74,7 +74,7 @@ class Admin::UsersControllerTest < ActionController::TestCase
     delete :destroy, id: @user
     @user.reload
     assert @user.busted?
-    assert_redirected_to users_path
+    assert_redirected_to admin_users_path
   end
 
   test "should accept user" do
