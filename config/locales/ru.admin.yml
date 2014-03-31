@@ -25,6 +25,8 @@ ru:
         there_is_not_archive: 'Архив не загружен'
       new:
         title: Добавить участника
+      edit:
+        title: Редактировать пользователя
       form:
         prohibited_this_user_from_being_saved: 'Ошибки зафиксированы во время сохранения'
         login_no_thin_than_3_characters_and_no_more_than_8_characters: 'Твой личный логин на это сайте. Логин больше 3 и меньше 8 символов'
