@@ -8,7 +8,6 @@ IAmTheLider::Application.routes.draw do
   resources :blog_posts, only: [ :index, :show ]
   resources :users do
     member do
-      resources :reports
       resource :works, except: [ :index, :show ]
     end
   end
@@ -32,7 +31,11 @@ IAmTheLider::Application.routes.draw do
       member do
         resources :welcome, only: :index
         resources :blog_posts
-        resource :event
+        resource :event do
+          scope module: :event do
+            resource :report
+          end
+        end
       end
     end
   end
@@ -50,7 +53,6 @@ IAmTheLider::Application.routes.draw do
         resource :reserve_reason, except: [ :index, :show ]
       end
     end
-    resources :reports, only: [ :edit, :update, :destroy ]
     resources :jurors, except: [:show, :new, :index]
     resources :stages do
       member do

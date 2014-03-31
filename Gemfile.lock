@@ -258,7 +258,7 @@ DEPENDENCIES
   coveralls
   draper
   enumerize
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   geocoder
   gmaps4rails
   haml

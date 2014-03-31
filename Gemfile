@@ -40,7 +40,7 @@ gem 'jquery-rails'
 group :test do
   gem 'simplecov', require: false
   gem 'minitest'
-  gem 'factory_girl_rails', require: false
+  gem "factory_girl_rails", "~> 4.0", require: false
   gem 'turn'
   gem 'tconsole'
   gem 'pry'
