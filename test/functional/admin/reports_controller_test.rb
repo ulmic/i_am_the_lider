@@ -1,41 +1,45 @@
 require 'test_helper'
 
-class Participant::Event::ReportsControllerTest < ActionController::TestCase
+class Admin::ReportsControllerTest < ActionController::TestCase
   setup do
     @report = create :event_report
-    @user = create :user
-    @event = create :event
-    user_sign_in @user
+    @admin = create :admin
+    admin_sign_in @admin
+  end
+
+  test "should get index" do
+    get :index
+    assert_response :success
   end
 
   test "should get new" do
-    get :new, id: @event
+    get :new
     assert_response :success
   end
 
   test "should create report" do
     attributes = attributes_for :event_report
 
-    post :create, event_report: attributes, id: @event
+    post :create, report: attributes
     assert_response :redirect
 
-    report = Event::Report.last
+    report = report.last
     assert_equal attributes[:description], report.description
   end
 
   test "should not create report" do
     attributes = { description: @report.description }
 
-    post :create, event_report: attributes, id: @event
+    post :create, report: attributes
     assert_response :success
   end
 
-  test "should get edit by user" do
+  test "should get edit by admin" do
     get :edit, id: @report
     assert_response :success
   end
 
-  test "should update report by user" do
+  test "should update report by admin" do
     attributes = attributes_for :event_report
     put :update, id: @report, report: attributes
     assert_response :redirect
@@ -55,11 +59,10 @@ class Participant::Event::ReportsControllerTest < ActionController::TestCase
   end
 
   test "should destroy report" do
-    user = @report.event.user
     assert_difference('Event::Report.count', -1) do
       delete :destroy, id: @report
     end
 
-    assert_redirected_to participant_welcome_index_path(user)
+    assert_redirected_to admin_reports_path
   end
 end
