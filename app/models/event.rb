@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
                   :longtitude
 
   belongs_to :user
+  has_one :report
 
   validates :adress, presence: true
   validates :begin_date, presence: true

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  full_name: MyText
+  school: MyText
+  report_id: 1
+  group: MyText
+  phone: MyText
+
+two:
+  full_name: MyText
+  school: MyText
+  report_id: 1
+  group: MyText
+  phone: MyText

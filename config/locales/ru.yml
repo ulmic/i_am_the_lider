@@ -39,6 +39,12 @@ ru:
     few_days: дня
     many_days: дней
 
+  participants:
+    participant: участник
+    few_participants: участника
+    many_participants: участников
+
+
   time:
     formats:
       default: "%d-%m-%Y %H:%M"

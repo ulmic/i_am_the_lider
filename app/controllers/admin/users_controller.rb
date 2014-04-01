@@ -12,7 +12,7 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def new
-    @user = User.new
+    @user = NewAdminUserType.new
   end
 
   def edit
@@ -31,7 +31,7 @@ class Admin::UsersController < Admin::ApplicationController
   def update
     @user = User.find params[:id]
     if @user.update_attributes params[:user]
-      redirect_to @user, flash: :success
+      redirect_to admin_user_path(@user), flash: :success
     else
       render action: :edit, flash: :error
     end
@@ -40,13 +40,13 @@ class Admin::UsersController < Admin::ApplicationController
   def destroy
     @user = User.find params[:id]
     @user.bust
-    redirect_to users_url, flash: :success
+    redirect_to admin_users_path, flash: :success
   end
 
   def accept
     @user = User.find params[:id]
     @user.accept
-    redirect_to user_path @user
+    redirect_to admin_user_path @user
   end
 
   def reserve

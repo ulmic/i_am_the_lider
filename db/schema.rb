@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140313012327) do
+ActiveRecord::Schema.define(:version => 20140401233333) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -66,6 +66,32 @@ ActiveRecord::Schema.define(:version => 20140313012327) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "event_participants", :force => true do |t|
+    t.text     "full_name"
+    t.text     "school"
+    t.integer  "report_id"
+    t.text     "group"
+    t.text     "phone"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "event_photos", :force => true do |t|
+    t.text     "file"
+    t.integer  "report_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "event_reports", :force => true do |t|
+    t.text     "description"
+    t.text     "document"
+    t.integer  "event_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.text     "results"
+  end
+
   create_table "events", :force => true do |t|
     t.text     "title"
     t.text     "goal"
@@ -75,7 +101,8 @@ ActiveRecord::Schema.define(:version => 20140313012327) do
     t.datetime "begin_date"
     t.datetime "end_date"
     t.text     "adress"
-    t.text     "coordinates"
+    t.float    "latitude"
+    t.float    "longtitude"
     t.integer  "user_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
@@ -119,21 +146,6 @@ ActiveRecord::Schema.define(:version => 20140313012327) do
     t.integer  "juror_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "reports", :force => true do |t|
-    t.text     "member_type"
-    t.integer  "member_count"
-    t.text     "venue"
-    t.date     "date"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.string   "archive_file_name"
-    t.string   "archive_content_type"
-    t.integer  "archive_file_size"
-    t.datetime "archive_updated_at"
-    t.integer  "user_id"
-    t.string   "description"
   end
 
   create_table "reserve_reasons", :force => true do |t|
