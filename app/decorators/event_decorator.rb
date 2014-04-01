@@ -9,4 +9,8 @@ class EventDecorator < Draper::Decorator
     Time.now >= model.end_date
   end
 
+  def participants_count
+    model.report.participants.count
+  end
+
 end

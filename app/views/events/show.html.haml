@@ -41,6 +41,11 @@
       .well
         %h2
           = @event.adress
+    - if @event.report.present?
+      .row
+        .well
+          %h2
+            = participants_count(@event.participants_count)
     -#.row
       %div{style: "width: 800px;"}
         #google_map{style: "width: 800px; height: 400px;"}
