@@ -14,6 +14,7 @@ ru:
         reserved_users: Отложенные заявки
         complete_evaluation_of_participants: Заполнить оценки участников
         admin_compeptition: Этапы конкурса
+        events: Мероприятия
     users:
       index:
         title: Список участников
@@ -123,3 +124,7 @@ ru:
         you_must_add_google_maps_url_here: Вы должны добавить ссылку на Google Maps сюда.
         mark_your_location_on_the_map: Отметьте на карте место проведения мероприятия (не обязательно)
         your_event_already_has_map: "Ваш Анонс мероприятия уже имеет отметку на карте. Хотите поставить новую?"
+      index:
+        report_is_present: Присутствует отчёт о мероприятии
+        report_is_not_present: Отчёт о мероприятии отсутствует
+        title: Мероприятия

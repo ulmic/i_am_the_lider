@@ -44,3 +44,13 @@
     -#.row
       %div{style: "width: 800px;"}
         #google_map{style: "width: 800px; height: 400px;"}
+.row-fluid
+  - if @event.report.present?
+    %hr
+    .row-fluid
+      %h1
+        Творческий отчёт о мероприятии
+      %p
+        %strong= model_class.human_attribute_name(:description) + ':'
+        %br
+        != @event.report.description
