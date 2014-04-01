@@ -1,5 +1,20 @@
+= stylesheet_link_tag "participant/event/reports"
+
 = simple_form_for @report, url: participant_event_report_path, html: { class: 'form-horizontal' } do |f|
-  = f.input :description
-  = f.input :document
+  - if @report.errors.any?
+    #error_explanation
+      Были найдены ошибки в заполнении форм
+      %ul
+        - @report.errors.full_messages.each do |msg|
+          %li= msg
+  - f.with_options input_html: { class: :span6 } do |f|
+    -#FIXME сделать локализацию. При стандартном подходе возникают проблемы
+    .text
+      Описание
+    = f.cktext_area :description
+    .text
+      Приложение к отчёту
+    = f.file_field :document, label: false
+    = f.input :event_id, as: :hidden, input_html: { value: current_user.event.id }
   .form-actions
-    = f.button :submit, class: 'btn-primary'
+    = f.button :submit, t('save'), class: 'btn btn-primary'

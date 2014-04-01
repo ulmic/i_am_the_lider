@@ -1,4 +1,4 @@
-class Participant::Event::ReportsController < ApplicationController
+class Participant::Event::ReportsController < Participant::Event::ApplicationController
   def show
     @report = Event::Report.find_by_event_id Event.find_by_user_id(params[:id]).id
   end
@@ -12,7 +12,7 @@ class Participant::Event::ReportsController < ApplicationController
   end
 
   def create
-    @report = Event::Report.new params[:report]
+    @report = Event::Report.new params[:event_report]
     if @report.save
       redirect_to participant_event_path(@report), flash: :success
     else

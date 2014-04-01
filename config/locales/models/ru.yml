@@ -13,6 +13,7 @@ ru:
       juror: Член жюри
       evaluation: Оценка
       event: Мероприятие
+      report: Творческий отчёт
     attributes:
       user:
         login: Логин
@@ -33,13 +34,6 @@ ru:
         locality: Населённый пункт
         adress_index: Почтовый индекс
         last_stage_id: "Этап, на котором остановился участник"
-      report:
-        date: Дата проведения
-        member_count: Количество участников
-        member_type: Категория участников
-        venue: Место проведения
-        archive: Архив с данными о мероприятии
-        description: Описание
       project:
         date: Запланированная дата проведения
         description: Описание мероприятия
