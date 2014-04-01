@@ -89,3 +89,7 @@ ru:
         begin_date: Дата и время начала
         end_date: Дата и время окончания
         adress: Адрес
+        report:
+          description: Описание
+          results: Результаты
+          document: Приложения к отчёту
