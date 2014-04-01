@@ -5,4 +5,8 @@ class EventDecorator < Draper::Decorator
     (model.begin_date.day - Time.now.day).abs >= 10
   end
 
+  def happened?
+    Time.now >= model.end_date
+  end
+
 end

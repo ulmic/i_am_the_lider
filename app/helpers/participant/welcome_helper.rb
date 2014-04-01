@@ -7,4 +7,8 @@ module Participant::WelcomeHelper
       false
     end
   end
+
+  def user_event_happened?
+    current_user.event.decorate.happened?
+  end
 end
