@@ -60,6 +60,10 @@
       %strong= model_class.human_attribute_name(:description) + ':'
       %br
       != @event.report.description
+      %strong= model_class.human_attribute_name(:results) + ':'
+      %br
+      = @event.report.results
+
     %p
       .form-actions
         = link_to t('edit', default: t("helpers.links.edit")), edit_admin_report_path(@event.report), class: 'btn'

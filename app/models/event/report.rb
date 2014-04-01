@@ -1,5 +1,5 @@
 class Event::Report < ActiveRecord::Base
-  attr_accessible :description, :document, :event_id
+  attr_accessible :description, :document, :event_id, :results
 
   belongs_to :event
 
@@ -7,4 +7,5 @@ class Event::Report < ActiveRecord::Base
 
   validates :description, presence: true
   validates :document, presence: true
+  validates :results, presence: true
 end
