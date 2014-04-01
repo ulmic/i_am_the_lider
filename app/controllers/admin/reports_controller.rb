@@ -12,7 +12,7 @@ class Admin::ReportsController < Admin::ApplicationController
   end
 
   def create
-    @report = Event::Report.new params[:report]
+    @report = Event::Report.new params[:event_report]
     if @report.save
       redirect_to admin_event_path(@report.event), flash: :success
     else

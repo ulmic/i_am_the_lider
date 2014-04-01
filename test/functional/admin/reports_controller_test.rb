@@ -4,6 +4,7 @@ class Admin::ReportsControllerTest < ActionController::TestCase
   setup do
     @report = create :event_report
     @admin = create :admin
+    @event = create :event
     admin_sign_in @admin
   end
 
@@ -19,11 +20,10 @@ class Admin::ReportsControllerTest < ActionController::TestCase
 
   test "should create report" do
     attributes = attributes_for :event_report
-
-    post :create, report: attributes
+    post :create, event_report: attributes
     assert_response :redirect
 
-    report = report.last
+    report = Event::Report.last
     assert_equal attributes[:description], report.description
   end
 
