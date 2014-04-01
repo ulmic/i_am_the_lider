@@ -1,10 +1,7 @@
 class Participant::Event::ReportsController < Participant::Event::ApplicationController
-  def show
-    @report = Event::Report.find_by_event_id Event.find_by_user_id(params[:id]).id
-  end
-
   def new
     @report = Event::Report.new
+    @report.participants.build
   end
 
   def edit
@@ -22,7 +19,7 @@ class Participant::Event::ReportsController < Participant::Event::ApplicationCon
 
   def update
     @report = Event::Report.find params[:id]
-    if @report.update_attributes params[:report]
+    if @report.update_attributes params[:event_report]
       redirect_to participant_event_path(@report), flash: :success
     else
       render action: :edit, flash: :error

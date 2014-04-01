@@ -33,7 +33,11 @@ IAmTheLider::Application.routes.draw do
         resources :blog_posts
         resource :event do
           scope module: :event do
-            resource :report, except: :show
+            resource :report, except: :show do
+              member do
+                resources :participants, except: [ :show, :index ]
+              end
+            end
           end
         end
       end

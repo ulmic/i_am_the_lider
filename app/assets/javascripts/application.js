@@ -1,4 +1,5 @@
 //= require jquery
+//= require cocoon
 //= require underscore
 //= require gmaps/google
 //= require jquery_ujs

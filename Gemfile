@@ -27,6 +27,7 @@ gem 'next_record'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem "simple_calendar", "~> 0.1.10"
+gem "cocoon"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

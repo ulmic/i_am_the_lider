@@ -28,5 +28,10 @@
       Если у тебя есть отсканированные отзывы участников о мероприятия или отзывы образовательного учреждения, на базе которого его проводили, то документы можно загрузить с помощью кнопки "Приложить документы". Если ты хочешь загрузить одновременно несколько документов, то их следует заархивировать. Максимальный объём файла, допустимого для загрузки - 25 Мб
     = f.file_field :document, label: false
     = f.input :event_id, as: :hidden, input_html: { value: current_user.event.id }
+    -#= f.simple_fields_for :participants do |participant|
+      = render "participants", f: participant
+    -#.links
+      = link_to_add_association t('.add_participant'), f, :participants
   .form-actions
+    После сохранения Творческого отчёта ты сможешь добавить список участников
     = f.button :submit, t('save'), class: 'btn btn-primary'

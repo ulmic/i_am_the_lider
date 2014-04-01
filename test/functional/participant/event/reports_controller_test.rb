@@ -37,7 +37,7 @@ class Participant::Event::ReportsControllerTest < ActionController::TestCase
 
   test "should update report by user" do
     attributes = attributes_for :event_report
-    put :update, id: @report, report: attributes
+    put :update, id: @report, event_report: attributes
     assert_response :redirect
 
     @report.reload
@@ -47,7 +47,7 @@ class Participant::Event::ReportsControllerTest < ActionController::TestCase
   test "should not update report with render edit" do
     attributes = attributes_for :event_report
     attributes[:description] = nil
-    put :update, id: @report, report: attributes
+    put :update, id: @report, event_report: attributes
 
     assert_response :success
 
