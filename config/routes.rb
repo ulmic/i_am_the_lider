@@ -36,6 +36,7 @@ IAmTheLider::Application.routes.draw do
             resource :report, except: :show do
               member do
                 resources :participants, except: [ :show, :index ]
+                resources :photos, except: [ :show, :index, :edit, :update ]
               end
             end
           end
