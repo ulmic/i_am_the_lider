@@ -50,6 +50,7 @@ IAmTheLider::Application.routes.draw do
     resources :news, except: [ :index, :show ]
     resources :events
     resources :reports
+    resources :participants, except: [ :show, :edit, :update ]
     resources :users do
       member do
         put :accept

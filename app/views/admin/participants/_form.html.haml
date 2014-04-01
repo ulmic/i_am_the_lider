@@ -1,0 +1,8 @@
+= simple_form_for @participant, url: admin_participants_path, html: { class: 'form-horizontal' } do |f|
+  = f.input :full_name
+  = f.input :school
+  = f.input :report_id
+  = f.input :group
+  = f.input :phone
+  .form-actions
+    = f.button :submit, class: 'btn-primary'
