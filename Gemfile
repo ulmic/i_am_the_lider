@@ -27,6 +27,7 @@ gem 'next_record'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem "simple_calendar", "~> 0.1.10"
+gem "cocoon"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -40,7 +41,7 @@ gem 'jquery-rails'
 group :test do
   gem 'simplecov', require: false
   gem 'minitest'
-  gem 'factory_girl_rails', require: false
+  gem "factory_girl_rails", "~> 4.0", require: false
   gem 'turn'
   gem 'tconsole'
   gem 'pry'

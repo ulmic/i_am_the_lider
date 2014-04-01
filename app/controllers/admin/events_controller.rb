@@ -3,6 +3,10 @@ class Admin::EventsController < Admin::ApplicationController
     @event = Event.find(params[:id]).decorate
   end
 
+  def index
+    @events = Event.all
+  end
+
   def new
     @event = Event.new
   end

@@ -44,8 +44,15 @@
           - if current_user.event.decorate.can_edit?
             = link_to t('.edit_event'), edit_participant_event_path(current_user.event), class: 'btn btn-warning btn-large'
           - else
-            %p
-              = t('.you_can_not_edit_event')
+            - unless user_event_happened?
+              %p
+                = t('.you_can_not_edit_event')
+      %p
+        - if user_event_happened?
+          - unless current_user.event.report.present?
+            = link_to t('.create_report'), new_participant_event_report_path(current_user.event), class: 'btn btn-success btn-large'
+          - else
+            = link_to t('.edit_report'), edit_participant_event_report_path(current_user.event.report), class: 'btn btn-wraning btn-large'
     .span5
       = render "blogs"
 - else
