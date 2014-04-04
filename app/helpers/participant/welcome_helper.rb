@@ -9,6 +9,6 @@ module Participant::WelcomeHelper
   end
 
   def user_event_happened?
-    current_user.event.decorate.happened?
+    current_user.event and current_user.event.decorate.happened?
   end
 end
