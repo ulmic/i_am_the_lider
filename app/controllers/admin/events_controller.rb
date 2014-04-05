@@ -12,7 +12,7 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def edit
-    @event = Event.find params[:id]
+    @event = Event.find_by_user_id params[:id]
   end
 
   def create

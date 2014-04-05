@@ -21,7 +21,7 @@ IAmTheLider::Application.routes.draw do
     end
   end
   resources :events, only: [ :index, :show ]
-  resource :errors do
+  resource :errors, only: [] do
     collection do
       get "not_found"
     end
