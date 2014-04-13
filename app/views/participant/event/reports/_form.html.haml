@@ -33,7 +33,7 @@
     -#.links
       = link_to_add_association t('.add_participant'), f, :participants
   .form-actions
-    - if @report.event_id
+    - if @report.present?
       = link_to t('preview'), participant_event_path(params[:id])
     - else
       = link_to t('preview'), participant_event_path(@report.event)
