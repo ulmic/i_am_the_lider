@@ -33,5 +33,9 @@
     -#.links
       = link_to_add_association t('.add_participant'), f, :participants
   .form-actions
+    - if @report.event_id
+      = link_to t('preview'), participant_event_path(params[:id])
+    - else
+      = link_to t('preview'), participant_event_path(@report.event)
     После сохранения Творческого отчёта ты сможешь добавить список участников
     = f.button :submit, t('save'), class: 'btn btn-primary'
