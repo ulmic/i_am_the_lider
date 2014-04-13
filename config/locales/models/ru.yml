@@ -94,3 +94,7 @@ ru:
           description: Описание
           results: Результаты
           document: Приложения к отчёту
+      report:
+        description: Описание
+        results: Результаты
+        document: Приложения к отчёту
