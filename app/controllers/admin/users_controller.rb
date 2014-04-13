@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   def index
-    @users = User.all
+    @users = User.order(:last_stage_id).reverse
     respond_to do |format|
       format.html { @users = UserDecorator.decorate_collection @users }
       format.xls { send_data @users.to_xls(header: false, only: [:first_name, :middle_name, :last_name, :mobile_phone, :email]) }
