@@ -24,7 +24,7 @@
       %strong= model_class.human_attribute_name(:description) + ':'
       %br
       = @event.description
-  .span6
+  .span5
     .row
       .button{ onclick: "return location.href = '#{user_path(@event.user)}'" }
         = image_tag @event.user.avatar.mini_thumb_fill
