@@ -20,7 +20,7 @@ class Participant::Event::ReportsController < Participant::Event::ApplicationCon
   def update
     @report = Event::Report.find params[:id]
     if @report.update_attributes params[:event_report]
-      redirect_to participant_event_path(@report), flash: :success
+      redirect_to participant_event_path(@report.event.user), flash: :success
     else
       render action: :edit, flash: :error
     end
