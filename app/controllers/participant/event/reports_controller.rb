@@ -5,7 +5,7 @@ class Participant::Event::ReportsController < Participant::Event::ApplicationCon
   end
 
   def edit
-    @report = Event::Report.find_event_id(Event.find_by_user_id params[:id]).id
+    @report = Event::Report.find_by_event_id (Event.find_by_user_id params[:id]).id
   end
 
   def create
