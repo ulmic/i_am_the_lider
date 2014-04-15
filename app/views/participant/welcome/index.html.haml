@@ -40,6 +40,7 @@
         - unless current_user.event.present?
           = link_to t('.create_event'), new_participant_event_path(current_user), class: 'btn btn-success btn-large'
         - else
+          = t('.here_you_can_add_participants_to_your_report')
           = link_to t('.view_my_event'), participant_event_path(current_user.event.user), class: 'btn btn-large'
           - if current_user.event.decorate.can_edit?
             = link_to t('.edit_event'), edit_participant_event_path(current_user.event), class: 'btn btn-warning btn-large'
