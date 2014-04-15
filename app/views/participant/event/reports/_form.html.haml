@@ -36,6 +36,6 @@
     - if @report.present?
       = link_to t('preview'), participant_event_path(params[:id])
     - else
-      = link_to t('preview'), participant_event_path(@report.event)
+      = link_to t('preview'), participant_event_path(@report.event.user)
     После сохранения Творческого отчёта ты сможешь добавить список участников
     = f.button :submit, t('save'), class: 'btn btn-primary'
