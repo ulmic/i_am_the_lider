@@ -12,6 +12,7 @@
 *.swo
 *.swm
 *.swl
+*.swk
 /config/database.yml
 /.sass-cache
 .vagrant
