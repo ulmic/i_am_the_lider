@@ -31,7 +31,12 @@ class Admin::EventsControllerTest < ActionController::TestCase
   end
 
   test "should show event" do
-    get :show, id: @user
+    report = create :event_report
+    report.event_id = @event.id
+    participant = create :event_participant
+    participant.report_id = @event.report.id
+    participant.save
+    get :show, id: @event
     assert_response :success
   end
 
