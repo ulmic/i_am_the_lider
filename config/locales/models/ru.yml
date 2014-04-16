@@ -94,6 +94,11 @@ ru:
           description: Описание
           results: Результаты
           document: Приложения к отчёту
+        participant:
+          full_name: ФИО
+          school: Учебное заведение
+          group: Группа
+          phone: Телефон
       report:
         description: Описание
         results: Результаты
