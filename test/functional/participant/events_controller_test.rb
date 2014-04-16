@@ -35,7 +35,7 @@ class Participant::EventsControllerTest < ActionController::TestCase
     participant = create :event_participant
     participant.report_id = @event.report.id
     participant.save
-    get :show, id: @event
+    get :show, id: @event.user
     assert_response :success
   end
 
