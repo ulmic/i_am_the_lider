@@ -8,54 +8,40 @@
     = @event.title
 .row-fluid
   .span6
-    %p
-      %strong= model_class.human_attribute_name(:goal) + ':'
-      %br
-      = @event.goal
-    %p
-      %strong= model_class.human_attribute_name(:tasks) + ':'
-      %br
-      = @event.tasks
-    %p
-      %strong= model_class.human_attribute_name(:participant_category) + ':'
-      %br
-      = @event.participant_category
-    %p
-      %strong= model_class.human_attribute_name(:description) + ':'
-      %br
-      = @event.description
-    %p
-      %strong= model_class.human_attribute_name(:begin_date) + ':'
-      %br
-      =l @event.begin_date
-    %p
-      %strong= model_class.human_attribute_name(:end_date) + ':'
-      %br
-      =l @event.end_date
-    %p
-      %strong= model_class.human_attribute_name(:adress) + ':'
-      %br
-      = @event.adress
-  .span5
-    .row
-      .button{ onclick: "return location.href = '#{user_path(@event.user)}'" }
-        = image_tag @event.user.avatar.mini_thumb_fill
-        = @event.user.decorate.small_name
-      - if @event.user.twitter?
-        .button{ onclick: "return location.href = '#{@event.user.twitter}'" }
-          = image_tag "social/twitter.png"
-          = @event.user.decorate.twitter_account
-    -#.row
-      %div{style: "width: 800px;"}
-        #google_map{style: "width: 800px; height: 400px;"}
-- if @event.can_edit?
-  .form-actions
-    = link_to t('edit', default: t("helpers.links.edit")), edit_participant_event_path(@event), class: 'btn'
-    = link_to t('destroy', default: t("helpers.links.destroy")), participant_event_path(@event), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
-- if @event.report.present?
-  %hr
-  .row-fluid
-    .span6
+    .row-fluid
+      %p
+        %strong= model_class.human_attribute_name(:goal) + ':'
+        %br
+        = @event.goal
+      %p
+        %strong= model_class.human_attribute_name(:tasks) + ':'
+        %br
+        = @event.tasks
+      %p
+        %strong= model_class.human_attribute_name(:participant_category) + ':'
+        %br
+        = @event.participant_category
+      %p
+        %strong= model_class.human_attribute_name(:description) + ':'
+        %br
+        = @event.description
+      %p
+        %strong= model_class.human_attribute_name(:begin_date) + ':'
+        %br
+        =l @event.begin_date
+      %p
+        %strong= model_class.human_attribute_name(:end_date) + ':'
+        %br
+        =l @event.end_date
+      %p
+        %strong= model_class.human_attribute_name(:adress) + ':'
+        %br
+        = @event.adress
+      - if @event.can_edit?
+        .form-actions
+          = link_to t('edit', default: t("helpers.links.edit")), edit_participant_event_path(@event), class: 'btn'
+          = link_to t('destroy', default: t("helpers.links.destroy")), participant_event_path(@event), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
+    .row-fluid
       %h1
         Творческий отчёт о мероприятии
       %p
@@ -65,20 +51,31 @@
         %strong= model_class.human_attribute_name(:results) + ':'
         %br
         = @event.report.results
-    .span6
-      %h3= t('.participants')
-      = link_to t('new'), new_participant_event_participant_path(@event.report), class: 'btn btn-success'
-      %table.table.table-striped
-        - @event.report.participants.each do |participant|
-          %tr
-            %td
-              = participant.full_name
-            %td
-              = participant.phone
-            %td
-              = participant.school
-            %td
-              = participant.group
-            %td
-              = link_to t('edit'), edit_participant_event_participant_path(participant), class: 'btn btn-mini btn-warning'
-              = link_to t('destroy'), participant_event_participant_path(participant), method: :delete, class: 'btn btn-mini btn-danger'
+  .span5
+    .row
+      .button{ onclick: "return location.href = '#{user_path(@event.user)}'" }
+        = image_tag @event.user.avatar.mini_thumb_fill
+        = @event.user.decorate.small_name
+      - if @event.user.twitter?
+        .button{ onclick: "return location.href = '#{@event.user.twitter}'" }
+          = image_tag "social/twitter.png"
+          = @event.user.decorate.twitter_account
+    - if @event.report.present?
+      %hr
+      .row-fluid
+        %h3= t('.participants')
+        = link_to t('new'), new_participant_event_participant_path(@event.report), class: 'btn btn-success'
+        %table.table.table-striped
+          - @event.report.participants.each do |participant|
+            %tr
+              %td
+                = participant.full_name
+              %td
+                = participant.phone
+              %td
+                = participant.school
+              %td
+                = participant.group
+              %td
+                = link_to t('edit'), edit_participant_event_participant_path(participant), class: 'btn btn-mini btn-warning'
+                = link_to t('destroy'), participant_event_participant_path(participant), method: :delete, class: 'btn btn-mini btn-danger'
