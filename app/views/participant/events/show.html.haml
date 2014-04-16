@@ -67,11 +67,18 @@
         = @event.report.results
     .span6
       %h3= t('.participants')
-      - @event.report.participants.each do |participant|
-        = participant.full_name
-        = participant.phone
-        = participant.school
-        = participant.group
-        = link_to t('edit'), edit_participant_event_participant_path(participant), class: 'btn btn-mini btn-warning'
-        = link_to t('destroy'), participant_event_participant_path(participant), method: :delete, class: 'btn btn-mini btn-danger'
       = link_to t('new'), new_participant_event_participant_path(@event.report), class: 'btn btn-success'
+      %table.table.table-striped
+        - @event.report.participants.each do |participant|
+          %tr
+            %td
+              = participant.full_name
+            %td
+              = participant.phone
+            %td
+              = participant.school
+            %td
+              = participant.group
+            %td
+              = link_to t('edit'), edit_participant_event_participant_path(participant), class: 'btn btn-mini btn-warning'
+              = link_to t('destroy'), participant_event_participant_path(participant), method: :delete, class: 'btn btn-mini btn-danger'
