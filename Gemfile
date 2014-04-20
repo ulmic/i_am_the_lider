@@ -43,7 +43,7 @@ group :test do
   gem 'minitest'
   gem "factory_girl_rails", "~> 4.0", require: false
   gem 'turn'
-  gem 'tconsole'
+  gem 'tconsole', git: "git://github.com/gma/tconsole"
   gem 'pry'
 end
 
