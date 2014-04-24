@@ -1,4 +1,4 @@
-= simple_form_for @report, url: { controller: "admin/reports" }, html: { class: 'form-horizontal' } do |f|
+= simple_form_for @report, url: { action: action, controller: "admin/reports" }, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: :span4 } do |f|
     = f.cktext_area :description
     %br
