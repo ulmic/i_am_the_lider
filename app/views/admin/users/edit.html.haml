@@ -1,4 +1,4 @@
 %h1= t('.title')
-= render 'form'
+= render partial: 'form', locals: { action: :update }
 = link_to t('.view'), @user |
 = link_to t('.back'), users_path
