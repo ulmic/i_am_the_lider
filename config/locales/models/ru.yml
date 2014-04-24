@@ -90,16 +90,12 @@ ru:
         begin_date: Дата и время начала
         end_date: Дата и время окончания
         adress: Адрес
-        report:
-          description: Описание
-          results: Результаты
-          document: Приложения к отчёту
-        participant:
-          full_name: ФИО
-          school: Учебное заведение
-          group: Группа
-          phone: Телефон
-      report:
+      event/participant:
+        full_name: ФИО
+        school: Учебное заведение
+        group: Группа
+        phone: Телефон
+      event/report:
         description: Описание
         results: Результаты
         document: Приложения к отчёту
