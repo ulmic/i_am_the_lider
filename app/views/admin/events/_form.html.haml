@@ -4,14 +4,14 @@
 
 = simple_form_for @event, url: "/admin/events/#{@event.id}", html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
-    = f.input :title, as: :string, placeholder: t('.not_more_than_140_characters')
+    = f.input :title, as: :string
     = f.input :goal, as: :string
     = f.input :tasks
-    = f.input :participant_category, placeholder: t('.please_describe_participant_category')
-    = f.input :description, placeholder: t('.not_more_than_1000_characters')
+    = f.input :participant_category
+    = f.input :description
     = f.input :begin_date, input_html: { class: :span1 }
     = f.input :end_date, input_html: { class: :span1 }
-    = f.input :user_id, as: :hidden, input_html: { value: params[:id] }
+    = f.association :user, label_method: lambda { |user| user.decorate.full_name }, input_html: { value: params[:id] }, collection: users_without_events
     = f.input :adress, as: :string
   .form-actions
     = f.button :submit, t('save'), class: 'btn btn-primary'
