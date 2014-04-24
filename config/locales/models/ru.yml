@@ -99,3 +99,7 @@ ru:
         description: Описание
         results: Результаты
         document: Приложения к отчёту
+        event_id: Мероприятие
+        event: Мероприятие
+        user: Участник
+        created_at: Создан

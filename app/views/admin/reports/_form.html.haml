@@ -8,6 +8,6 @@
     - if @report.event_id
       = f.input :event_id, as: :hidden, input_html: { value: @report.event.user }
     - else
-      = f.association :event
+      = f.association :event, collection: events_without_reports
   .form-actions
     = f.button :submit, class: 'btn-primary'

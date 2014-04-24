@@ -5,6 +5,10 @@ class UserDecorator < Draper::Decorator
     "#{model.first_name} #{model.middle_name} #{model.last_name}"
   end
 
+  def full_name
+    "#{model.first_name} #{model.middle_name} #{model.last_name}"
+  end
+
   def small_name
     "#{model.first_name} #{model.middle_name}"
   end
