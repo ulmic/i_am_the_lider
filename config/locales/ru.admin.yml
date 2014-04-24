@@ -128,3 +128,6 @@ ru:
         report_is_present: Присутствует отчёт о мероприятии
         report_is_not_present: Отчёт о мероприятии отсутствует
         title: Мероприятия
+    reports:
+      edit:
+        title: Редактировать Творческий отчёт

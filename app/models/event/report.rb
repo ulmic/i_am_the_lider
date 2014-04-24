@@ -7,6 +7,5 @@ class Event::Report < ActiveRecord::Base
   mount_uploader :document, DocumentUploader
 
   validates :description, presence: true
-  validates :document, presence: true
   validates :results, presence: true
 end
