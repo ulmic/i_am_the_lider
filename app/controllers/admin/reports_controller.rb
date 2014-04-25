@@ -1,10 +1,14 @@
 class Admin::ReportsController < Admin::ApplicationController
   def index
-    @reports = Event::Report.all
+    @reports = Event::ReportDecorator.decorate_collection Event::Report.all
   end
 
   def new
-    @report = Event::Report.new
+    if Event.all.select { |event| event.report.nil? }.any?
+      @report = Event::Report.new
+    else
+      redirect_to new_admin_event_path, flash: :error
+    end
   end
 
   def edit

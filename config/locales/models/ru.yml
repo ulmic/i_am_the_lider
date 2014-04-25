@@ -90,16 +90,19 @@ ru:
         begin_date: Дата и время начала
         end_date: Дата и время окончания
         adress: Адрес
-        report:
-          description: Описание
-          results: Результаты
-          document: Приложения к отчёту
-        participant:
-          full_name: ФИО
-          school: Учебное заведение
-          group: Группа
-          phone: Телефон
-      report:
+        user_id: Участник
+        user: Участник
+      event/participant:
+        full_name: ФИО
+        school: Учебное заведение
+        group: Группа
+        phone: Телефон
+        report: Мероприятие
+      event/report:
         description: Описание
         results: Результаты
         document: Приложения к отчёту
+        event_id: Мероприятие
+        event: Мероприятие
+        user: Участник
+        created_at: Создан

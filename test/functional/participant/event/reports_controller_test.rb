@@ -4,19 +4,20 @@ class Participant::Event::ReportsControllerTest < ActionController::TestCase
   setup do
     @report = create :event_report
     @user = create :user
-    @event = create :event
+    @user.event = create :event
     user_sign_in @user
   end
 
   test "should get new" do
-    get :new, id: @event
+    get :new, id: @user.event
     assert_response :success
   end
 
   test "should create report" do
     attributes = attributes_for :event_report
+    attributes[:event_id] = @user.event.id
 
-    post :create, event_report: attributes, id: @event
+    post :create, event_report: attributes, id: @user.event
     assert_response :redirect
 
     report = Event::Report.last
@@ -26,7 +27,8 @@ class Participant::Event::ReportsControllerTest < ActionController::TestCase
   test "should not create report" do
     attributes = { description: @report.description }
 
-    post :create, event_report: attributes, id: @event
+
+    post :create, event_report: attributes, id: @user.event
     assert_response :success
   end
 
