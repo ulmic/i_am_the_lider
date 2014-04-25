@@ -106,10 +106,15 @@ ru:
         destroy:
           success: Член жюри удалён
       events:
+        create:
+          success: Мероприятие успешно создано
         update:
           success: Анонс мероприятия успешно изменён
         new:
           error: "Все участники имеют мероприятия. Добавьте нового участника."
+      reports:
+        create:
+          success: Творческий отчёт успешно добавлен
     juror:
       sessions:
         create:
