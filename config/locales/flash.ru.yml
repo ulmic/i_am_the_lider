@@ -115,6 +115,11 @@ ru:
       reports:
         create:
           success: Творческий отчёт успешно добавлен
+      participants:
+        create:
+          success: Участник мероприятия успешно добавлен
+        destroy:
+          success: Участник мероприятия успешно удалён
     juror:
       sessions:
         create:

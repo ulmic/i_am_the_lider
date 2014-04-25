@@ -75,7 +75,7 @@
       %hr
       .row-fluid
         %h3= t('.participants')
-        = link_to t('new'), new_admin_participant_path(@event.report), class: 'btn btn-success'
+        = link_to t('new'), new_admin_participant_path, class: 'btn btn-success'
         %table.table.table-striped
           - @event.report.participants.each do |participant|
             %tr

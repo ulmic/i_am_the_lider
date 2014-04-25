@@ -18,7 +18,8 @@ class Admin::ParticipantsController < Admin::ApplicationController
 
   def destroy
     @participant = Event::Participant.find params[:id]
+    event = @participant.report.event
     @participant.destroy
-    redirect_to admin_participants_path, flash: :success
+    redirect_to admin_event_path(event), flash: :success
   end
 end

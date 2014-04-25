@@ -38,10 +38,11 @@ class Admin::ParticipantsControllerTest < ActionController::TestCase
   end
 
   test "should destroy participant" do
+    event = @participant.report.event
     assert_difference('Event::Participant.count', -1) do
       delete :destroy, id: @participant
     end
 
-    assert_redirected_to admin_participants_path
+    assert_redirected_to admin_event_path event
   end
 end

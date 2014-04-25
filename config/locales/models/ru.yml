@@ -97,6 +97,7 @@ ru:
         school: Учебное заведение
         group: Группа
         phone: Телефон
+        report: Мероприятие
       event/report:
         description: Описание
         results: Результаты
