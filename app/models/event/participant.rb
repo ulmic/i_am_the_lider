@@ -9,5 +9,5 @@ class Event::Participant < ActiveRecord::Base
 
   validates :report_id, presence: true
   validates :full_name, presence: true
-  validates :phone, presence: true, phone: true
+  validates :phone, phone: true, allow_blank: true
 end
