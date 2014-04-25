@@ -14,6 +14,7 @@ class Participant::EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     attributes = attributes_for :event
+    attributes[:user_id] = @user.id
 
     post :create, event: attributes, id: @user
     assert_response :redirect
@@ -30,11 +31,7 @@ class Participant::EventsControllerTest < ActionController::TestCase
   end
 
   test "should show event" do
-    report = create :event_report
-    report.event_id = @event.id
-    participant = create :event_participant
-    participant.report_id = @event.report.id
-    participant.save
+    @event.report = create :event_report
     get :show, id: @event.user
     assert_response :success
   end

@@ -4,10 +4,9 @@ class Participant::Event::ParticipantsControllerTest < ActionController::TestCas
   setup do
     @participant = create :event_participant
     @user = create :user
-    @report = create :event_report
     @event = create :event
-    @report.event_id = @event.id
-    @report.save
+    @event.report = create :event_report
+    @user.event = @event
     user_sign_in @user
   end
 
@@ -29,7 +28,7 @@ class Participant::Event::ParticipantsControllerTest < ActionController::TestCas
   test "should not create participant" do
     attributes = { full_name: @participant.full_name }
 
-    post :create, event_participant: attributes, id: @report
+    post :create, event_participant: attributes, id: @event.report
     assert_response :success
   end
 

@@ -5,18 +5,18 @@
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:description)
-      %th= model_class.human_attribute_name(:document)
+      %th= model_class.human_attribute_name(:user)
       %th= model_class.human_attribute_name(:event_id)
+      %th= model_class.human_attribute_name(:document)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', default: t("helpers.actions")
   %tbody
     - @reports.each do |report|
       %tr
         %td= link_to report.id, admin_event_path(report.event)
-        %td= report.description
-        %td= report.document
-        %td= report.event_id
+        %td= report.author.full_name
+        %td= report.event.title
+        %td= link_to t('helpers.general.download'), report.document.url, class: 'btn'
         %td=l report.created_at
         %td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_report_path(report), class: 'btn btn-mini'

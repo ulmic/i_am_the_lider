@@ -62,6 +62,8 @@ ru:
           error: Ошибка в заполении полей
         destroy:
           success: Отчёт удален
+        new:
+          error: "Все мероприятия имеют Творческие отчёты. Добавьте новое мероприятие."
       sessions:
         create:
           success: Авторизация прошла успешно
@@ -104,8 +106,20 @@ ru:
         destroy:
           success: Член жюри удалён
       events:
+        create:
+          success: Мероприятие успешно создано
         update:
           success: Анонс мероприятия успешно изменён
+        new:
+          error: "Все участники имеют мероприятия. Добавьте нового участника."
+      reports:
+        create:
+          success: Творческий отчёт успешно добавлен
+      participants:
+        create:
+          success: Участник мероприятия успешно добавлен
+        destroy:
+          success: Участник мероприятия успешно удалён
     juror:
       sessions:
         create:

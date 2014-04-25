@@ -20,6 +20,8 @@ class Admin::ReportsControllerTest < ActionController::TestCase
 
   test "should create report" do
     attributes = attributes_for :event_report
+    attributes[:event_id] = @event.id
+
     post :create, event_report: attributes
     assert_response :redirect
 

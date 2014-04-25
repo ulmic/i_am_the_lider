@@ -115,6 +115,9 @@ ru:
         add_stage_average: Добавить среднюю оценку к текущему этапу конкурса
         juror_has_not_evaluate_yet: Жюри пока не опубликовало оценки этого участника
     events:
+      show:
+        add_report: Добавить Творческий отчёт
+        participants: Участники мероприятия
       edit:
         title: Изменить Анонс мероприятия
       form:
@@ -128,3 +131,13 @@ ru:
         report_is_present: Присутствует отчёт о мероприятии
         report_is_not_present: Отчёт о мероприятии отсутствует
         title: Мероприятия
+    reports:
+      edit:
+        title: Редактировать Творческий отчёт
+      index:
+        title: Творческие отчёты
+      new:
+        title: Добавить отчёт о мероприятии
+    participants:
+      new:
+        title: Добавить участника мероприятия
