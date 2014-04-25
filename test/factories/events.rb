@@ -8,6 +8,6 @@ FactoryGirl.define do
     participant_category { generate :string }
     tasks { generate :string }
     title
-    user_id 1
+    association :user
   end
 end

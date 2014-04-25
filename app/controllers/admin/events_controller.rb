@@ -8,7 +8,7 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def new
-    if User.with(last_stage_id: current_stage.id).select { |user| user.event.nil? }.any?
+    if not current_stage or (current_stage and User.with(last_stage_id: current_stage.id).select { |user| user.event.nil? }.any?)
       @event = Event.new
     else
       redirect_to new_admin_user_path, flash: :error
