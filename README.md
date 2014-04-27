@@ -21,3 +21,13 @@ With this website, contestants can upload their competitive projects, reports on
 Read more about the contest asset of students can be found here (http://www.ulmic.ru/programms/lider/-l-r (in Russian))
 
 http://ul-lider.ru
+
+===============
+
+    git clone git@github.com:ulmic/i_am_the_lider
+    cd i_am_the_lider
+    bundle
+    rake db:migrate && RAILS_ENV=test rake db:migrate
+    tconsole all
+    rails s
+  
