@@ -16,6 +16,8 @@ class Juror::RatingsControllerTest < ActionController::TestCase
 
   test "should post create" do
     attributes = attributes_for :rating
+    attributes[:user_id] = @user.id
+    attributes[:juror_id] = @juror.id
     post :create, rating: attributes
     assert_response :redirect
     assert_equal attributes[:user_id], Rating.last.user_id
@@ -28,6 +30,8 @@ class Juror::RatingsControllerTest < ActionController::TestCase
 
   test "should put update" do
     attributes = attributes_for :rating
+    attributes[:user_id] = @user.id
+    attributes[:juror_id] = @juror.id
     put :update, id: @rating, rating: attributes
     assert_response :redirect
     @rating.reload

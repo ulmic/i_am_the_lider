@@ -20,6 +20,7 @@ class Admin::JurorsControllerTest < ActionController::TestCase
 
   test "should create juror" do
     attributes = attributes_for :juror
+    attributes[:stage_id] = @stage.id
     post :create, juror: attributes, id: @stage
     assert_response :redirect
 
