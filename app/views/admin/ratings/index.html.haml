@@ -4,6 +4,10 @@
     = t('.title')
   - unless @stage.average
     = link_to t('.add_stage_average'), edit_admin_stage_path(@stage), class: 'btn btn-info'
+  - if @stage.not_published?
+    = link_to t('.publish_ratings'), publish_admin_stage_path(@stage), method: :put, class: 'btn btn-success'
+  - else
+    = link_to t('.unpublish_ratings'), unpublish_admin_stage_path(@stage), method: :put, class: 'btn btn-success'
 - @users.each do |user|
   .row-fluid.has_top_margin
     .span2

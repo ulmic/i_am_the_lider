@@ -34,4 +34,16 @@ class Admin::StagesController < ApplicationController
     @stage.destroy
     redirect_to admin_stages_path, flash: :success
   end
+
+  def publish
+    @stage = Stage.find params[:id]
+    @stage.publish
+    redirect_to admin_ratings_path @stage
+  end
+
+  def unpublish
+    @stage = Stage.find params[:id]
+    @stage.unpublish
+    redirect_to admin_ratings_path @stage
+  end
 end

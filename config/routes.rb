@@ -63,6 +63,8 @@ IAmTheLider::Application.routes.draw do
     resources :jurors, except: [:show, :new, :index]
     resources :stages do
       member do
+        put :publish
+        put :unpublish
         resources :criterions, except: :show
         resources :jurors, only: [:new, :index]
         resources :ratings, only: :index
