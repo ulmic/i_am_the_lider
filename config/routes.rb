@@ -4,6 +4,11 @@ IAmTheLider::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :news, only: [ :show, :index ]
+  resources :stages, only: [] do
+    member do
+      resources :ratings, only: :index
+    end
+  end
   resource :session, only: [:new, :create, :destroy]
   resources :blog_posts, only: [ :index, :show ]
   resources :users do
@@ -63,6 +68,8 @@ IAmTheLider::Application.routes.draw do
     resources :jurors, except: [:show, :new, :index]
     resources :stages do
       member do
+        put :publish
+        put :unpublish
         resources :criterions, except: :show
         resources :jurors, only: [:new, :index]
         resources :ratings, only: :index

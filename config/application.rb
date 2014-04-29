@@ -13,6 +13,7 @@ module IAmTheLider
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
+    I18n.config.enforce_available_locales = true
     config.active_support.escape_html_entities_in_json = true
     config.active_record.whitelist_attributes = true
     config.assets.enabled = true
