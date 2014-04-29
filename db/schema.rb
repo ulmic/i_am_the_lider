@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140401233333) do
+ActiveRecord::Schema.define(:version => 20140429083542) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -158,11 +158,14 @@ ActiveRecord::Schema.define(:version => 20140401233333) do
   create_table "stages", :force => true do |t|
     t.text     "title"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.date     "begin_date"
     t.date     "end_date"
     t.integer  "average"
+    t.string   "publish"
+    t.string   "publish_state"
+    t.string   "ratings_publish_state"
   end
 
   create_table "users", :force => true do |t|

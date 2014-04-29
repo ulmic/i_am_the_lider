@@ -65,4 +65,14 @@ class Admin::StagesControllerTest < ActionController::TestCase
 
     assert_redirected_to admin_stages_path
   end
+
+  test "should publish ratings stage" do
+    put :publish, id: @stage
+    assert_response :redirect
+  end
+
+  test "should unpublish ratings stage" do
+    put :unpublish, id: @stage
+    assert_response :redirect
+  end
 end

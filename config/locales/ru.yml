@@ -188,6 +188,20 @@ ru:
       registration_ended: Регистрация окончена
     auth_form:
       to_office: Войти в личный кабинет
+    view_ratings:
+      ratings_for_stage: "Оценки за этап \"%{stage_title}\" выставлены!"
+      view_ratings: Посмотреть оценки
+  ratings:
+    index:
+      title: Оценки участников
+      average_of_stage: "Средний бал за Этапа - %{average}"
+      average_eval: Средний бал
+      has_entered_to_next_stage: Проходит в следующий этап
+      has_not_entered_to_next_stage: Не проходит в следующий этап
+      add_stage_average: Добавить среднюю оценку к текущему этапу конкурса
+      juror_has_not_evaluate_yet: Жюри пока не опубликовало оценки этого участника
+      publish_ratings: Опубликовать результаты Этапа
+      unpublish_ratings: Вернуть из публикации результаты Этапа
 
   juror:
     welcome:

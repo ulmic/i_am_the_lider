@@ -1,0 +1,26 @@
+= stylesheet_link_tag "users"
+.page-header
+  %h1
+    = t('.title')
+  %h4
+    = t('.average_of_stage', average: @stage.average)
+- @users.each do |user|
+  .row-fluid.has_top_margin
+    .span2
+      %img.img-polaroid{ src: user.avatar.thumb_fill }
+    .span3
+      .row-fluid
+        %h4
+          = user.small_name
+      .row-fluid
+        %h4= user.district.title
+    .span3
+      - if user.has_ratings_on_stage?(@stage)
+        %h4
+          %table.table.table-striped.table-bordered
+            %tr
+              %td
+                = t('.average_eval')
+                = user.average_eval(@stage)
+    .span3
+      = user.has_entered?(@stage)
