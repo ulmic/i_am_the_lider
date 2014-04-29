@@ -1,6 +1,7 @@
 module WelcomeHelper
   def market_dreams_coming_soon?
-    Date.today < Stage.find_by_title(I18n.t('stages.market_dreams')).begin_date
+    stage = Stage.find_by_title(I18n.t('stages.market_dreams'))
+    Date.today < stage.begin_date if stage
   end
 
   def days_to_market_dreams
