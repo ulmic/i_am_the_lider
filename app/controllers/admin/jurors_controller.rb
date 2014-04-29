@@ -14,7 +14,7 @@ class Admin::JurorsController < Admin::ApplicationController
   def create
     @juror = Juror.new params[:juror]
     if @juror.save
-      redirect_to admin_jurors_path, flash: :success
+      redirect_to admin_jurors_path(@juror.stage), flash: :success
     else
       render action: :new, flash: :error
     end
