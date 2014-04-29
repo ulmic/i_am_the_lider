@@ -30,4 +30,3 @@ http://ul-lider.ru
     rake db:migrate && RAILS_ENV=test rake db:migrate
     tconsole all
     rails s
-  
