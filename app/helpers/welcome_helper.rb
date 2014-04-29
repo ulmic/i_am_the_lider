@@ -18,4 +18,8 @@ module WelcomeHelper
   def time_of_real_deals_during?
     current_stage.title == I18n.t('stages.time_of_real_deals')
   end
+
+  def current_stage_ratings_published?
+    current_stage.published? if current_stage
+  end
 end

@@ -1,3 +1,5 @@
+- if current_stage_ratings_published?
+  = render "view_ratings"
 - if market_dreams_coming_soon?
   = render "news"
 - elsif market_dreams_during?
