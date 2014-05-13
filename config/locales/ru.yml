@@ -34,6 +34,7 @@ ru:
     time_to_be_the_lider: Время быть лидером
     market_dreams: Ярмарка идей
     time_of_real_deals: Время реальных дел
+    final_stage: Финал
 
   days:
     day: день
@@ -177,6 +178,7 @@ ru:
       days_to_market_dreams: ДО ЯРМАРКИ ИДЕЙ ОСТАЛОСЬ
     users:
       semifinalists: Полуфиналисты конкурса
+      finalists: Финалисты конкурса
       view_competitors_list:   'Посмотреть список участников'
       be_the_first: 'Стать первым!'
     news:

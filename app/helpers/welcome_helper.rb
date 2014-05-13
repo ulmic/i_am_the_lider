@@ -19,6 +19,10 @@ module WelcomeHelper
     current_stage.title == I18n.t('stages.time_of_real_deals')
   end
 
+  def final_stage_during?
+    current_stage.title == I18n.t('stages.final_stage')
+  end
+
   def current_stage_ratings_published?
     current_stage.published? if current_stage
   end
