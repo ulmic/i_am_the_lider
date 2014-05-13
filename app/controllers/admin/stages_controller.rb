@@ -3,6 +3,11 @@ class Admin::StagesController < ApplicationController
     @stages = Stage.all
   end
 
+  def show
+    @stage = Stage.find params[:id]
+    @users = UserDecorator.decorate_collection User.with(last_stage_id: params[:id])
+  end
+
   def new
     @stage = Stage.new
   end
