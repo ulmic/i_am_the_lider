@@ -17,7 +17,7 @@
           = image_tag user.avatar.mini_thumb_fill
         %td
           = link_to user.title, user_path(user)
-        = simple_form_for user, url: update_stage_admin_user_path do |f|
+        = simple_form_for user, url: update_stage_admin_user_path(user.id) do |f|
           %td
             = f.association :last_stage
           %td
