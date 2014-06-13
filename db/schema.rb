@@ -163,8 +163,6 @@ ActiveRecord::Schema.define(:version => 20140429083542) do
     t.date     "begin_date"
     t.date     "end_date"
     t.integer  "average"
-    t.string   "publish"
-    t.string   "publish_state"
     t.string   "ratings_publish_state"
   end
 
