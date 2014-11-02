@@ -28,4 +28,5 @@ task :seed_data do
   run "cd #{current_path} && RAILS_ENV=#{rails_env} #{rake} db:seed"
 end
 
+after "deploy:restart", "unicorn:restart"
 #require 'capistrano_colors'
