@@ -1,0 +1,5 @@
+= simple_form_for @photo, url: participant_event_photos_path, html: { class: 'form-horizontal' } do |f|
+  = f.input :file
+  = f.input :report_id
+  .form-actions
+    = f.button :submit, class: 'btn-primary'

@@ -1,0 +1,60 @@
+= stylesheet_link_tag "participant/welcome"
+- if participant_is_semifinalist?(current_user)
+  .row-fluid
+    .span6.main_text
+      %h2
+        Привет, полуфиналист конкурса
+        %br
+        "Я-лидер!"
+      %p
+        Ещё раз поздравляем тебя с победой на "Ярмарке идей" и напомнаем, что в рамках 2 уровня II этапа XII конкурса актива учащейся молодёжи "Я-лидер!" тебе необходимо вместе с командой единомышленников применить на практике полученные ранее знания, придумать, организовать и провести социально значимое мероприятие.
+      %p
+        %b ВНИМАНИЕ!
+        Подготовку мероприятия следует подробно описывать в Дневнике участника. Это один из двух обязательных документов, которые должны быть у каждого полуфиналиста.
+      %p
+        Согласно п.5.2.2. Положения, все участники обязаны за неделю до начала мероприятия сообщить о дате его проведения в МИЦ.
+      %p
+        %b ВНИМАНИЕ!
+        Чтобы сообщить нам о своём мероприятии тебе необходимо заполнить на этом сайте форму "Анонс мероприятия".
+      %p
+        По итогам проведённого мероприятия участникам необходимо представить в МИЦ творческий отчёт.
+      %p
+        %b Внимание!
+        Отчёт предстоит также заполнить на данном сайте прикрепив к нему как можно больше материалов (фото, видео, отзывы и т.п.). Последний день заполнения творческого отчёта - 15 апреля 2014 года.
+      %p
+        .row-fluid
+          .span5
+            %span
+              Вы, также, можете скачать расширение для Google Chrome для быстрого доступа к сайту конкурса
+              = link_to configus.apps.chrome_web_store_url, target: "_blank" do
+                = t('.here')
+          .offset1.span6
+            = link_to configus.apps.chrome_web_store_url, target: "_blank"  do
+              = image_tag "app_markets/chrome_web_store.png"
+      %p
+        Если будут вопросы, всегда готовы на них ответить.
+      %p
+        %h3
+          Желаем удачи!
+      %p
+        - unless current_user.event.present?
+          = link_to t('.create_event'), new_participant_event_path(current_user), class: 'btn btn-success btn-large'
+        - else
+          = t('.here_you_can_add_participants_to_your_report')
+          = link_to t('.view_my_event'), participant_event_path(current_user.event.user), class: 'btn btn-large'
+          - if current_user.event.decorate.can_edit?
+            = link_to t('.edit_event'), edit_participant_event_path(current_user.event), class: 'btn btn-warning btn-large'
+          - else
+            - unless user_event_happened?
+              %p
+                = t('.you_can_not_edit_event')
+      %p
+        - if user_event_happened?
+          - unless current_user.event.report.present?
+            = link_to t('.create_report'), new_participant_event_report_path(current_user.event), class: 'btn btn-success btn-large'
+          - else
+            = link_to t('.edit_report'), edit_participant_event_report_path(current_user), class: 'btn btn-wraning btn-large'
+    .span5
+      = render "blogs"
+- else
+  = render "you_are_loser"

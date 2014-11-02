@@ -1,16 +1,13 @@
-= simple_form_for @report do |f|
-  - if @report.errors.any?
-    #error_explanation
-      %h2= "#{ pluralize(@report.errors.count, "error") } #{ t('.prohibited_this_report_from_being_saved') }:"
-      %ul
-        - @report.errors.full_messages.each do |msg|
-          %li= msg
-  - f.with_options input_html: { class: "span6" } do |f|
-    .field
-      = f.label :description
-      = f.cktext_area :description
-      %hr
-      = f.label :archive
-      = f.file_field :archive
-    .actions
-      = f.submit t('.save'), class: "btn btn-large btn-success"
+= simple_form_for @report, url: { action: action, controller: "admin/reports" }, html: { class: 'form-horizontal' } do |f|
+  - f.with_options input_html: { class: :span4 } do |f|
+    = f.cktext_area :description
+    %br
+    = f.label :document
+    = f.file_field :document
+    = f.input :results
+    - if @report.event_id
+      = f.input :event_id, as: :hidden, input_html: { value: @report.event.user }
+    - else
+      = f.association :event, collection: events_without_reports
+  .form-actions
+    = f.button :submit, class: 'btn-primary'

@@ -1,0 +1,9 @@
+= simple_form_for @participant, url: "/participant/users/#{current_user.event.report.id}/event/report/participants", html: { class: 'form-horizontal' } do |f|
+  = f.input :full_name, as: :string
+  = f.input :school, as: :string
+  = f.input :report_id, as: :hidden, input_html: { value: current_user.event.report.id }
+  = f.input :group, as: :string
+  = f.input :phone, as: :string
+  .form-actions
+    = f.button :submit, class: 'btn-primary'
+    = link_to t('.cancel', default: t("helpers.links.cancel")), participant_event_path(current_user.event), class: 'btn'

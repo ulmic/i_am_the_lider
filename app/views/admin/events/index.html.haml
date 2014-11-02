@@ -1,0 +1,31 @@
+= stylesheet_link_tag "events"
+= stylesheet_link_tag "admin/events"
+
+.page-header
+  %h1= t('.title')
+= link_to t('helpers.links.new'), new_admin_event_path, class: 'btn btn-primary'
+- if @events.any?
+  - @events.each do |event|
+    .well.link{ onclick: "return location.href = '#{admin_event_path(event)}'" }
+      .row-fluid
+        .span10
+          = image_tag event.user.avatar.thumb
+          %small
+            = event.user.decorate.small_name
+            |
+            =l event.begin_date.to_date
+            |
+            = event.adress
+          %h4= event.title
+          %p
+            != strip_tags event.description.first(250)
+            %b ...
+        .span2
+          - if event.report.present?
+            .well.green
+              = t('.report_is_present')
+          - else
+            .well.red
+              = t('.report_is_not_present')
+- else
+  = t('.no_events')

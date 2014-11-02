@@ -4,11 +4,15 @@ IAmTheLider::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :news, only: [ :show, :index ]
+  resources :stages, only: [] do
+    member do
+      resources :ratings, only: :index
+    end
+  end
   resource :session, only: [:new, :create, :destroy]
+  resources :blog_posts, only: [ :index, :show ]
   resources :users do
     member do
-      resources :reports
-      resources :blog_posts
       resource :works, except: [ :index, :show ]
     end
   end
@@ -21,9 +25,28 @@ IAmTheLider::Application.routes.draw do
       get "reg_end" => "welcome#reg_end"
     end
   end
-  resource :errors do
+  resources :events, only: [ :index, :show ]
+  resource :errors, only: [] do
     collection do
       get "not_found"
+    end
+  end
+  namespace :participant do
+    resources :users do
+      member do
+        resources :welcome, only: :index
+        resources :blog_posts
+        resource :event do
+          scope module: :event do
+            resource :report, except: :show do
+              member do
+                resources :participants, except: [ :show, :index ]
+                resources :photos, except: [ :show, :index, :edit, :update ]
+              end
+            end
+          end
+        end
+      end
     end
   end
   namespace :admin do
@@ -31,19 +54,24 @@ IAmTheLider::Application.routes.draw do
     resources :welcome, only: [ :index ]
     resources :blog_posts, except: [:create, :new]
     resources :news, except: [ :index, :show ]
+    resources :events
+    resources :reports
+    resources :participants, except: [ :show, :edit, :update ]
     resources :users do
       member do
         put :accept
         put :reserve
+        put :update_stage
         resource :reserve_reason, except: [ :index, :show ]
       end
     end
-    resources :reports, only: [ :edit, :update, :destroy ]
-    resources :jurors, except: [:show, :new]
-    resources :stages, except: :show do
+    resources :jurors, except: [:show, :new, :index]
+    resources :stages do
       member do
+        put :publish
+        put :unpublish
         resources :criterions, except: :show
-        resources :jurors, only: [:new]
+        resources :jurors, only: [:new, :index]
         resources :ratings, only: :index
       end
     end

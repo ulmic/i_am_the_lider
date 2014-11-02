@@ -12,6 +12,8 @@ ru:
       criterion: Критерий оценки
       juror: Член жюри
       evaluation: Оценка
+      event: Мероприятие
+      report: Творческий отчёт
     attributes:
       user:
         login: Логин
@@ -31,13 +33,8 @@ ru:
         avatar_content_type: Загруженный файл
         locality: Населённый пункт
         adress_index: Почтовый индекс
-      report:
-        date: Дата проведения
-        member_count: Количество участников
-        member_type: Категория участников
-        venue: Место проведения
-        archive: Архив с данными о мероприятии
-        description: Описание
+        last_stage_id: "Этап, на котором остановился участник"
+        last_stage: Этап конкурса
       project:
         date: Запланированная дата проведения
         description: Описание мероприятия
@@ -57,6 +54,7 @@ ru:
         text: Текст
         user_id: Автор
         created_at: Создан
+        photo: Фото
       admin:
         login: Логин
         password: Пароль
@@ -83,3 +81,28 @@ ru:
         password: Пароль
       evaluation:
         value: Оценка
+      event:
+        title: Название мероприятия
+        goal: Цель мероприятия
+        tasks: Задачи
+        participant_category: Целевая аудитория
+        description: Краткое описание
+        begin_date: Дата и время начала
+        end_date: Дата и время окончания
+        adress: Адрес
+        user_id: Участник
+        user: Участник
+      event/participant:
+        full_name: ФИО
+        school: Учебное заведение
+        group: Группа
+        phone: Телефон
+        report: Мероприятие
+      event/report:
+        description: Описание
+        results: Результаты
+        document: Приложения к отчёту
+        event_id: Мероприятие
+        event: Мероприятие
+        user: Участник
+        created_at: Создан

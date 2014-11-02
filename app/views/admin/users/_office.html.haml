@@ -1,44 +1,32 @@
-- if user_signed_in?
-  %h3
-    Hello,
-    = @user.middle_name
-  = link_to t('sign_out'), session_path, method: :delete, class: :btn
-= simple_form_for @user do |f|
-  .row-fluid
-    .span5
+.row-fluid
+  .span5
+    %p
+      %img.img-polaroid.big_img{  src: @user.avatar  }
+    %p
+      %b= t('activerecord.attributes.user.district')
+      = @user.district.title if @user.district.present?
+    %p
+      %b= t('activerecord.attributes.user.birth_date')
+      = @user.birth_date
+    - unless @user.school.blank?
       %p
-        %h2= @user.title
+        %b= t('activerecord.attributes.user.school')
+        = @user.school
+    - unless @user.group.blank?
       %p
-        %img.img-polaroid.big_img{ src: @user.avatar }
+        %b= t('activerecord.attributes.user.group')
+        = @user.group
+    - unless @user.twitter.blank?
       %p
-        %b= f.label :district
-        = @user.district.title if @user.district.present?
-      %p
-        %b= f.label :birth_date
-        = @user.birth_date
-      - unless @user.school.blank?
-        %p
-          %b= f.label :school
-          = @user.school
-      - unless @user.group.blank?
-        %p
-          %b= f.label :group
-          = @user.group
-      -unless @user.twitter.blank?
-        %p
-          %b= f.label :twitter
-          %a{href: "#{@user.twitter}"}
-            = @user.twitter
-    .span7
-      - if @user.report
-        %p
-          %h3= t('.report')
-        %p
-          != @user.report.description if @user.report.description
-        %p
-          -if @user.report.present?
-            %a.btn.btn-large.btn-success{href: "#{@user.report.archive}"}
-              = t('.download_archive')
-          -else
-            %span{style: "color: #AAA;"}
-              = t('.there_is_not_archive')
+        %b= t('activerecord.attributes.user.twitter')
+        %a{ href: "#{ @user.twitter }" }
+          = @user.twitter_account
+    %p
+      %b= t('activerecord.attributes.user.mobile_phone')
+      = @user.mobile_phone
+    %p
+      %b= t('activerecord.attributes.user.home_phone')
+      = @user.home_phone
+    %p
+      %b= t('activerecord.attributes.user.email')
+      = @user.email

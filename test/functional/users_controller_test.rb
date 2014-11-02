@@ -6,6 +6,7 @@ class UsersControllerTest < ActionController::TestCase
     @district = create :district
     @user.district_id = @district.id
     @admin = create :admin
+    @stage = create :stage
   end
 
   test "should get index" do

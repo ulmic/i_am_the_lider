@@ -1,0 +1,9 @@
+= simple_form_for @participant, url: admin_participants_path do |f|
+  - f.with_options input_html: { class: :span4 } do |f|
+    = f.input :full_name, as: :string
+    = f.input :school, as: :string
+    = f.association :report, label_method: lambda { |report| report.event.title }, value_method: :id
+    = f.input :group, as: :string
+    = f.input :phone, as: :string, placeholder: "+79601234567"
+  .form-actions
+    = f.button :submit, class: 'btn-primary'

@@ -1,4 +1,5 @@
 ru:
+  preview:             Предпросмотр
   accepted_user:       Подтверждённая заявка
   reserve_user:        На данный момент не подтверждённая заявка
   busted_user:         Удалённая заявка
@@ -30,14 +31,21 @@ ru:
   add: Добавить
 
   stages:
-    time_to_be_lider: Время быть лидером
+    time_to_be_the_lider: Время быть лидером
     market_dreams: Ярмарка идей
-    time_for_real_deals: Время реальных дел
+    time_of_real_deals: Время реальных дел
+    final_stage: Финал
 
   days:
     day: день
     few_days: дня
     many_days: дней
+
+  participants:
+    participant: участник
+    few_participants: участника
+    many_participants: участников
+
 
   time:
     formats:
@@ -53,8 +61,10 @@ ru:
       participants:           'Участники'
       competition:            'Положение'
       contest_news:           'Новости'
+      events:                 Мероприятия
       stages:                 'Этапы'
       reformal_message:		  'Oтзывы и предложения для lider.ulgood.ru'
+      blog_posts: Дневники активности
     footer:
       organizers:              Организатор
       ministry_of_education:   'Министерство образования'
@@ -65,19 +75,6 @@ ru:
       partners: Партнёры
       designer_page: Страница нашего дизайнера
 
-  blog_posts:
-    back:       'Назад'
-    blog_posts: 'Блоги'
-    edit:
-      editing_blog_post: 	'Редактирование записи блога'
-      view_blog_post: 		'Посмотреть'
-    form:
-      prohibited_this_blog_post_from_being_saved: 'зафиксировано во время сохранения'
-      no_more_than_140_characters: 'Не больше 140 символов'
-      save:                        'Сохранить'
-    new:
-      add_blog_post:             Добавить запись в блог
-      blog_post_added:           Запись в блог добавлена
 
   errors:
     not_found:
@@ -148,10 +145,13 @@ ru:
       user_reserved_because: 'Заявка отложена по причине:'
       add_work: Добавить творческую работу
       edit_work: Изменить творческую работу
-      download_work: Загрузить творческую работу
+      download_work: Скачать творческую работу
       download_work_from_file_storage: Загрузить работу с файлообменника
       work_is_unavalaible: Работа не загружена на сайт
       return_to_reserved: Вернуть в отложенные
+    blogs:
+      blogs: Дневник активности
+      participant_has_not_write_anything: Участник ничего не написал на данный момент
   works:
     new:
       title: 'Добавить творческую работу "Кого лидер ведёт за собой?"'
@@ -168,6 +168,8 @@ ru:
       sign_up:                 'Зарегистрируйтесь!'
       blog_posts_empty:        'Блоги пока что пусты...'
       i_am_lider:              'Я - лидер!'
+    blogs:
+      blogs:                    Дневники активности
     market_dreams:
       if_you_are_participant: 'Если ты участник конкурса, войди в свой профиль'
       registration_ended: 'Регистрация на конкурс завершена'
@@ -175,6 +177,8 @@ ru:
       apply_participation_to_market_dream: 'Подать заявку на Ярмарку идей 2014'
       days_to_market_dreams: ДО ЯРМАРКИ ИДЕЙ ОСТАЛОСЬ
     users:
+      semifinalists: Полуфиналисты конкурса
+      finalists: Финалисты конкурса
       view_competitors_list:   'Посмотреть список участников'
       be_the_first: 'Стать первым!'
     news:
@@ -184,6 +188,22 @@ ru:
       all_news: Все новости
     reg_end:
       registration_ended: Регистрация окончена
+    auth_form:
+      to_office: Войти в личный кабинет
+    view_ratings:
+      ratings_for_stage: "Оценки за этап \"%{stage_title}\" выставлены!"
+      view_ratings: Посмотреть оценки
+  ratings:
+    index:
+      title: Оценки участников
+      average_of_stage: "Средний бал за Этапа - %{average}"
+      average_eval: Средний бал
+      has_entered_to_next_stage: Проходит в следующий этап
+      has_not_entered_to_next_stage: Не проходит в следующий этап
+      add_stage_average: Добавить среднюю оценку к текущему этапу конкурса
+      juror_has_not_evaluate_yet: Жюри пока не опубликовало оценки этого участника
+      publish_ratings: Опубликовать результаты Этапа
+      unpublish_ratings: Вернуть из публикации результаты Этапа
 
   juror:
     welcome:
@@ -204,3 +224,12 @@ ru:
       edit_form:
         estimate: Оценить
         criterions: Критерии оценки
+  blog_posts:
+    index:
+      blog_posts: Дневники активности
+      there_are_not_any_blog_posts: Пока нет ни одной записи
+
+  events:
+    index:
+      events: Мероприятия
+      no_events: Никто из участников пока не анонсировал мероприятия

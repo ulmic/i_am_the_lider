@@ -1,6 +1,9 @@
 //= require jquery
-////= require jquery_ujs
-////= require ckeditor/init
+//= require cocoon
+//= require underscore
+//= require gmaps/google
+//= require jquery_ujs
+//= require ckeditor/init
 
 var reformalOptions = {
     project_id: 98584,

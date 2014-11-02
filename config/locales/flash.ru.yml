@@ -62,6 +62,8 @@ ru:
           error: Ошибка в заполении полей
         destroy:
           success: Отчёт удален
+        new:
+          error: "Все мероприятия имеют Творческие отчёты. Добавьте новое мероприятие."
       sessions:
         create:
           success: Авторизация прошла успешно
@@ -76,6 +78,8 @@ ru:
           error: Ошибка в заполении полей
         destroy:
           success: Пользователь удален
+        update_stage:
+          success: Участник перенесён в другой этап
       stages:
         create:
           success: Этап конкурса добавлен успешно
@@ -101,6 +105,21 @@ ru:
           error: Ошибка в заполении полей
         destroy:
           success: Член жюри удалён
+      events:
+        create:
+          success: Мероприятие успешно создано
+        update:
+          success: Анонс мероприятия успешно изменён
+        new:
+          error: "Все участники имеют мероприятия. Добавьте нового участника."
+      reports:
+        create:
+          success: Творческий отчёт успешно добавлен
+      participants:
+        create:
+          success: Участник мероприятия успешно добавлен
+        destroy:
+          success: Участник мероприятия успешно удалён
     juror:
       sessions:
         create:
@@ -115,3 +134,22 @@ ru:
           success: Оценки добавлены
         update:
           success: Оценки исправлены
+    participant:
+      blog_posts:
+        create:
+          success: Запись добавлена в ваш дневник
+        destroy:
+          success: Запись удалена
+        update:
+          success: Запись отредактирована
+      events:
+        create:
+          success: Анонс мероприятия успешно добавлен
+        update:
+          success: Анонс мероприятия отредактирован
+      event:
+        reports:
+          create:
+            success: Творческий отчёт о мероприятии создан
+          update:
+            success: Творческий отчёт отредактирован

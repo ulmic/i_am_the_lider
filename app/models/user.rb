@@ -15,13 +15,15 @@ class User < ActiveRecord::Base
                   :avatar,
                   :locality,
                   :adress_index,
-                  :confirm_state
+                  :confirm_state,
+                  :last_stage_id
 
   belongs_to :district
+  belongs_to :last_stage, class_name: "Stage"
   has_one :reserve_reason
   has_one :work
-  has_one :report
   has_many :blog_posts
+  has_one :event
   has_many :ratings
   mount_uploader :avatar, PhotoUploader, mount_on: :avatar_file_name
 
@@ -40,7 +42,6 @@ class User < ActiveRecord::Base
                         allow_blank: true
   validates :twitter, url: true,
                       allow_blank: true
-  validates :password, presence: true, length: { minimum: 8, maximum: 16 }
   validates :adress_index, presence: true, length: { is: 6 }
   validates :locality, presence: true
   validates :avatar, presence: true

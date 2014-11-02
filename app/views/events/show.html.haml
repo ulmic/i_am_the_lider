@@ -1,0 +1,64 @@
+= stylesheet_link_tag "participant/events"
+%script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
+%script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
+= javascript_include_tag "participant/events"
+- model_class = Event
+.page-header
+  %h1
+    = @event.title
+.row-fluid
+  .span6.text_about_event
+    %p
+      %strong= model_class.human_attribute_name(:goal) + ':'
+      %br
+      = @event.goal
+    %p
+      %strong= model_class.human_attribute_name(:tasks) + ':'
+      %br
+      = @event.tasks
+    %p
+      %strong= model_class.human_attribute_name(:participant_category) + ':'
+      %br
+      = @event.participant_category
+    %p
+      %strong= model_class.human_attribute_name(:description) + ':'
+      %br
+      = @event.description
+  .span5
+    .row
+      .button{ onclick: "return location.href = '#{user_path(@event.user)}'" }
+        = image_tag @event.user.avatar.mini_thumb_fill
+        = @event.user.decorate.small_name
+      - if @event.user.twitter?
+        .button{ onclick: "return location.href = '#{@event.user.twitter}'" }
+          = image_tag "social/twitter.png"
+          = @event.user.decorate.twitter_account
+    .row
+      .well.begin_date
+        %h2
+          = Russian::strftime(@event.begin_date, "%e %B %Y %R")
+    .row
+      .well
+        %h2
+          = @event.adress
+    - if @event.report.present?
+      .row
+        .well
+          %h2
+            = participants_count(@event.participants_count)
+    -#.row
+      %div{style: "width: 800px;"}
+        #google_map{style: "width: 800px; height: 400px;"}
+.row-fluid
+  - if @event.report.present?
+    %hr
+    .row-fluid
+      %h1
+        Творческий отчёт о мероприятии
+      %p
+        %strong= model_class.human_attribute_name(:description) + ':'
+        %br
+        != @event.report.description
+        %strong= model_class.human_attribute_name(:results) + ':'
+        %br
+        = @event.report.results

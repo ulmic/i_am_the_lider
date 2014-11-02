@@ -3,24 +3,19 @@
   %h1
     = t('.title')
   = link_to t('.users_excel'), admin_users_path(format: :xls), class: 'btn btn-success'
-- @users.each do |user|
-  .row-fluid.has_top_margin
-    %a{ href: user_path(user) }
-      .span2
-        %img.img-polaroid.width-200px{ src: user.avatar }
-      .span3
-        .row-fluid
-          %h4= user.title
-        .row-fluid
-          %h4= user.district.title
-        .row-fluid
-          %h4 Дата рождения #{ user.birth_date }
-      .span3
-        .row_fluid
-          %h4= user.school
-        .row-fluid
-          %h4= user.group
-      - unless user.twitter.blank?
-        .row-fluid
+= link_to t('.add_user'), new_admin_user_path, class: 'btn btn-info'
+%table.table.table-striped.table-hover
+  - @users.each do |user|
+    %tr.link{ onclick: "return location.href = '#{admin_user_path(user)}'" }
+      %td
+        %img.img-polaroid{ src: user.avatar.mini_thumb_fill }
+      %td
+        = user.title
+      %td
+        = user.district.title
+      %td
+        = user.school
+      %td
+        - unless user.twitter.blank?
           %a{ href: user.twitter }
-            .span1.logo.mini.twitter
+            .logo.mini.twitter

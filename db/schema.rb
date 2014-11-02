@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213092210) do
+ActiveRecord::Schema.define(:version => 20140429083542) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -66,6 +66,48 @@ ActiveRecord::Schema.define(:version => 20140213092210) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "event_participants", :force => true do |t|
+    t.text     "full_name"
+    t.text     "school"
+    t.integer  "report_id"
+    t.text     "group"
+    t.text     "phone"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "event_photos", :force => true do |t|
+    t.text     "file"
+    t.integer  "report_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "event_reports", :force => true do |t|
+    t.text     "description"
+    t.text     "document"
+    t.integer  "event_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.text     "results"
+  end
+
+  create_table "events", :force => true do |t|
+    t.text     "title"
+    t.text     "goal"
+    t.text     "tasks"
+    t.text     "participant_category"
+    t.text     "description"
+    t.datetime "begin_date"
+    t.datetime "end_date"
+    t.text     "adress"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.integer  "user_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
   create_table "jurors", :force => true do |t|
     t.text     "first_name"
     t.string   "last_name"
@@ -106,21 +148,6 @@ ActiveRecord::Schema.define(:version => 20140213092210) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "reports", :force => true do |t|
-    t.text     "member_type"
-    t.integer  "member_count"
-    t.text     "venue"
-    t.date     "date"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.string   "archive_file_name"
-    t.string   "archive_content_type"
-    t.integer  "archive_file_size"
-    t.datetime "archive_updated_at"
-    t.integer  "user_id"
-    t.string   "description"
-  end
-
   create_table "reserve_reasons", :force => true do |t|
     t.text     "description"
     t.integer  "user_id"
@@ -131,11 +158,12 @@ ActiveRecord::Schema.define(:version => 20140213092210) do
   create_table "stages", :force => true do |t|
     t.text     "title"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.date     "begin_date"
     t.date     "end_date"
     t.integer  "average"
+    t.string   "ratings_publish_state"
   end
 
   create_table "users", :force => true do |t|
@@ -161,6 +189,7 @@ ActiveRecord::Schema.define(:version => 20140213092210) do
     t.integer  "adress_index"
     t.text     "locality"
     t.string   "confirm_state"
+    t.integer  "last_stage_id"
   end
 
   create_table "works", :force => true do |t|

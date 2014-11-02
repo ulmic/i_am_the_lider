@@ -3,6 +3,11 @@ class Admin::StagesController < ApplicationController
     @stages = Stage.all
   end
 
+  def show
+    @stage = Stage.find params[:id]
+    @users = UserDecorator.decorate_collection User.with(last_stage_id: params[:id])
+  end
+
   def new
     @stage = Stage.new
   end
@@ -33,5 +38,17 @@ class Admin::StagesController < ApplicationController
     @stage = Stage.find params[:id]
     @stage.destroy
     redirect_to admin_stages_path, flash: :success
+  end
+
+  def publish
+    @stage = Stage.find params[:id]
+    @stage.publish
+    redirect_to admin_ratings_path @stage
+  end
+
+  def unpublish
+    @stage = Stage.find params[:id]
+    @stage.unpublish
+    redirect_to admin_ratings_path @stage
   end
 end

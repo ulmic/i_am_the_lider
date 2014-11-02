@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = UserDecorator.decorate_collection User.with_confirm_state :accepted
+    @users = UserDecorator.decorate_collection User.with(last_stage_id: current_stage.id).shuffle!
   end
 
   def show
@@ -23,6 +23,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    #FIXME реализовать иное назначение last_stage_id
+    params[:user][:last_stage_id] = 1
+
     @user = User.new params[:user]
     if @user.save
       user_sign_in @user

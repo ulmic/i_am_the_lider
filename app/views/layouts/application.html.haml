@@ -1,53 +1,62 @@
 %html
-%head
-  %title= t(".i_am_lider")
-  = stylesheet_link_tag    "bootstrap_and_overrides"
-  = stylesheet_link_tag    "application"
-  = javascript_include_tag "application"
-  = favicon_link_tag 'favicon.ico'
-  = csrf_meta_tags
-%body
-  = render 'layouts/reformal'
-  = render 'layouts/metrics'
-  .container-fluid
-    .row-fluid.header
-      %a{ href: root_path }
-        .span4.offset3.description
-          =t('.learning_youth_contest')
-        .span12.font-logo
-          %h4= t('.i_am_lider')
-      .text-center
-        %ul.nav.nav-pills
-          %li
-            %a{ href: root_path }
-              %h3= t('.home')
-          - if user_signed_in?
+  %head
+    %title= t(".i_am_lider")
+    = stylesheet_link_tag    "bootstrap_and_overrides"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+  %body
+    = render 'layouts/reformal'
+    = render 'layouts/metrics'
+    .container-fluid
+      .row-fluid.header
+        %a{ href: root_path }
+          .span4.offset3.description
+            =t('.learning_youth_contest')
+          .span12.font-logo
+            %h4= t('.i_am_lider')
+        .text-center
+          %ul.nav.nav-pills
             %li
-              %a{ href: user_path(current_user) }
-                %h3= t('.i_am_participant')
-          - elsif can_registred?
+              %a{ href: root_path }
+                %h3= t('.home')
+            - if user_signed_in?
+              %li
+                %a{ href: participant_welcome_index_path(current_user) }
+                  %h3= t('.i_am_participant')
+            - elsif can_registred?
+              %li
+                %a{ href: new_user_path }
+                  %h3= t('apply_for_participation')
             %li
-              %a{ href: new_user_path }
-                %h3= t('apply_for_participation')
-          %li
-            %a{ href: users_path }
-              %h3= t('.participants')
-          %li
-            %a{ href: competition_welcome_path }
-              %h3= t('.competition')
-          %li
-            %a{ href: '/news' }
-              %h3= t('.contest_news')
-          %li
-            %a{ href: first_stage_welcome_path }
-              %h3= t('.stages')
-          - if admin_signed_in?
+              %a{ href: users_path }
+                %h3= t('.participants')
             %li
-              %a{ href: admin_welcome_index_path }
-                %h3= t('.admin_home')
-    .row-fluid
-      .span12.content
-        = flash_messages :close
-        = yield
-    .row-fluid.footer
-      = render 'layouts/footer'
+              %a{ href: events_path }
+                %h3= t('.events')
+            %li
+              = link_to blog_posts_path do
+                %h3
+                  = t('.blog_posts')
+            %li
+              %a{ href: competition_welcome_path }
+                %h3= t('.competition')
+            - unless user_signed_in?
+              %li
+                %a{ href: '/news' }
+                  %h3= t('.contest_news')
+            - if user_signed_in?
+              %li
+                = link_to session_path, method: :delete do
+                  %h3= t('sign_out')
+            - if admin_signed_in?
+              %li
+                %a{ href: admin_welcome_index_path }
+                  %h3= t('.admin_home')
+      .row-fluid
+        .span12.content
+          = flash_messages :close
+          = yield
+      .row-fluid.footer
+        = render 'layouts/footer'

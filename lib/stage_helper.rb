@@ -1,9 +1,10 @@
 module StageHelper
   def current_stage
-    stage_id = 1
-    Rating.all.each do |rating|
-      stage_id = rating.juror.stage_id if rating.juror.stage_id >= stage_id
+    Stage.all.each do |stage|
+      if Date.today >= stage.begin_date and Date.today <= stage.end_date
+        return stage
+      end
     end
-    stage = Stage.find stage_id
+    Stage.last
   end
 end

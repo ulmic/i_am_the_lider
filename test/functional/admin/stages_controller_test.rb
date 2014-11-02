@@ -12,6 +12,11 @@ class Admin::StagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get show" do
+    get :show, id: @stage
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -64,5 +69,15 @@ class Admin::StagesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to admin_stages_path
+  end
+
+  test "should publish ratings stage" do
+    put :publish, id: @stage
+    assert_response :redirect
+  end
+
+  test "should unpublish ratings stage" do
+    put :unpublish, id: @stage
+    assert_response :redirect
   end
 end

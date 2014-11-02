@@ -1,4 +1,12 @@
+- if current_stage_ratings_published?
+  = render "view_ratings"
 - if market_dreams_coming_soon?
   = render "news"
 - elsif market_dreams_during?
   = render "users"
+- elsif time_of_real_deals_during?
+  = render "auth_form"
+  = render "blogs"
+- elsif final_stage_during?
+  = render "auth_form"
+  = render "blogs"

@@ -1,3 +1,4 @@
-%h1= t('.edit_report')
-= render 'form'
-= link_to t('.back'), reports_path
+- model_class = Event::Report
+.page-header
+  %h1=t '.title', default: [:'helpers.titles.edit', 'Edit %{model}'], model: model_class.model_name.human.titleize
+= render partial: "form", locals: { action: :update }

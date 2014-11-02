@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :rating do
-    user_id 1
-    juror_id 1
+    association :user
+    association :juror
   end
 end

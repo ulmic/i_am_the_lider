@@ -1,5 +1,5 @@
 %h3
-  Участники
+  = t('.finalists')
   = @users_count
 .row.top_row
   - if @users.blank?
@@ -10,13 +10,13 @@
     .triple
       .row
         - user_triple.each do |user|
-          .span4
-            %a{ href: user_path(user) }
-              %img.mini_equal_size.img-circle.small{ src: user.avatar.thumb_fill }
-            %a{ href: user_path(user) }
-              %small.very_small_text= user.first_name
-              %br
-              %small.very_small_text= user.middle_name
+          .span4.link{ onclick: "return location.href = '#{user_path(user)}'" }
+            .row-fluid
+              %img.mini_equal_size.img-rounded.small{ src: user.avatar.thumb_fill }
+            .row-fluid
+              .very_small_text= user.first_name
+            .row-fluid
+              .very_small_text_margin_top= user.middle_name
 - unless @users.blank?
   .row
     %p{ align: :center }

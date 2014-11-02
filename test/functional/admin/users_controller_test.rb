@@ -74,7 +74,7 @@ class Admin::UsersControllerTest < ActionController::TestCase
     delete :destroy, id: @user
     @user.reload
     assert @user.busted?
-    assert_redirected_to users_path
+    assert_redirected_to admin_users_path
   end
 
   test "should accept user" do
@@ -87,5 +87,15 @@ class Admin::UsersControllerTest < ActionController::TestCase
     put :reserve, id: @user
     @user.reload
     assert @user.reserved?
+  end
+
+  test "should update stage" do
+    stage = create :stage
+    create :stage
+    @user.last_stage = stage
+    @user.save
+    put :update_stage, id: @user, user: { last_stage_id: stage.id }
+    @user.reload
+    assert_redirected_to admin_stage_path stage
   end
 end

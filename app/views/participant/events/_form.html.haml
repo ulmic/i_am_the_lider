@@ -1,0 +1,17 @@
+= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true&language=ru"
+= javascript_include_tag "participant/geo_marker"
+= stylesheet_link_tag "participant/events"
+
+= simple_form_for @event, url: participant_event_path, html: { class: 'form-horizontal' } do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
+    = f.input :title, as: :string, placeholder: t('.not_more_than_140_characters')
+    = f.input :goal, as: :string
+    = f.input :tasks
+    = f.input :participant_category, placeholder: t('.please_describe_participant_category')
+    = f.input :description, placeholder: t('.not_more_than_1000_characters')
+    = f.input :begin_date, input_html: { class: :span1 }
+    = f.input :end_date, input_html: { class: :span1 }
+    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    = f.input :adress, as: :string
+  .form-actions
+    = f.button :submit, t('save'), class: 'btn btn-primary'
